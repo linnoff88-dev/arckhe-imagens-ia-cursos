@@ -1,0 +1,65 @@
+{
+  "course": "olhar-treinado",
+  "tracks": [
+    {
+      "n": "1",
+      "title": "Fundamentos",
+      "modules": [
+        {
+          "id": "1-1",
+          "title": "Gosto é treinável",
+          "topics": 7,
+          "href": "curso/trilha1/modulo-1-1.html"
+        },
+        {
+          "id": "1-2",
+          "title": "Nomeie o que você vê: vocabulário e Visual DNA",
+          "topics": 7,
+          "href": "curso/trilha1/modulo-1-2.html"
+        }
+      ]
+    },
+    {
+      "n": "2",
+      "title": "Direção visual",
+      "modules": [
+        {
+          "id": "2-1",
+          "title": "As sete famílias estéticas",
+          "topics": 8,
+          "href": "curso/trilha2/modulo-2-1.html"
+        },
+        {
+          "id": "2-2",
+          "title": "Estética por objetivo: decidir, misturar, aplicar",
+          "topics": 7,
+          "href": "curso/trilha2/modulo-2-2.html"
+        }
+      ]
+    },
+    {
+      "n": "3",
+      "title": "Produção",
+      "modules": [
+        {
+          "id": "3-1",
+          "title": "Observação profissional: desmontar, estudar, criar regras",
+          "topics": 7,
+          "href": "curso/trilha3/modulo-3-1.html"
+        }
+      ]
+    },
+    {
+      "n": "4",
+      "title": "Projeto",
+      "modules": [
+        {
+          "id": "4-1",
+          "title": "Projeto final: seu caderno de olhar aplicado",
+          "topics": 7,
+          "href": "curso/trilha4/modulo-4-1.html"
+        }
+      ]
+    }
+  ]
+}
