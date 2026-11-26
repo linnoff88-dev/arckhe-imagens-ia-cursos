@@ -28,7 +28,7 @@ Analise as imagens anexadas e responda em 6 partes.
    - forma dominante (arredondada, angular, geométrica, orgânica)
    - composiçêo (espaço negativo, simetria/assimetria, um herói ou vários)
    - textura e acabamento (grêo, brilho, papel, cromado)
-   - estilo de imagem (produto em estúdio, lifestyle espontâneo, luz cinematográfica, macro)
+   - estilo de imagem (produto em estúdio, lifestyle espontâneo, luz cARCKHÉtográfica, macro)
    - tipografia, se houver (serifada, sem serifa, pesada, leve)
 
 3) COERÊNCIA — Quais elementos puxam para as 3 palavras de vibe e quais puxam para outro lado? Liste os conflitos em ordem de gravidade.

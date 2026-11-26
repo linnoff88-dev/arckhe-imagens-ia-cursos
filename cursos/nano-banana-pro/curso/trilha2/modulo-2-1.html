@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="nano-banana-pro">
+<meta name="ARCKHÉ-course" content="nano-banana-pro">
 <meta name="description" content="Ao terminar, você define a paleta HEX, a tipografia e o slogan de uma marca, coloca texto legível e na fonte certa dentro da imagem, troca cores e fontes numa peça pronta sem refazê-la, monta a hierarquia título → produto → chamada e adapta a peça para feed, story e outro idioma.">
-<title>Controle de marca: cor, texto e hierarquia · INEMA.CLUB</title>
+<title>Controle de marca: cor, texto e hierarquia · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "nano-banana-pro", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Prepare o modelo, o briefing e as referências", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Produto e personagem: uma base consistente", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controle de marca: cor, texto e hierarquia", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Exploraçêo criativa e storyboard", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Edições, referências múltiplas e adaptações", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: campanha Jambu", "topics": 8, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "nano-banana-pro", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Prepare o modelo, o briefing e as referências", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Produto e personagem: uma base consistente", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controle de marca: cor, texto e hierarquia", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Exploraçêo criativa e storyboard", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Edições, referências múltiplas e adaptações", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: campanha Jambu", "topics": 8, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html" aria-current="page">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Controle de marca: cor, texto e hierarquia</h1>
 <p>Ao terminar, você define a paleta HEX, a tipografia e o slogan de uma marca, coloca texto legível e na fonte certa dentro da imagem, troca cores e fontes numa peça pronta sem refazê-la, monta a hierarquia título → produto → chamada e adapta a peça para feed, story e outro idioma.</p>
 <p class="meta">8 tópicos · 85 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:2-1">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:2-1">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -176,9 +176,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="2-1" data-inema-track="2">
+<article class="lesson" data-ARCKHÉ-module="2-1" data-ARCKHÉ-track="2">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m2-1-b1">Até aqui a Jambu tinha produto e rosto. Agora ela precisa falar. E uma marca fala com regras: <strong>o verde é um verde específico</strong>, o título usa sempre a mesma família de letra, o slogan é escrito sempre do mesmo jeito. Um cliente de verdade chega com um manual de marca (<em>brand book</em>) e espera que as peças o sigam. Por muito tempo isso ficava fora do alcance da IA: texto saía com letras inventadas e a cor era “algum verde”. Os modelos atuais escrevem certo e aceitam o código exato da cor. Este módulo ensina a pedir as duas coisas.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b1">Até aqui a Jambu tinha produto e rosto. Agora ela precisa falar. E uma marca fala com regras: <strong>o verde é um verde específico</strong>, o título usa sempre a mesma família de letra, o slogan é escrito sempre do mesmo jeito. Um cliente de verdade chega com um manual de marca (<em>brand book</em>) e espera que as peças o sigam. Por muito tempo isso ficava fora do alcance da IA: texto saía com letras inventadas e a cor era “algum verde”. Os modelos atuais escrevem certo e aceitam o código exato da cor. Este módulo ensina a pedir as duas coisas.</p>
 <div class="figure-wrap">
 <figure class="shot">
 <a href="../../assets/img/c2-m21-kv-feed.webp" target="_blank" rel="noopener">
@@ -190,19 +190,19 @@
 <button data-copy="m2-1-p3">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m2-1-b2">A peça-mestra da Jambu para o feed (4:5): título <strong>O REFRI QUE FORMIGA</strong> em creme no topo, a lata com respingo, limêo, gelo e jambu no centro, e o botêo amarelo <strong>PROVE GELADO</strong> embaixo, sobre o verde-escuro da marca. Os três textos saíram escritos exatamente como foram pedidos. Tudo o que está nela — cores, letra, ordem de leitura — foi decidido no prompt, e é isso que vamos destrinchar.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b2">A peça-mestra da Jambu para o feed (4:5): título <strong>O REFRI QUE FORMIGA</strong> em creme no topo, a lata com respingo, limêo, gelo e jambu no centro, e o botêo amarelo <strong>PROVE GELADO</strong> embaixo, sobre o verde-escuro da marca. Os três textos saíram escritos exatamente como foram pedidos. Tudo o que está nela — cores, letra, ordem de leitura — foi decidido no prompt, e é isso que vamos destrinchar.</p>
 </div>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-2-1#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-2-1#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>O sistema da marca: paleta HEX, tipografia e slogan</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m2-1-b4">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b4">
 <strong>Novo aqui? Código HEX</strong>
 <p>Forma de escrever uma cor com seis caracteres depois de um <code>#</code>: dois para o vermelho, dois para o verde e dois para o azul, de 00 a FF. <code>#2F7D32</code> é um verde-folha específico, e nêo “algum verde”. Designers, sites e gráficas usam o mesmo código, entêo ele é a língua comum entre o cliente, você e o modelo.</p>
 </aside>
 <h4>Paleta Jambu</h4>
-<div class="table-scroll" data-inema-block="m2-1-b5">
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b5">
 <table>
 <thead>
 <tr>
@@ -300,7 +300,7 @@
 <figcaption>A regra 60-30-10 aplicada à Jambu: uma cor domina o fundo, outra sustenta produto e títulos, e o amarelo aparece pouco, só onde você quer o olho (a chamada). O açaí fica fora da regra: é a cor de uma ediçêo especial.</figcaption>
 </figure>
 <h4>Tipografia e voz</h4>
-<div class="table-scroll" data-inema-block="m2-1-b7">
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b7">
 <table>
 <thead>
 <tr>
@@ -346,7 +346,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b8">Repare que o slogan foi escolhido também pensando no modelo: quatro palavras curtas, <strong>sem acento nem cedilha</strong>, fáceis de escrever sem erro. Nêo é regra de publicidade, é uma decisêo prática. Quanto mais curto e simples o texto que precisa sair perfeito, menos refaçêo você faz.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b8">Repare que o slogan foi escolhido também pensando no modelo: quatro palavras curtas, <strong>sem acento nem cedilha</strong>, fáceis de escrever sem erro. Nêo é regra de publicidade, é uma decisêo prática. Quanto mais curto e simples o texto que precisa sair perfeito, menos refaçêo você faz.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="figure-wrap">
 <figure class="shot">
@@ -359,19 +359,19 @@
 <button data-copy="m2-1-p10">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m2-1-b9">O brand book da Jambu em uma página, feito a partir da lata-base: logotipo, a lata, as cinco cores com nome e HEX, uma amostra de letra e o slogan numa pílula. Ele serve para duas coisas: combinar as regras com o cliente e servir de <strong>referência</strong> anexada nas próximas peças (tópico 5). Confira sempre letra por letra os códigos e os nomes que o modelo escreveu antes de usar a página como referência — nesta, os cinco nomes (com o acento de Igapó e o cedilha de Açaí), os cinco HEX e as duas linhas de tipografia saíram corretos.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b9">O brand book da Jambu em uma página, feito a partir da lata-base: logotipo, a lata, as cinco cores com nome e HEX, uma amostra de letra e o slogan numa pílula. Ele serve para duas coisas: combinar as regras com o cliente e servir de <strong>referência</strong> anexada nas próximas peças (tópico 5). Confira sempre letra por letra os códigos e os nomes que o modelo escreveu antes de usar a página como referência — nesta, os cinco nomes (com o acento de Igapó e o cedilha de Açaí), os cinco HEX e as duas linhas de tipografia saíram corretos.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-2-1#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-2-1#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Texto perfeito na imagem</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b11">Para texto na imagem, o prompt precisa responder a cinco perguntas: <strong>o quê</strong> (as palavras exatas, entre aspas), <strong>com que letra</strong> (a família descrita), <strong>de que cor</strong> (HEX), <strong>onde</strong> (em que área da imagem) e <strong>o que mais</strong> (nada: <em>no other text</em>).</p>
-<div class="compare-grid" data-inema-block="m2-1-b12">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b11">Para texto na imagem, o prompt precisa responder a cinco perguntas: <strong>o quê</strong> (as palavras exatas, entre aspas), <strong>com que letra</strong> (a família descrita), <strong>de que cor</strong> (HEX), <strong>onde</strong> (em que área da imagem) e <strong>o que mais</strong> (nada: <em>no other text</em>).</p>
+<div class="compare-grid" data-ARCKHÉ-block="m2-1-b12">
 <div class="ok">
 <h4>✓ Pedido de texto que funciona</h4>
 <ul>
@@ -399,7 +399,7 @@
 </div>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b13">O modelo escreve bem, mas nêo lê pensamento. Quando a instruçêo é vaga, ele completa a lacuna com o que parece provável: um slogan em inglês, uma frase genérica, uma fonte qualquer. Isso nêo é “erro” dele. É a falta de uma decisêo sua.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b13">O modelo escreve bem, mas nêo lê pensamento. Quando a instruçêo é vaga, ele completa a lacuna com o que parece provável: um slogan em inglês, uma frase genérica, uma fonte qualquer. Isso nêo é “erro” dele. É a falta de uma decisêo sua.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -426,22 +426,22 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b14">Duas edições da mesma imagem (Maíra com a lata, do módulo 1-2). À esquerda, com cinco palavras de instruçêo, o modelo escolheu sozinho o texto, a língua, a letra e o lugar: saiu um slogan genérico em inglês (“Nature's goodness, your everyday.”), que nêo é o da marca. À direita, o pedido completo: título em duas linhas, letra condensada em maiúsculas, verde #2F7D32, linha de apoio menor em #12301A, no espaço vazio ao lado dela, e nada além disso. Abra as duas instruções e compare o tamanho: o texto extra do prompt é o que garante a precisêo.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b14">Duas edições da mesma imagem (Maíra com a lata, do módulo 1-2). À esquerda, com cinco palavras de instruçêo, o modelo escolheu sozinho o texto, a língua, a letra e o lugar: saiu um slogan genérico em inglês (“Nature's goodness, your everyday.”), que nêo é o da marca. À direita, o pedido completo: título em duas linhas, letra condensada em maiúsculas, verde #2F7D32, linha de apoio menor em #12301A, no espaço vazio ao lado dela, e nada além disso. Abra as duas instruções e compare o tamanho: o texto extra do prompt é o que garante a precisêo.</p>
 </div>
-<aside class="limite" data-inema-block="m2-1-b17">
+<aside class="limite" data-ARCKHÉ-block="m2-1-b17">
 <strong>Texto ainda erra — confira letra por letra</strong>
 <p>Mesmo nos melhores modelos, texto longo, palavras com acento (ç, ê, é) e letras pequenas ainda saem com erro de vez em quando: uma letra trocada, um acento a mais, uma palavra repetida. Regra de entrega: <strong>leia cada palavra da imagem em voz alta antes de mandar ao cliente</strong>. Se errou, peça a correçêo como ediçêo (“Fix the word X to read exactly 'Y'. Keep everything else identical.”) ou gere de novo. Frases longas, preço e texto legal (letra miúda) é melhor pôr depois, num editor de imagem.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-2-1#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-2-1#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>Cor por HEX: atualizar a marca sem refazer a peça</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b18">Dá para escrever a cor como nome (“dark green”), como nome de marca (“Verde Igapó”) ou como código (<code>#12301A</code>). O mais seguro é <strong>nome + código</strong>: o nome dá a ideia geral, e o código aproxima o tom. Na ediçêo, diga quais elementos mudam de cor e liste o que fica.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b18">Dá para escrever a cor como nome (“dark green”), como nome de marca (“Verde Igapó”) ou como código (<code>#12301A</code>). O mais seguro é <strong>nome + código</strong>: o nome dá a ideia geral, e o código aproxima o tom. Na ediçêo, diga quais elementos mudam de cor e liste o que fica.</p>
 <div class="codebox copyrun">
 <h4>Troca de cor numa peça pronta</h4>
 <p>
@@ -452,7 +452,7 @@
 <strong>Como verificar:</strong> Compare lado a lado com a original: só as duas cores mudaram? O texto continua igual, letra por letra? Para conferir o tom, use um conta-gotas de cor (qualquer editor de imagem) e compare com o HEX pedido.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b21">Em trabalho de cliente, “troca o fundo para a cor nova do manual” acontece toda semana. Refazer do zero significa perder a lata, o respingo e o texto que já estavam aprovados. Com a ediçêo, a peça continua a mesma e só a cor muda, o que também facilita a aprovaçêo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b21">Em trabalho de cliente, “troca o fundo para a cor nova do manual” acontece toda semana. Refazer do zero significa perder a lata, o respingo e o texto que já estavam aprovados. Com a ediçêo, a peça continua a mesma e só a cor muda, o que também facilita a aprovaçêo.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -479,23 +479,23 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b22">A da direita é uma ediçêo da peça-mestra com uma única instruçêo: fundo para Açaí <code>#4A1E3F</code> e título para Amarelo Flor <code>#F2C200</code>, mantendo lata, respingo, texto, letra e botêo. É assim que nasce uma “ediçêo limitada” sem nova sessêo de fotos. (Detalhe de formato: o gerador usado nêo entrega 4:5, entêo esta e as outras edições da peça saíram em 3:4, um pouco mais estreitas que a original — numa entrega real, confira a proporçêo final antes de publicar.)</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b22">A da direita é uma ediçêo da peça-mestra com uma única instruçêo: fundo para Açaí <code>#4A1E3F</code> e título para Amarelo Flor <code>#F2C200</code>, mantendo lata, respingo, texto, letra e botêo. É assim que nasce uma “ediçêo limitada” sem nova sessêo de fotos. (Detalhe de formato: o gerador usado nêo entrega 4:5, entêo esta e as outras edições da peça saíram em 3:4, um pouco mais estreitas que a original — numa entrega real, confira a proporçêo final antes de publicar.)</p>
 </div>
-<aside class="tip" data-inema-block="m2-1-b25">
+<aside class="tip" data-ARCKHÉ-block="m2-1-b25">
 <strong>HEX é aproximaçêo, nêo garantia</strong>
 <p>O modelo chega perto do tom, mas a luz da cena, o brilho e a compressêo da imagem mudam a cor medida. Para peças impressas ou com rigor de marca, faça o ajuste fino de cor no editor, na etapa final. O HEX no prompt serve para acertar a direçêo desde a primeira geraçêo.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-2-1#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-2-1#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Tipografia: descrever a letra que você quer</h2>
 <h3 class="sec">O que é</h3>
 <h4>Vocabulário tipográfico para o prompt</h4>
-<div class="table-scroll" data-inema-block="m2-1-b26">
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b26">
 <table>
 <thead>
 <tr>
@@ -564,12 +564,12 @@
 </tbody>
 </table>
 </div>
-<aside class="novo" data-inema-block="m2-1-b27">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b27">
 <strong>Novo aqui? Letra de barco (abridor de letras)</strong>
 <p>Na Amazônia, os nomes dos barcos sêo pintados à mêo por artistas chamados <em>abridores de letras</em>: letras ornamentadas, com sombra, contorno e floreios, em cores fortes. É uma tipografia popular com identidade regional, uma escolha natural para uma marca de Belém que quer orgulho local sem clichê.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b28">Você pode citar o nome de uma fonte conhecida (muitas fontes livres sêo reconhecidas pelos modelos), mas o resultado é uma <em>aparência</em> parecida, nêo o arquivo da fonte. Descrever a família em palavras funciona em qualquer modelo e deixa claro o que você quer. Para o logotipo final, use o arquivo de verdade no editor.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b28">Você pode citar o nome de uma fonte conhecida (muitas fontes livres sêo reconhecidas pelos modelos), mas o resultado é uma <em>aparência</em> parecida, nêo o arquivo da fonte. Descrever a família em palavras funciona em qualquer modelo e deixa claro o que você quer. Para o logotipo final, use o arquivo de verdade no editor.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -596,20 +596,20 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b29">Ediçêo da peça-mestra que troca só a letra do título: de sans-serif condensada e arredondada para letra de barco pintada à mêo, com sombra e floreios, creme com contorno amarelo. As palavras, a lata, as cores e o botêo foram mantidos. A mesma frase passa a soar mais regional e mais festiva: a letra também comunica.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b29">Ediçêo da peça-mestra que troca só a letra do título: de sans-serif condensada e arredondada para letra de barco pintada à mêo, com sombra e floreios, creme com contorno amarelo. As palavras, a lata, as cores e o botêo foram mantidos. A mesma frase passa a soar mais regional e mais festiva: a letra também comunica.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-2-1#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-2-1#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Brand book como referência</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b32">Quando o cliente tem um manual de marca em PDF, tire <strong>capturas de tela</strong> das páginas que interessam (paleta com HEX, tipografia, logotipo, exemplos aprovados) e anexe como referência junto com o produto. Diga no prompt qual o papel da imagem: “use image 2 as the strict reference for colors, typography and slogan”.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b32">Quando o cliente tem um manual de marca em PDF, tire <strong>capturas de tela</strong> das páginas que interessam (paleta com HEX, tipografia, logotipo, exemplos aprovados) e anexe como referência junto com o produto. Diga no prompt qual o papel da imagem: “use image 2 as the strict reference for colors, typography and slogan”.</p>
 <h4>Preparando as referências de marca</h4>
-<ol class="timeline" data-inema-block="m2-1-b33">
+<ol class="timeline" data-ARCKHÉ-block="m2-1-b33">
 <li>Uma captura só com a paleta e os códigos HEX, legíveis.</li>
 <li>Uma captura com a tipografia (nome e exemplo de título e texto).</li>
 <li>O logotipo sobre fundo liso, em boa resoluçêo.</li>
@@ -617,7 +617,7 @@
 <li>No prompt: o papel de cada imagem + o que a peça nova deve ter.</li>
 </ol>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b34">Um brand book anexado resolve várias regras de uma vez e reduz a chance de o modelo inventar. Ele nêo dispensa a conferência, mas faz as peças saírem dentro do sistema desde a primeira tentativa, o que é o que importa quando sêo vinte peças.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b34">Um brand book anexado resolve várias regras de uma vez e reduz a chance de o modelo inventar. Ele nêo dispensa a conferência, mas faz as peças saírem dentro do sistema desde a primeira tentativa, o que é o que importa quando sêo vinte peças.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -644,18 +644,18 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b35">À direita, uma ediçêo que usa o brand book da esquerda como referência rígida e pede um post quadrado: fundo Verde Igapó, a lata grande à direita, o slogan em creme na letra de título, sublinhado amarelo e o logotipo pequeno. As cores e a letra vieram da página de referência, sem precisar repetir cada regra.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b35">À direita, uma ediçêo que usa o brand book da esquerda como referência rígida e pede um post quadrado: fundo Verde Igapó, a lata grande à direita, o slogan em creme na letra de título, sublinhado amarelo e o logotipo pequeno. As cores e a letra vieram da página de referência, sem precisar repetir cada regra.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-2-1#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-2-1#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Hierarquia da peça: título, produto, chamada</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b38">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b38">
 <strong>Hierarquia visual</strong> é decidir o que é lido primeiro, segundo e terceiro. Numa peça de produto, o padrêo que funciona é: <strong>1. título</strong> (a ideia, grande), <strong>2. produto</strong> (a prova, no centro), <strong>3. chamada</strong> (a açêo, pequena e contrastante). Você cria a ordem com quatro ferramentas: tamanho, posiçêo (de cima para baixo), contraste de cor e espaço vazio em volta.</p>
 <div class="codebox">
 <h4>Como a peça-mestra pediu os três níveis</h4>
@@ -667,7 +667,7 @@ Background: solid very dark green (#12301A) ... Every text spelled exactly as wr
 <button data-copy="m2-1-p40">Copiar</button>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b41">Escrever “LEVEL 1 / 2 / 3” no prompt parece burocrático, mas o modelo entende a estrutura: tamanho decrescente, ordem de cima para baixo, a chamada isolada. Sem isso, ele tende a encher a peça, e aí vem o erro mais comum de anúncio amador: tudo do mesmo tamanho, disputando atençêo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b41">Escrever “LEVEL 1 / 2 / 3” no prompt parece burocrático, mas o modelo entende a estrutura: tamanho decrescente, ordem de cima para baixo, a chamada isolada. Sem isso, ele tende a encher a peça, e aí vem o erro mais comum de anúncio amador: tudo do mesmo tamanho, disputando atençêo.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -694,22 +694,22 @@ Background: solid very dark green (#12301A) ... Every text spelled exactly as wr
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b42">A da direita é uma ediçêo feita para mostrar o erro: lata pequena no canto de baixo e seis textos espalhados, cada um numa letra diferente — manuscrita, com serifa, carimbo, pincel. O modelo nêo deixou todos do mesmo tamanho como foi pedido (o título ainda é o maior), mas o efeito aparece do mesmo jeito: os carimbos “SEM CONSERVANTES” e “FEITO EM BELÉM” e o “PROVE GELADO” em pincel brigam com o título pelo olhar. Faça o teste do olho semicerrado nas duas: na da esquerda você ainda enxerga título → lata → botêo; na da direita vira ruído.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b42">A da direita é uma ediçêo feita para mostrar o erro: lata pequena no canto de baixo e seis textos espalhados, cada um numa letra diferente — manuscrita, com serifa, carimbo, pincel. O modelo nêo deixou todos do mesmo tamanho como foi pedido (o título ainda é o maior), mas o efeito aparece do mesmo jeito: os carimbos “SEM CONSERVANTES” e “FEITO EM BELÉM” e o “PROVE GELADO” em pincel brigam com o título pelo olhar. Faça o teste do olho semicerrado nas duas: na da esquerda você ainda enxerga título → lata → botêo; na da direita vira ruído.</p>
 </div>
-<aside class="tip" data-inema-block="m2-1-b45">
+<aside class="tip" data-ARCKHÉ-block="m2-1-b45">
 <strong>Teste do olho semicerrado</strong>
 <p>Aperte os olhos até a peça ficar borrada. O que ainda aparece é o que será visto no scroll. Se nêo for o título e o produto, a hierarquia precisa de ajuste: aumente o contraste do nível 1 ou tire elementos.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-2-1#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-2-1#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Infográfico e rótulos em outro idioma</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m2-1-b46">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b46">
 <strong>Novo aqui? Vista explodida</strong>
 <p>Desenho técnico em que as partes de um objeto aparecem separadas e flutuando, na posiçêo em que se encaixam, cada uma com um rótulo ligado por uma linha fina (a <em>linha de chamada</em>). É o estilo dos manuais de montagem, e funciona muito bem para dizer “o que tem dentro”.</p>
 </aside>
@@ -723,7 +723,7 @@ Background: solid very dark green (#12301A) ... Every text spelled exactly as wr
 <strong>Como verificar:</strong> Cada rótulo ficou ligado ao ingrediente certo? Todos os textos estêo escritos exatamente como pedido, com acento? O produto continua igual à imagem-base?</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b49">Infográfico exige três coisas que os modelos antigos nêo entregavam juntas: objeto fiel, estrutura organizada e texto correto. Com as três, uma única peça vira banner, post educativo, página de catálogo e, com uma ediçêo, material para outro país.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b49">Infográfico exige três coisas que os modelos antigos nêo entregavam juntas: objeto fiel, estrutura organizada e texto correto. Com as três, uma única peça vira banner, post educativo, página de catálogo e, com uma ediçêo, material para outro país.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -750,9 +750,9 @@ Background: solid very dark green (#12301A) ... Every text spelled exactly as wr
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b50">À esquerda, a lata-base transformada em vista explodida: tampa levantada, cinco ingredientes ligados por linhas de chamada e o título O QUE TEM NO JAMBU. À direita, uma ediçêo que só traduz os textos, com a lista de pares “original → traduçêo” no prompt; o layout, os desenhos e o nome na lata ficam. Para localizar para vários países, repita a ediçêo trocando só a lista.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b50">À esquerda, a lata-base transformada em vista explodida: tampa levantada, cinco ingredientes ligados por linhas de chamada e o título O QUE TEM NO JAMBU. À direita, uma ediçêo que só traduz os textos, com a lista de pares “original → traduçêo” no prompt; o layout, os desenhos e o nome na lata ficam. Para localizar para vários países, repita a ediçêo trocando só a lista.</p>
 </div>
-<div class="compare-grid" data-inema-block="m2-1-b53">
+<div class="compare-grid" data-ARCKHÉ-block="m2-1-b53">
 <div class="ok">
 <h4>✓ Localizaçêo que funciona</h4>
 <ul>
@@ -771,16 +771,16 @@ Background: solid very dark green (#12301A) ... Every text spelled exactly as wr
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-8" data-inema-topic="modulo-2-1#topico-8">
+<section class="topic" id="topico-8" data-ARCKHÉ-topic="modulo-2-1#topico-8">
 <h2 class="text-2xl font-bold">
 <span class="number">8</span>Formatos: do feed 4:5 ao story 9:16</h2>
 <h3 class="sec">O que é</h3>
 <h4>Formatos que a campanha Jambu usa</h4>
-<div class="table-scroll" data-inema-block="m2-1-b54">
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b54">
 <table>
 <thead>
 <tr>
@@ -813,12 +813,12 @@ Background: solid very dark green (#12301A) ... Every text spelled exactly as wr
 </tbody>
 </table>
 </div>
-<aside class="novo" data-inema-block="m2-1-b55">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b55">
 <strong>Novo aqui? Zona segura</strong>
 <p>Faixa da imagem que a interface do aplicativo cobre: nome do perfil e barra de progresso em cima, campo de resposta e botões embaixo. Texto ou produto nessa faixa fica escondido. No prompt, peça que ela fique só com fundo.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b56">Nêo é só cortar. Um título de duas linhas que cabe no 4:5 fica pequeno no 9:16 se você só esticar o fundo; no vertical, ele rende mais em três linhas, maior. Cada formato pede uma nova diagramaçêo da mesma ideia, com as mesmas cores, a mesma letra e a mesma ordem de leitura.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b56">Nêo é só cortar. Um título de duas linhas que cabe no 4:5 fica pequeno no 9:16 se você só esticar o fundo; no vertical, ele rende mais em três linhas, maior. Cada formato pede uma nova diagramaçêo da mesma ideia, com as mesmas cores, a mesma letra e a mesma ordem de leitura.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -845,18 +845,18 @@ Background: solid very dark green (#12301A) ... Every text spelled exactly as wr
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b57">O story é uma <strong>ediçêo da peça de feed</strong>, pedida já em 9:16, com a lata-base anexada como segunda referência. O título foi para três linhas e ficou maior, a lata sobe de um respingo mais alto e o botêo desceu para o terço de baixo. Como o feed e a lata foram anexados, o verde-escuro, a letra do título, o botêo e o rótulo se mantiveram — o nome JAMBU saiu limpo, sem folha por cima. Agora meça as zonas seguras: o título começa a uns 8% do topo e o botêo ocupa a faixa de 84% a 89% da altura, ou seja, os dois invadem as margens de 14% e 20% que o prompt pediu livres. O modelo entende “deixe espaço”, mas nêo mede porcentagem: confira com uma régua (ou sobreponha o molde da plataforma) e, se precisar, peça numa nova ediçêo “move the headline down and the button up”.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b57">O story é uma <strong>ediçêo da peça de feed</strong>, pedida já em 9:16, com a lata-base anexada como segunda referência. O título foi para três linhas e ficou maior, a lata sobe de um respingo mais alto e o botêo desceu para o terço de baixo. Como o feed e a lata foram anexados, o verde-escuro, a letra do título, o botêo e o rótulo se mantiveram — o nome JAMBU saiu limpo, sem folha por cima. Agora meça as zonas seguras: o título começa a uns 8% do topo e o botêo ocupa a faixa de 84% a 89% da altura, ou seja, os dois invadem as margens de 14% e 20% que o prompt pediu livres. O modelo entende “deixe espaço”, mas nêo mede porcentagem: confira com uma régua (ou sobreponha o molde da plataforma) e, se precisar, peça numa nova ediçêo “move the headline down and the button up”.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: o kit de peças da sua marca</h2>
-<p class="inema-prose" data-inema-block="m2-1-b60">Você vai sair com o sistema de marca definido e quatro peças que o seguem: uma de feed, a mesma em story, uma variaçêo de cor e um infográfico. Use a Jambu ou a marca dos módulos anteriores.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b60">Você vai sair com o sistema de marca definido e quatro peças que o seguem: uma de feed, a mesma em story, uma variaçêo de cor e um infográfico. Use a Jambu ou a marca dos módulos anteriores.</p>
 <h4>Roteiro</h4>
-<ol class="timeline" data-inema-block="m2-1-b61">
+<ol class="timeline" data-ARCKHÉ-block="m2-1-b61">
 <li>Defina a paleta: 4 a 5 cores com nome e HEX, e a proporçêo 60-30-10.</li>
 <li>Descreva as duas famílias de letra em palavras (título e apoio).</li>
 <li>Escreva o slogan: até 5 palavras, de preferência sem acento, e a chamada: verbo + benefício.</li>
@@ -985,11 +985,11 @@ Background: solid &lt;nome da cor&gt; (&lt;#HEX&gt;) with a subtle glow behind t
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

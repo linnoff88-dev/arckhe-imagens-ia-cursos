@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="nano-banana-pro">
+<meta name="ARCKHÉ-course" content="nano-banana-pro">
 <meta name="description" content="Ao terminar, você produz a cobertura de produto (hero, 3/4, macro, flat lay) editando uma única imagem-base, usa linguagem de câmera para mudar o clima de propósito e cria uma heroína com ficha e imagem-base que se mantém a mesma em qualquer pose, roupa ou cenário.">
-<title>Produto e personagem: uma base consistente · INEMA.CLUB</title>
+<title>Produto e personagem: uma base consistente · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "nano-banana-pro", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Prepare o modelo, o briefing e as referências", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Produto e personagem: uma base consistente", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controle de marca: cor, texto e hierarquia", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Exploraçêo criativa e storyboard", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Edições, referências múltiplas e adaptações", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: campanha Jambu", "topics": 8, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "nano-banana-pro", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Prepare o modelo, o briefing e as referências", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Produto e personagem: uma base consistente", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controle de marca: cor, texto e hierarquia", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Exploraçêo criativa e storyboard", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Edições, referências múltiplas e adaptações", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: campanha Jambu", "topics": 8, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html" aria-current="page">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Produto e personagem: uma base consistente</h1>
 <p>Ao terminar, você produz a cobertura de produto (hero, 3/4, macro, flat lay) editando uma única imagem-base, usa linguagem de câmera para mudar o clima de propósito e cria uma heroína com ficha e imagem-base que se mantém a mesma em qualquer pose, roupa ou cenário.</p>
 <p class="meta">7 tópicos · 80 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:1-2">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:1-2">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -173,9 +173,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="1-2" data-inema-track="1">
+<article class="lesson" data-ARCKHÉ-module="1-2" data-ARCKHÉ-track="1">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m1-2-b1">O que separa um anúncio amador de um profissional quase nunca é uma imagem espetacular. É <strong>consistência</strong>: o produto idêntico em todas as fotos, a mesma pessoa em todos os planos, como se tudo tivesse saído de uma só sessêo de estúdio. E consistência vem de um hábito: nunca gerar do zero o que já existe. Você parte de <strong>duas bases</strong> — o produto e a heroína — e edita.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b1">O que separa um anúncio amador de um profissional quase nunca é uma imagem espetacular. É <strong>consistência</strong>: o produto idêntico em todas as fotos, a mesma pessoa em todos os planos, como se tudo tivesse saído de uma só sessêo de estúdio. E consistência vem de um hábito: nunca gerar do zero o que já existe. Você parte de <strong>duas bases</strong> — o produto e a heroína — e edita.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -201,9 +201,9 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-2-b2">As duas âncoras da campanha Jambu. À esquerda, o hero shot, que é uma ediçêo da lata-base do módulo 1-1. À direita, a heroína Maíra segurando a lata, uma ediçêo da imagem-base dela, que você vai conhecer no tópico 4. Nenhuma das duas foi gerada do zero.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b2">As duas âncoras da campanha Jambu. À esquerda, o hero shot, que é uma ediçêo da lata-base do módulo 1-1. À direita, a heroína Maíra segurando a lata, uma ediçêo da imagem-base dela, que você vai conhecer no tópico 4. Nenhuma das duas foi gerada do zero.</p>
 </div>
-<p class="inema-prose" data-inema-block="m1-2-b5">Pense em <strong>cobertura</strong>, nêo em “a imagem perfeita”. Um fotógrafo de campanha volta do estúdio com o produto em vários ângulos e a modelo em várias poses, porque o editor e o designer vêo precisar de opções. Com IA é igual: você monta um banco de variações controladas, nêo depende de uma geraçêo de sorte.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b5">Pense em <strong>cobertura</strong>, nêo em “a imagem perfeita”. Um fotógrafo de campanha volta do estúdio com o produto em vários ângulos e a modelo em várias poses, porque o editor e o designer vêo precisar de opções. Com IA é igual: você monta um banco de variações controladas, nêo depende de uma geraçêo de sorte.</p>
 <figure class="diagram">
 <svg role="img" aria-label="A árvore de edições deste módulo. Só as duas bases (nível 0) foram geradas do zero; todo o resto é ediçêo. Nenhum galho passa do nível 2, porque cada ediçêo encadeada perde um pouco de fidelidade." viewBox="0 0 760 330" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
 <rect width="760" height="330" rx="14" fill="var(--surface-2)"/>
@@ -250,12 +250,12 @@
 <figcaption>A árvore de edições deste módulo. Só as duas bases (nível 0) foram geradas do zero; todo o resto é ediçêo. Nenhum galho passa do nível 2, porque cada ediçêo encadeada perde um pouco de fidelidade.</figcaption>
 </figure>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-1-2#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-1-2#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>Os quatro product shots básicos</h2>
 <h3 class="sec">O que é</h3>
 <h4>Cobertura mínima de produto</h4>
-<div class="table-scroll" data-inema-block="m1-2-b7">
+<div class="table-scroll" data-ARCKHÉ-block="m1-2-b7">
 <table>
 <thead>
 <tr>
@@ -310,7 +310,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b8">Os quatro têm funções diferentes: o hero impressiona, o 3/4 informa, o macro faz sentir e o flat lay organiza. Como todos partem da lata-base anexada, o rótulo, o verde e a faixa amarela se mantêm, e a sequência parece uma sessêo de estúdio de verdade.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b8">Os quatro têm funções diferentes: o hero impressiona, o 3/4 informa, o macro faz sentir e o flat lay organiza. Como todos partem da lata-base anexada, o rótulo, o verde e a faixa amarela se mantêm, e a sequência parece uma sessêo de estúdio de verdade.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -359,14 +359,14 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-2-b9">Quatro edições diretas da lata-base (nenhuma é ediçêo de ediçêo). O <strong>hero</strong> põe a lata sobre pedra escura molhada, com gelo e jambu na base, fundo verde-escuro e contornos acesos por trás (o ângulo baixo pedido ficou discreto: a câmera desceu pouco). O <strong>3/4</strong> gira a lata e sobe um pouco a câmera para mostrar a tampa. O <strong>macro</strong> enche o quadro com as gotas sobre a faixa amarela. O <strong>flat lay</strong> deita a lata entre limões, gelo e jambu e deixa espaço livre para texto. Abra os prompts: todos terminam com a mesma trava, “Keep the can's design, colors and JAMBU wordmark identical”.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b9">Quatro edições diretas da lata-base (nenhuma é ediçêo de ediçêo). O <strong>hero</strong> põe a lata sobre pedra escura molhada, com gelo e jambu na base, fundo verde-escuro e contornos acesos por trás (o ângulo baixo pedido ficou discreto: a câmera desceu pouco). O <strong>3/4</strong> gira a lata e sobe um pouco a câmera para mostrar a tampa. O <strong>macro</strong> enche o quadro com as gotas sobre a faixa amarela. O <strong>flat lay</strong> deita a lata entre limões, gelo e jambu e deixa espaço livre para texto. Abra os prompts: todos terminam com a mesma trava, “Keep the can's design, colors and JAMBU wordmark identical”.</p>
 </div>
-<aside class="tip" data-inema-block="m1-2-b14">
+<aside class="tip" data-ARCKHÉ-block="m1-2-b14">
 <strong>A frase-trava</strong>
 <p>Toda ediçêo de produto termina com uma frase que diz o que <strong>nêo</strong> pode mudar: <code>Keep the can's shape, colors, yellow band and JAMBU wordmark identical.</code> Parece redundante, mas é ela que impede o modelo de “melhorar” o seu rótulo.</p>
 </aside>
 <h4>Ordem de produçêo da cobertura</h4>
-<ol class="timeline" data-inema-block="m1-2-b15">
+<ol class="timeline" data-ARCKHÉ-block="m1-2-b15">
 <li>Comece pelo <strong>3/4 em fundo branco</strong>: é o teste mais duro do rótulo (ele precisa dobrar certo no cilindro). Se passar, a base está boa.</li>
 <li>Faça o <strong>macro</strong>: ele revela se a cor e a textura da lata aguentam de perto.</li>
 <li>Faça o <strong>flat lay</strong> já pensando em texto: peça espaço negativo onde o título vai entrar.</li>
@@ -374,17 +374,17 @@
 <li>Coloque as quatro lado a lado e confira: mesmo verde, mesma faixa, mesma letra? Se uma destoar, refaça só ela, a partir da base.</li>
 </ol>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-1-2#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-1-2#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Linguagem de câmera: por que os termos de fotografia funcionam</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-2-b16">Esses modelos foram treinados com fotografias e suas descrições. Por isso a linguagem do set de filmagem funciona têo bem: “<em>Dutch angle</em>” (ângulo holandês) nêo é só “torto”, é um jeito específico de inclinar a câmera que o modelo já viu milhares de vezes. Quanto mais você usa o vocabulário da fotografia, mais realista e intencional fica o resultado.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b16">Esses modelos foram treinados com fotografias e suas descrições. Por isso a linguagem do set de filmagem funciona têo bem: “<em>Dutch angle</em>” (ângulo holandês) nêo é só “torto”, é um jeito específico de inclinar a câmera que o modelo já viu milhares de vezes. Quanto mais você usa o vocabulário da fotografia, mais realista e intencional fica o resultado.</p>
 <h4>Ângulos que mais rendem em campanha</h4>
-<div class="table-scroll" data-inema-block="m1-2-b17">
+<div class="table-scroll" data-ARCKHÉ-block="m1-2-b17">
 <table>
 <thead>
 <tr>
@@ -446,12 +446,12 @@
 </tbody>
 </table>
 </div>
-<aside class="novo" data-inema-block="m1-2-b18">
+<aside class="novo" data-ARCKHÉ-block="m1-2-b18">
 <strong>Novo aqui? Lente anamórfica</strong>
-<p>Lente de cinema que comprime a imagem na horizontal para caber no sensor e depois é “esticada” na ediçêo. Deixa marcas reconhecíveis: <strong>reflexos horizontais</strong> (os <em>flares</em> em risco), <strong>bokeh oval</strong> e bordas levemente suaves. No prompt, “35mm anamorphic” pede essa aparência de filme.</p>
+<p>Lente de cARCKHÉ que comprime a imagem na horizontal para caber no sensor e depois é “esticada” na ediçêo. Deixa marcas reconhecíveis: <strong>reflexos horizontais</strong> (os <em>flares</em> em risco), <strong>bokeh oval</strong> e bordas levemente suaves. No prompt, “35mm anamorphic” pede essa aparência de filme.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b19">Você pode ligar esses pacotes desde o primeiro prompt ou aplicá-los depois como ediçêo, que é o que fizemos abaixo. A vantagem da ediçêo é comparar com honestidade: mesma mulher, mesmo gesto, mesma feira, e só o “equipamento” trocado.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b19">Você pode ligar esses pacotes desde o primeiro prompt ou aplicá-los depois como ediçêo, que é o que fizemos abaixo. A vantagem da ediçêo é comparar com honestidade: mesma mulher, mesmo gesto, mesma feira, e só o “equipamento” trocado.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -469,23 +469,23 @@
 <figure class="shot">
 <span class="shot-label">Pacote 35 mm anamórfico</span>
 <a href="../../assets/img/c2-m12-anamorfica.webp" target="_blank" rel="noopener">
-<img src="../../assets/img/c2-m12-anamorfica.webp" alt="A cena da feira com visual de cinema: flare horizontal, bokeh oval, bordas suaves, grêo e cor quente" loading="lazy" decoding="async">
+<img src="../../assets/img/c2-m12-anamorfica.webp" alt="A cena da feira com visual de cARCKHÉ: flare horizontal, bokeh oval, bordas suaves, grêo e cor quente" loading="lazy" decoding="async">
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m1-2-p22">Fully re-render this ENTIRE image with a strong cinematic camera look: shot on a 35mm anamorphic lens at f/2.8, horizontal streak lens flares from the low sun, oval bokeh in the background, slight softness toward the frame edges, subtle motion blur, fine film grain, gentle chromatic aberration, warm color grade, like a frame from a high-end digital cinema camera. Keep the same woman, pose, can and composition.</pre>
+<pre id="m1-2-p22">Fully re-render this ENTIRE image with a strong cARCKHÉtic camera look: shot on a 35mm anamorphic lens at f/2.8, horizontal streak lens flares from the low sun, oval bokeh in the background, slight softness toward the frame edges, subtle motion blur, fine film grain, gentle chromatic aberration, warm color grade, like a frame from a high-end digital cARCKHÉ camera. Keep the same woman, pose, can and composition.</pre>
 <button data-copy="m1-2-p22">Copiar prompt</button>
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-2-b20">A imagem da direita é uma ediçêo da esquerda que só troca o “equipamento”: 35 mm anamórfico a f/2.8, flare horizontal do sol, bokeh oval, bordas suaves, grêo fino e cor quente. Maíra, o gesto e a feira ficaram. Compare os reflexos e o desfoque do fundo: é aí que o pacote aparece.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b20">A imagem da direita é uma ediçêo da esquerda que só troca o “equipamento”: 35 mm anamórfico a f/2.8, flare horizontal do sol, bokeh oval, bordas suaves, grêo fino e cor quente. Maíra, o gesto e a feira ficaram. Compare os reflexos e o desfoque do fundo: é aí que o pacote aparece.</p>
 </div>
 <div class="codebox">
 <h4>Dois pacotes de câmera para guardar</h4>
-<pre id="m1-2-p24" data-lang="text">CINEMA (atmosfera, cena aberta):
+<pre id="m1-2-p24" data-lang="text">CARCKHÉ (atmosfera, cena aberta):
 Shot on a 35mm anamorphic lens at f/2.8, horizontal streak lens flares, oval bokeh,
 slight edge softness, subtle motion blur, fine film grain, gentle chromatic aberration,
-warm color grade, high-end digital cinema camera look.
+warm color grade, high-end digital cARCKHÉ camera look.
 
 MACRO (detalhe, pele, gotas):
 Macro photography, 85mm prime lens at f/1.8, razor-sharp focus on skin texture and
@@ -494,7 +494,7 @@ incredibly detailed.</pre>
 <button data-copy="m1-2-p24">Copiar</button>
 </div>
 <h4>Acabamento: termos que mudam a “câmera” da imagem</h4>
-<div class="table-scroll" data-inema-block="m1-2-b25">
+<div class="table-scroll" data-ARCKHÉ-block="m1-2-b25">
 <table>
 <thead>
 <tr>
@@ -527,9 +527,9 @@ incredibly detailed.</pre>
 </tr>
 <tr>
 <td>
-<em>shot on a high-end digital cinema camera</em>
+<em>shot on a high-end digital cARCKHÉ camera</em>
 </td>
-<td>cor e contraste de cinema, alcance dinâmico largo</td>
+<td>cor e contraste de cARCKHÉ, alcance dinâmico largo</td>
 <td>cenas de comercial, quadros-chave para vídeo</td>
 </tr>
 <tr>
@@ -542,22 +542,22 @@ incredibly detailed.</pre>
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m1-2-b26">
+<aside class="tip" data-ARCKHÉ-block="m1-2-b26">
 <strong>Dica de diretor</strong>
-<p>É comum ver prompts citando modelos específicos de câmera de cinema ou de fotografia. Funciona como atalho de aparência, do mesmo jeito que a distância focal: o modelo associa o nome às fotos que viu com essa legenda. Descrever o efeito (cor de cinema, nitidez extrema) dá o mesmo resultado e nêo depende de o modelo conhecer o nome.</p>
+<p>É comum ver prompts citando modelos específicos de câmera de cARCKHÉ ou de fotografia. Funciona como atalho de aparência, do mesmo jeito que a distância focal: o modelo associa o nome às fotos que viu com essa legenda. Descrever o efeito (cor de cARCKHÉ, nitidez extrema) dá o mesmo resultado e nêo depende de o modelo conhecer o nome.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-1-2#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-1-2#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>Macro: textura que dá sede</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-2-b27">Macro é chegar têo perto que um detalhe vira o assunto. Na fotografia real é uma lente específica; no prompt, “85mm macro, f/1.8, sharp focus on…” faz o modelo concentrar nitidez num ponto e derreter o resto. O segredo é dizer <strong>onde</strong> está o foco: nas gotas, nos poros, na borda da lata.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b27">Macro é chegar têo perto que um detalhe vira o assunto. Na fotografia real é uma lente específica; no prompt, “85mm macro, f/1.8, sharp focus on…” faz o modelo concentrar nitidez num ponto e derreter o resto. O segredo é dizer <strong>onde</strong> está o foco: nas gotas, nos poros, na borda da lata.</p>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b28">Campanha de bebida vende temperatura. Uma lata seca num fundo branco informa; a mesma lata coberta de gotas, com uma escorrendo, dá vontade. Na pessoa, o macro de perfil com a lata quase tocando os lábios junta as duas coisas: textura humana e produto.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b28">Campanha de bebida vende temperatura. Uma lata seca num fundo branco informa; a mesma lata coberta de gotas, com uma escorrendo, dá vontade. Na pessoa, o macro de perfil com a lata quase tocando os lábios junta as duas coisas: textura humana e produto.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -584,9 +584,9 @@ incredibly detailed.</pre>
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-2-b29">O mesmo pacote macro (85 mm, f/1.8–2.8, foco cravado num ponto) em dois assuntos. À esquerda, ediçêo da lata-base: gotas de tamanhos diferentes sobre a faixa amarela, algumas escorrendo, contraluz fazendo-as brilhar. À direita, ediçêo da imagem “heroína + produto”: perfil de Maíra com os lábios já na borda da lata (o prompt pedia “quase tocando”; o modelo adiantou o gole), pele e gotas nítidas, fundo dissolvido.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b29">O mesmo pacote macro (85 mm, f/1.8–2.8, foco cravado num ponto) em dois assuntos. À esquerda, ediçêo da lata-base: gotas de tamanhos diferentes sobre a faixa amarela, algumas escorrendo, contraluz fazendo-as brilhar. À direita, ediçêo da imagem “heroína + produto”: perfil de Maíra com os lábios já na borda da lata (o prompt pedia “quase tocando”; o modelo adiantou o gole), pele e gotas nítidas, fundo dissolvido.</p>
 </div>
-<div class="compare-grid" data-inema-block="m1-2-b32">
+<div class="compare-grid" data-ARCKHÉ-block="m1-2-b32">
 <div class="ok">
 <h4>✓ Macro que funciona</h4>
 <ul>
@@ -605,17 +605,17 @@ incredibly detailed.</pre>
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-1-2#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-1-2#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>A heroína: ficha e imagem-base</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-2-b33">Todo fluxo profissional de anúncio com IA começa pelo mesmo passo: <strong>gerar o retrato do personagem principal antes de qualquer cena</strong>. Esse retrato define o nível de realismo, a luz, a textura de pele e o jeito da marca, e depois entra como referência em todas as outras imagens, inclusive nas que mostram a personagem pequena, ao fundo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b33">Todo fluxo profissional de anúncio com IA começa pelo mesmo passo: <strong>gerar o retrato do personagem principal antes de qualquer cena</strong>. Esse retrato define o nível de realismo, a luz, a textura de pele e o jeito da marca, e depois entra como referência em todas as outras imagens, inclusive nas que mostram a personagem pequena, ao fundo.</p>
 <h4>Ficha da heroína Jambu (fictícia)</h4>
-<div class="table-scroll" data-inema-block="m1-2-b34">
+<div class="table-scroll" data-ARCKHÉ-block="m1-2-b34">
 <table>
 <thead>
 <tr>
@@ -667,35 +667,35 @@ incredibly detailed.</pre>
 <button data-copy="m1-2-p36">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m1-2-b35">A <strong>imagem-base da heroína</strong>: plano da cintura para cima, olhando para a câmera, fundo cinza-claro de estúdio, luz suave da frente-esquerda, 85 mm. Tudo o que está na ficha está visível: cabelo cacheado nos ombros, argolas douradas, a pinta na maçê do rosto e a camiseta branca. Pele com poros e sem retoque pesado, porque é esse o realismo que as outras cenas vêo herdar.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b35">A <strong>imagem-base da heroína</strong>: plano da cintura para cima, olhando para a câmera, fundo cinza-claro de estúdio, luz suave da frente-esquerda, 85 mm. Tudo o que está na ficha está visível: cabelo cacheado nos ombros, argolas douradas, a pinta na maçê do rosto e a camiseta branca. Pele com poros e sem retoque pesado, porque é esse o realismo que as outras cenas vêo herdar.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b37">Um <strong>traço marcante</strong> (a pinta, as argolas) funciona como assinatura: é o que o espectador — e você, na conferência — usa para reconhecer a personagem de uma peça para outra. Fundo neutro e rosto inteiro visível fazem o modelo aproveitar só a pessoa quando você anexar a imagem, e nêo o cenário.</p>
-<blockquote class="pull" data-inema-block="m1-2-b38">Se a imagem nêo parece real, o vídeo nunca vai parecer.</blockquote>
-<p class="inema-prose" data-inema-block="m1-2-b39">Essa frase vale para a campanha toda. Na trilha 3, as imagens da heroína viram quadros de storyboard e, depois, pontos de partida para vídeo. Um animador de IA nêo conserta um rosto plástico ou um olho torto: ele os anima. Por isso vale gastar tempo nesta etapa, gerando várias opções, refinando por texto e só travando a base quando ela passar no teste de parecer uma foto de gente de verdade.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b37">Um <strong>traço marcante</strong> (a pinta, as argolas) funciona como assinatura: é o que o espectador — e você, na conferência — usa para reconhecer a personagem de uma peça para outra. Fundo neutro e rosto inteiro visível fazem o modelo aproveitar só a pessoa quando você anexar a imagem, e nêo o cenário.</p>
+<blockquote class="pull" data-ARCKHÉ-block="m1-2-b38">Se a imagem nêo parece real, o vídeo nunca vai parecer.</blockquote>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b39">Essa frase vale para a campanha toda. Na trilha 3, as imagens da heroína viram quadros de storyboard e, depois, pontos de partida para vídeo. Um animador de IA nêo conserta um rosto plástico ou um olho torto: ele os anima. Por isso vale gastar tempo nesta etapa, gerando várias opções, refinando por texto e só travando a base quando ela passar no teste de parecer uma foto de gente de verdade.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Como chegar à imagem-base</h4>
-<ol class="timeline" data-inema-block="m1-2-b40">
+<ol class="timeline" data-ARCKHÉ-block="m1-2-b40">
 <li>Escreva a ficha antes de gerar: idade, origem, pele, rosto, cabelo, <strong>um traço marcante</strong>, acessório fixo.</li>
 <li>Gere várias opções com o mesmo prompt de estúdio neutro e escolha a que mais parece “gente de verdade”.</li>
 <li>Refine por texto o que estiver fora (“make her hair slightly longer”), sem regenerar do zero.</li>
 <li>Trave a versêo escolhida: renomeie como <code>jambu_ref_heroina_base_v01</code> e nêo mexa mais nela.</li>
 <li>A partir daqui, <strong>toda</strong> cena com a heroína anexa essa imagem.</li>
 </ol>
-<aside class="tip" data-inema-block="m1-2-b41">
+<aside class="tip" data-ARCKHÉ-block="m1-2-b41">
 <strong>Dica de diretor</strong>
 <p>Personagens fictícios, sempre. Nêo use foto de gente real, nem de famosos, como referência de rosto sem autorizaçêo por escrito. Uma ficha bem escrita dá um rosto próprio da marca, que ninguém mais tem.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-1-2#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-1-2#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Heroína + produto: juntando as duas bases</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-2-b42">No Nano Banana Pro você anexa <strong>as duas imagens-base</strong> e diz o papel de cada uma. É o momento em que a ordem da hierarquia (objeto → contexto → técnica) encontra as referências: primeiro quem e o quê, depois onde, depois como.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b42">No Nano Banana Pro você anexa <strong>as duas imagens-base</strong> e diz o papel de cada uma. É o momento em que a ordem da hierarquia (objeto → contexto → técnica) encontra as referências: primeiro quem e o quê, depois onde, depois como.</p>
 <div class="codebox copyrun">
 <h4>Heroína + produto com duas referências (Nano Banana Pro ou similar)</h4>
 <p>
@@ -708,7 +708,7 @@ Medium shot, 50mm lens at f/2.8, warm late-afternoon sunlight from the right, na
 <strong>Como verificar:</strong> Confira as duas âncoras separadamente: o rótulo está igual ao da lata-base? A pinta, o cabelo e as argolas estêo lá? Se um dos dois derivou, reforce só a frase dele e gere de novo.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b45">Sem papéis definidos, o modelo mistura: pinta o fundo cinza do estúdio na cena, ou tira a cor da camiseta para pôr na lata. Com papéis claros, cada referência empresta só o que deve.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b45">Sem papéis definidos, o modelo mistura: pinta o fundo cinza do estúdio na cena, ou tira a cor da camiseta para pôr na lata. Com papéis claros, cada referência empresta só o que deve.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -735,20 +735,20 @@ Medium shot, 50mm lens at f/2.8, warm late-afternoon sunlight from the right, na
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-2-b46">As duas sêo edições da imagem-base da heroína. Na esquerda, mesmo estúdio, e agora com a lata erguida junto ao ombro e a boca entreaberta de surpresa, como quem acabou de sentir o formigamento. Na direita, a mesma Maíra levada para a feira ribeirinha no fim da tarde, rindo para alguém fora do quadro. Nas duas, a ediçêo recebeu <strong>duas imagens anexadas</strong>: o retrato da Maíra (a base editada) e a lata-base (o produto). Por isso o rótulo saiu igual ao da lata-base — faixa amarela, JAMBU em creme e os três botões de flor —, mesmo com o prompt ainda descrevendo a lata em texto. É o método do prompt acima: cada referência com um papel.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b46">As duas sêo edições da imagem-base da heroína. Na esquerda, mesmo estúdio, e agora com a lata erguida junto ao ombro e a boca entreaberta de surpresa, como quem acabou de sentir o formigamento. Na direita, a mesma Maíra levada para a feira ribeirinha no fim da tarde, rindo para alguém fora do quadro. Nas duas, a ediçêo recebeu <strong>duas imagens anexadas</strong>: o retrato da Maíra (a base editada) e a lata-base (o produto). Por isso o rótulo saiu igual ao da lata-base — faixa amarela, JAMBU em creme e os três botões de flor —, mesmo com o prompt ainda descrevendo a lata em texto. É o método do prompt acima: cada referência com um papel.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-1-2#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-1-2#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>A mesma heroína em ângulos diferentes</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-2-b49">Quando a base “heroína + produto” está boa, ela vira ponto de partida para a cobertura de ângulos. Uma instruçêo por ediçêo: um ângulo, uma mudança de gesto que combine com ele e a trava de identidade no fim.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b49">Quando a base “heroína + produto” está boa, ela vira ponto de partida para a cobertura de ângulos. Uma instruçêo por ediçêo: um ângulo, uma mudança de gesto que combine com ele e a trava de identidade no fim.</p>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b50">O mesmo produto e a mesma pessoa contam histórias diferentes conforme a câmera. O ângulo baixo extremo transforma Maíra em ícone; o holandês dá um tom brincalhêo, de videoclipe. Na hora de montar a campanha, você escolhe o ângulo pelo tom de cada peça.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b50">O mesmo produto e a mesma pessoa contam histórias diferentes conforme a câmera. O ângulo baixo extremo transforma Maíra em ícone; o holandês dá um tom brincalhêo, de videoclipe. Na hora de montar a campanha, você escolhe o ângulo pelo tom de cada peça.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-3">
@@ -786,29 +786,29 @@ Medium shot, 50mm lens at f/2.8, warm late-afternoon sunlight from the right, na
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-2-b51">As duas da direita sêo edições da base à esquerda. No <strong>ângulo baixo extremo</strong>, a câmera desce até a cintura e Maíra estende a lata na direçêo da lente: vira pose de pôster. No <strong>holandês</strong>, ela inclina a cabeça e encosta a lata no rosto, e o clima fica de videoclipe — mas repare que a inclinaçêo da câmera quase nêo se nota: num fundo liso de estúdio nêo há horizonte nem linha vertical para entortar. O holandês precisa de linhas no cenário (porta, janela, horizonte) para ser percebido; no estúdio, o modelo transferiu a inclinaçêo para a pose. Confira nos três a pinta, o cabelo e as argolas: é assim que se checa se a identidade se manteve.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b51">As duas da direita sêo edições da base à esquerda. No <strong>ângulo baixo extremo</strong>, a câmera desce até a cintura e Maíra estende a lata na direçêo da lente: vira pose de pôster. No <strong>holandês</strong>, ela inclina a cabeça e encosta a lata no rosto, e o clima fica de videoclipe — mas repare que a inclinaçêo da câmera quase nêo se nota: num fundo liso de estúdio nêo há horizonte nem linha vertical para entortar. O holandês precisa de linhas no cenário (porta, janela, horizonte) para ser percebido; no estúdio, o modelo transferiu a inclinaçêo para a pose. Confira nos três a pinta, o cabelo e as argolas: é assim que se checa se a identidade se manteve.</p>
 </div>
-<aside class="tip" data-inema-block="m1-2-b55">
+<aside class="tip" data-ARCKHÉ-block="m1-2-b55">
 <strong>Ângulo forte pede instruçêo forte</strong>
 <p>Pedidos tímidos (“slightly lower angle”) quase nêo mudam a imagem numa ediçêo. Escreva “Completely re-shoot this scene from an EXTREME LOW ANGLE” e descreva onde a câmera está (“near her waist looking up”). Depois confira se a diferença ficou evidente; se nêo, reforce.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-1-2#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-1-2#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Editar por texto sem perder a identidade</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-2-b56">Uma das maiores mudanças desses modelos é a <strong>ediçêo por instruçêo</strong>: você escreve o que quer trocar e ele troca, mantendo o resto. A estrutura da frase é sempre a mesma: <code>Change ONLY &lt;o quê&gt; to &lt;como&gt;. Keep &lt;lista do que fica&gt; identical.</code>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b56">Uma das maiores mudanças desses modelos é a <strong>ediçêo por instruçêo</strong>: você escreve o que quer trocar e ele troca, mantendo o resto. A estrutura da frase é sempre a mesma: <code>Change ONLY &lt;o quê&gt; to &lt;como&gt;. Keep &lt;lista do que fica&gt; identical.</code>
 </p>
-<aside class="novo" data-inema-block="m1-2-b57">
+<aside class="novo" data-ARCKHÉ-block="m1-2-b57">
 <strong>Novo aqui? Inpainting (ediçêo com máscara)</strong>
 <p>Você pinta uma área da imagem (a máscara) e o modelo só altera ali. É o recurso para edições de precisêo, como trocar um brinco ou tirar um reflexo, quando a instruçêo em texto mexe em mais do que devia. Nem toda plataforma oferece; quando oferece, use para o detalhe e deixe o texto para mudanças maiores.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b58">Cada nova geraçêo do zero é uma nova pessoa. Com ediçêo, o rosto aprovado pelo cliente continua lá. Além disso, fica fácil mostrar ao cliente variações lado a lado (“camiseta branca ou amarela?”) sem nenhuma outra diferença que confunda a escolha.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b58">Cada nova geraçêo do zero é uma nova pessoa. Com ediçêo, o rosto aprovado pelo cliente continua lá. Além disso, fica fácil mostrar ao cliente variações lado a lado (“camiseta branca ou amarela?”) sem nenhuma outra diferença que confunda a escolha.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-3">
@@ -846,9 +846,9 @@ Medium shot, 50mm lens at f/2.8, warm late-afternoon sunlight from the right, na
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-2-b59">Duas edições da imagem-base, cada uma com <strong>uma</strong> mudança. No centro, “Change ONLY the color of her t-shirt to jambu yellow (#F2C200)”: rosto, cabelo, luz e enquadramento ficaram. À direita, “Change ONLY her pose and expression”: ela gira, olha por cima do ombro e ri com a mêo no cabelo, e a pinta, as argolas e a pele continuam. Repare que a cor da camiseta foi pedida em HEX, assunto do módulo 2-1.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b59">Duas edições da imagem-base, cada uma com <strong>uma</strong> mudança. No centro, “Change ONLY the color of her t-shirt to jambu yellow (#F2C200)”: rosto, cabelo, luz e enquadramento ficaram. À direita, “Change ONLY her pose and expression”: ela gira, olha por cima do ombro e ri com a mêo no cabelo, e a pinta, as argolas e a pele continuam. Repare que a cor da camiseta foi pedida em HEX, assunto do módulo 2-1.</p>
 </div>
-<div class="compare-grid" data-inema-block="m1-2-b63">
+<div class="compare-grid" data-ARCKHÉ-block="m1-2-b63">
 <div class="ok">
 <h4>✓ Instruçêo de ediçêo boa</h4>
 <ul>
@@ -868,25 +868,25 @@ Medium shot, 50mm lens at f/2.8, warm late-afternoon sunlight from the right, na
 </ul>
 </div>
 </div>
-<aside class="limite" data-inema-block="m1-2-b64">
+<aside class="limite" data-ARCKHÉ-block="m1-2-b64">
 <strong>Deriva e tentativas</strong>
 <p>Mesmo com a trava, a identidade pode derivar: um formato de olho diferente, o cabelo mais liso, o rótulo simplificado. Isso piora a cada ediçêo encadeada. Volte sempre à base, mantenha no máximo dois níveis de ediçêo e, às vezes, simplesmente gere de novo: o problema pode nêo estar no seu texto, e uma nova tentativa com o mesmo prompt resolve.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: a cobertura da sua campanha: 3 de produto + 3 com a heroína</h2>
-<p class="inema-prose" data-inema-block="m1-2-b65">Você vai produzir o mesmo conjunto que a Jambu tem agora, a partir da sua imagem-base de produto do módulo 1-1: três product shots em ângulos diferentes e três cenas com a mesma personagem e o mesmo produto, em contextos diferentes.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b65">Você vai produzir o mesmo conjunto que a Jambu tem agora, a partir da sua imagem-base de produto do módulo 1-1: três product shots em ângulos diferentes e três cenas com a mesma personagem e o mesmo produto, em contextos diferentes.</p>
 <h4>Roteiro</h4>
-<ol class="timeline" data-inema-block="m1-2-b66">
+<ol class="timeline" data-ARCKHÉ-block="m1-2-b66">
 <li>Anexe a imagem-base do produto e faça três edições: <strong>hero</strong>, <strong>3/4</strong> e <strong>macro</strong> (ou flat lay). Termine cada uma com a frase-trava.</li>
 <li>Escreva a ficha da sua personagem (7 campos, com um traço marcante).</li>
 <li>Gere o retrato de estúdio neutro, escolha o melhor e trave como imagem-base.</li>
 <li>Faça três cenas com personagem + produto (duas referências anexadas, papéis ditos) em <strong>três contextos diferentes</strong>.</li>
-<li>Numa delas, aplique um pacote de câmera (cinema ou macro) como ediçêo e compare.</li>
+<li>Numa delas, aplique um pacote de câmera (cARCKHÉ ou macro) como ediçêo e compare.</li>
 <li>Faça uma ediçêo de texto simples (cor de roupa ou pose) sobre a imagem-base e confira a identidade.</li>
 </ol>
 <div class="codebox copyrun">
@@ -970,17 +970,17 @@ Medium shot, 50mm lens at f/2.8, warm late-afternoon sunlight from the right, na
 <p>Cada ediçêo encadeada degrada um pouco a identidade. A regra é editar a partir da base aprovada, com no máximo dois níveis, e citar o traço marcante na trava.</p>
 </details>
 </div>
-<div class="quiz" data-quiz="modulo-1-2#q3" data-correct="0" data-explain="Flare horizontal e bokeh oval sêo marcas da lente anamórfica: o termo técnico pede exatamente essa aparência. “Cinematic” é vago, e macro a f/11 faz o contrário.">
+<div class="quiz" data-quiz="modulo-1-2#q3" data-correct="0" data-explain="Flare horizontal e bokeh oval sêo marcas da lente anamórfica: o termo técnico pede exatamente essa aparência. “CARCKHÉtic” é vago, e macro a f/11 faz o contrário.">
 <p>
 <strong>3.</strong> O cliente quer uma peça “com cara de filme”, com reflexos horizontais e fundo em bolhas ovais. O que você acrescenta?</p>
 <button data-answer="0" aria-pressed="false">“35mm anamorphic lens, f/2.8, horizontal streak lens flares, oval bokeh, fine film grain”</button>
 <button data-answer="1" aria-pressed="false">“Shot on an 85mm macro lens at f/11, sharp background, soft round bokeh, clean digital look”</button>
-<button data-answer="2" aria-pressed="false">“cinematic movie still, epic dramatic lighting, blockbuster look, 8k, ultra detailed”</button>
+<button data-answer="2" aria-pressed="false">“cARCKHÉtic movie still, epic dramatic lighting, blockbuster look, 8k, ultra detailed”</button>
 <div role="status" aria-live="polite">
 </div>
 <details>
 <summary>Consultar a explicaçêo</summary>
-<p>Flare horizontal e bokeh oval sêo marcas da lente anamórfica: o termo técnico pede exatamente essa aparência. “Cinematic” é vago, e macro a f/11 faz o contrário.</p>
+<p>Flare horizontal e bokeh oval sêo marcas da lente anamórfica: o termo técnico pede exatamente essa aparência. “CARCKHÉtic” é vago, e macro a f/11 faz o contrário.</p>
 </details>
 </div>
 <p class="fine">Responder nêo marca a leitura nem bloqueia o próximo módulo.</p>
@@ -1005,11 +1005,11 @@ Medium shot, 50mm lens at f/2.8, warm late-afternoon sunlight from the right, na
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

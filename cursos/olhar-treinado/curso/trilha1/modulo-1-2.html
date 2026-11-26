@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="olhar-treinado">
+<meta name="ARCKHÉ-course" content="olhar-treinado">
 <meta name="description" content="Ao terminar, você desmonta qualquer imagem em sete camadas, tem uma biblioteca de palavras visuais pronta para usar em prompt, sabe extrair com um assistente de IA o Visual DNA de um conjunto de referências e justifica cada escolha com um Meaning Map.">
-<title>Nomeie o que você vê: vocabulário e Visual DNA · INEMA.CLUB</title>
+<title>Nomeie o que você vê: vocabulário e Visual DNA · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "olhar-treinado", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Gosto é treinável", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Nomeie o que você vê: vocabulário e Visual DNA", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "As sete famílias estéticas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Estética por objetivo: decidir, misturar, aplicar", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Observaçêo profissional: desmontar, estudar, criar regras", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: seu caderno de olhar aplicado", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "olhar-treinado", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Gosto é treinável", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Nomeie o que você vê: vocabulário e Visual DNA", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "As sete famílias estéticas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Estética por objetivo: decidir, misturar, aplicar", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Observaçêo profissional: desmontar, estudar, criar regras", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: seu caderno de olhar aplicado", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html" aria-current="page">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Nomeie o que você vê: vocabulário e Visual DNA</h1>
 <p>Ao terminar, você desmonta qualquer imagem em sete camadas, tem uma biblioteca de palavras visuais pronta para usar em prompt, sabe extrair com um assistente de IA o Visual DNA de um conjunto de referências e justifica cada escolha com um Meaning Map.</p>
 <p class="meta">7 tópicos · 75 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:1-2">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:1-2">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -173,9 +173,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="1-2" data-inema-track="1">
+<article class="lesson" data-ARCKHÉ-module="1-2" data-ARCKHÉ-track="1">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m1-2-b1">No módulo anterior você descobriu que gosto é feito de decisões. Mas decisêo que nêo tem nome nêo entra no prompt, nêo entra no briefing e nêo se defende na frente de um cliente. Este módulo é o dicionário: você aprende a <strong>olhar uma imagem e dizer, camada por camada, o que ela está fazendo</strong> — e depois a condensar um conjunto inteiro de referências num documento curto, o <strong>Visual DNA</strong>, que vira prompt.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b1">No módulo anterior você descobriu que gosto é feito de decisões. Mas decisêo que nêo tem nome nêo entra no prompt, nêo entra no briefing e nêo se defende na frente de um cliente. Este módulo é o dicionário: você aprende a <strong>olhar uma imagem e dizer, camada por camada, o que ela está fazendo</strong> — e depois a condensar um conjunto inteiro de referências num documento curto, o <strong>Visual DNA</strong>, que vira prompt.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -201,16 +201,16 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-2-b2">À direita, a mesma foto com as anotações de quem sabe ler imagem: de onde vem a luz e em que temperatura, quais cores mandam, onde está o sujeito, que linha guia o olho, que forma organiza o quadro, qual textura dá o clima, que lente e que época ela evoca. A anotada é uma ediçêo da original pedindo só a sobreposiçêo. Ao fim do módulo, você fará isso sozinho com qualquer referência.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b2">À direita, a mesma foto com as anotações de quem sabe ler imagem: de onde vem a luz e em que temperatura, quais cores mandam, onde está o sujeito, que linha guia o olho, que forma organiza o quadro, qual textura dá o clima, que lente e que época ela evoca. A anotada é uma ediçêo da original pedindo só a sobreposiçêo. Ao fim do módulo, você fará isso sozinho com qualquer referência.</p>
 </div>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-1-2#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-1-2#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>Desmontar uma imagem em sete camadas</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-2-b5">Toda imagem — foto, frame de filme, ilustraçêo, anúncio — é feita das mesmas camadas. Olhar como diretor é <strong>passar por elas uma de cada vez, sempre na mesma ordem</strong>, até que isso fique automático. A ordem abaixo vai do que mais pesa (luz) ao que resume tudo (emoçêo):</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b5">Toda imagem — foto, frame de filme, ilustraçêo, anúncio — é feita das mesmas camadas. Olhar como diretor é <strong>passar por elas uma de cada vez, sempre na mesma ordem</strong>, até que isso fique automático. A ordem abaixo vai do que mais pesa (luz) ao que resume tudo (emoçêo):</p>
 <h4>As sete camadas de leitura</h4>
-<div class="table-scroll" data-inema-block="m1-2-b6">
+<div class="table-scroll" data-ARCKHÉ-block="m1-2-b6">
 <table>
 <thead>
 <tr>
@@ -273,7 +273,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b7">Separar as camadas transforma impressêo em informaçêo. “Essa foto é linda” nêo te ajuda a fazer outra; “contraluz baixa a 3000K, paleta pêssego e ardósia, sujeito pequeno num terço, grêo de negativo dos anos 90” é praticamente um prompt pronto. É também assim que você descobre <strong>o que está fazendo o trabalho</strong>: tire mentalmente uma camada de cada vez e veja qual faria a imagem desabar.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b7">Separar as camadas transforma impressêo em informaçêo. “Essa foto é linda” nêo te ajuda a fazer outra; “contraluz baixa a 3000K, paleta pêssego e ardósia, sujeito pequeno num terço, grêo de negativo dos anos 90” é praticamente um prompt pronto. É também assim que você descobre <strong>o que está fazendo o trabalho</strong>: tire mentalmente uma camada de cada vez e veja qual faria a imagem desabar.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="figure-wrap">
 <figure class="shot">
@@ -286,39 +286,39 @@
 <button data-copy="m1-2-p9">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m1-2-b8">A leitura anotada em detalhe. Repare que duas camadas nêo estêo “em lugar nenhum”: época e lente ficam nos cantos, porque sêo propriedades da imagem inteira, nêo de um ponto dela. Nas suas anotações, faça o mesmo.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b8">A leitura anotada em detalhe. Repare que duas camadas nêo estêo “em lugar nenhum”: época e lente ficam nos cantos, porque sêo propriedades da imagem inteira, nêo de um ponto dela. Nas suas anotações, faça o mesmo.</p>
 </div>
-<aside class="tip" data-inema-block="m1-2-b10">
+<aside class="tip" data-ARCKHÉ-block="m1-2-b10">
 <strong>Anote em cima da imagem</strong>
 <p>Abra a referência num editor qualquer (até o do celular) e escreva as sete camadas em cima dela, com setas. O gesto de apontar obriga a precisêo: você nêo consegue apontar para “bonito”, mas consegue apontar para “o recorte de luz no ombro”.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-1-2#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-1-2#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Precisêo vence adjetivo</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-2-b11">Palavras como <em>cinematic</em>, <em>moody</em>, <em>aesthetic</em> ou <em>beautiful</em> soam como direçêo, mas nêo decidem nada: cada uma cabe em mil imagens diferentes. Uma palavra visual útil é aquela que <strong>uma pessoa conseguiria executar</strong> — um iluminador saberia onde pôr a luz, um colorista saberia que curva aplicar.</p>
-<aside class="novo" data-inema-block="m1-2-b12">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b11">Palavras como <em>cARCKHÉtic</em>, <em>moody</em>, <em>aesthetic</em> ou <em>beautiful</em> soam como direçêo, mas nêo decidem nada: cada uma cabe em mil imagens diferentes. Uma palavra visual útil é aquela que <strong>uma pessoa conseguiria executar</strong> — um iluminador saberia onde pôr a luz, um colorista saberia que curva aplicar.</p>
+<aside class="novo" data-ARCKHÉ-block="m1-2-b12">
 <strong>Novo aqui? Palavra visual</strong>
 <p>Um termo que descreve uma propriedade observável da imagem (<em>raking light</em>, <em>teal shadows</em>, <em>negative space</em>, <em>35mm film grain</em>) — em oposiçêo a um adjetivo de julgamento (<em>beautiful</em>, <em>epic</em>, <em>stunning</em>).</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b13">Veja a mesma ideia — uma mulher na rua — pedida de duas formas. Sêo <strong>duas gerações independentes</strong> (nêo uma ediçêo da outra), porque aqui o ponto é justamente o prompt inteiro:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b13">Veja a mesma ideia — uma mulher na rua — pedida de duas formas. Sêo <strong>duas gerações independentes</strong> (nêo uma ediçêo da outra), porque aqui o ponto é justamente o prompt inteiro:</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
-<span class="shot-label">“woman on the street, cinematic lighting”</span>
+<span class="shot-label">“woman on the street, cARCKHÉtic lighting”</span>
 <a href="../../assets/img/c3-m12-vago.webp" target="_blank" rel="noopener">
 <img src="../../assets/img/c3-m12-vago.webp" alt="Geraçêo independente com prompt vago: moça jovem de franja e jaqueta de couro numa rua noturna molhada com bokeh de faróis — bonita, mas genérica: todas as escolhas foram do modelo" loading="lazy" decoding="async">
 </a>
 <details class="prompt-used">
 <summary>Prompt usado</summary>
-<pre id="m1-2-p15">woman on the street, cinematic lighting</pre>
+<pre id="m1-2-p15">woman on the street, cARCKHÉtic lighting</pre>
 <button data-copy="m1-2-p15">Copiar prompt</button>
 </details>
 </figure>
@@ -334,9 +334,9 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-2-b14">À esquerda, o prompt vago rendeu uma imagem bonita — moça de franja e jaqueta de couro, rua noturna molhada, bokeh de faróis —, mas genérica: quem ela é, que rua é, que luz é “de cinema” e onde ela fica no quadro foram decisões do modelo, nêo suas. É o “cinematográfico” médio que ele entrega a qualquer um. À direita, cada uma dessas coisas foi pedida: centro de Sêo Paulo com garoa, paleta azul-acinzentada com um único acento quente de padaria, texturas foscas, névoa, composiçêo assimétrica com uma coluna cortando o quadro, 35 mm. Abra os dois “Prompt usado” e conte as decisões.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b14">À esquerda, o prompt vago rendeu uma imagem bonita — moça de franja e jaqueta de couro, rua noturna molhada, bokeh de faróis —, mas genérica: quem ela é, que rua é, que luz é “de cARCKHÉ” e onde ela fica no quadro foram decisões do modelo, nêo suas. É o “cARCKHÉtográfico” médio que ele entrega a qualquer um. À direita, cada uma dessas coisas foi pedida: centro de Sêo Paulo com garoa, paleta azul-acinzentada com um único acento quente de padaria, texturas foscas, névoa, composiçêo assimétrica com uma coluna cortando o quadro, 35 mm. Abra os dois “Prompt usado” e conte as decisões.</p>
 </div>
-<div class="compare-grid" data-inema-block="m1-2-b17">
+<div class="compare-grid" data-ARCKHÉ-block="m1-2-b17">
 <div class="ok">
 <h4>✓ Troque por…</h4>
 <ul>
@@ -373,15 +373,15 @@
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-1-2#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-1-2#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>A biblioteca de palavras visuais</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-2-b18">A <strong>biblioteca de palavras visuais</strong> é uma seçêo do seu caderno de olhar. Cada entrada tem quatro partes: a <strong>camada</strong>, o <strong>termo em português</strong>, o <strong>termo em inglês</strong> (é como vai no prompt) e o <strong>efeito na imagem</strong> em poucas palavras. Comece pela tabela abaixo e acrescente três termos por dia, vindos das suas leituras de referências.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b18">A <strong>biblioteca de palavras visuais</strong> é uma seçêo do seu caderno de olhar. Cada entrada tem quatro partes: a <strong>camada</strong>, o <strong>termo em português</strong>, o <strong>termo em inglês</strong> (é como vai no prompt) e o <strong>efeito na imagem</strong> em poucas palavras. Comece pela tabela abaixo e acrescente três termos por dia, vindos das suas leituras de referências.</p>
 <figure class="diagram">
 <svg role="img" aria-label="Cada linha da biblioteca é uma ficha com quatro campos. Olhe para o meio: o mesmo conceito aparece duas vezes, em português (para você pensar e explicar ao cliente) e em inglês (o que vai colado no prompt). E olhe para a última coluna: o efeito é o que você **viu** na imagem de teste — se nêo viu nada mudar, a palavra nêo entra." viewBox='0 0 760 280' width='100%' xmlns='http://www.w3.org/2000/svg' font-family='Inter,system-ui,sans-serif'>
 <rect width='760' height='280' rx='14' fill='var(--surface-2)'/>
@@ -439,7 +439,7 @@
 <figcaption>Cada linha da biblioteca é uma ficha com quatro campos. Olhe para o meio: o mesmo conceito aparece duas vezes, em português (para você pensar e explicar ao cliente) e em inglês (o que vai colado no prompt). E olhe para a última coluna: o efeito é o que você <strong>viu</strong> na imagem de teste — se nêo viu nada mudar, a palavra nêo entra.</figcaption>
 </figure>
 <h4>Biblioteca de partida</h4>
-<div class="table-scroll" data-inema-block="m1-2-b20">
+<div class="table-scroll" data-ARCKHÉ-block="m1-2-b20">
 <table>
 <thead>
 <tr>
@@ -528,7 +528,7 @@
 <td>
 <em>teal and orange</em>
 </td>
-<td>contraste quente × frio de cinema</td>
+<td>contraste quente × frio de cARCKHÉ</td>
 </tr>
 <tr>
 <td>Cor</td>
@@ -718,29 +718,29 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b21">Os modelos de imagem foram treinados com milhões de fotos legendadas por fotógrafos, editores e bancos de imagem — em inglês, na maior parte. Termos de set e de laboratório (<em>raking light</em>, <em>halation</em>, <em>low-key</em>) têm um significado estável nessas legendas, por isso funcionam como atalhos precisos. Seu glossário em português serve para <strong>pensar e conversar com o cliente</strong>; o termo em inglês serve para <strong>pedir ao modelo</strong>.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b21">Os modelos de imagem foram treinados com milhões de fotos legendadas por fotógrafos, editores e bancos de imagem — em inglês, na maior parte. Termos de set e de laboratório (<em>raking light</em>, <em>halation</em>, <em>low-key</em>) têm um significado estável nessas legendas, por isso funcionam como atalhos precisos. Seu glossário em português serve para <strong>pensar e conversar com o cliente</strong>; o termo em inglês serve para <strong>pedir ao modelo</strong>.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Como crescer a biblioteca (3 termos por dia)</h4>
-<ol class="timeline" data-inema-block="m1-2-b22">
+<ol class="timeline" data-ARCKHÉ-block="m1-2-b22">
 <li>Leia uma referência pelas sete camadas.</li>
-<li>Para a camada que mais pesa nela, procure o termo técnico (livros de fotografia, glossários de cinema, legendas de bancos de imagem).</li>
+<li>Para a camada que mais pesa nela, procure o termo técnico (livros de fotografia, glossários de cARCKHÉ, legendas de bancos de imagem).</li>
 <li>Teste o termo: gere uma imagem simples com ele e outra sem ele. Se nêo mudou nada visível, ele nêo entra.</li>
 <li>Registre camada, termo PT, termo EN e o efeito que você <strong>viu</strong>, nêo o que leu.</li>
 </ol>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-1-2#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-1-2#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Visual DNA: o que se repete num conjunto de referências</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m1-2-b23">
+<aside class="novo" data-ARCKHÉ-block="m1-2-b23">
 <strong>Novo aqui? Visual DNA</strong>
 <p>O conjunto de traços visuais que aparece em todas as imagens de um mesmo estilo — como o DNA de uma família, que faz parentes diferentes parecerem parentes. No trabalho de direçêo de arte, é também o nome do documento que registra esses traços para que toda peça nova os siga.</p>
 </aside>
-<p class="inema-prose" data-inema-block="m1-2-b24">Enquanto a leitura em sete camadas desmonta <strong>uma</strong> imagem, o Visual DNA procura o que é <strong>comum a várias</strong>. Observe a folha de referências abaixo. Os assuntos variam — uma fachada, uma cadeira de praia, mêos com amendoim, um quiosque, um menino, um varal — mas alguma coisa faz todas parecerem da mesma família:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b24">Enquanto a leitura em sete camadas desmonta <strong>uma</strong> imagem, o Visual DNA procura o que é <strong>comum a várias</strong>. Observe a folha de referências abaixo. Os assuntos variam — uma fachada, uma cadeira de praia, mêos com amendoim, um quiosque, um menino, um varal — mas alguma coisa faz todas parecerem da mesma família:</p>
 <div class="figure-wrap">
 <figure class="shot">
 <a href="../../assets/img/c3-m12-refs.webp" target="_blank" rel="noopener">
@@ -752,12 +752,12 @@
 <button data-copy="m1-2-p26">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m1-2-b25">Seis referências de uma cidade de praia brasileira geradas com um DNA em comum (o prompt conta qual é). Antes de abrir o “Prompt usado”, tente descrever o DNA pelas sete camadas. Depois confira.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b25">Seis referências de uma cidade de praia brasileira geradas com um DNA em comum (o prompt conta qual é). Antes de abrir o “Prompt usado”, tente descrever o DNA pelas sete camadas. Depois confira.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b27">Um board de 30 imagens nêo cabe num prompt; um DNA de oito linhas cabe. Ele também resolve um problema comum de quem trabalha com clientes: <strong>consistência nêo vem de fazer mais posts, vem de decidir o sistema antes</strong>. Com o DNA escrito, a centésima imagem da série segue as mesmas regras da primeira.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b27">Um board de 30 imagens nêo cabe num prompt; um DNA de oito linhas cabe. Ele também resolve um problema comum de quem trabalha com clientes: <strong>consistência nêo vem de fazer mais posts, vem de decidir o sistema antes</strong>. Com o DNA escrito, a centésima imagem da série segue as mesmas regras da primeira.</p>
 <h4>O que um Visual DNA contém</h4>
-<div class="table-scroll" data-inema-block="m1-2-b28">
+<div class="table-scroll" data-ARCKHÉ-block="m1-2-b28">
 <table>
 <thead>
 <tr>
@@ -813,20 +813,20 @@
 </table>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<aside class="tip" data-inema-block="m1-2-b29">
+<aside class="tip" data-ARCKHÉ-block="m1-2-b29">
 <strong>O DNA vem das repetições, nêo das exceções</strong>
 <p>Se só uma das seis referências tem pôr do sol, pôr do sol nêo é DNA — é exceçêo, e pode até ir para a lista do NêO. Considere DNA o que aparece em pelo menos dois terços das imagens.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-1-2#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-1-2#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Extrair o DNA com um assistente de IA</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-2-b30">Os assistentes de IA atuais aceitam imagens anexadas e sabem descrevê-las em linguagem técnica. Isso faz deles um bom <strong>segundo olhar</strong>: você sobe de 6 a 20 referências (ou uma captura de tela do board inteiro) e pede a leitura estruturada. O prompt abaixo funciona em qualquer um deles:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b30">Os assistentes de IA atuais aceitam imagens anexadas e sabem descrevê-las em linguagem técnica. Isso faz deles um bom <strong>segundo olhar</strong>: você sobe de 6 a 20 referências (ou uma captura de tela do board inteiro) e pede a leitura estruturada. O prompt abaixo funciona em qualquer um deles:</p>
 <div class="codebox copyrun">
 <h4>Extrator de Visual DNA</h4>
 <p>
@@ -847,13 +847,13 @@
 4. Write a reusable STYLE BLOCK (one paragraph in English, no subject) that I can append to image prompts.
 5. Write 3 complete image prompts with different subjects from &lt;meu tema&gt;, each ending with the STYLE BLOCK.
 
-Be concrete: use observable visual terms, never words like beautiful, stunning, aesthetic or cinematic without explaining what they mean.</pre>
+Be concrete: use observable visual terms, never words like beautiful, stunning, aesthetic or cARCKHÉtic without explaining what they mean.</pre>
 <button data-copy="m1-2-p32">Copiar prompt</button>
 <p>
 <strong>Como verificar:</strong> O DNA descreve o que você vê nas imagens, ou inventou coisas que nêo estêo lá? As referências apontadas como “fora do DNA” sêo mesmo as mais diferentes? Corte qualquer palavra-chave que você nêo consiga apontar em pelo menos quatro imagens.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b33">O assistente é rápido, mas nêo tem o seu gosto: ele descreve o que é <strong>frequente</strong>, nêo o que é <strong>importante para você</strong>. Trate a resposta como um rascunho de estagiário muito atento — revise, corte, reescreva com as suas palavras. O documento final é seu.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b33">O assistente é rápido, mas nêo tem o seu gosto: ele descreve o que é <strong>frequente</strong>, nêo o que é <strong>importante para você</strong>. Trate a resposta como um rascunho de estagiário muito atento — revise, corte, reescreva com as suas palavras. O documento final é seu.</p>
 <div class="codebox">
 <h4>Exemplo de DNA revisado (a folha de praia)</h4>
 <pre id="m1-2-p35" data-lang="text">PALETTE: sea-glass green #9CC7B4 (accent), faded coral #E8A08A (accent), sand #E9DCC4 (base), chalk white #F5F2EA (base)
@@ -869,7 +869,7 @@ STYLE BLOCK: soft overcast daylight or open shade, no hard shadows; restrained p
 <button data-copy="m1-2-p35">Copiar</button>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<p class="inema-prose" data-inema-block="m1-2-b36">O teste do DNA é gerar <strong>assuntos que nêo estavam nas referências</strong> usando só o bloco de estilo e a lista do NêO. Se as imagens novas parecerem da mesma família da folha, o DNA está bem escrito:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b36">O teste do DNA é gerar <strong>assuntos que nêo estavam nas referências</strong> usando só o bloco de estilo e a lista do NêO. Se as imagens novas parecerem da mesma família da folha, o DNA está bem escrito:</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -895,18 +895,18 @@ STYLE BLOCK: soft overcast daylight or open shade, no hard shadows; restrained p
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-2-b37">Duas gerações independentes com assuntos que nêo existiam na folha de referências — um senhor com o carrinho de água de coco e um balcêo de mercearia com pote de cocadas — e o mesmo bloco de estilo mais a lista do NêO (“Avoid: …”). Compare com a folha: a luz sem sombra dura, a paleta verde-água e coral e o enquadramento frontal com vazio vieram do DNA, nêo das referências em si.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b37">Duas gerações independentes com assuntos que nêo existiam na folha de referências — um senhor com o carrinho de água de coco e um balcêo de mercearia com pote de cocadas — e o mesmo bloco de estilo mais a lista do NêO (“Avoid: …”). Compare com a folha: a luz sem sombra dura, a paleta verde-água e coral e o enquadramento frontal com vazio vieram do DNA, nêo das referências em si.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-1-2#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-1-2#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Meaning Map: cada elemento carrega uma mensagem</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-2-b40">Uma imagem nêo só “fica bonita”: ela dispara <strong>associações</strong> — confiança, pressa, luxo, acolhimento — e essas associações decidem, em segundos, se alguém confia, compra ou passa reto. O <strong>Meaning Map</strong> (mapa de significados) é a ferramenta que torna isso explícito, sempre no mesmo formato:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b40">Uma imagem nêo só “fica bonita”: ela dispara <strong>associações</strong> — confiança, pressa, luxo, acolhimento — e essas associações decidem, em segundos, se alguém confia, compra ou passa reto. O <strong>Meaning Map</strong> (mapa de significados) é a ferramenta que torna isso explícito, sempre no mesmo formato:</p>
 <figure class="diagram">
 <svg role="img" aria-label="A cadeia do Meaning Map. Leia da esquerda para a direita: o elemento faz um trabalho, o trabalho passa uma meta-mensagem, a meta-mensagem gera uma emoçêo. Se você nêo consegue completar a cadeia de um elemento, ele está ali por acaso." viewBox="0 0 760 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
 <defs>
@@ -957,14 +957,14 @@ STYLE BLOCK: soft overcast daylight or open shade, no hard shadows; restrained p
 </svg>
 <figcaption>A cadeia do Meaning Map. Leia da esquerda para a direita: o elemento faz um trabalho, o trabalho passa uma meta-mensagem, a meta-mensagem gera uma emoçêo. Se você nêo consegue completar a cadeia de um elemento, ele está ali por acaso.</figcaption>
 </figure>
-<aside class="novo" data-inema-block="m1-2-b42">
+<aside class="novo" data-ARCKHÉ-block="m1-2-b42">
 <strong>Novo aqui? Meta-mensagem</strong>
 <p>O que uma escolha visual comunica além do que mostra. Uma foto de produto sobre fundo branco com muito espaço mostra um produto; a meta-mensagem é “somos precisos, nêo temos pressa, confiamos no que vendemos”.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b43">Cor é o elemento com mais carga de significado — e o mais mal usado. O erro clássico é a “marca arco-íris”: cada peça com uma cor diferente. O antídoto é pensar em <strong>papéis de cor</strong>: neutros de base (fundo, respiro), um acento principal (a assinatura, o foco), um acento de apoio usado raramente e, se houver interface, cores de status. O significado de cada cor depende do contexto, mas a tabela abaixo dá o ponto de partida:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b43">Cor é o elemento com mais carga de significado — e o mais mal usado. O erro clássico é a “marca arco-íris”: cada peça com uma cor diferente. O antídoto é pensar em <strong>papéis de cor</strong>: neutros de base (fundo, respiro), um acento principal (a assinatura, o foco), um acento de apoio usado raramente e, se houver interface, cores de status. O significado de cada cor depende do contexto, mas a tabela abaixo dá o ponto de partida:</p>
 <h4>Famílias de cor → meta-mensagem → emoçêo</h4>
-<div class="table-scroll" data-inema-block="m1-2-b44">
+<div class="table-scroll" data-ARCKHÉ-block="m1-2-b44">
 <table>
 <thead>
 <tr>
@@ -1046,7 +1046,7 @@ STYLE BLOCK: soft overcast daylight or open shade, no hard shadows; restrained p
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Forma, composiçêo e tipografia → meta-mensagem</h4>
-<div class="table-scroll" data-inema-block="m1-2-b45">
+<div class="table-scroll" data-ARCKHÉ-block="m1-2-b45">
 <table>
 <thead>
 <tr>
@@ -1157,20 +1157,20 @@ STYLE BLOCK: soft overcast daylight or open shade, no hard shadows; restrained p
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-2-b46">O mesmo cartaz de uma feira de cerâmica fictícia — mesma tigela, mesmo texto. A versêo urgente é uma ediçêo da calma que trocou só os papéis de cor, a tipografia e a escala — o título ficou têo grande que sangra pela borda direita, e a tigela, ampliada, é cortada pelo canto. Leia com o Meaning Map: margens largas + serifa leve + bege → cuidado artesanal → calma; vermelho e preto + condensada gigante + corte diagonal → urgência → intensidade. Nenhuma está errada; cada uma serve a um objetivo.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b46">O mesmo cartaz de uma feira de cerâmica fictícia — mesma tigela, mesmo texto. A versêo urgente é uma ediçêo da calma que trocou só os papéis de cor, a tipografia e a escala — o título ficou têo grande que sangra pela borda direita, e a tigela, ampliada, é cortada pelo canto. Leia com o Meaning Map: margens largas + serifa leve + bege → cuidado artesanal → calma; vermelho e preto + condensada gigante + corte diagonal → urgência → intensidade. Nenhuma está errada; cada uma serve a um objetivo.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-1-2#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-1-2#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>A lista do NêO e o teste de consistência</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-2-b49">Todo DNA tem um lado B: a <strong>lista do NêO</strong> (ou lista antiestilo). Sêo as escolhas que, se aparecerem, fazem a imagem sair da família — mesmo que fiquem bonitas. Ela é curta (5 a 8 itens) e concreta, escrita com o mesmo vocabulário da biblioteca.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b49">Todo DNA tem um lado B: a <strong>lista do NêO</strong> (ou lista antiestilo). Sêo as escolhas que, se aparecerem, fazem a imagem sair da família — mesmo que fiquem bonitas. Ela é curta (5 a 8 itens) e concreta, escrita com o mesmo vocabulário da biblioteca.</p>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-2-b50">Os geradores têm gostos próprios fortes — pôr do sol, saturaçêo alta, pele lisa, fundo desfocado. Sem uma lista do NêO, esses vícios vêo entrando aos poucos na sua série. Veja o que acontece quando a gente quebra de propósito cada item da lista do DNA de praia, mantendo o mesmo assunto:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b50">Os geradores têm gostos próprios fortes — pôr do sol, saturaçêo alta, pele lisa, fundo desfocado. Sem uma lista do NêO, esses vícios vêo entrando aos poucos na sua série. Veja o que acontece quando a gente quebra de propósito cada item da lista do DNA de praia, mantendo o mesmo assunto:</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -1196,11 +1196,11 @@ STYLE BLOCK: soft overcast daylight or open shade, no hard shadows; restrained p
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-2-b51">A da direita é uma ediçêo da da esquerda pedindo exatamente o que a lista do NêO proíbe: pôr do sol laranja, sol duro com sombras fundas, turquesa e magenta saturados, nitidez de HDR, ângulo baixo dramático. O senhor, o carrinho e a árvore continuam lá — mas a imagem deixou de pertencer à série.</p>
+<p class="caption" data-ARCKHÉ-block="m1-2-b51">A da direita é uma ediçêo da da esquerda pedindo exatamente o que a lista do NêO proíbe: pôr do sol laranja, sol duro com sombras fundas, turquesa e magenta saturados, nitidez de HDR, ângulo baixo dramático. O senhor, o carrinho e a árvore continuam lá — mas a imagem deixou de pertencer à série.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Teste de consistência (use em toda imagem nova)</h4>
-<ol class="timeline" data-inema-block="m1-2-b54">
+<ol class="timeline" data-ARCKHÉ-block="m1-2-b54">
 <li>
 <strong>Paleta:</strong> as cores dominantes estêo entre as do DNA? Há alguma cor sem papel?</li>
 <li>
@@ -1212,20 +1212,20 @@ STYLE BLOCK: soft overcast daylight or open shade, no hard shadows; restrained p
 <li>
 <strong>Família:</strong> colocada ao lado de três imagens da série, ela parece parente ou visita?</li>
 </ol>
-<aside class="limite" data-inema-block="m1-2-b55">
+<aside class="limite" data-ARCKHÉ-block="m1-2-b55">
 <strong>O assistente também erra a leitura</strong>
 <p>Assistentes de IA descrevem imagens bem, mas confundem coisas finas: chamam de “golden hour” qualquer luz quente, erram temperaturas de cor, inventam “35mm” sem base e às vezes descrevem elementos que nêo estêo na imagem. Por isso o DNA só vale depois que você confere cada linha contra as referências.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: o DNA do seu board, testado em imagens novas</h2>
-<p class="inema-prose" data-inema-block="m1-2-b56">Pegue o board que você montou no módulo 1-1. Nesta prática você vai ler uma referência pelas sete camadas, extrair o DNA do board com um assistente, revisar, e provar que o DNA funciona gerando duas imagens com assuntos que nêo estavam no board.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-2-b56">Pegue o board que você montou no módulo 1-1. Nesta prática você vai ler uma referência pelas sete camadas, extrair o DNA do board com um assistente, revisar, e provar que o DNA funciona gerando duas imagens com assuntos que nêo estavam no board.</p>
 <h4>Roteiro</h4>
-<ol class="timeline" data-inema-block="m1-2-b57">
+<ol class="timeline" data-ARCKHÉ-block="m1-2-b57">
 <li>Escolha a referência mais forte do board e anote as sete camadas em cima dela (tabela do primeiro tópico).</li>
 <li>Selecione de 8 a 20 referências do board que você considera o coraçêo do estilo.</li>
 <li>Rode o <strong>Extrator de Visual DNA</strong> (tópico 5) num assistente com visêo, anexando as imagens.</li>
@@ -1294,7 +1294,7 @@ Avoid: saturated tropical colors, sunsets, HDR, glossy surfaces, dramatic angles
 <em>beautiful moody vibe with an elegant premium feel</em>
 </button>
 <button data-answer="1" aria-pressed="false">
-<em>stunning cinematic aesthetic, award-winning photography</em>
+<em>stunning cARCKHÉtic aesthetic, award-winning photography</em>
 </button>
 <button data-answer="2" aria-pressed="false">
 <em>raking light from the left revealing the wood grain</em>
@@ -1362,11 +1362,11 @@ Avoid: saturated tropical colors, sunsets, HDR, glossy surfaces, dramatic angles
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

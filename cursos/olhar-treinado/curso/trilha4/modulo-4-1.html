@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="olhar-treinado">
+<meta name="ARCKHÉ-course" content="olhar-treinado">
 <meta name="description" content="Ao terminar, você entrega um caderno de olhar completo — 3 boards, 10 palavras-chave, 3 imagens consistentes, uma recriaçêo antes/depois e uma série de 4 a 6 imagens guiada pelas suas regras — avaliado por uma rubrica e pronto para apresentar.">
-<title>Projeto final: seu caderno de olhar aplicado · INEMA.CLUB</title>
+<title>Projeto final: seu caderno de olhar aplicado · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "olhar-treinado", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Gosto é treinável", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Nomeie o que você vê: vocabulário e Visual DNA", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "As sete famílias estéticas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Estética por objetivo: decidir, misturar, aplicar", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Observaçêo profissional: desmontar, estudar, criar regras", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: seu caderno de olhar aplicado", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "olhar-treinado", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Gosto é treinável", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Nomeie o que você vê: vocabulário e Visual DNA", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "As sete famílias estéticas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Estética por objetivo: decidir, misturar, aplicar", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Observaçêo profissional: desmontar, estudar, criar regras", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: seu caderno de olhar aplicado", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html" aria-current="page">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Projeto final: seu caderno de olhar aplicado</h1>
 <p>Ao terminar, você entrega um caderno de olhar completo — 3 boards, 10 palavras-chave, 3 imagens consistentes, uma recriaçêo antes/depois e uma série de 4 a 6 imagens guiada pelas suas regras — avaliado por uma rubrica e pronto para apresentar.</p>
 <p class="meta">7 tópicos · 3–4 h (em uma semana) · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:4-1">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:4-1">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -173,10 +173,10 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="4-1" data-inema-track="4">
+<article class="lesson" data-ARCKHÉ-module="4-1" data-ARCKHÉ-track="4">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m4-1-b1">O caderno de olhar é o registro de como você passou a enxergar. Ele junta tudo o que o curso pediu — observar, nomear, decidir, estudar, fixar regras — num único documento que mostra <strong>o raciocínio</strong>, nêo só o resultado. É isso que um cliente, um diretor de arte ou você mesmo, daqui a seis meses, precisa ver para confiar nas suas escolhas.</p>
-<p class="inema-prose" data-inema-block="m4-1-b2">Para mostrar como fica, acompanhamos o caderno de um projeto fictício: a <strong>Roça Aurora</strong>, marca de chocolate de origem feita com cacau cabruca do sul da Bahia. O objetivo do projeto é vender barras numa loja on-line para quem valoriza procedência; a emoçêo-alvo é <strong>confiança calorosa</strong> — “isso foi feito por gente de verdade, num lugar de verdade”.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b1">O caderno de olhar é o registro de como você passou a enxergar. Ele junta tudo o que o curso pediu — observar, nomear, decidir, estudar, fixar regras — num único documento que mostra <strong>o raciocínio</strong>, nêo só o resultado. É isso que um cliente, um diretor de arte ou você mesmo, daqui a seis meses, precisa ver para confiar nas suas escolhas.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b2">Para mostrar como fica, acompanhamos o caderno de um projeto fictício: a <strong>Roça Aurora</strong>, marca de chocolate de origem feita com cacau cabruca do sul da Bahia. O objetivo do projeto é vender barras numa loja on-line para quem valoriza procedência; a emoçêo-alvo é <strong>confiança calorosa</strong> — “isso foi feito por gente de verdade, num lugar de verdade”.</p>
 <div class="compare-shots">
 <div class="shots cols-4">
 <figure class="shot">
@@ -224,10 +224,10 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m4-1-b3">O ponto de chegada: a série final da Roça Aurora, quatro gerações independentes com o mesmo bloco de estilo e as mesmas cinco regras pessoais. Assuntos diferentes, uma só voz visual. O resto do módulo mostra o caminho até ela.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b3">O ponto de chegada: a série final da Roça Aurora, quatro gerações independentes com o mesmo bloco de estilo e as mesmas cinco regras pessoais. Assuntos diferentes, uma só voz visual. O resto do módulo mostra o caminho até ela.</p>
 </div>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-4-1#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-4-1#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>O mapa do caderno</h2>
 <h3 class="sec">O que é</h3>
@@ -289,11 +289,11 @@
 <figcaption>O caderno em seis seções. As três primeiras constroem repertório e decisêo; as três últimas provam que você sabe aplicar. Cada seçêo reaproveita um método de um módulo anterior.</figcaption>
 </figure>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b9">Uma série bonita sem o caderno é indistinguível de sorte. Com o caderno, quem vê entende que cada imagem nasceu de uma decisêo tomada antes — e que você consegue repetir o resultado com outro assunto, outro cliente, outra semana. É a diferença entre mostrar um portfólio e mostrar um <strong>método</strong>.</p>
-<p class="inema-prose" data-inema-block="m4-1-b10">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b9">Uma série bonita sem o caderno é indistinguível de sorte. Com o caderno, quem vê entende que cada imagem nasceu de uma decisêo tomada antes — e que você consegue repetir o resultado com outro assunto, outro cliente, outra semana. É a diferença entre mostrar um portfólio e mostrar um <strong>método</strong>.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b10">
 <strong>Como escolher o projeto do caderno:</strong>
 </p>
-<ul class="inema-prose list" data-inema-block="m4-1-b11">
+<ul class="ARCKHÉ-prose list" data-ARCKHÉ-block="m4-1-b11">
 <li>
 <strong>Real ou quase real:</strong> seu negócio, um cliente, ou uma marca do nicho em que você quer trabalhar. Projeto inventado sem público nêo testa a cadeia objetivo → emoçêo.</li>
 <li>
@@ -305,7 +305,7 @@
 </ul>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>O que entra em cada seçêo</h4>
-<div class="table-scroll" data-inema-block="m4-1-b12">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b12">
 <table>
 <thead>
 <tr>
@@ -349,38 +349,38 @@
 </table>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-4-1#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-4-1#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Três boards, três estéticas</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b13">Monte três boards para <strong>o mesmo projeto</strong>, cada um numa família estética diferente. Nêo é para escolher a mais bonita ainda: é para ver o seu assunto falando três línguas. Embaixo de cada board, liste de 5 a 7 traços — luz, paleta, textura, composiçêo, clima — no formato de anotaçêo que você aprendeu (específico, verificável).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b13">Monte três boards para <strong>o mesmo projeto</strong>, cada um numa família estética diferente. Nêo é para escolher a mais bonita ainda: é para ver o seu assunto falando três línguas. Embaixo de cada board, liste de 5 a 7 traços — luz, paleta, textura, composiçêo, clima — no formato de anotaçêo que você aprendeu (específico, verificável).</p>
 <div class="figure-wrap">
 <figure class="shot">
 <a href="../../assets/img/c3-m41-boards.webp" target="_blank" rel="noopener">
-<img src="../../assets/img/c3-m41-boards.webp" alt="Três boards lado a lado sobre a mesa, rotulados RETRÔ, MINIMALISTA e CINEMATOGRÁFICO, cada um com seis fotos de cacau e chocolate" loading="lazy" decoding="async">
+<img src="../../assets/img/c3-m41-boards.webp" alt="Três boards lado a lado sobre a mesa, rotulados RETRÔ, MINIMALISTA e CARCKHÉTOGRÁFICO, cada um com seis fotos de cacau e chocolate" loading="lazy" decoding="async">
 </a>
 <details class="prompt-used">
 <summary>Prompt usado</summary>
-<pre id="m4-1-p15">Overhead photograph of three small mood boards laid side by side on a dark wooden table, each board a 2x3 grid of six printed photographs about a small cacao farm and chocolate brand in southern Bahia, Brazil, with a white paper label taped above each board, handwritten in black marker: &#x27;RETRÔ&#x27; on the left board, &#x27;MINIMALISTA&#x27; in the middle, &#x27;CINEMATOGRÁFICO&#x27; on the right. Left board: faded warm film photos of farm workers with straw hats, old wooden cacao drying racks, sepia and ochre tones, visible grain. Middle board: a single yellow cacao pod on plain beige, clean dark chocolate bars on white, lots of empty space, soft light. Right board: dramatic low sun through the cacao forest canopy, silhouettes, deep teal-and-orange contrast, shallow focus. Soft daylight on the table. No other text.</pre>
+<pre id="m4-1-p15">Overhead photograph of three small mood boards laid side by side on a dark wooden table, each board a 2x3 grid of six printed photographs about a small cacao farm and chocolate brand in southern Bahia, Brazil, with a white paper label taped above each board, handwritten in black marker: &#x27;RETRÔ&#x27; on the left board, &#x27;MINIMALISTA&#x27; in the middle, &#x27;CARCKHÉTOGRÁFICO&#x27; on the right. Left board: faded warm film photos of farm workers with straw hats, old wooden cacao drying racks, sepia and ochre tones, visible grain. Middle board: a single yellow cacao pod on plain beige, clean dark chocolate bars on white, lots of empty space, soft light. Right board: dramatic low sun through the cacao forest canopy, silhouettes, deep teal-and-orange contrast, shallow focus. Soft daylight on the table. No other text.</pre>
 <button data-copy="m4-1-p15">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m4-1-b14">Os três boards da Roça Aurora, lado a lado: retrô (fotos quentes e desbotadas de produtores e secadores de madeira), minimalista (um fruto de cacau sobre bege, barras limpas, muito espaço) e cinematográfica (sol baixo atravessando a mata, silhuetas, contraste).</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b14">Os três boards da Roça Aurora, lado a lado: retrô (fotos quentes e desbotadas de produtores e secadores de madeira), minimalista (um fruto de cacau sobre bege, barras limpas, muito espaço) e cARCKHÉtográfica (sol baixo atravessando a mata, silhuetas, contraste).</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
 <h4>Traços anotados de cada board</h4>
-<div class="table-scroll" data-inema-block="m4-1-b16">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b16">
 <table>
 <thead>
 <tr>
 <th>Traço</th>
 <th>Retrô</th>
 <th>Minimalista</th>
-<th>Cinematográfico</th>
+<th>CARCKHÉtográfico</th>
 </tr>
 </thead>
 <tbody>
@@ -424,24 +424,24 @@
 </table>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<p class="inema-prose" data-inema-block="m4-1-b17">Com a tabela montada, a decisêo fica fácil de justificar: a emoçêo-alvo da Roça Aurora é <strong>confiança calorosa</strong> e procedência. A linha “meta-mensagem” mostra que a retrô diz exatamente isso; a minimalista diz “sofisticado” (bom, mas frio para uma marca de roça); a cinematográfica diz “épico” (bonita, mas exagerada para uma barra de chocolate). Escolha: <strong>retrô / vintage</strong>.</p>
-<aside class="tip" data-inema-block="m4-1-b18">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b17">Com a tabela montada, a decisêo fica fácil de justificar: a emoçêo-alvo da Roça Aurora é <strong>confiança calorosa</strong> e procedência. A linha “meta-mensagem” mostra que a retrô diz exatamente isso; a minimalista diz “sofisticado” (bom, mas frio para uma marca de roça); a cARCKHÉtográfica diz “épico” (bonita, mas exagerada para uma barra de chocolate). Escolha: <strong>retrô / vintage</strong>.</p>
+<aside class="tip" data-ARCKHÉ-block="m4-1-b18">
 <strong>Anote a escolha e a rejeiçêo</strong>
 <p>No caderno, escreva por que você escolheu uma estética <strong>e</strong> por que descartou as outras duas. A frase de descarte é a que mais convence um cliente — prova que você considerou alternativas.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-4-1#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-4-1#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>Dez palavras-chave: sua biblioteca visual</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b19">Da estética escolhida, extraia <strong>dez palavras-chave</strong> — expressões curtas, em inglês, que você cola no prompt. Cubra as cinco categorias (luz, paleta, textura, composiçêo, clima) e teste cada uma: gere com e sem a palavra e anote o que ela realmente faz. Palavra que nêo muda nada sai da lista.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b19">Da estética escolhida, extraia <strong>dez palavras-chave</strong> — expressões curtas, em inglês, que você cola no prompt. Cubra as cinco categorias (luz, paleta, textura, composiçêo, clima) e teste cada uma: gere com e sem a palavra e anote o que ela realmente faz. Palavra que nêo muda nada sai da lista.</p>
 <h3 class="sec">Por que aprender</h3>
 <h4>Biblioteca da Roça Aurora (estética retrô)</h4>
-<div class="table-scroll" data-inema-block="m4-1-b20">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b20">
 <table>
 <thead>
 <tr>
@@ -527,10 +527,10 @@
 <button data-copy="m4-1-p22">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m4-1-b21">As palavras da biblioteca, conferidas numa imagem da série (o bloco completo está no prompt abaixo). <strong>Paleta terrosa de kraft e creme</strong> e <strong>ocre como único acento</strong>: a faixa do rótulo é a única cor saturada do quadro. <strong>Pretos leitosos</strong>: as letras e frestas do caixote ficam marrom-acinzentadas, em nenhum ponto há preto puro. <strong>35mm na altura dos olhos</strong>: câmera reta, sem ângulo dramático. Repare também no que <strong>nêo</strong> dá para conferir aqui — “candid, honest mood” nêo tem pessoa em quem aparecer. Palavra se testa na imagem em que ela deveria agir.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b21">As palavras da biblioteca, conferidas numa imagem da série (o bloco completo está no prompt abaixo). <strong>Paleta terrosa de kraft e creme</strong> e <strong>ocre como único acento</strong>: a faixa do rótulo é a única cor saturada do quadro. <strong>Pretos leitosos</strong>: as letras e frestas do caixote ficam marrom-acinzentadas, em nenhum ponto há preto puro. <strong>35mm na altura dos olhos</strong>: câmera reta, sem ângulo dramático. Repare também no que <strong>nêo</strong> dá para conferir aqui — “candid, honest mood” nêo tem pessoa em quem aparecer. Palavra se testa na imagem em que ela deveria agir.</p>
 </div>
-<p class="inema-prose" data-inema-block="m4-1-b23">Para testar, use o mesmo método dos estudos: gere uma imagem com o bloco completo e outra idêntica <strong>sem</strong> a palavra que você está avaliando (ou peça uma ediçêo que remove só aquele efeito). Coloque as duas lado a lado. Se você precisa de mais de dois segundos para achar a diferença, a palavra é fraca — troque por uma mais concreta (“faded” → “warm faded tones, lifted milky blacks”) ou tire da lista. Dez palavras fortes valem mais que trinta que o modelo ignora.</p>
-<div class="compare-grid" data-inema-block="m4-1-b24">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b23">Para testar, use o mesmo método dos estudos: gere uma imagem com o bloco completo e outra idêntica <strong>sem</strong> a palavra que você está avaliando (ou peça uma ediçêo que remove só aquele efeito). Coloque as duas lado a lado. Se você precisa de mais de dois segundos para achar a diferença, a palavra é fraca — troque por uma mais concreta (“faded” → “warm faded tones, lifted milky blacks”) ou tire da lista. Dez palavras fortes valem mais que trinta que o modelo ignora.</p>
+<div class="compare-grid" data-ARCKHÉ-block="m4-1-b24">
 <div class="ok">
 <h4>✓ Palavra que entra na biblioteca</h4>
 <ul>
@@ -549,15 +549,15 @@
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-4-1#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-4-1#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Três imagens consistentes</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b25">Transforme as dez palavras num <strong>bloco de estilo</strong> e gere três imagens de assuntos diferentes — uma pessoa, um detalhe, um ambiente. O bloco entra igual nas três; só muda a primeira frase do prompt.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b25">Transforme as dez palavras num <strong>bloco de estilo</strong> e gere três imagens de assuntos diferentes — uma pessoa, um detalhe, um ambiente. O bloco entra igual nas três; só muda a primeira frase do prompt.</p>
 <div class="codebox">
 <h4>Bloco de estilo v1 da Roça Aurora</h4>
 <pre id="m4-1-p27" data-lang="text">STYLE BLOCK: 1970s color negative film photograph; warm faded tones, soft contrast, lifted milky blacks; natural daylight filtering through leaves from the left; visible fine grain, slight analog imperfections and a gentle vignette; earthy palette of cacao brown, banana-leaf green and faded ochre; 35mm lens at eye level; candid, honest mood. No text.</pre>
@@ -600,27 +600,27 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m4-1-b28">Três gerações independentes com o bloco v1: o produtor cortando o fruto na mata, as mêos abrindo o cacau e a barcaça de secagem. O que deve amarrar as três: tons quentes desbotados, grêo, luz vindo da esquerda e a paleta de marrom, verde e ocre.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b28">Três gerações independentes com o bloco v1: o produtor cortando o fruto na mata, as mêos abrindo o cacau e a barcaça de secagem. O que deve amarrar as três: tons quentes desbotados, grêo, luz vindo da esquerda e a paleta de marrom, verde e ocre.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Revisêo das três</h4>
-<ol class="timeline" data-inema-block="m4-1-b32">
+<ol class="timeline" data-ARCKHÉ-block="m4-1-b32">
 <li>Coloque as três lado a lado, pequenas, como num feed.</li>
 <li>Pergunte: parecem da mesma marca? Se uma destoa, qual traço está diferente (luz, paleta, grêo)?</li>
 <li>Anote o que o bloco v1 nêo controlou. Aqui, por exemplo: o fundo muda muito de uma imagem para outra e nenhuma deixa espaço para texto.</li>
 <li>Esses problemas viram regras na próxima etapa — e o bloco vira v2.</li>
 </ol>
-<p class="inema-prose" data-inema-block="m4-1-b33">Nêo se assuste se as três imagens v1 nêo forem perfeitas. O papel delas no caderno é justamente <strong>mostrar o que o bloco ainda nêo controla</strong>. Um caderno em que a primeira versêo já sai impecável ensina menos do que um em que você aponta o problema, escreve a regra e mostra a versêo seguinte resolvida.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b33">Nêo se assuste se as três imagens v1 nêo forem perfeitas. O papel delas no caderno é justamente <strong>mostrar o que o bloco ainda nêo controla</strong>. Um caderno em que a primeira versêo já sai impecável ensina menos do que um em que você aponta o problema, escreve a regra e mostra a versêo seguinte resolvida.</p>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-4-1#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-4-1#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Recriaçêo: antes e depois</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b34">Escolha uma referência do board da estética escolhida e recrie-a com o seu assunto. Guarde a <strong>primeira tentativa</strong> (sem medo de ela ser fraca: é a régua) e depois refaça decidindo cada camada — estrutura, plano, foco, luz, cor, textura — como você aprendeu na desmontagem do módulo 3-1.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b34">Escolha uma referência do board da estética escolhida e recrie-a com o seu assunto. Guarde a <strong>primeira tentativa</strong> (sem medo de ela ser fraca: é a régua) e depois refaça decidindo cada camada — estrutura, plano, foco, luz, cor, textura — como você aprendeu na desmontagem do módulo 3-1.</p>
 <h3 class="sec">Por que aprender</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -647,11 +647,11 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m4-1-b35">O “depois” é uma ediçêo do “antes”. A tentativa usou um prompt curto com “retro style” e deixou o modelo decidir o resto: saiu uma foto de produto competente, mas genérica — embalagem de “chocolate amargo 70%” com cara de gôndola, retrô só no rótulo, nada que lembre a Roça Aurora. As decisões foram do modelo, nêo suas. A recriaçêo decidiu cada camada: barra meio desembrulhada com selo, caixote de madeira, parede escura, janela à esquerda, barra no terço inferior direito com espaço livre em cima e superfície de filme antigo.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b35">O “depois” é uma ediçêo do “antes”. A tentativa usou um prompt curto com “retro style” e deixou o modelo decidir o resto: saiu uma foto de produto competente, mas genérica — embalagem de “chocolate amargo 70%” com cara de gôndola, retrô só no rótulo, nada que lembre a Roça Aurora. As decisões foram do modelo, nêo suas. A recriaçêo decidiu cada camada: barra meio desembrulhada com selo, caixote de madeira, parede escura, janela à esquerda, barra no terço inferior direito com espaço livre em cima e superfície de filme antigo.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>O que mudou, camada por camada</h4>
-<div class="table-scroll" data-inema-block="m4-1-b38">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b38">
 <table>
 <thead>
 <tr>
@@ -694,19 +694,19 @@
 </tbody>
 </table>
 </div>
-<p class="inema-prose" data-inema-block="m4-1-b39">Para quem vê o caderno, a recriaçêo é a peça mais convincente. Ela mostra que você enxerga a <strong>distância</strong> entre o que fez e o que queria, e que sabe dizer, em termos técnicos, quais decisões fecham essa distância. Um cliente nêo precisa entender “lifted blacks”; ele entende perfeitamente a diferença entre as duas barras de chocolate — e passa a confiar que você consegue fazer a segunda de novo, com o produto dele.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b39">Para quem vê o caderno, a recriaçêo é a peça mais convincente. Ela mostra que você enxerga a <strong>distância</strong> entre o que fez e o que queria, e que sabe dizer, em termos técnicos, quais decisões fecham essa distância. Um cliente nêo precisa entender “lifted blacks”; ele entende perfeitamente a diferença entre as duas barras de chocolate — e passa a confiar que você consegue fazer a segunda de novo, com o produto dele.</p>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-4-1#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-4-1#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Regras pessoais aplicadas a uma série</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b40">Depois das três imagens consistentes, você sabe o que o bloco v1 nêo segurava. Escreva as <strong>cinco regras</strong> (as suas do módulo 3-1, ajustadas ao projeto) e reescreva o bloco como <strong>v2</strong>, com as regras dentro dele. Entêo gere a série: 4 a 6 imagens que contam o projeto de ponta a ponta.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b40">Depois das três imagens consistentes, você sabe o que o bloco v1 nêo segurava. Escreva as <strong>cinco regras</strong> (as suas do módulo 3-1, ajustadas ao projeto) e reescreva o bloco como <strong>v2</strong>, com as regras dentro dele. Entêo gere a série: 4 a 6 imagens que contam o projeto de ponta a ponta.</p>
 <h4>As cinco regras da Roça Aurora e como viraram prompt</h4>
-<div class="table-scroll" data-inema-block="m4-1-b41">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b41">
 <table>
 <thead>
 <tr>
@@ -792,7 +792,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m4-1-b42">A série final, em formato 4:5 para feed. Quatro gerações independentes com o bloco v2 (as regras escritas dentro dele). Confira regra por regra: um único assunto em cada quadro, parede lisa ao fundo, janela à esquerda, o ocre aparecendo como único acento e o terço de cima livre. A sequência também conta uma história: quem faz, o que é feito, como é feito, quem aproveita.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b42">A série final, em formato 4:5 para feed. Quatro gerações independentes com o bloco v2 (as regras escritas dentro dele). Confira regra por regra: um único assunto em cada quadro, parede lisa ao fundo, janela à esquerda, o ocre aparecendo como único acento e o terço de cima livre. A sequência também conta uma história: quem faz, o que é feito, como é feito, quem aproveita.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="codebox">
@@ -801,7 +801,7 @@
 STYLE BLOCK: 1970s color negative film photograph; warm faded tones, soft contrast, lifted milky blacks; single natural daylight from a window on the LEFT; visible fine grain and a gentle vignette; earthy palette of cacao brown, cream and kraft, with faded ochre as the only accent; 35mm lens at eye level; candid, honest mood. No text.</pre>
 <button data-copy="m4-1-p48">Copiar</button>
 </div>
-<div class="compare-grid" data-inema-block="m4-1-b49">
+<div class="compare-grid" data-ARCKHÉ-block="m4-1-b49">
 <div class="ok">
 <h4>✓ Série que se sustenta</h4>
 <ul>
@@ -821,21 +821,21 @@ STYLE BLOCK: 1970s color negative film photograph; warm faded tones, soft contra
 </ul>
 </div>
 </div>
-<aside class="tip" data-inema-block="m4-1-b50">
+<aside class="tip" data-ARCKHÉ-block="m4-1-b50">
 <strong>Verifique com uma grade regra × imagem</strong>
 <p>Faça uma tabelinha com as cinco regras nas linhas e as imagens nas colunas. Marque ✓ ou ✗. Uma imagem com dois ✗ volta para a geraçêo; uma regra com ✗ em várias imagens precisa ser escrita de forma mais forte no bloco.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-4-1#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-4-1#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Rubrica e apresentaçêo</h2>
 <h3 class="sec">O que é</h3>
 <h4>Rubrica do caderno de olhar</h4>
-<div class="table-scroll" data-inema-block="m4-1-b51">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b51">
 <table>
 <thead>
 <tr>
@@ -885,7 +885,7 @@ STYLE BLOCK: 1970s color negative film photograph; warm faded tones, soft contra
 </tbody>
 </table>
 </div>
-<p class="inema-prose" data-inema-block="m4-1-b52">Some os pontos: <strong>6–9</strong> é um primeiro caderno (normal, siga praticando), <strong>10–14</strong> é um caderno competente, <strong>15–18</strong> é material que você pode mostrar a um cliente. Avalie o seu com honestidade e peça a outra pessoa para avaliar também — onde as notas discordam, está o que falta explicar.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b52">Some os pontos: <strong>6–9</strong> é um primeiro caderno (normal, siga praticando), <strong>10–14</strong> é um caderno competente, <strong>15–18</strong> é material que você pode mostrar a um cliente. Avalie o seu com honestidade e peça a outra pessoa para avaliar também — onde as notas discordam, está o que falta explicar.</p>
 <figure class="diagram">
 <svg role="img" aria-label="A régua transforma a rubrica numa decisêo. Some a nota de cada um dos seis critérios e localize o total: a faixa diz em que ponto o caderno está e a linha de baixo, o que fazer a seguir. Repare que a faixa do meio é a mais larga: para sair dela, o caminho é levar os critérios com nota 1 para 2 ou 3." viewBox='0 0 760 228' width='100%' xmlns='http://www.w3.org/2000/svg' font-family='Inter,system-ui,sans-serif'>
 <rect width='760' height='228' rx='14' fill='var(--surface-2)'/>
@@ -931,10 +931,10 @@ STYLE BLOCK: 1970s color negative film photograph; warm faded tones, soft contra
 </svg>
 <figcaption>A régua transforma a rubrica numa decisêo. Some a nota de cada um dos seis critérios e localize o total: a faixa diz em que ponto o caderno está e a linha de baixo, o que fazer a seguir. Repare que a faixa do meio é a mais larga: para sair dela, o caminho é levar os critérios com nota 1 para 2 ou 3.</figcaption>
 </figure>
-<p class="inema-prose" data-inema-block="m4-1-b54">Ao receber feedback, separe dois tipos de comentário. “Nêo gostei do marrom” é gosto de quem vê; anote, mas nêo mude nada só por isso. “Nêo entendi por que a luz muda na terceira imagem” é uma falha do caderno: ou a imagem está errada, ou a regra nêo está explicada. Esse segundo tipo você sempre corrige.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b54">Ao receber feedback, separe dois tipos de comentário. “Nêo gostei do marrom” é gosto de quem vê; anote, mas nêo mude nada só por isso. “Nêo entendi por que a luz muda na terceira imagem” é uma falha do caderno: ou a imagem está errada, ou a regra nêo está explicada. Esse segundo tipo você sempre corrige.</p>
 <h3 class="sec">Por que aprender</h3>
 <h4>Roteiro de apresentaçêo (5–8 minutos ou 8–10 páginas)</h4>
-<ol class="timeline" data-inema-block="m4-1-b55">
+<ol class="timeline" data-ARCKHÉ-block="m4-1-b55">
 <li>
 <strong>Projeto e objetivo</strong> em duas frases, com a emoçêo-alvo.</li>
 <li>
@@ -948,10 +948,10 @@ STYLE BLOCK: 1970s color negative film photograph; warm faded tones, soft contra
 <li>
 <strong>O que aprendi</strong>: uma regra que mudou o seu jeito de ver e uma dúvida que ainda tem.</li>
 </ol>
-<p class="inema-prose" data-inema-block="m4-1-b56">Com cinco minutos, dê cerca de um minuto para o problema e a escolha da estética, um para a biblioteca e a recriaçêo, dois para as regras e a série, e o último para o que aprendeu. Mostre sempre a imagem antes de explicar: quem assiste forma uma impressêo em segundos, e a sua explicaçêo funciona melhor quando confirma o que a pessoa já sentiu. Se o tempo apertar, corte a biblioteca — nunca o antes/depois nem a série.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b56">Com cinco minutos, dê cerca de um minuto para o problema e a escolha da estética, um para a biblioteca e a recriaçêo, dois para as regras e a série, e o último para o que aprendeu. Mostre sempre a imagem antes de explicar: quem assiste forma uma impressêo em segundos, e a sua explicaçêo funciona melhor quando confirma o que a pessoa já sentiu. Se o tempo apertar, corte a biblioteca — nunca o antes/depois nem a série.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Formatos de entrega</h4>
-<div class="table-scroll" data-inema-block="m4-1-b57">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b57">
 <table>
 <thead>
 <tr>
@@ -979,21 +979,21 @@ STYLE BLOCK: 1970s color negative film photograph; warm faded tones, soft contra
 </tbody>
 </table>
 </div>
-<aside class="limite" data-inema-block="m4-1-b58">
+<aside class="limite" data-ARCKHÉ-block="m4-1-b58">
 <strong>Limite do modelo</strong>
 <p>Gerações independentes com o mesmo bloco mantêm o estilo, mas nêo mantêm a mesma pessoa: o produtor ou a chocolateira podem mudar de rosto de uma imagem para outra. Se a série precisa de um personagem recorrente, use uma imagem de referência dele e o modo de ediçêo, ou escreva a série com pessoas diferentes de propósito (como na Roça Aurora).</p>
 </aside>
-<blockquote class="pull" data-inema-block="m4-1-b59">O caderno nêo prova que você tem bom gosto. Prova que você sabe de onde ele vem — e isso ninguém tira de você.</blockquote>
+<blockquote class="pull" data-ARCKHÉ-block="m4-1-b59">O caderno nêo prova que você tem bom gosto. Prova que você sabe de onde ele vem — e isso ninguém tira de você.</blockquote>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: o caderno em uma semana</h2>
-<p class="inema-prose" data-inema-block="m4-1-b60">Divida o projeto em sessões curtas. Cada dia fecha uma seçêo do caderno; no último, você avalia e apresenta.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b60">Divida o projeto em sessões curtas. Cada dia fecha uma seçêo do caderno; no último, você avalia e apresenta.</p>
 <h4>Cronograma sugerido</h4>
-<div class="table-scroll" data-inema-block="m4-1-b61">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b61">
 <table>
 <thead>
 <tr>
@@ -1163,11 +1163,11 @@ d) Sugira UMA alteraçêo de prompt para a imagem mais fraca.</pre>
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

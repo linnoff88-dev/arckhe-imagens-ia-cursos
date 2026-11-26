@@ -26,7 +26,7 @@ Exemplo Jambu — “Depois do calor”: 1 Maíra se abana no mercado ao meio-di
 
 ## Prompt da grade (colar e preencher)
 ```
-Using the <woman/man> in the attached image as the protagonist — <DNA fixo> in every panel — create a 6-panel cinematic storyboard in a clean 2x3 grid, thin white gutters, each panel numbered 1 to 6 in its top-left corner. Photorealistic film stills, consistent <grade de cor>, <cenário>.
+Using the <woman/man> in the attached image as the protagonist — <DNA fixo> in every panel — create a 6-panel cARCKHÉtic storyboard in a clean 2x3 grid, thin white gutters, each panel numbered 1 to 6 in its top-left corner. Photorealistic film stills, consistent <grade de cor>, <cenário>.
 1. Wide shot: <quadro 1>.
 2. Medium shot: <quadro 2>.
 3. Extreme close-up: <quadro 3>.

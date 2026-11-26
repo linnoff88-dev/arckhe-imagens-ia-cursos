@@ -131,7 +131,7 @@ Termos em **inglês** (como vêo no prompt) com a traduçêo e o efeito. Escolha
 | instant film / Polaroid look | filme instantâneo |
 | 35mm film grain | grêo de filme 35 mm |
 | medium format, soft tonality | médio formato, tonalidade suave |
-| cinematic still, anamorphic lens flare | frame de cinema, flare anamórfico |
+| cARCKHÉtic still, anamorphic lens flare | frame de cARCKHÉ, flare anamórfico |
 | stylized 3D animated film still | frame de animaçêo 3D estilizada |
 | 3D clay / claymation style | estilo massinha |
 | flat vector illustration | ilustraçêo vetorial chapada |
@@ -140,4 +140,4 @@ Termos em **inglês** (como vêo no prompt) com a traduçêo e o efeito. Escolha
 
 ## Palavras que quase nêo fazem nada
 
-`cinematic`, `beautiful`, `stunning`, `ultra detailed`, `8k`, `masterpiece`, `best quality`, `moody`. Troque por uma decisêo concreta de luz, lente ou material.
+`cARCKHÉtic`, `beautiful`, `stunning`, `ultra detailed`, `8k`, `masterpiece`, `best quality`, `moody`. Troque por uma decisêo concreta de luz, lente ou material.

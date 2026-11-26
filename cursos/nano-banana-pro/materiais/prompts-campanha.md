@@ -90,7 +90,7 @@ Turn this into a technical infographic in the style of a clean engineering drawi
 
 ## 7. Storyboard
 ```
-Using the <woman/man> in the attached image as the protagonist — <DNA fixo> in every panel — create a 6-panel cinematic storyboard in a clean 2x3 grid, thin white gutters, each panel numbered 1 to 6 in its top-left corner. Photorealistic film stills, consistent <grade de cor>, <cenário>.
+Using the <woman/man> in the attached image as the protagonist — <DNA fixo> in every panel — create a 6-panel cARCKHÉtic storyboard in a clean 2x3 grid, thin white gutters, each panel numbered 1 to 6 in its top-left corner. Photorealistic film stills, consistent <grade de cor>, <cenário>.
 1. <Plano geral>: <situaçêo>.
 2. <Plano médio>: <desejo / produto aparece>.
 3. <Plano-detalhe>: <gatilho>.
@@ -105,7 +105,7 @@ The attached image is a 6-panel storyboard. Recreate ONLY panel <N> as a single 
 ```
 ### Quadro a partir do recorte ampliado
 ```
-Recreate this frame as a high-resolution cinematic still. Keep the composition and action. Use the face from reference 2 and the <produto> from reference 3 exactly.
+Recreate this frame as a high-resolution cARCKHÉtic still. Keep the composition and action. Use the face from reference 2 and the <produto> from reference 3 exactly.
 ```
 
 ## 8. Personagem fictício novo (anti-morphing)

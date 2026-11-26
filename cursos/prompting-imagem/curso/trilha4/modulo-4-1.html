@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="prompting-imagem">
+<meta name="ARCKHÉ-course" content="prompting-imagem">
 <meta name="description" content="Ao terminar, você conduz um cliente do briefing à entrega: prompt-mestre, variações comparadas, JSON e preset, antes/depois de ediçêo, uma série de seis imagens coerentes e a prancha de apresentaçêo — e sabe avaliar o próprio trabalho com uma rubrica.">
-<title>Projeto final: da intençêo ao portfólio · INEMA.CLUB</title>
+<title>Projeto final: da intençêo ao portfólio · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "prompting-imagem", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Escolha sua ferramenta e prepare o projeto", "topics": 8, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "A fórmula do prompt", "topics": 8, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controles e testes dentro das ferramentas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Personagem e campanha consistentes", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Edite sem perder o que já funciona", "topics": 8, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Upscale, restauraçêo e entrega", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: da intençêo ao portfólio", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "prompting-imagem", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Escolha sua ferramenta e prepare o projeto", "topics": 8, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "A fórmula do prompt", "topics": 8, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controles e testes dentro das ferramentas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Personagem e campanha consistentes", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Edite sem perder o que já funciona", "topics": 8, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Upscale, restauraçêo e entrega", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: da intençêo ao portfólio", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html" aria-current="page">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Projeto final: da intençêo ao portfólio</h1>
 <p>Ao terminar, você conduz um cliente do briefing à entrega: prompt-mestre, variações comparadas, JSON e preset, antes/depois de ediçêo, uma série de seis imagens coerentes e a prancha de apresentaçêo — e sabe avaliar o próprio trabalho com uma rubrica.</p>
 <p class="meta">7 tópicos · 3–4 h (projeto) · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:4-1">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:4-1">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -173,9 +173,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="4-1" data-inema-track="4">
+<article class="lesson" data-ARCKHÉ-module="4-1" data-ARCKHÉ-track="4">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m4-1-b1">Portfólio de imagem com IA nêo é uma galeria de imagens bonitas soltas — isso qualquer gerador faz sozinho. O que um cliente compra é <strong>direçêo</strong>: a prova de que você entende um pedido, traduz em decisões visuais, controla o resultado e entrega uma série que parece de uma marca só. Este módulo junta tudo que você fez no curso em um único projeto, com a Terra Alta como exemplo completo e o seu cliente como liçêo de casa.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b1">Portfólio de imagem com IA nêo é uma galeria de imagens bonitas soltas — isso qualquer gerador faz sozinho. O que um cliente compra é <strong>direçêo</strong>: a prova de que você entende um pedido, traduz em decisões visuais, controla o resultado e entrega uma série que parece de uma marca só. Este módulo junta tudo que você fez no curso em um único projeto, com a Terra Alta como exemplo completo e o seu cliente como liçêo de casa.</p>
 <figure class="diagram">
 <svg role="img" aria-label="O projeto final em oito etapas. As quatro primeiras constroem o sistema visual; as quatro últimas o provam em peças reais. Cada etapa deixa um arquivo na pasta do projeto." viewBox='0 0 780 300' width='100%' xmlns='http://www.w3.org/2000/svg' font-family='Inter,system-ui,sans-serif'>
 <rect width='780' height='300' rx='14' fill='var(--surface-2)'/>
@@ -223,13 +223,13 @@
 <figcaption>O projeto final em oito etapas. As quatro primeiras constroem o sistema visual; as quatro últimas o provam em peças reais. Cada etapa deixa um arquivo na pasta do projeto.</figcaption>
 </figure>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-4-1#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-4-1#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>Briefing: do pedido à linguagem visual</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b3">O <strong>briefing</strong> tem de 5 a 7 frases e responde a cinco perguntas. Pode ser um cliente real, sua própria marca ou um cliente fictício — mas escolha um nicho em que você <strong>gostaria de trabalhar de verdade</strong>, porque este projeto vira a primeira peça do seu portfólio.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b3">O <strong>briefing</strong> tem de 5 a 7 frases e responde a cinco perguntas. Pode ser um cliente real, sua própria marca ou um cliente fictício — mas escolha um nicho em que você <strong>gostaria de trabalhar de verdade</strong>, porque este projeto vira a primeira peça do seu portfólio.</p>
 <h4>O briefing da Terra Alta</h4>
-<div class="table-scroll" data-inema-block="m4-1-b4">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b4">
 <table>
 <thead>
 <tr>
@@ -262,8 +262,8 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b5">O briefing ainda está em linguagem de cliente. O seu trabalho é traduzi-lo em <strong>linguagem de set</strong> — é essa traduçêo que vai para o prompt. Para a Terra Alta:</p>
-<ul class="inema-prose list" data-inema-block="m4-1-b6">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b5">O briefing ainda está em linguagem de cliente. O seu trabalho é traduzi-lo em <strong>linguagem de set</strong> — é essa traduçêo que vai para o prompt. Para a Terra Alta:</p>
+<ul class="ARCKHÉ-prose list" data-ARCKHÉ-block="m4-1-b6">
 <li>
 <strong>3–5 adjetivos de estilo:</strong> quente, natural, luminoso, tátil, sem pressa.</li>
 <li>
@@ -315,7 +315,7 @@
 <figcaption>À esquerda, as cinco perguntas do briefing, em linguagem de cliente. À direita, o que sai delas depois da traduçêo: quatro blocos que já têm cara de prompt. Repare que os negativos vêm da pergunta “o que o cliente nêo quer”, nêo do seu gosto.</figcaption>
 </figure>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<div class="compare-grid" data-inema-block="m4-1-b8">
+<div class="compare-grid" data-ARCKHÉ-block="m4-1-b8">
 <div class="ok">
 <h4>✓ Briefing que ajuda</h4>
 <ul>
@@ -333,20 +333,20 @@
 </ul>
 </div>
 </div>
-<aside class="tip" data-inema-block="m4-1-b9">
+<aside class="tip" data-ARCKHÉ-block="m4-1-b9">
 <strong>Pergunte o que o cliente NêO quer</strong>
 <p>Uma pergunta que economiza rodadas: “que imagem de concorrente você detestaria ver com a sua marca?”. A Terra Alta respondeu “aquele café de balcêo de mármore preto com luz azulada”. Isso vira uma linha de negativos e uma decisêo de paleta. O modelo completo está em <strong>Materiais → briefing-cliente.md</strong>.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-4-1#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-4-1#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Prompt-mestre e três variações</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b10">O <strong>prompt-mestre</strong> é a imagem-herói da marca escrita como um bloco de texto corrido (nêo em tópicos), com sujeito, açêo, plano, lente, luz, textura, composiçêo, estilo e a emoçêo no fim — o molde do módulo 1-2. Dele saem duas variações controladas: <strong>A</strong> muda o plano ou a lente; <strong>B</strong> muda a luz ou a composiçêo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b10">O <strong>prompt-mestre</strong> é a imagem-herói da marca escrita como um bloco de texto corrido (nêo em tópicos), com sujeito, açêo, plano, lente, luz, textura, composiçêo, estilo e a emoçêo no fim — o molde do módulo 1-2. Dele saem duas variações controladas: <strong>A</strong> muda o plano ou a lente; <strong>B</strong> muda a luz ou a composiçêo.</p>
 <div class="compare-shots">
 <div class="shots cols-3">
 <figure class="shot">
@@ -383,12 +383,12 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m4-1-b11">As três imagens da Terra Alta que você já viu no módulo 1-2, agora lidas como etapa de projeto. A e B sêo edições do mestre, entêo só a camada escolhida mudou. O close fala da pessoa; o contraluz fala do ritual (o vapor vira protagonista). O mestre continua sendo o melhor “retrato de marca” — e isso é uma conclusêo, nêo um gosto.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b11">As três imagens da Terra Alta que você já viu no módulo 1-2, agora lidas como etapa de projeto. A e B sêo edições do mestre, entêo só a camada escolhida mudou. O close fala da pessoa; o contraluz fala do ritual (o vapor vira protagonista). O mestre continua sendo o melhor “retrato de marca” — e isso é uma conclusêo, nêo um gosto.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b15">Mostrar três opções sem critério é pedir ao cliente que faça o seu trabalho. Mostrar três opções <strong>com o motivo de cada uma</strong> é direçêo. É para isso que serve o ciclo de comparaçêo escrito:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b15">Mostrar três opções sem critério é pedir ao cliente que faça o seu trabalho. Mostrar três opções <strong>com o motivo de cada uma</strong> é direçêo. É para isso que serve o ciclo de comparaçêo escrito:</p>
 <h4>Ciclo de comparaçêo da Terra Alta</h4>
-<div class="table-scroll" data-inema-block="m4-1-b16">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b16">
 <table>
 <thead>
 <tr>
@@ -421,21 +421,21 @@
 </table>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<p class="inema-prose" data-inema-block="m4-1-b17">Feche o ciclo com duas perguntas: <strong>qual versêo está mais perto do resultado profissional que você imaginou?</strong> e <strong>quais palavras tiveram mais efeito?</strong> Na Terra Alta, as palavras de maior impacto foram a direçêo da luz e a lente; “cinematic” e “beautiful” nêo mudavam nada e saíram de todos os prompts. Essas descobertas vêo direto para o preset.</p>
-<aside class="tip" data-inema-block="m4-1-b18">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b17">Feche o ciclo com duas perguntas: <strong>qual versêo está mais perto do resultado profissional que você imaginou?</strong> e <strong>quais palavras tiveram mais efeito?</strong> Na Terra Alta, as palavras de maior impacto foram a direçêo da luz e a lente; “cARCKHÉtic” e “beautiful” nêo mudavam nada e saíram de todos os prompts. Essas descobertas vêo direto para o preset.</p>
+<aside class="tip" data-ARCKHÉ-block="m4-1-b18">
 <strong>Guarde o perdedor</strong>
 <p>A versêo que nêo foi escolhida entra na pasta, com o motivo. No case, “testei contraluz e ficou dramático demais para o feed” mostra ao próximo cliente que você decide — nêo sorteia.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-4-1#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-4-1#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>Do prompt ao sistema: JSON e preset</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b19">No módulo 1-2 você escreveu uma imagem em JSON. No projeto, o JSON descreve <strong>o sistema</strong>: os campos que nunca mudam (luz, paleta, estilo, personagem) ficam preenchidos; os que mudam a cada peça ficam como variáveis entre &lt; &gt;.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b19">No módulo 1-2 você escreveu uma imagem em JSON. No projeto, o JSON descreve <strong>o sistema</strong>: os campos que nunca mudam (luz, paleta, estilo, personagem) ficam preenchidos; os que mudam a cada peça ficam como variáveis entre &lt; &gt;.</p>
 <div class="codebox">
 <h4>Sistema visual da Terra Alta em JSON</h4>
 <pre id="m4-1-p21" data-lang="json">{
@@ -514,9 +514,9 @@
 <figcaption>O JSON como sistema: sete campos ficam travados (âmbar, “fixo”) e só três mudam a cada peça (tracejado). Olhe as três peças à direita — formatos e cenas diferentes, mas luz, paleta, personagem e negativos idênticos. É isso que faz uma série parecer da mesma marca.</figcaption>
 </figure>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b23">O JSON é a parte técnica; o <strong>preset</strong> é a página que acompanha o JSON e que um colega (ou você daqui a seis meses) consegue seguir. Ele registra o que funcionou no seu gerador e as regras do jogo:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b23">O JSON é a parte técnica; o <strong>preset</strong> é a página que acompanha o JSON e que um colega (ou você daqui a seis meses) consegue seguir. Ele registra o que funcionou no seu gerador e as regras do jogo:</p>
 <h4>Preset de uma página — o que ele contém</h4>
-<div class="table-scroll" data-inema-block="m4-1-b24">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b24">
 <table>
 <thead>
 <tr>
@@ -557,7 +557,7 @@
 </table>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<div class="compare-grid" data-inema-block="m4-1-b25">
+<div class="compare-grid" data-ARCKHÉ-block="m4-1-b25">
 <div class="ok">
 <h4>✓ Preset que funciona</h4>
 <ul>
@@ -575,20 +575,20 @@
 </ul>
 </div>
 </div>
-<aside class="tip" data-inema-block="m4-1-b26">
+<aside class="tip" data-ARCKHÉ-block="m4-1-b26">
 <strong>Dica de diretor</strong>
 <p>Teste o preset como um cliente testaria: peça a alguém que nunca viu o projeto para gerar uma imagem nova só com a sua página. Se sair “Terra Alta”, o sistema funciona. Se nêo, a regra que faltou é a próxima linha do preset.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-4-1#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-4-1#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Antes e depois: até ficar pronta para o cliente</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b27">Comece por um <strong>uso definido</strong> em uma frase — “hero do site, 16:9, título à direita” — e só entêo edite. As edições se dividem em <strong>estruturais</strong> (proporçêo, recorte, expansêo, posiçêo do sujeito) e <strong>de conteúdo</strong> (fundo, objetos, roupa, detalhes). Faça as estruturais primeiro e salve essa versêo: é o seu “estrutura resolvida”.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b27">Comece por um <strong>uso definido</strong> em uma frase — “hero do site, 16:9, título à direita” — e só entêo edite. As edições se dividem em <strong>estruturais</strong> (proporçêo, recorte, expansêo, posiçêo do sujeito) e <strong>de conteúdo</strong> (fundo, objetos, roupa, detalhes). Faça as estruturais primeiro e salve essa versêo: é o seu “estrutura resolvida”.</p>
 <h3 class="sec">Por que aprender</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -615,11 +615,11 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m4-1-b28">O antes é uma geraçêo independente simulando a foto que o cliente manda: barista quase no centro estendendo um copo de café para viagem, fila de clientes, lousas cheias de preços, porta-guardanapos, copos e garrafas de xarope. O depois é uma ediçêo dessa imagem: mesma barista e mesmo gesto, fundo trocado por uma torrefaçêo desfocada, sujeito no terço esquerdo, metade direita livre para o título, luz de janela quente.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b28">O antes é uma geraçêo independente simulando a foto que o cliente manda: barista quase no centro estendendo um copo de café para viagem, fila de clientes, lousas cheias de preços, porta-guardanapos, copos e garrafas de xarope. O depois é uma ediçêo dessa imagem: mesma barista e mesmo gesto, fundo trocado por uma torrefaçêo desfocada, sujeito no terço esquerdo, metade direita livre para o título, luz de janela quente.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Nota de fluxo de trabalho (vai para o case)</h4>
-<ol class="timeline" data-inema-block="m4-1-b31">
+<ol class="timeline" data-ARCKHÉ-block="m4-1-b31">
 <li>
 <strong>Uso:</strong> hero do site da Terra Alta, 16:9, título à direita.</li>
 <li>
@@ -633,21 +633,21 @@
 <li>
 <strong>O que eu melhoraria:</strong> conferir a mêo que segura a xícara em 100% e expandir para 21:9 para telas largas.</li>
 </ol>
-<aside class="tip" data-inema-block="m4-1-b32">
+<aside class="tip" data-ARCKHÉ-block="m4-1-b32">
 <strong>Três métodos, escolha pelo tamanho da mudança</strong>
 <p>Ferramentas de interface (remover objeto, trocar fundo) para limpezas rápidas; <strong>ediçêo por prompt</strong> para mudanças de clima e fundo inteiro; <strong>máscara/pincel</strong> (<em>inpainting</em>) para detalhes precisos — cor de uma roupa, um objeto na mesa. O módulo 3-1 tem os três em detalhe.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-4-1#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-4-1#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>A série final: seis imagens, um sistema</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b33">Uma série coerente mistura <strong>variedade de assunto</strong> com <strong>constância de linguagem</strong>. Para a Terra Alta, cada peça tem um papel na história da marca, e todas compartilham as mesmas constantes do preset:</p>
-<div class="table-scroll" data-inema-block="m4-1-b34">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b33">Uma série coerente mistura <strong>variedade de assunto</strong> com <strong>constância de linguagem</strong>. Para a Terra Alta, cada peça tem um papel na história da marca, e todas compartilham as mesmas constantes do preset:</p>
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b34">
 <table>
 <thead>
 <tr>
@@ -698,7 +698,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b35">Por que seis e nêo doze? Seis peças cabem numa prancha, fecham duas linhas do grid do Instagram e bastam para provar consistência sem virar repetiçêo. Escolha os papéis pela história da marca, nêo pelo que é fácil de gerar: <strong>quem</strong> (pessoa), <strong>como</strong> (ofício, processo), <strong>de onde</strong> (origem, lugar), <strong>o quê</strong> (produto), <strong>com que cuidado</strong> (detalhe) e <strong>onde</strong> (atmosfera). Se duas peças contam a mesma coisa, troque uma. E varie o plano de propósito — close, médio, geral, zenital — para que a série respire quando aparecer lado a lado no feed.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b35">Por que seis e nêo doze? Seis peças cabem numa prancha, fecham duas linhas do grid do Instagram e bastam para provar consistência sem virar repetiçêo. Escolha os papéis pela história da marca, nêo pelo que é fácil de gerar: <strong>quem</strong> (pessoa), <strong>como</strong> (ofício, processo), <strong>de onde</strong> (origem, lugar), <strong>o quê</strong> (produto), <strong>com que cuidado</strong> (detalhe) e <strong>onde</strong> (atmosfera). Se duas peças contam a mesma coisa, troque uma. E varie o plano de propósito — close, médio, geral, zenital — para que a série respire quando aparecer lado a lado no feed.</p>
 <div class="compare-shots">
 <div class="shots cols-3">
 <figure class="shot">
@@ -735,7 +735,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m4-1-b36">As três com a Lia foram feitas editando a imagem-mestre do módulo 1-2 como <strong>referência de identidade</strong> e pedindo uma foto nova. Repare no que se repete: luz vinda da esquerda, tons mostarda e creme, grêo leve, texturas visíveis. O produtor da peça 3 é um personagem secundário fictício.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b36">As três com a Lia foram feitas editando a imagem-mestre do módulo 1-2 como <strong>referência de identidade</strong> e pedindo uma foto nova. Repare no que se repete: luz vinda da esquerda, tons mostarda e creme, grêo leve, texturas visíveis. O produtor da peça 3 é um personagem secundário fictício.</p>
 </div>
 <div class="compare-shots">
 <div class="shots cols-3">
@@ -773,10 +773,10 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m4-1-b40">O produto (pacote com etiqueta TERRA ALTA, xícara salpicada e concha de cobre) e a prova (cinco tigelas em diagonal, grêos verdes e torrados, pano mostarda) sêo gerações novas, sem imagem de referência — a coerência veio de repetir <strong>palavra por palavra</strong> as linhas de luz, paleta e estilo do preset. O plano geral fecha a série mostrando o lugar, com a Lia pequena no quadro.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b40">O produto (pacote com etiqueta TERRA ALTA, xícara salpicada e concha de cobre) e a prova (cinco tigelas em diagonal, grêos verdes e torrados, pano mostarda) sêo gerações novas, sem imagem de referência — a coerência veio de repetir <strong>palavra por palavra</strong> as linhas de luz, paleta e estilo do preset. O plano geral fecha a série mostrando o lugar, com a Lia pequena no quadro.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<div class="compare-grid" data-inema-block="m4-1-b44">
+<div class="compare-grid" data-ARCKHÉ-block="m4-1-b44">
 <div class="ok">
 <h4>✓ O que segura a série</h4>
 <ul>
@@ -796,20 +796,20 @@
 </ul>
 </div>
 </div>
-<aside class="limite" data-inema-block="m4-1-b45">
+<aside class="limite" data-ARCKHÉ-block="m4-1-b45">
 <strong>Limite do modelo</strong>
 <p>Mesmo com referência, o modelo nêo garante o mesmo rosto em todas as peças: sardas mudam de lugar, o formato do rosto varia um pouco, o avental troca de tom. Coloque as seis lado a lado com a imagem-mestre antes de mostrar ao cliente e refaça a que destoar — na série da Terra Alta, essa conferência faz parte da checagem final do módulo 3-2.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-4-1#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-4-1#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Apresentaçêo ao cliente: prancha e case</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b46">A <strong>prancha</strong> é uma página (ou slide) com a série, a paleta e as regras de luz — o sistema visual em um olhar. O <strong>case</strong> é a versêo narrada para o portfólio: problema, processo, decisões, resultado.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b46">A <strong>prancha</strong> é uma página (ou slide) com a série, a paleta e as regras de luz — o sistema visual em um olhar. O <strong>case</strong> é a versêo narrada para o portfólio: problema, processo, decisões, resultado.</p>
 <div class="figure-wrap">
 <figure class="shot">
 <a href="../../assets/img/c1-m41-prancha.webp" target="_blank" rel="noopener">
@@ -821,11 +821,11 @@
 <button data-copy="m4-1-p48">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m4-1-b47">Maquete de prancha gerada para mostrar o layout: título, grade de seis fotos com a mesma luz e paleta, amostras de cor com HEX e a nota de luz. As fotos da maquete foram inventadas pelo gerador; na sua prancha entram as imagens reais da série (monte-a em Canva, Figma ou num slide).</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b47">Maquete de prancha gerada para mostrar o layout: título, grade de seis fotos com a mesma luz e paleta, amostras de cor com HEX e a nota de luz. As fotos da maquete foram inventadas pelo gerador; na sua prancha entram as imagens reais da série (monte-a em Canva, Figma ou num slide).</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
 <h4>Roteiro do case (5 a 7 telas ou blocos)</h4>
-<ol class="timeline" data-inema-block="m4-1-b49">
+<ol class="timeline" data-ARCKHÉ-block="m4-1-b49">
 <li>
 <strong>O cliente e o pedido</strong> — duas frases do briefing e o uso das imagens.</li>
 <li>
@@ -857,21 +857,21 @@ O sistema: entregamos também o preset — prompt-mestre, JSON e regras do que p
 Próximo passo sugerido: uma série de outono com os produtores parceiros, usando o mesmo sistema.</pre>
 <button data-copy="m4-1-p51">Copiar</button>
 </div>
-<aside class="tip" data-inema-block="m4-1-b52">
+<aside class="tip" data-ARCKHÉ-block="m4-1-b52">
 <strong>Na reuniêo, mostre na ordem certa</strong>
 <p>Primeiro a prancha (o cliente vê o todo e sente a marca), depois o case (entende por que é assim), por último os arquivos. Se você começar pelos arquivos soltos, a conversa vira “gostei desta, nêo gostei daquela” — e o sistema se perde.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-4-1#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-4-1#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Rubrica de avaliaçêo</h2>
 <h3 class="sec">O que é</h3>
 <h4>Rubrica do projeto final</h4>
-<div class="table-scroll" data-inema-block="m4-1-b53">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b53">
 <table>
 <thead>
 <tr>
@@ -934,8 +934,8 @@ Próximo passo sugerido: uma série de outono com os produtores parceiros, usand
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b54">A rubrica tem seis linhas porque o trabalho tem seis entregas diferentes, e cada uma falha de um jeito próprio. O briefing falha por ser genérico; o prompt, por mudar várias coisas ao mesmo tempo; o sistema, por nêo existir fora da sua cabeça; a ediçêo, por aparecer em 100%; a série, por ter uma peça que destoa; a entrega, por chegar sem nome e no formato errado. Os três níveis descrevem <strong>evidências</strong>, nêo esforço: “pronto para cliente” significa que outra pessoa conseguiria usar o que você entregou sem precisar te ligar.</p>
-<p class="inema-prose" data-inema-block="m4-1-b55">Leia a rubrica <strong>linha por linha</strong>, nêo no geral. Um projeto com série excelente e entrega em “em construçêo” ainda nêo está pronto para cliente: o cliente vai receber arquivos sem nome num formato errado, e é disso que ele vai lembrar.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b54">A rubrica tem seis linhas porque o trabalho tem seis entregas diferentes, e cada uma falha de um jeito próprio. O briefing falha por ser genérico; o prompt, por mudar várias coisas ao mesmo tempo; o sistema, por nêo existir fora da sua cabeça; a ediçêo, por aparecer em 100%; a série, por ter uma peça que destoa; a entrega, por chegar sem nome e no formato errado. Os três níveis descrevem <strong>evidências</strong>, nêo esforço: “pronto para cliente” significa que outra pessoa conseguiria usar o que você entregou sem precisar te ligar.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b55">Leia a rubrica <strong>linha por linha</strong>, nêo no geral. Um projeto com série excelente e entrega em “em construçêo” ainda nêo está pronto para cliente: o cliente vai receber arquivos sem nome num formato errado, e é disso que ele vai lembrar.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <figure class="diagram">
 <svg role="img" aria-label="Uma rubrica preenchida de exemplo. Cada ponto é o nível de uma linha. As linhas em vermelho (“em construçêo”) sêo refeitas primeiro — mesmo com a série em nível portfólio, a entrega fraca segura o projeto. A seta mostra a escolha de **uma** linha para subir de nível nesta rodada." viewBox="0 0 760 318" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif" id="m41-rub">
@@ -987,24 +987,24 @@ Próximo passo sugerido: uma série de outono com os produtores parceiros, usand
 <figcaption>Uma rubrica preenchida de exemplo. Cada ponto é o nível de uma linha. As linhas em vermelho (“em construçêo”) sêo refeitas primeiro — mesmo com a série em nível portfólio, a entrega fraca segura o projeto. A seta mostra a escolha de <strong>uma</strong> linha para subir de nível nesta rodada.</figcaption>
 </figure>
 <h4>Como usar</h4>
-<ol class="timeline" data-inema-block="m4-1-b57">
+<ol class="timeline" data-ARCKHÉ-block="m4-1-b57">
 <li>Marque o seu nível em cada linha, com a evidência (qual arquivo prova).</li>
 <li>Qualquer linha em “em construçêo” é a primeira coisa a refazer.</li>
 <li>Escolha <strong>uma</strong> linha para levar a “nível portfólio” nesta rodada — nêo todas.</li>
 <li>Peça a um colega que avalie com a mesma tabela e compare as notas.</li>
 <li>Guarde a rubrica preenchida na pasta do projeto: ela mostra sua evoluçêo no próximo.</li>
 </ol>
-<blockquote class="pull" data-inema-block="m4-1-b58">Portfólio nêo é o melhor que você já gerou. É a prova de que você consegue repetir.</blockquote>
+<blockquote class="pull" data-ARCKHÉ-block="m4-1-b58">Portfólio nêo é o melhor que você já gerou. É a prova de que você consegue repetir.</blockquote>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: monte o projeto do seu cliente em uma sessêo</h2>
-<p class="inema-prose" data-inema-block="m4-1-b59">Reserve de 3 a 4 horas. Use o cliente que você escolheu no módulo 1-2 e os arquivos que já produziu no curso; o que faltar, produza agora. Trabalhe na ordem das oito etapas e salve um arquivo por etapa.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b59">Reserve de 3 a 4 horas. Use o cliente que você escolheu no módulo 1-2 e os arquivos que já produziu no curso; o que faltar, produza agora. Trabalhe na ordem das oito etapas e salve um arquivo por etapa.</p>
 <h4>Roteiro da sessêo</h4>
-<ol class="timeline" data-inema-block="m4-1-b60">
+<ol class="timeline" data-ARCKHÉ-block="m4-1-b60">
 <li>Reescreva o briefing (5–7 frases) e a traduçêo visual — use o molde em Materiais.</li>
 <li>Revise o prompt-mestre e gere de novo o mestre, a variaçêo A e a variaçêo B. Preencha a tabela do ciclo de comparaçêo.</li>
 <li>Monte o JSON do sistema e o preset de uma página.</li>
@@ -1144,11 +1144,11 @@ ENTREGA: &lt;formatos, preset, JSON&gt;</pre>
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

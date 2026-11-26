@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="nano-banana-pro">
+<meta name="ARCKHÉ-course" content="nano-banana-pro">
 <meta name="description" content="Ao terminar, você monta uma cena a partir de várias referências dizendo o papel de cada uma, cria uma identidade fictícia nova sem “derreter” rostos, reestiliza uma colagem para anime, pixel art e 3D, troca o personagem de uma cena existente e adapta uma peça para vários formatos.">
-<title>Edições, referências múltiplas e adaptações · INEMA.CLUB</title>
+<title>Edições, referências múltiplas e adaptações · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "nano-banana-pro", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Prepare o modelo, o briefing e as referências", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Produto e personagem: uma base consistente", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controle de marca: cor, texto e hierarquia", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Exploraçêo criativa e storyboard", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Edições, referências múltiplas e adaptações", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: campanha Jambu", "topics": 8, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "nano-banana-pro", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Prepare o modelo, o briefing e as referências", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Produto e personagem: uma base consistente", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controle de marca: cor, texto e hierarquia", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Exploraçêo criativa e storyboard", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Edições, referências múltiplas e adaptações", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: campanha Jambu", "topics": 8, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Edições, referências múltiplas e adaptações</h1>
 <p>Ao terminar, você monta uma cena a partir de várias referências dizendo o papel de cada uma, cria uma identidade fictícia nova sem “derreter” rostos, reestiliza uma colagem para anime, pixel art e 3D, troca o personagem de uma cena existente e adapta uma peça para vários formatos.</p>
 <p class="meta">7 tópicos · 80 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:3-2">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:3-2">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -173,9 +173,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="3-2" data-inema-track="3">
+<article class="lesson" data-ARCKHÉ-module="3-2" data-ARCKHÉ-track="3">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m3-2-b1">Até aqui você trabalhou quase sempre com <strong>uma</strong> imagem de referência: a lata ou a Maíra. Uma campanha de verdade mistura várias ao mesmo tempo — o rosto da heroína, a roupa da coleçêo, o lugar escolhido pela produçêo, o produto. Quando você joga quatro imagens no modelo sem dizer para que serve cada uma, ele adivinha: pega a roupa do lugar, a cor do produto no rosto, o fundo da foto de rosto. Este módulo é sobre <strong>dar papéis</strong>.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b1">Até aqui você trabalhou quase sempre com <strong>uma</strong> imagem de referência: a lata ou a Maíra. Uma campanha de verdade mistura várias ao mesmo tempo — o rosto da heroína, a roupa da coleçêo, o lugar escolhido pela produçêo, o produto. Quando você joga quatro imagens no modelo sem dizer para que serve cada uma, ele adivinha: pega a roupa do lugar, a cor do produto no rosto, o fundo da foto de rosto. Este módulo é sobre <strong>dar papéis</strong>.</p>
 <figure class="diagram">
 <svg role="img" aria-label="Cada referência entra com um número e um papel explícito no prompt. O modelo combina os papéis numa cena só — e o que nêo tem papel nêo deveria vazar." viewBox="0 0 760 280" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
 <rect width="760" height="280" rx="14" fill="var(--surface-2)"/>
@@ -218,18 +218,18 @@
 </svg>
 <figcaption>Cada referência entra com um número e um papel explícito no prompt. O modelo combina os papéis numa cena só — e o que nêo tem papel nêo deveria vazar.</figcaption>
 </figure>
-<aside class="tip" data-inema-block="m3-2-b3">
+<aside class="tip" data-ARCKHÉ-block="m3-2-b3">
 <strong>Regra de ética deste módulo</strong>
 <p>Tudo o que você vai ver aqui — combinar rostos, criar identidades, trocar o rosto de alguém numa cena — só se faz com <strong>pessoas fictícias</strong> ou com <strong>autorizaçêo expressa</strong> da pessoa retratada (e, para uso comercial, por escrito). Nada de rosto de conhecido, de celebridade ou de foto tirada da internet. Todas as pessoas deste módulo foram geradas e nêo existem.</p>
 </aside>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-3-2#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-3-2#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>Os papéis das referências</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b4">Pense nas referências como a equipe de um set: a <strong>atriz</strong> empresta o rosto, o <strong>figurino</strong> empresta a roupa, a <strong>locaçêo</strong> empresta o lugar, a <strong>produçêo de objetos</strong> empresta o produto. No prompt, você chama cada uma pelo número e diz o que tirar dela — e, igualmente importante, o que <strong>nêo</strong> tirar.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b4">Pense nas referências como a equipe de um set: a <strong>atriz</strong> empresta o rosto, o <strong>figurino</strong> empresta a roupa, a <strong>locaçêo</strong> empresta o lugar, a <strong>produçêo de objetos</strong> empresta o produto. No prompt, você chama cada uma pelo número e diz o que tirar dela — e, igualmente importante, o que <strong>nêo</strong> tirar.</p>
 <h4>Papel · frase no prompt · o que ignorar</h4>
-<div class="table-scroll" data-inema-block="m3-2-b5">
+<div class="table-scroll" data-ARCKHÉ-block="m3-2-b5">
 <table>
 <thead>
 <tr>
@@ -278,7 +278,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-2-b6">O modelo nêo sabe que a foto do píer é “só o lugar”: para ele, é mais um monte de informaçêo visual. A frase de papel funciona como etiqueta. Algumas plataformas ajudam com mecanismos próprios — marcar a referência com @ dentro do prompt, ou um campo “personagem” que aproveita só a pessoa e descarta o fundo. Use esses recursos quando existirem (confira na sua ferramenta), mas <strong>escreva o papel mesmo assim</strong>: é o que funciona em qualquer lugar.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b6">O modelo nêo sabe que a foto do píer é “só o lugar”: para ele, é mais um monte de informaçêo visual. A frase de papel funciona como etiqueta. Algumas plataformas ajudam com mecanismos próprios — marcar a referência com @ dentro do prompt, ou um campo “personagem” que aproveita só a pessoa e descarta o fundo. Use esses recursos quando existirem (confira na sua ferramenta), mas <strong>escreva o papel mesmo assim</strong>: é o que funciona em qualquer lugar.</p>
 <figure class="diagram">
 <svg role="img" aria-label="Cada linha é uma referência. Tudo o que está na foto chega ao modelo; a frase de papel decide o que atravessa (coluna do meio) e o que deveria ficar de fora (coluna da direita). Quando algo da direita aparece na cena — o fundo cinza do retrato, o corpo de quem vestia a roupa, uma pessoa que estava no píer — foi vazamento: reforce o papel daquela referência e diga explicitamente o que ignorar." viewBox="0 0 760 322" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
 <rect width="760" height="322" rx="14" fill="var(--surface-2)"/>
@@ -323,7 +323,7 @@
 <figcaption>Cada linha é uma referência. Tudo o que está na foto chega ao modelo; a frase de papel decide o que atravessa (coluna do meio) e o que deveria ficar de fora (coluna da direita). Quando algo da direita aparece na cena — o fundo cinza do retrato, o corpo de quem vestia a roupa, uma pessoa que estava no píer — foi vazamento: reforce o papel daquela referência e diga explicitamente o que ignorar.</figcaption>
 </figure>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<div class="compare-grid" data-inema-block="m3-2-b8">
+<div class="compare-grid" data-ARCKHÉ-block="m3-2-b8">
 <div class="ok">
 <h4>✓ Referência bem escolhida</h4>
 <ul>
@@ -343,17 +343,17 @@
 </ul>
 </div>
 </div>
-<p class="inema-prose" data-inema-block="m3-2-b9">Quantas referências usar? Comece com o mínimo que resolve: uma para o rosto e uma para o produto já cobrem a maioria das peças de campanha. Cada referência a mais é uma fonte a mais de confusêo. Suba para três ou quatro só quando o lugar ou a roupa <strong>precisam</strong> ser exatos (uma loja real do cliente, uma coleçêo de roupas que será vendida).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b9">Quantas referências usar? Comece com o mínimo que resolve: uma para o rosto e uma para o produto já cobrem a maioria das peças de campanha. Cada referência a mais é uma fonte a mais de confusêo. Suba para três ou quatro só quando o lugar ou a roupa <strong>precisam</strong> ser exatos (uma loja real do cliente, uma coleçêo de roupas que será vendida).</p>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-3-2#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-3-2#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Exemplo com quatro referências</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b10">Montamos as quatro referências da Maíra numa <strong>prancha numerada</strong>: 1 ROSTO, 2 ROUPA, 3 LUGAR, 4 OBJETO. Em ferramentas que aceitam várias imagens, você anexaria as quatro separadas; aqui usamos a prancha como entrada única — o que também é uma técnica legítima, a <strong>colagem de referências</strong>, útil quando a ferramenta tem limite de imagens anexadas.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b10">Montamos as quatro referências da Maíra numa <strong>prancha numerada</strong>: 1 ROSTO, 2 ROUPA, 3 LUGAR, 4 OBJETO. Em ferramentas que aceitam várias imagens, você anexaria as quatro separadas; aqui usamos a prancha como entrada única — o que também é uma técnica legítima, a <strong>colagem de referências</strong>, útil quando a ferramenta tem limite de imagens anexadas.</p>
 <div class="figure-wrap">
 <figure class="shot">
 <a href="../../assets/img/c2-m32-prancha-refs.webp" target="_blank" rel="noopener">
@@ -365,10 +365,10 @@
 <button data-copy="m3-2-p12">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m3-2-b11">A prancha de referências: o rosto da Maíra (1), a roupa em flat lay (2), o píer com barcos (3) e a lata (4). Foi montada editando o retrato da Maíra com a lata-base anexada como segunda imagem, por isso o painel 4 repete o rótulo real. Repare que cada painel é “limpo”: o painel do lugar nêo tem gente, o da roupa nêo tem corpo.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b11">A prancha de referências: o rosto da Maíra (1), a roupa em flat lay (2), o píer com barcos (3) e a lata (4). Foi montada editando o retrato da Maíra com a lata-base anexada como segunda imagem, por isso o painel 4 repete o rótulo real. Repare que cada painel é “limpo”: o painel do lugar nêo tem gente, o da roupa nêo tem corpo.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-2-b13">O prompt da cena final segue sempre a mesma ordem: <strong>açêo e cena</strong> primeiro, depois <strong>um bloco por referência</strong> com a frase de papel, depois os <strong>ajustes técnicos</strong>. Cada bloco termina com um reforço curto (“no changes to clothing”, “same pier and boats”).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b13">O prompt da cena final segue sempre a mesma ordem: <strong>açêo e cena</strong> primeiro, depois <strong>um bloco por referência</strong> com a frase de papel, depois os <strong>ajustes técnicos</strong>. Cada bloco termina com um reforço curto (“no changes to clothing”, “same pier and boats”).</p>
 <div class="codebox">
 <h4>Esqueleto do prompt de 4 referências</h4>
 <pre id="m3-2-p15" data-lang="text">&lt;açêo e cena em 1 frase&gt;
@@ -406,32 +406,32 @@ NO &lt;o que nêo pode aparecer: texto, grade, rótulos, outra pessoa&gt;</pre>
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-2-b16">A cena é uma ediçêo da prancha. Confira papel por papel: o rosto e a pinta sêo os da referência 1? A camisa verde estampada e o short vieram da 2? O píer e os barcos sêo os da 3? A lata tem a faixa amarela e o nome JAMBU da 4? Onde um papel falhou, reforce só aquele bloco.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b16">A cena é uma ediçêo da prancha. Confira papel por papel: o rosto e a pinta sêo os da referência 1? A camisa verde estampada e o short vieram da 2? O píer e os barcos sêo os da 3? A lata tem a faixa amarela e o nome JAMBU da 4? Onde um papel falhou, reforce só aquele bloco.</p>
 </div>
-<aside class="tip" data-inema-block="m3-2-b19">
+<aside class="tip" data-ARCKHÉ-block="m3-2-b19">
 <strong>Dica de diretor</strong>
 <p>Em cenas seguidas (um vlog, uma sequência de posts), repita os <strong>mesmos quatro blocos</strong> em todos os prompts e mude só a açêo. É assim que uma série de imagens parece ter sido fotografada no mesmo dia.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-3-2#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-3-2#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>DNA fixo e contexto variável</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b20">Um personagem de marca é um <strong>ativo</strong>: quanto mais reconhecível, mais ele vale. A regra de trabalho é uma conta, um personagem — e o personagem tem um <em>prompt-mestre</em> dividido em duas partes. O <strong>DNA fixo</strong> (rosto, pele, idade, marcas) você copia e cola sempre, sem editar uma vírgula. O <strong>contexto variável</strong> (roupa, lugar, luz, pose, açêo) é o que muda de peça para peça.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b20">Um personagem de marca é um <strong>ativo</strong>: quanto mais reconhecível, mais ele vale. A regra de trabalho é uma conta, um personagem — e o personagem tem um <em>prompt-mestre</em> dividido em duas partes. O <strong>DNA fixo</strong> (rosto, pele, idade, marcas) você copia e cola sempre, sem editar uma vírgula. O <strong>contexto variável</strong> (roupa, lugar, luz, pose, açêo) é o que muda de peça para peça.</p>
 <div class="codebox">
 <h4>DNA fixo da Maíra (copie sempre igual)</h4>
 <pre id="m3-2-p22" data-lang="text">Maíra, 28, from Belém do Pará: deep brown skin with warm undertones, mixed Indigenous and Afro-Brazilian features, high cheekbones, thick dark eyebrows, warm dark-brown eyes, a small beauty mark on her left cheekbone, voluminous shoulder-length black wavy-curly hair with a middle part, small gold hoop earrings.</pre>
 <button data-copy="m3-2-p22">Copiar</button>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-2-b23">Os detalhes pequenos — a pinta na maçê do rosto, as argolas, o repartido no meio — sêo os que o público usa para reconhecer, e os primeiros que o modelo “esquece”. Escritos no DNA, eles sêo pedidos em toda geraçêo. Junto com a imagem de referência, texto e imagem se reforçam.</p>
-<p class="inema-prose" data-inema-block="m3-2-b24">Na prática, isso significa manter um arquivo de texto por personagem, com o DNA fixo no topo e, embaixo, uma lista de contextos já usados (roupas, lugares, luzes). Antes de cada peça, você copia o DNA inteiro e escolhe ou inventa um contexto. Esse arquivo, junto com a imagem de referência aprovada, é o que outra pessoa da equipe precisaria para continuar o personagem sem você.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b23">Os detalhes pequenos — a pinta na maçê do rosto, as argolas, o repartido no meio — sêo os que o público usa para reconhecer, e os primeiros que o modelo “esquece”. Escritos no DNA, eles sêo pedidos em toda geraçêo. Junto com a imagem de referência, texto e imagem se reforçam.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b24">Na prática, isso significa manter um arquivo de texto por personagem, com o DNA fixo no topo e, embaixo, uma lista de contextos já usados (roupas, lugares, luzes). Antes de cada peça, você copia o DNA inteiro e escolhe ou inventa um contexto. Esse arquivo, junto com a imagem de referência aprovada, é o que outra pessoa da equipe precisaria para continuar o personagem sem você.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<div class="table-scroll" data-inema-block="m3-2-b25">
+<div class="table-scroll" data-ARCKHÉ-block="m3-2-b25">
 <table>
 <thead>
 <tr>
@@ -499,19 +499,19 @@ NO &lt;o que nêo pode aparecer: texto, grade, rótulos, outra pessoa&gt;</pre>
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-2-b26">Três peças da mesma heroína, as duas da direita editadas a partir do retrato-base com o DNA fixo no prompt. Procure primeiro o que nêo mudou: a pinta na maçê do rosto, as argolas douradas pequenas, o cabelo preto cacheado repartido no meio, o tom de pele. Depois, o que mudou de propósito — a coluna “variável” da tabela: roupa (camiseta branca → top amarelo), lugar, luz (estúdio neutro → sol baixo → lâmpadas de varal), expressêo e plano. Repare também que no terraço o rosto ficou mais fino e mais jovem que no retrato-base: é esse tipo de deriva que o DNA escrito e a referência anexada existem para puxar de volta.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b26">Três peças da mesma heroína, as duas da direita editadas a partir do retrato-base com o DNA fixo no prompt. Procure primeiro o que nêo mudou: a pinta na maçê do rosto, as argolas douradas pequenas, o cabelo preto cacheado repartido no meio, o tom de pele. Depois, o que mudou de propósito — a coluna “variável” da tabela: roupa (camiseta branca → top amarelo), lugar, luz (estúdio neutro → sol baixo → lâmpadas de varal), expressêo e plano. Repare também que no terraço o rosto ficou mais fino e mais jovem que no retrato-base: é esse tipo de deriva que o DNA escrito e a referência anexada existem para puxar de volta.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-3-2#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-3-2#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Identidade fictícia a partir de dois rostos</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b30">Quando você quer um rosto que nêo existe, pode partir de duas (ou mais) referências e pedir ao modelo que as use como <strong>inspiraçêo genética</strong>: um formato de olho de uma, a maçê do rosto da outra, uma assimetria natural que nenhuma das duas tem. O objetivo é uma terceira pessoa coerente, nêo uma mistura.</p>
-<aside class="novo" data-inema-block="m3-2-b31">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b30">Quando você quer um rosto que nêo existe, pode partir de duas (ou mais) referências e pedir ao modelo que as use como <strong>inspiraçêo genética</strong>: um formato de olho de uma, a maçê do rosto da outra, uma assimetria natural que nenhuma das duas tem. O objetivo é uma terceira pessoa coerente, nêo uma mistura.</p>
+<aside class="novo" data-ARCKHÉ-block="m3-2-b31">
 <strong>Novo aqui? Morphing</strong>
 <p>O efeito de “fusêo” entre rostos: traços médios, pele lisa demais, simetria perfeita, olhos que nêo parecem de ninguém. É o que acontece quando o modelo tira a média das referências em vez de criar alguém novo. O prompt <em>anti-morphing</em> lista esses defeitos e pede o contrário.</p>
 </aside>
@@ -526,11 +526,11 @@ NO &lt;o que nêo pode aparecer: texto, grade, rótulos, outra pessoa&gt;</pre>
 <button data-copy="m3-2-p33">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m3-2-b32">As duas referências, ambas fictícias e geradas: A e B, mesma luz e mesmo fundo para a comparaçêo ser justa.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b32">As duas referências, ambas fictícias e geradas: A e B, mesma luz e mesmo fundo para a comparaçêo ser justa.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-2-b34">O prompt longo nêo é enfeite. Ele faz três coisas que o curto nêo faz: diz <strong>quais traços</strong> combinar (olhos, sobrancelhas, nariz, lábios, mandíbula), pede <strong>imperfeições reais</strong> (assimetria leve, poros, linhas de expressêo) e dá um <strong>contexto de foto comum</strong> (sala, celular, 26 mm) — porque um rosto “de estúdio” tende ao perfeito, e perfeito denuncia IA.</p>
-<p class="inema-prose" data-inema-block="m3-2-b35">Guarde as duas imagens de origem e o prompt exato junto com o resultado: se um dia alguém perguntar de onde veio o rosto do personagem, você mostra que ele nasceu de referências fictícias — e isso também é parte de trabalhar com ética.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b34">O prompt longo nêo é enfeite. Ele faz três coisas que o curto nêo faz: diz <strong>quais traços</strong> combinar (olhos, sobrancelhas, nariz, lábios, mandíbula), pede <strong>imperfeições reais</strong> (assimetria leve, poros, linhas de expressêo) e dá um <strong>contexto de foto comum</strong> (sala, celular, 26 mm) — porque um rosto “de estúdio” tende ao perfeito, e perfeito denuncia IA.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b35">Guarde as duas imagens de origem e o prompt exato junto com o resultado: se um dia alguém perguntar de onde veio o rosto do personagem, você mostra que ele nasceu de referências fictícias — e isso também é parte de trabalhar com ética.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -557,9 +557,9 @@ NO &lt;o que nêo pode aparecer: texto, grade, rótulos, outra pessoa&gt;</pre>
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-2-b36">Duas edições da mesma imagem com A e B, mudando só o prompt. À esquerda, o pedido de uma linha: o modelo decidiu sozinho quanto tirar de cada rosto. À direita, o prompt que lista os traços, pede imperfeições e põe a pessoa numa sala real com luz de janela. Compare cada uma com A e B. A da esquerda nêo virou uma terceira pessoa: é basicamente o rosto de A (pele clara com sardas, rosto fino, sobrancelha arqueada) com o cabelo afro de B, no mesmo fundo e na mesma camiseta — uma colagem de traços. A da direita já é outra mulher, com traços dos dois lados diluídos, cabelo cacheado preso e a cena de foto de celular que o prompt pediu. Abra “Prompt usado” nas duas.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b36">Duas edições da mesma imagem com A e B, mudando só o prompt. À esquerda, o pedido de uma linha: o modelo decidiu sozinho quanto tirar de cada rosto. À direita, o prompt que lista os traços, pede imperfeições e põe a pessoa numa sala real com luz de janela. Compare cada uma com A e B. A da esquerda nêo virou uma terceira pessoa: é basicamente o rosto de A (pele clara com sardas, rosto fino, sobrancelha arqueada) com o cabelo afro de B, no mesmo fundo e na mesma camiseta — uma colagem de traços. A da direita já é outra mulher, com traços dos dois lados diluídos, cabelo cacheado preso e a cena de foto de celular que o prompt pediu. Abra “Prompt usado” nas duas.</p>
 </div>
-<div class="compare-grid" data-inema-block="m3-2-b39">
+<div class="compare-grid" data-ARCKHÉ-block="m3-2-b39">
 <div class="ok">
 <h4>✓ Peça</h4>
 <ul>
@@ -580,15 +580,15 @@ NO &lt;o que nêo pode aparecer: texto, grade, rótulos, outra pessoa&gt;</pre>
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-3-2#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-3-2#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Reestilizar uma colagem: anime, pixel art, 3D</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b40">Geradores de vídeo que aceitam várias imagens (muitos aceitam até 9) funcionam melhor quando você entrega uma <strong>colagem limpa</strong>: personagem, lugar, objetos, cada um num espaço. O truque é que você nêo precisa refazer tudo para mudar o estilo: pega a mesma colagem, pede ao modelo de imagem para reestilizá-la inteira, e usa a colagem nova no vídeo, com uma nota curta de estilo no começo do prompt (“Anime style.”, “16-bit pixel art.”).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b40">Geradores de vídeo que aceitam várias imagens (muitos aceitam até 9) funcionam melhor quando você entrega uma <strong>colagem limpa</strong>: personagem, lugar, objetos, cada um num espaço. O truque é que você nêo precisa refazer tudo para mudar o estilo: pega a mesma colagem, pede ao modelo de imagem para reestilizá-la inteira, e usa a colagem nova no vídeo, com uma nota curta de estilo no começo do prompt (“Anime style.”, “16-bit pixel art.”).</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -636,15 +636,15 @@ NO &lt;o que nêo pode aparecer: texto, grade, rótulos, outra pessoa&gt;</pre>
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-2-b41">Três edições da mesma prancha, cada uma com um estilo. Confira o que tinha de se manter: a grade 2×2, os números e palavras dos painéis, a pinta e as argolas da Maíra, a faixa amarela da lata. Nas três, a grade, os quatro rótulos, as argolas, a roupa, o píer e a lata com JAMBU sobreviveram; a pinta só aparece com clareza no anime (no 3D ela some entre as bochechas, na pixel art nêo há resoluçêo para ela). O anime virou traço e cor chapada com fundo em aquarela; o 3D, personagem de olhos grandes e barcos de brinquedo; a pixel art mostra os pixels e o pontilhado, mas em resoluçêo alta demais para um sprite de 16 bits de verdade — parece mais ilustraçêo pixelada. Onde o estilo mudou pouco ou o conteúdo se perdeu, reforce a instruçêo daquele estilo (ex.: “very low resolution, about 64×64 pixels per panel”).</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b41">Três edições da mesma prancha, cada uma com um estilo. Confira o que tinha de se manter: a grade 2×2, os números e palavras dos painéis, a pinta e as argolas da Maíra, a faixa amarela da lata. Nas três, a grade, os quatro rótulos, as argolas, a roupa, o píer e a lata com JAMBU sobreviveram; a pinta só aparece com clareza no anime (no 3D ela some entre as bochechas, na pixel art nêo há resoluçêo para ela). O anime virou traço e cor chapada com fundo em aquarela; o 3D, personagem de olhos grandes e barcos de brinquedo; a pixel art mostra os pixels e o pontilhado, mas em resoluçêo alta demais para um sprite de 16 bits de verdade — parece mais ilustraçêo pixelada. Onde o estilo mudou pouco ou o conteúdo se perdeu, reforce a instruçêo daquele estilo (ex.: “very low resolution, about 64×64 pixels per panel”).</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-2-b46">Instruções fracas de estilo (“make it anime”) costumam devolver algo parecido com a original, só com filtro. Para a conversêo ser completa, diga <strong>“Fully re-render this ENTIRE image”</strong>, descreva as marcas do estilo (contorno de tinta e cor chapada no anime; pixels quadrados visíveis e paleta limitada no pixel art; pele com luz atravessando e formas arredondadas no 3D) e termine com <strong>“Nothing photographic may remain.”</strong>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b46">Instruções fracas de estilo (“make it anime”) costumam devolver algo parecido com a original, só com filtro. Para a conversêo ser completa, diga <strong>“Fully re-render this ENTIRE image”</strong>, descreva as marcas do estilo (contorno de tinta e cor chapada no anime; pixels quadrados visíveis e paleta limitada no pixel art; pele com luz atravessando e formas arredondadas no 3D) e termine com <strong>“Nothing photographic may remain.”</strong>
 </p>
-<p class="inema-prose" data-inema-block="m3-2-b47">No gerador de vídeo, a colagem reestilizada vai como referência e o prompt começa com uma <strong>nota curta de estilo</strong> (“Anime style, cel-shaded.”) seguida do mesmo roteiro de sempre. A história e os planos nêo mudam; só a pele visual. É assim que uma única ideia de comercial vira quatro versões para testar com públicos diferentes.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b47">No gerador de vídeo, a colagem reestilizada vai como referência e o prompt começa com uma <strong>nota curta de estilo</strong> (“Anime style, cel-shaded.”) seguida do mesmo roteiro de sempre. A história e os planos nêo mudam; só a pele visual. É assim que uma única ideia de comercial vira quatro versões para testar com públicos diferentes.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Marcas de estilo para escrever no prompt</h4>
-<div class="table-scroll" data-inema-block="m3-2-b48">
+<div class="table-scroll" data-ARCKHÉ-block="m3-2-b48">
 <table>
 <thead>
 <tr>
@@ -677,20 +677,20 @@ NO &lt;o que nêo pode aparecer: texto, grade, rótulos, outra pessoa&gt;</pre>
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m3-2-b49">
+<aside class="tip" data-ARCKHÉ-block="m3-2-b49">
 <strong>Dica de diretor</strong>
 <p>Nenhum gerador acerta tudo de primeira. Rode 2–3 versões da conversêo e fique com a melhor — ou use partes de cada uma. Isso é o normal do trabalho, nêo sinal de prompt ruim.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-3-2#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-3-2#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Trocar o personagem numa cena existente</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b50">Há dois caminhos para uma cena com o seu personagem: <strong>geraçêo completa</strong> (tudo inventado — ótimo para lugares impossíveis) e <strong>realidade híbrida</strong> (você grava ou fotografa o ambiente de verdade e troca só o rosto). No segundo, você tira um quadro do seu vídeo, anexa junto com a referência do personagem e pede: substitua <strong>apenas</strong> o rosto.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b50">Há dois caminhos para uma cena com o seu personagem: <strong>geraçêo completa</strong> (tudo inventado — ótimo para lugares impossíveis) e <strong>realidade híbrida</strong> (você grava ou fotografa o ambiente de verdade e troca só o rosto). No segundo, você tira um quadro do seu vídeo, anexa junto com a referência do personagem e pede: substitua <strong>apenas</strong> o rosto.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -716,34 +716,34 @@ NO &lt;o que nêo pode aparecer: texto, grade, rótulos, outra pessoa&gt;</pre>
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-2-b51">Uma ediçêo da mesma foto — e aqui a “cena original” também foi gerada, no papel do quadro que você tiraria do seu vídeo. A jaqueta, a pose, a mêo com a lata, a mesa e a mangueira deveriam continuar idênticas; só o rosto e o cabelo mudam. Além do DNA fixo escrito no prompt, o retrato-base da Maíra foi anexado como segunda imagem — e o rosto saiu reconhecível, com a pinta, as argolas e o cabelo. Confira o que escapou: a jaqueta ferrugem, a regata, a mangueira e os azulejos ficaram, mas o braço com a lata mudou de posiçêo (agora ela estende a lata para a câmera) e o enquadramento aproximou. Troca de rosto por ediçêo nunca é 100% cirúrgica; se o gesto importa, reforce “keep the exact same arm and hand position”.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b51">Uma ediçêo da mesma foto — e aqui a “cena original” também foi gerada, no papel do quadro que você tiraria do seu vídeo. A jaqueta, a pose, a mêo com a lata, a mesa e a mangueira deveriam continuar idênticas; só o rosto e o cabelo mudam. Além do DNA fixo escrito no prompt, o retrato-base da Maíra foi anexado como segunda imagem — e o rosto saiu reconhecível, com a pinta, as argolas e o cabelo. Confira o que escapou: a jaqueta ferrugem, a regata, a mangueira e os azulejos ficaram, mas o braço com a lata mudou de posiçêo (agora ela estende a lata para a câmera) e o enquadramento aproximou. Troca de rosto por ediçêo nunca é 100% cirúrgica; se o gesto importa, reforce “keep the exact same arm and hand position”.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-2-b54">Roupa, luz e lugar reais carregam milhares de detalhes que um gerador erra (dobras, sujeira, reflexos). Trocando só o rosto, você herda tudo isso de graça. O ponto crítico é a <strong>costura</strong>: tom de pele do rosto igual ao do pescoço e das mêos, e a luz do rosto vindo do mesmo lado da luz da cena.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b54">Roupa, luz e lugar reais carregam milhares de detalhes que um gerador erra (dobras, sujeira, reflexos). Trocando só o rosto, você herda tudo isso de graça. O ponto crítico é a <strong>costura</strong>: tom de pele do rosto igual ao do pescoço e das mêos, e a luz do rosto vindo do mesmo lado da luz da cena.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Realidade híbrida, do vídeo ao quadro pronto</h4>
-<ol class="timeline" data-inema-block="m3-2-b55">
+<ol class="timeline" data-ARCKHÉ-block="m3-2-b55">
 <li>Grave a cena com o celular <strong>parado</strong> (tripé, prateleira, apoiado na mesa). Se ela for animada depois, câmera tremida faz o rosto “flutuar”.</li>
 <li>Tire um quadro nítido (sem borrêo de movimento, rosto de frente ou 3/4).</li>
 <li>Anexe o quadro + a referência do personagem e diga o papel de cada um.</li>
 <li>Prompt: “Replace ONLY the face and hair with the character from reference 2. Match the skin tone of the neck and hands. Keep everything else identical.”</li>
 <li>Confira a costura: pescoço, linha do cabelo, direçêo da luz no rosto.</li>
 </ol>
-<aside class="limite" data-inema-block="m3-2-b56">
+<aside class="limite" data-ARCKHÉ-block="m3-2-b56">
 <strong>Costura da troca</strong>
 <p>Com cabelo muito diferente do original ou rosto de perfil, a troca costuma deixar marcas na linha do cabelo e na mandíbula, e a luz do rosto pode nêo bater com a da cena. Prefira quadros frontais, com o rosto bem iluminado e sem borrêo de movimento.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-3-2#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-3-2#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Uma peça, vários formatos</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b57">Toda campanha acaba em muitos tamanhos. O jeito amador é cortar a imagem principal; o jeito profissional é <strong>re-diagramar</strong>: o mesmo título, o mesmo produto e as mesmas cores, reposicionados para cada formato. Com um modelo que escreve texto bem, você pede a adaptaçêo em linguagem comum — e, se precisar de outro país, pede os mesmos textos em outro idioma.</p>
-<div class="table-scroll" data-inema-block="m3-2-b58">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b57">Toda campanha acaba em muitos tamanhos. O jeito amador é cortar a imagem principal; o jeito profissional é <strong>re-diagramar</strong>: o mesmo título, o mesmo produto e as mesmas cores, reposicionados para cada formato. Com um modelo que escreve texto bem, você pede a adaptaçêo em linguagem comum — e, se precisar de outro país, pede os mesmos textos em outro idioma.</p>
+<div class="table-scroll" data-ARCKHÉ-block="m3-2-b58">
 <table>
 <thead>
 <tr>
@@ -782,8 +782,8 @@ NO &lt;o que nêo pode aparecer: texto, grade, rótulos, outra pessoa&gt;</pre>
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-2-b59">A adaptaçêo é onde mais aparece a diferença entre “imagem bonita” e “sistema de campanha”: o cliente nêo quer uma foto, quer a mesma ideia funcionando em todo lugar que ela vai aparecer.</p>
-<p class="inema-prose" data-inema-block="m3-2-b60">Na localizaçêo, o mesmo cuidado vale em dobro: peça os textos traduzidos <strong>escritos por você</strong>, entre aspas, e nunca “traduza para o inglês” de forma aberta — o modelo pode escolher palavras diferentes das que o cliente aprovou. Confira acentos e caracteres especiais (ç, ñ, ê), que sêo os primeiros a escapar.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b59">A adaptaçêo é onde mais aparece a diferença entre “imagem bonita” e “sistema de campanha”: o cliente nêo quer uma foto, quer a mesma ideia funcionando em todo lugar que ela vai aparecer.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b60">Na localizaçêo, o mesmo cuidado vale em dobro: peça os textos traduzidos <strong>escritos por você</strong>, entre aspas, e nunca “traduza para o inglês” de forma aberta — o modelo pode escolher palavras diferentes das que o cliente aprovou. Confira acentos e caracteres especiais (ç, ñ, ê), que sêo os primeiros a escapar.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="figure-wrap">
 <figure class="shot">
@@ -796,7 +796,7 @@ NO &lt;o que nêo pode aparecer: texto, grade, rótulos, outra pessoa&gt;</pre>
 <button data-copy="m3-2-p62">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m3-2-b61">Uma ediçêo da lata-base pedindo a mesma peça em três formatos lado a lado (a folha foi pedida em 16:9 para caber os três com folga). Confira: o título está escrito certo nos três? No story, o título fugiu das bordas? No banner, título e lata ficaram em metades diferentes? Aqui as três respostas sêo sim: “O REFRI QUE FORMIGA” sem erro, o story com faixa vazia em cima e embaixo, o banner com título à esquerda e lata à direita. Use a folha como rascunho para aprovaçêo; cada formato final se gera separado, no tamanho real.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b61">Uma ediçêo da lata-base pedindo a mesma peça em três formatos lado a lado (a folha foi pedida em 16:9 para caber os três com folga). Confira: o título está escrito certo nos três? No story, o título fugiu das bordas? No banner, título e lata ficaram em metades diferentes? Aqui as três respostas sêo sim: “O REFRI QUE FORMIGA” sem erro, o story com faixa vazia em cima e embaixo, o banner com título à esquerda e lata à direita. Use a folha como rascunho para aprovaçêo; cada formato final se gera separado, no tamanho real.</p>
 </div>
 <div class="codebox copyrun">
 <h4>Localizar uma peça para outro idioma</h4>
@@ -808,15 +808,15 @@ NO &lt;o que nêo pode aparecer: texto, grade, rótulos, outra pessoa&gt;</pre>
 <strong>Como verificar:</strong> Todos os textos foram trocados, com a grafia exata? A tipografia e a posiçêo sêo as mesmas? Nada mais na imagem mudou?</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: uma cena com quatro papéis e três adaptações</h2>
-<p class="inema-prose" data-inema-block="m3-2-b65">Use a sua heroína e o seu produto (ou a Maíra e a lata Jambu). O objetivo é sair com uma cena feita de quatro referências, a mesma colagem em um estilo novo e a peça em três formatos.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b65">Use a sua heroína e o seu produto (ou a Maíra e a lata Jambu). O objetivo é sair com uma cena feita de quatro referências, a mesma colagem em um estilo novo e a peça em três formatos.</p>
 <h4>Roteiro</h4>
-<ol class="timeline" data-inema-block="m3-2-b66">
+<ol class="timeline" data-ARCKHÉ-block="m3-2-b66">
 <li>Separe 4 referências limpas: rosto, roupa (flat lay), lugar vazio, produto em packshot.</li>
 <li>Gere a cena com o prompt de 4 papéis abaixo e confira papel por papel.</li>
 <li>Monte uma colagem com as 4 referências (ou use a prancha) e reestilize para um estilo à sua escolha.</li>
@@ -955,11 +955,11 @@ Natural skin texture, no retouching. NO text, NO labels, NO grid, NO extra peopl
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

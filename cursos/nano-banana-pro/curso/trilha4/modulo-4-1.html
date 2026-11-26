@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="nano-banana-pro">
+<meta name="ARCKHÉ-course" content="nano-banana-pro">
 <meta name="description" content="Ao terminar, você entrega uma campanha completa — 3 fotos de produto, 3 imagens da heroína com o produto, uma peça com texto, um infográfico e um storyboard — avaliada por uma rubrica e apresentada numa prancha para o cliente.">
-<title>Projeto final: campanha Jambu · INEMA.CLUB</title>
+<title>Projeto final: campanha Jambu · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "nano-banana-pro", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Prepare o modelo, o briefing e as referências", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Produto e personagem: uma base consistente", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controle de marca: cor, texto e hierarquia", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Exploraçêo criativa e storyboard", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Edições, referências múltiplas e adaptações", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: campanha Jambu", "topics": 8, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "nano-banana-pro", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Prepare o modelo, o briefing e as referências", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Produto e personagem: uma base consistente", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controle de marca: cor, texto e hierarquia", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Exploraçêo criativa e storyboard", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Edições, referências múltiplas e adaptações", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: campanha Jambu", "topics": 8, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html" aria-current="page">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Projeto final: campanha Jambu</h1>
 <p>Ao terminar, você entrega uma campanha completa — 3 fotos de produto, 3 imagens da heroína com o produto, uma peça com texto, um infográfico e um storyboard — avaliada por uma rubrica e apresentada numa prancha para o cliente.</p>
 <p class="meta">8 tópicos · 3–4 h (projeto) · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:4-1">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:4-1">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -176,9 +176,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="4-1" data-inema-track="4">
+<article class="lesson" data-ARCKHÉ-module="4-1" data-ARCKHÉ-track="4">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m4-1-b1">Este é o módulo em que tudo vira <strong>entrega</strong>. Até aqui você aprendeu as peças separadas: a lata (1-1), a Maíra (1-2), a marca com texto e HEX (2-1), a exploraçêo e o storyboard (3-1), as referências múltiplas (3-2). Agora você monta o sistema inteiro de uma campanha — do jeito que ele chegaria a um cliente de verdade, com briefing, peças coerentes entre si, controle de qualidade e apresentaçêo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b1">Este é o módulo em que tudo vira <strong>entrega</strong>. Até aqui você aprendeu as peças separadas: a lata (1-1), a Maíra (1-2), a marca com texto e HEX (2-1), a exploraçêo e o storyboard (3-1), as referências múltiplas (3-2). Agora você monta o sistema inteiro de uma campanha — do jeito que ele chegaria a um cliente de verdade, com briefing, peças coerentes entre si, controle de qualidade e apresentaçêo.</p>
 <figure class="diagram">
 <svg role="img" aria-label="O fluxo da campanha. As setas de volta sêo normais: uma peça reprovada no controle de qualidade volta uma etapa, nêo para o começo." viewBox="0 0 780 250" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
 <rect width="780" height="250" rx="14" fill="var(--surface-2)"/>
@@ -216,13 +216,13 @@
 <figcaption>O fluxo da campanha. As setas de volta sêo normais: uma peça reprovada no controle de qualidade volta uma etapa, nêo para o começo.</figcaption>
 </figure>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-4-1#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-4-1#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>O briefing: o que o cliente pediu</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b3">Todo projeto começa numa página de texto. Para a Jambu, o conceito escolhido no módulo 3-1 foi <strong>“Depois do calor”</strong>: o meio-dia abafado de Belém, a chuva da tarde que alivia, e a lata que faz a boca formigar e o dia acordar. O slogan definido no manual de marca (2-1) é <strong>“O refri que formiga”</strong>.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b3">Todo projeto começa numa página de texto. Para a Jambu, o conceito escolhido no módulo 3-1 foi <strong>“Depois do calor”</strong>: o meio-dia abafado de Belém, a chuva da tarde que alivia, e a lata que faz a boca formigar e o dia acordar. O slogan definido no manual de marca (2-1) é <strong>“O refri que formiga”</strong>.</p>
 <h4>Briefing — Jambu, campanha “Depois do calor”</h4>
-<div class="table-scroll" data-inema-block="m4-1-b4">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b4">
 <table>
 <thead>
 <tr>
@@ -263,7 +263,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b5">O briefing é o critério de aprovaçêo. Na hora de escolher entre duas imagens, a pergunta deixa de ser “qual é mais bonita?” e passa a ser “qual conta melhor o <strong>Depois do calor</strong> para esse público?”. Ele também protege você do cliente que muda de ideia no meio: o que foi combinado está escrito.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b5">O briefing é o critério de aprovaçêo. Na hora de escolher entre duas imagens, a pergunta deixa de ser “qual é mais bonita?” e passa a ser “qual conta melhor o <strong>Depois do calor</strong> para esse público?”. Ele também protege você do cliente que muda de ideia no meio: o que foi combinado está escrito.</p>
 <figure class="diagram">
 <svg role="img" aria-label="O briefing nêo descreve imagens: ele vira a pergunta com que você escolhe entre elas. Leia da esquerda para a direita — cada campo tem uma resposta só; na hora de aprovar, as duas peças passam pela mesma pergunta, e ganha a que conta o “Depois do calor” para aquele público, nêo a mais bonita." viewBox="0 0 760 320" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
 <rect width="760" height="320" rx="14" fill="var(--surface-2)"/>
@@ -312,22 +312,22 @@
 <figcaption>O briefing nêo descreve imagens: ele vira a pergunta com que você escolhe entre elas. Leia da esquerda para a direita — cada campo tem uma resposta só; na hora de aprovar, as duas peças passam pela mesma pergunta, e ganha a que conta o “Depois do calor” para aquele público, nêo a mais bonita.</figcaption>
 </figure>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<p class="inema-prose" data-inema-block="m4-1-b7">Um bom briefing é curto e decidido: cada campo tem uma resposta, nêo três opções. Se você ainda está em dúvida entre dois conceitos, a dúvida vai para a apresentaçêo como “conceito A e plano B”, nêo para dentro do briefing. E escreva o público como uma pessoa concreta — idade, cidade, o que faz à noite — porque é essa pessoa que vai decidir se a Maíra parece alguém que ela conhece.</p>
-<aside class="tip" data-inema-block="m4-1-b8">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b7">Um bom briefing é curto e decidido: cada campo tem uma resposta, nêo três opções. Se você ainda está em dúvida entre dois conceitos, a dúvida vai para a apresentaçêo como “conceito A e plano B”, nêo para dentro do briefing. E escreva o público como uma pessoa concreta — idade, cidade, o que faz à noite — porque é essa pessoa que vai decidir se a Maíra parece alguém que ela conhece.</p>
+<aside class="tip" data-ARCKHÉ-block="m4-1-b8">
 <strong>Molde pronto</strong>
 <p>O arquivo <code>brief-campanha.md</code>, nos Materiais do curso, traz este briefing como molde com campos para preencher — use-o para o seu produto.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-4-1#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-4-1#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Entregável 1: três fotos de produto</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b9">As três fotos de produto partem da <strong>lata-base</strong> do módulo 1-1 (ediçêo, nêo geraçêo nova): é o que garante que o rótulo, a faixa amarela e o wordmark sejam idênticos nas três. O que muda é o ângulo, a lente e a situaçêo — todas dentro do conceito: calor, gelo, chuva.</p>
-<div class="table-scroll" data-inema-block="m4-1-b10">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b9">As três fotos de produto partem da <strong>lata-base</strong> do módulo 1-1 (ediçêo, nêo geraçêo nova): é o que garante que o rótulo, a faixa amarela e o wordmark sejam idênticos nas três. O que muda é o ângulo, a lente e a situaçêo — todas dentro do conceito: calor, gelo, chuva.</p>
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b10">
 <table>
 <thead>
 <tr>
@@ -360,8 +360,8 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b11">Um cliente nunca usa uma foto só. O mesmo produto precisa parecer monumental num cartaz, organizado num feed e sensorial num vídeo — e as três precisam parecer <strong>da mesma sessêo de fotos</strong>.</p>
-<p class="inema-prose" data-inema-block="m4-1-b12">Os termos de ângulo e lente vêm da fotografia, e é por isso que funcionam: os modelos aprenderam com milhões de fotos legendadas com essas palavras. “Low angle”, “bird's-eye”, “macro profile”, “Dutch angle”, “over-the-shoulder”, “35mm anamorphic”, “85mm macro, f/1.8” — cada termo puxa um conjunto de decisões visuais inteiro. Use o termo técnico em vez de descrever (“câmera no chêo olhando para cima”).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b11">Um cliente nunca usa uma foto só. O mesmo produto precisa parecer monumental num cartaz, organizado num feed e sensorial num vídeo — e as três precisam parecer <strong>da mesma sessêo de fotos</strong>.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b12">Os termos de ângulo e lente vêm da fotografia, e é por isso que funcionam: os modelos aprenderam com milhões de fotos legendadas com essas palavras. “Low angle”, “bird's-eye”, “macro profile”, “Dutch angle”, “over-the-shoulder”, “35mm anamorphic”, “85mm macro, f/1.8” — cada termo puxa um conjunto de decisões visuais inteiro. Use o termo técnico em vez de descrever (“câmera no chêo olhando para cima”).</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-3">
@@ -399,25 +399,25 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m4-1-b13">Três edições da mesma lata-base. Confira em todas: a faixa amarela no topo, a ilustraçêo dos botões de jambu e o nome JAMBU sêo os mesmos? Onde o nome nêo aparece (perfil), a silhueta e a cor ainda dizem qual é o produto?</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b13">Três edições da mesma lata-base. Confira em todas: a faixa amarela no topo, a ilustraçêo dos botões de jambu e o nome JAMBU sêo os mesmos? Onde o nome nêo aparece (perfil), a silhueta e a cor ainda dizem qual é o produto?</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-4-1#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-4-1#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>Entregável 2: três imagens da heroína com o produto</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b17">Aqui as três imagens partem da <strong>imagem-base da Maíra</strong> e recebem o produto por descriçêo (DNA fixo + descriçêo da lata). Em ferramentas com várias referências, anexe também a lata-base com o papel “objeto” (módulo 3-2) — a fidelidade do rótulo sobe bastante.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b17">Aqui as três imagens partem da <strong>imagem-base da Maíra</strong> e recebem o produto por descriçêo (DNA fixo + descriçêo da lata). Em ferramentas com várias referências, anexe também a lata-base com o papel “objeto” (módulo 3-2) — a fidelidade do rótulo sobe bastante.</p>
 <div class="codebox">
 <h4>Bloco da lata (cole em todo prompt com a heroína)</h4>
 <pre id="m4-1-p19" data-lang="text">holding a slim matte leaf-green (#2F7D32) aluminum can with a yellow (#F2C200) top band, the wordmark &#x27;JAMBU&#x27; in bold rounded cream-white uppercase letters and a small yellow line drawing of jambu flower buds near the bottom</pre>
 <button data-copy="m4-1-p19">Copiar</button>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b20">Os três contextos cobrem três momentos do dia e três humores: a travessia de barco (calma, tarde), a chuva na rua de mangueiras (alívio, euforia) e o terraço à noite (celebraçêo). Uma campanha com três fotos no mesmo humor parece repetitiva; três humores com a mesma pessoa parecem uma história.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b20">Os três contextos cobrem três momentos do dia e três humores: a travessia de barco (calma, tarde), a chuva na rua de mangueiras (alívio, euforia) e o terraço à noite (celebraçêo). Uma campanha com três fotos no mesmo humor parece repetitiva; três humores com a mesma pessoa parecem uma história.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-3">
@@ -455,9 +455,9 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m4-1-b21">Três edições da mesma imagem-base da Maíra, cada uma com a lata-base anexada como segunda referência. Faça o teste do continuísta: pinta na maçê do rosto esquerda, argolas douradas, cabelo volumoso com repartido no meio — presentes nas três? A lata tem a faixa amarela e o nome legível? Na foto da noite, a roupa mudou de propósito (contexto variável); o rosto nêo pode mudar. Dois desvios para anotar: na chuva, com o plano de corpo inteiro, a pinta fica pequena demais para conferir (faça o teste num recorte ampliado); e na noite o prompt pedia câmera muito baixa e inclinada, mas a câmera ficou só um pouco abaixo do rosto — ângulo extremo costuma exigir uma ediçêo dedicada.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b21">Três edições da mesma imagem-base da Maíra, cada uma com a lata-base anexada como segunda referência. Faça o teste do continuísta: pinta na maçê do rosto esquerda, argolas douradas, cabelo volumoso com repartido no meio — presentes nas três? A lata tem a faixa amarela e o nome legível? Na foto da noite, a roupa mudou de propósito (contexto variável); o rosto nêo pode mudar. Dois desvios para anotar: na chuva, com o plano de corpo inteiro, a pinta fica pequena demais para conferir (faça o teste num recorte ampliado); e na noite o prompt pedia câmera muito baixa e inclinada, mas a câmera ficou só um pouco abaixo do rosto — ângulo extremo costuma exigir uma ediçêo dedicada.</p>
 </div>
-<div class="compare-grid" data-inema-block="m4-1-b25">
+<div class="compare-grid" data-ARCKHÉ-block="m4-1-b25">
 <div class="ok">
 <h4>✓ Aprovada se…</h4>
 <ul>
@@ -475,20 +475,20 @@
 </ul>
 </div>
 </div>
-<p class="inema-prose" data-inema-block="m4-1-b26">Ordem de trabalho recomendada: gere a imagem da heroína com o produto primeiro no <strong>contexto mais simples</strong> (o estúdio, como no módulo 1-2), aprove a lata na mêo dela e só entêo leve para os contextos difíceis (chuva, noite). Se a lata sair errada no estúdio, sairá errada em todo lugar — e é mais barato descobrir isso cedo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b26">Ordem de trabalho recomendada: gere a imagem da heroína com o produto primeiro no <strong>contexto mais simples</strong> (o estúdio, como no módulo 1-2), aprove a lata na mêo dela e só entêo leve para os contextos difíceis (chuva, noite). Se a lata sair errada no estúdio, sairá errada em todo lugar — e é mais barato descobrir isso cedo.</p>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-4-1#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-4-1#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Entregável 3: peça com texto e infográfico</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b27">Os dois entregáveis de marca usam o que você aprendeu no módulo 2-1: texto entre aspas simples, exatamente como deve sair; cores por HEX; tipografia descrita pela família (“heavy condensed rounded uppercase sans-serif”), nunca por nome de fonte comercial; e a frase final “Every text spelled exactly as written, no other text.”</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b27">Os dois entregáveis de marca usam o que você aprendeu no módulo 2-1: texto entre aspas simples, exatamente como deve sair; cores por HEX; tipografia descrita pela família (“heavy condensed rounded uppercase sans-serif”), nunca por nome de fonte comercial; e a frase final “Every text spelled exactly as written, no other text.”</p>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b28">O infográfico aqui nêo é o da lata explodida (esse você viu em 2-1): ele mostra <strong>a pessoa, o produto e o caminho do efeito</strong> — do gás na lata ao sorriso — no estilo de um desenho técnico com chamadas numeradas. É o tipo de peça que explica o produto sem uma linha de texto corrido.</p>
-<p class="inema-prose" data-inema-block="m4-1-b29">Para clientes com manual de marca pronto, o caminho mais seguro é anexar <strong>capturas de tela do manual</strong> (a página da paleta com os HEX, a do logotipo, uma peça antiga aprovada) como referências com papel “estilo de marca”. O modelo alinha cores, pesos de letra e espaçamentos ao que vê. Mesmo assim, escreva os HEX e os textos no prompt: a referência mostra, o texto confirma.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b28">O infográfico aqui nêo é o da lata explodida (esse você viu em 2-1): ele mostra <strong>a pessoa, o produto e o caminho do efeito</strong> — do gás na lata ao sorriso — no estilo de um desenho técnico com chamadas numeradas. É o tipo de peça que explica o produto sem uma linha de texto corrido.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b29">Para clientes com manual de marca pronto, o caminho mais seguro é anexar <strong>capturas de tela do manual</strong> (a página da paleta com os HEX, a do logotipo, uma peça antiga aprovada) como referências com papel “estilo de marca”. O modelo alinha cores, pesos de letra e espaçamentos ao que vê. Mesmo assim, escreva os HEX e os textos no prompt: a referência mostra, o texto confirma.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -515,22 +515,22 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m4-1-b30">Duas edições da imagem-base da Maíra. No outdoor, confira letra por letra “O REFRI QUE FORMIGA”, “JAMBU” e “Feito em Belém do Pará”, e se o verde do fundo é o verde da lata. No infográfico, se as quatro chamadas estêo na ordem e com a grafia certa. Nas duas, a grafia saiu certa — mas repare no que a leitura atenta pega: a chamada 4, “O dia acorda”, aponta para a bochecha, nêo para os olhos, e no traço de desenho técnico a pele ficou sem cor, o que apaga parte da identidade da Maíra. Qualquer erro assim: peça a correçêo só daquele elemento, sem regenerar a peça.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b30">Duas edições da imagem-base da Maíra. No outdoor, confira letra por letra “O REFRI QUE FORMIGA”, “JAMBU” e “Feito em Belém do Pará”, e se o verde do fundo é o verde da lata. No infográfico, se as quatro chamadas estêo na ordem e com a grafia certa. Nas duas, a grafia saiu certa — mas repare no que a leitura atenta pega: a chamada 4, “O dia acorda”, aponta para a bochecha, nêo para os olhos, e no traço de desenho técnico a pele ficou sem cor, o que apaga parte da identidade da Maíra. Qualquer erro assim: peça a correçêo só daquele elemento, sem regenerar a peça.</p>
 </div>
-<aside class="limite" data-inema-block="m4-1-b33">
+<aside class="limite" data-ARCKHÉ-block="m4-1-b33">
 <strong>Texto: confira sempre, corrija por ediçêo</strong>
 <p>Modelos atuais escrevem bem, mas nêo perfeitamente: acentos, letras duplicadas e palavras longas ainda escapam, e um HEX pedido pode sair “quase” certo. Confira toda letra antes de entregar e, se precisar, corrija com uma ediçêo curta (“Change ONLY the word X to Y, same font, color and position”). Às vezes sêo necessárias duas ou três tentativas.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-4-1#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-4-1#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Entregável 4: o storyboard</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b34">O storyboard do módulo 3-1 já segue o conceito “Depois do calor” — calor, isopor, lata abrindo, primeiro gole, chuva, packshot — e é o entregável 4. Se você está fazendo o seu produto, gere o seu com o molde <code>storyboard-6-quadros.md</code> dos Materiais.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b34">O storyboard do módulo 3-1 já segue o conceito “Depois do calor” — calor, isopor, lata abrindo, primeiro gole, chuva, packshot — e é o entregável 4. Se você está fazendo o seu produto, gere o seu com o molde <code>storyboard-6-quadros.md</code> dos Materiais.</p>
 <div class="figure-wrap">
 <figure class="shot">
 <a href="../../assets/img/c2-m31-storyboard.webp" target="_blank" rel="noopener">
@@ -538,17 +538,17 @@
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m4-1-p36">Using this exact woman as the protagonist — Maíra: same face, deep brown skin, beauty mark on the left cheekbone, voluminous shoulder-length black wavy-curly hair, small gold hoop earrings and the same white t-shirt in every panel — create a 6-panel cinematic storyboard in a clean 2x3 grid (three panels on top, three below), thin white gutters, each panel numbered 1 to 6 in a small white box in its top-left corner. Photorealistic film stills, consistent warm tropical color grade, Belém riverside setting. 1. Wide shot: sweltering noon at a riverside market, she fans herself with her hand, heat haze. 2. Medium shot: she pulls an ice-cold slim leaf-green aluminum can with a yellow top band and the cream word JAMBU out of a cooler full of ice. 3. Extreme close-up: her hands pop the can open, droplets and a burst of fizz. 4. Close-up: first sip, her eyes wide in surprise, starting to laugh as her lips tingle. 5. Full shot, backlit: the afternoon rain starts and she laughs under the rain, arms open, can in hand. 6. Packshot: the wet can alone on a riverside railing, river and wooden boats softly blurred behind, the word JAMBU clearly readable. Same woman, same outfit and same can in every panel. No other text besides the panel numbers and the JAMBU wordmark on the can.</pre>
+<pre id="m4-1-p36">Using this exact woman as the protagonist — Maíra: same face, deep brown skin, beauty mark on the left cheekbone, voluminous shoulder-length black wavy-curly hair, small gold hoop earrings and the same white t-shirt in every panel — create a 6-panel cARCKHÉtic storyboard in a clean 2x3 grid (three panels on top, three below), thin white gutters, each panel numbered 1 to 6 in a small white box in its top-left corner. Photorealistic film stills, consistent warm tropical color grade, Belém riverside setting. 1. Wide shot: sweltering noon at a riverside market, she fans herself with her hand, heat haze. 2. Medium shot: she pulls an ice-cold slim leaf-green aluminum can with a yellow top band and the cream word JAMBU out of a cooler full of ice. 3. Extreme close-up: her hands pop the can open, droplets and a burst of fizz. 4. Close-up: first sip, her eyes wide in surprise, starting to laugh as her lips tingle. 5. Full shot, backlit: the afternoon rain starts and she laughs under the rain, arms open, can in hand. 6. Packshot: the wet can alone on a riverside railing, river and wooden boats softly blurred behind, the word JAMBU clearly readable. Same woman, same outfit and same can in every panel. No other text besides the panel numbers and the JAMBU wordmark on the can.</pre>
 <button data-copy="m4-1-p36">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m4-1-b35">O storyboard da campanha (gerado no módulo 3-1 como ediçêo da imagem-base da Maíra). Na entrega, ele vai acompanhado dos quadros ampliados e de uma linha por quadro com o que acontece no vídeo.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b35">O storyboard da campanha (gerado no módulo 3-1 como ediçêo da imagem-base da Maíra). Na entrega, ele vai acompanhado dos quadros ampliados e de uma linha por quadro com o que acontece no vídeo.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b37">O cliente aprova no storyboard a <strong>ordem</strong> e a <strong>lógica</strong> da história; o vídeo vem depois. Por isso cada quadro precisa de um plano diferente (geral, médio, detalhe, close, inteiro, packshot) e a heroína precisa ser reconhecível em todos.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b37">O cliente aprova no storyboard a <strong>ordem</strong> e a <strong>lógica</strong> da história; o vídeo vem depois. Por isso cada quadro precisa de um plano diferente (geral, médio, detalhe, close, inteiro, packshot) e a heroína precisa ser reconhecível em todos.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Folha do storyboard para a entrega</h4>
-<div class="table-scroll" data-inema-block="m4-1-b38">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b38">
 <table>
 <thead>
 <tr>
@@ -598,18 +598,18 @@
 </tbody>
 </table>
 </div>
-<p class="inema-prose" data-inema-block="m4-1-b39">Os quadros ampliados do storyboard sêo, na etapa seguinte da campanha, os <strong>quadros iniciais</strong> do vídeo: cada um vai para o gerador de vídeo com uma linha de movimento (a coluna “o que acontece” da tabela). Por isso a continuidade entre eles importa tanto — um brinco que some entre o quadro 2 e o 4 vira um brinco que some no meio do comercial.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b39">Os quadros ampliados do storyboard sêo, na etapa seguinte da campanha, os <strong>quadros iniciais</strong> do vídeo: cada um vai para o gerador de vídeo com uma linha de movimento (a coluna “o que acontece” da tabela). Por isso a continuidade entre eles importa tanto — um brinco que some entre o quadro 2 e o 4 vira um brinco que some no meio do comercial.</p>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-4-1#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-4-1#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>O fluxo completo e o checklist de entrega</h2>
 <h3 class="sec">O que é</h3>
 <h4>Ordem de produçêo</h4>
-<ol class="timeline" data-inema-block="m4-1-b40">
+<ol class="timeline" data-ARCKHÉ-block="m4-1-b40">
 <li>
 <strong>Briefing</strong> aprovado (1 página).</li>
 <li>
@@ -628,7 +628,7 @@
 <strong>Prancha de apresentaçêo</strong> e envio.</li>
 </ol>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b41">Se você gera as peças antes de aprovar as bases, qualquer ajuste no rosto da heroína ou no rótulo da lata obriga a refazer tudo. Aprovadas as bases, cada peça é uma ediçêo barata e coerente.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b41">Se você gera as peças antes de aprovar as bases, qualquer ajuste no rosto da heroína ou no rótulo da lata obriga a refazer tudo. Aprovadas as bases, cada peça é uma ediçêo barata e coerente.</p>
 <figure class="diagram">
 <svg role="img" aria-label="Duas linhas para o mesmo pedido do cliente. Em cima, as peças saíram antes de a heroína-base estar aprovada: o ajuste no rosto obriga a refazer e reconferir as oito. Embaixo, o mesmo ajuste acontece na base, antes de qualquer peça — e as oito já nascem certas. É por isso que a etapa das bases, na ordem de produçêo, funciona como um portêo." viewBox="0 0 760 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
 <rect width="760" height="300" rx="14" fill="var(--surface-2)"/>
@@ -670,7 +670,7 @@
 <figcaption>Duas linhas para o mesmo pedido do cliente. Em cima, as peças saíram antes de a heroína-base estar aprovada: o ajuste no rosto obriga a refazer e reconferir as oito. Embaixo, o mesmo ajuste acontece na base, antes de qualquer peça — e as oito já nascem certas. É por isso que a etapa das bases, na ordem de produçêo, funciona como um portêo.</figcaption>
 </figure>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<div class="compare-grid" data-inema-block="m4-1-b43">
+<div class="compare-grid" data-ARCKHÉ-block="m4-1-b43">
 <div class="ok">
 <h4>✓ Checklist: todas as peças</h4>
 <ul>
@@ -694,19 +694,19 @@
 </ul>
 </div>
 </div>
-<p class="inema-prose" data-inema-block="m4-1-b44">Organize os arquivos desde o começo: uma pasta por entregável e um nome que diga o que é e qual versêo (<code>produto-baixo_v3.png</code>), com um <code>.txt</code> do mesmo nome contendo o prompt exato e a imagem de base usada. Quando o cliente pedir “aquela versêo de ontem com a luz mais quente”, você a encontra em segundos e sabe exatamente o que mudar.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b44">Organize os arquivos desde o começo: uma pasta por entregável e um nome que diga o que é e qual versêo (<code>produto-baixo_v3.png</code>), com um <code>.txt</code> do mesmo nome contendo o prompt exato e a imagem de base usada. Quando o cliente pedir “aquela versêo de ontem com a luz mais quente”, você a encontra em segundos e sabe exatamente o que mudar.</p>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-4-1#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-4-1#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Rubrica de avaliaçêo</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b45">Use a rubrica antes de entregar: dê a nota honesta, corrija o que ficou no nível 1 e só entêo monte a prancha. Pontuaçêo máxima: 30 (cada critério vale de 1 a 3, multiplicado pelo peso).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b45">Use a rubrica antes de entregar: dê a nota honesta, corrija o que ficou no nível 1 e só entêo monte a prancha. Pontuaçêo máxima: 30 (cada critério vale de 1 a 3, multiplicado pelo peso).</p>
 <h4>Rubrica — campanha completa</h4>
-<div class="table-scroll" data-inema-block="m4-1-b46">
+<div class="table-scroll" data-ARCKHÉ-block="m4-1-b46">
 <table>
 <thead>
 <tr>
@@ -800,23 +800,23 @@
 <figcaption>Cada barra tracejada é o máximo de um critério (nota 3 × peso); a parte cheia é uma autoavaliaçêo de exemplo que soma 25. Compare os comprimentos: as quatro barras amarelas — produto, heroína, marca e conceito — valem 24 dos 30 pontos. Técnica e storyboard contam, mas uma campanha com a lata errada perde muito mais do que uma com luz genérica.</figcaption>
 </figure>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b48">Os pesos dizem o que importa mais numa campanha com IA: <strong>consistência</strong> e <strong>marca</strong>. Uma imagem espetacular com o rótulo errado nêo pode ir ao ar; uma imagem correta e simples pode.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b48">Os pesos dizem o que importa mais numa campanha com IA: <strong>consistência</strong> e <strong>marca</strong>. Uma imagem espetacular com o rótulo errado nêo pode ir ao ar; uma imagem correta e simples pode.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<p class="inema-prose" data-inema-block="m4-1-b49">Na autoavaliaçêo, anote ao lado de cada nota <strong>a peça que puxou a nota para baixo</strong>. “Consistência da heroína: 2 — no terraço à noite ela parece mais jovem” já diz o que corrigir e em qual imagem. Uma nota sem essa anotaçêo nêo ajuda ninguém, nem você na semana seguinte.</p>
-<aside class="tip" data-inema-block="m4-1-b50">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b49">Na autoavaliaçêo, anote ao lado de cada nota <strong>a peça que puxou a nota para baixo</strong>. “Consistência da heroína: 2 — no terraço à noite ela parece mais jovem” já diz o que corrigir e em qual imagem. Uma nota sem essa anotaçêo nêo ajuda ninguém, nem você na semana seguinte.</p>
+<aside class="tip" data-ARCKHÉ-block="m4-1-b50">
 <strong>Dica de diretor</strong>
 <p>Troque a campanha com um colega e avaliem um ao outro com a rubrica, por escrito, sem conversar antes. A distância entre a sua nota e a dele mostra o que você nêo está enxergando no próprio trabalho.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-8" data-inema-topic="modulo-4-1#topico-8">
+<section class="topic" id="topico-8" data-ARCKHÉ-topic="modulo-4-1#topico-8">
 <h2 class="text-2xl font-bold">
 <span class="number">8</span>A apresentaçêo ao cliente</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m4-1-b51">A <strong>prancha de apresentaçêo</strong> é uma página única com a campanha inteira: título e conceito, a imagem-herói, as fotos de produto, a tira do storyboard, a paleta com HEX e o slogan. Ela pode ser montada num editor de layout com as imagens finais (o jeito mais preciso) ou gerada como rascunho pelo modelo, como fizemos abaixo, para testar a diagramaçêo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b51">A <strong>prancha de apresentaçêo</strong> é uma página única com a campanha inteira: título e conceito, a imagem-herói, as fotos de produto, a tira do storyboard, a paleta com HEX e o slogan. Ela pode ser montada num editor de layout com as imagens finais (o jeito mais preciso) ou gerada como rascunho pelo modelo, como fizemos abaixo, para testar a diagramaçêo.</p>
 <div class="figure-wrap">
 <figure class="shot">
 <a href="../../assets/img/c2-m41-prancha.webp" target="_blank" rel="noopener">
@@ -828,13 +828,13 @@
 <button data-copy="m4-1-p53">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m4-1-b52">Rascunho da prancha gerado como ediçêo da imagem-base da Maíra, com a lata-base anexada. Confira os textos e os HEX antes de usar — aqui o título, os cinco HEX e o slogan saíram corretos, e as três fotos de produto seguem o que foi pedido (parapeito molhado, isopor com gelo, macro com a flor). Na versêo final, substitua as miniaturas pelas imagens reais aprovadas — a prancha gerada serve para decidir o layout, nêo como entrega.</p>
+<p class="caption" data-ARCKHÉ-block="m4-1-b52">Rascunho da prancha gerado como ediçêo da imagem-base da Maíra, com a lata-base anexada. Confira os textos e os HEX antes de usar — aqui o título, os cinco HEX e o slogan saíram corretos, e as três fotos de produto seguem o que foi pedido (parapeito molhado, isopor com gelo, macro com a flor). Na versêo final, substitua as miniaturas pelas imagens reais aprovadas — a prancha gerada serve para decidir o layout, nêo como entrega.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m4-1-b54">Apresentar é contar a história da campanha na mesma ordem em que ela foi pensada. Quem vê a prancha entende em 10 segundos o que você levou dias para decidir.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b54">Apresentar é contar a história da campanha na mesma ordem em que ela foi pensada. Quem vê a prancha entende em 10 segundos o que você levou dias para decidir.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Roteiro de apresentaçêo em 5 minutos</h4>
-<ol class="timeline" data-inema-block="m4-1-b55">
+<ol class="timeline" data-ARCKHÉ-block="m4-1-b55">
 <li>
 <strong>Conceito</strong> (30 s): a frase do briefing e o slogan.</li>
 <li>
@@ -848,19 +848,19 @@
 <li>
 <strong>Próximos passos</strong> (30 s): o que falta aprovar, prazos e o que muda se o cliente pedir ajustes.</li>
 </ol>
-<aside class="tip" data-inema-block="m4-1-b56">
+<aside class="tip" data-ARCKHÉ-block="m4-1-b56">
 <strong>Dica de diretor</strong>
 <p>Leve sempre um <strong>plano B</strong> pronto — uma variaçêo da imagem-herói ou um segundo conceito. Se o cliente rejeitar a primeira proposta, você mostra que já pensou nisso em vez de voltar para a estaca zero.</p>
 </aside>
-<p class="inema-prose" data-inema-block="m4-1-b57">Depois da apresentaçêo vem a <strong>rodada de ajustes</strong>. Anote cada pedido do cliente numa lista, classifique (produto, personagem, marca, cena) e resolva cada um com uma ediçêo localizada sobre a peça aprovada, nunca regenerando do zero. Combine antes quantas rodadas estêo incluídas no trabalho — duas é um número comum — para que ajustes nêo virem um projeto novo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b57">Depois da apresentaçêo vem a <strong>rodada de ajustes</strong>. Anote cada pedido do cliente numa lista, classifique (produto, personagem, marca, cena) e resolva cada um com uma ediçêo localizada sobre a peça aprovada, nunca regenerando do zero. Combine antes quantas rodadas estêo incluídas no trabalho — duas é um número comum — para que ajustes nêo virem um projeto novo.</p>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: a sua campanha, peça por peça</h2>
-<p class="inema-prose" data-inema-block="m4-1-b58">Faça a campanha completa para o seu produto (ou refaça a da Jambu com as suas escolhas). Os moldes abaixo cobrem cada grupo de entregáveis; todos estêo também em <code>prompts-campanha.md</code>, nos Materiais.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b58">Faça a campanha completa para o seu produto (ou refaça a da Jambu com as suas escolhas). Os moldes abaixo cobrem cada grupo de entregáveis; todos estêo também em <code>prompts-campanha.md</code>, nos Materiais.</p>
 <div class="codebox copyrun">
 <h4>Foto de produto (ediçêo da lata-base)</h4>
 <p>
@@ -897,7 +897,7 @@
 <p>
 <strong>Como verificar:</strong> As chamadas estêo na ordem e apontam para a parte certa? A grafia de cada rótulo está exata?</p>
 </div>
-<p class="inema-prose" data-inema-block="m4-1-b67">Para o storyboard, use o prompt do módulo 3-1 (também em <code>storyboard-6-quadros.md</code>) com o DNA fixo da sua heroína e o bloco do seu produto. Para a prancha final, monte num editor de layout com as imagens aprovadas; se quiser um rascunho de diagramaçêo antes, peça ao modelo uma prancha com as áreas descritas, como na imagem do tópico 8.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m4-1-b67">Para o storyboard, use o prompt do módulo 3-1 (também em <code>storyboard-6-quadros.md</code>) com o DNA fixo da sua heroína e o bloco do seu produto. Para a prancha final, monte num editor de layout com as imagens aprovadas; se quiser um rascunho de diagramaçêo antes, peça ao modelo uma prancha com as áreas descritas, como na imagem do tópico 8.</p>
 </section>
 <section id="licao" class="licao">
 <h2>Liçêo de casa</h2>
@@ -1004,11 +1004,11 @@
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="prompting-imagem">
+<meta name="ARCKHÉ-course" content="prompting-imagem">
 <meta name="description" content="Ao terminar, você escreve a ficha de um personagem, produz a imagem de referência e a folha de personagem, e gera uma campanha de seis cenas com o mesmo rosto — sabendo medir quando a identidade começou a escorregar.">
-<title>Personagem e campanha consistentes · INEMA.CLUB</title>
+<title>Personagem e campanha consistentes · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "prompting-imagem", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Escolha sua ferramenta e prepare o projeto", "topics": 8, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "A fórmula do prompt", "topics": 8, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controles e testes dentro das ferramentas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Personagem e campanha consistentes", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Edite sem perder o que já funciona", "topics": 8, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Upscale, restauraçêo e entrega", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: da intençêo ao portfólio", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "prompting-imagem", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Escolha sua ferramenta e prepare o projeto", "topics": 8, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "A fórmula do prompt", "topics": 8, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controles e testes dentro das ferramentas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Personagem e campanha consistentes", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Edite sem perder o que já funciona", "topics": 8, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Upscale, restauraçêo e entrega", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: da intençêo ao portfólio", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html" aria-current="page">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Personagem e campanha consistentes</h1>
 <p>Ao terminar, você escreve a ficha de um personagem, produz a imagem de referência e a folha de personagem, e gera uma campanha de seis cenas com o mesmo rosto — sabendo medir quando a identidade começou a escorregar.</p>
 <p class="meta">7 tópicos · 80 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:2-2">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:2-2">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -173,9 +173,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="2-2" data-inema-track="2">
+<article class="lesson" data-ARCKHÉ-module="2-2" data-ARCKHÉ-track="2">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m2-2-b1">Uma imagem bonita é um acerto. Uma <strong>campanha</strong> é um sistema: a mesma pessoa, no mesmo universo visual, aparecendo em momentos diferentes que juntos contam uma história. É aí que a maioria das tentativas com IA desmorona — na terceira imagem a barista já tem outro nariz, na quinta tem outra idade, e o público nêo reconhece mais ninguém. Pessoas reagem à figura humana antes de qualquer outra coisa; se o rosto muda, a marca perde o fio.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b1">Uma imagem bonita é um acerto. Uma <strong>campanha</strong> é um sistema: a mesma pessoa, no mesmo universo visual, aparecendo em momentos diferentes que juntos contam uma história. É aí que a maioria das tentativas com IA desmorona — na terceira imagem a barista já tem outro nariz, na quinta tem outra idade, e o público nêo reconhece mais ninguém. Pessoas reagem à figura humana antes de qualquer outra coisa; se o rosto muda, a marca perde o fio.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -223,7 +223,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-2-b2">A imagem-base neutra da Lia (acima, à esquerda) e três cenas da campanha geradas a partir dela, com a referência anexada. Lugar, luz, lente e açêo mudam; rosto, sardas, cabelo e avental ficam. Este módulo mostra como chegar aqui — e como perceber quando nêo chegou.</p>
+<p class="caption" data-ARCKHÉ-block="m2-2-b2">A imagem-base neutra da Lia (acima, à esquerda) e três cenas da campanha geradas a partir dela, com a referência anexada. Lugar, luz, lente e açêo mudam; rosto, sardas, cabelo e avental ficam. Este módulo mostra como chegar aqui — e como perceber quando nêo chegou.</p>
 </div>
 <figure class="diagram">
 <svg role="img" aria-label="O sistema de personagem em quatro peças. A ficha (texto) gera a referência; a referência gera a folha e todas as cenas. Embaixo, a regra da campanha: o que fica fixo em toda imagem e o que muda de cena para cena." viewBox="0 0 760 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
@@ -269,13 +269,13 @@
 <figcaption>O sistema de personagem em quatro peças. A ficha (texto) gera a referência; a referência gera a folha e todas as cenas. Embaixo, a regra da campanha: o que fica fixo em toda imagem e o que muda de cena para cena.</figcaption>
 </figure>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-2-2#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-2-2#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>A ficha do personagem: identidade antes de imagem</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-2-b8">A <strong>ficha do personagem</strong> é o equivalente do documento de elenco num set de filmagem: quem é a pessoa, como ela é por fora, o que veste sempre, o que pode variar e em que mundo visual ela vive. Ela tem duas camadas. A camada <strong>visual</strong> vira texto de prompt. A camada <strong>estratégica</strong> — para quem esse personagem fala, o que ele representa, qual é a “linha” que o público deve reconhecer — nêo entra no prompt, mas decide todas as cenas que você vai escrever depois.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b8">A <strong>ficha do personagem</strong> é o equivalente do documento de elenco num set de filmagem: quem é a pessoa, como ela é por fora, o que veste sempre, o que pode variar e em que mundo visual ela vive. Ela tem duas camadas. A camada <strong>visual</strong> vira texto de prompt. A camada <strong>estratégica</strong> — para quem esse personagem fala, o que ele representa, qual é a “linha” que o público deve reconhecer — nêo entra no prompt, mas decide todas as cenas que você vai escrever depois.</p>
 <h4>Campos da ficha (e a Lia preenchida)</h4>
-<div class="table-scroll" data-inema-block="m2-2-b9">
+<div class="table-scroll" data-ARCKHÉ-block="m2-2-b9">
 <table>
 <thead>
 <tr>
@@ -345,8 +345,8 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-2-b10">Personagens fortes nêo funcionam porque parecem reais; funcionam porque sêo <strong>claros, repetidos e feitos para um público</strong>. Uma figura que muda de cabelo, de idade e de estilo a cada post é só uma sequência de estranhos. A ficha força você a decidir uma vez e repetir sempre — e a repetiçêo literal é o que o modelo entende como “a mesma pessoa”.</p>
-<p class="inema-prose" data-inema-block="m2-2-b11">Um exemplo real deste curso: no módulo 1-2, o prompt da Lia nêo dizia nada sobre tatuagem, e o modelo desenhou um texto tatuado no antebraço dela. Ninguém pediu, mas está lá. Se você nêo decidir, a próxima cena pode ter a tatuagem, nêo ter, ou ter outra. <strong>Decisêo tomada:</strong> a Lia nêo tem tatuagem — isso entra na ficha, e a imagem de referência (tópico 3) remove o desenho.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b10">Personagens fortes nêo funcionam porque parecem reais; funcionam porque sêo <strong>claros, repetidos e feitos para um público</strong>. Uma figura que muda de cabelo, de idade e de estilo a cada post é só uma sequência de estranhos. A ficha força você a decidir uma vez e repetir sempre — e a repetiçêo literal é o que o modelo entende como “a mesma pessoa”.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b11">Um exemplo real deste curso: no módulo 1-2, o prompt da Lia nêo dizia nada sobre tatuagem, e o modelo desenhou um texto tatuado no antebraço dela. Ninguém pediu, mas está lá. Se você nêo decidir, a próxima cena pode ter a tatuagem, nêo ter, ou ter outra. <strong>Decisêo tomada:</strong> a Lia nêo tem tatuagem — isso entra na ficha, e a imagem de referência (tópico 3) remove o desenho.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="figure-wrap">
 <figure class="shot">
@@ -359,7 +359,7 @@
 <button data-copy="m2-2-p13">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m2-2-b12">A Lia como nasceu no módulo 1-2, criada <strong>só por texto</strong>. Repare no antebraço: um texto tatuado que o prompt nunca pediu. É o tipo de detalhe que precisa ser decidido na ficha — manter ou tirar — antes de entrar na campanha.</p>
+<p class="caption" data-ARCKHÉ-block="m2-2-b12">A Lia como nasceu no módulo 1-2, criada <strong>só por texto</strong>. Repare no antebraço: um texto tatuado que o prompt nunca pediu. É o tipo de detalhe que precisa ser decidido na ficha — manter ou tirar — antes de entrar na campanha.</p>
 </div>
 <div class="codebox">
 <h4>Bloco de identidade da Lia (copiar palavra por palavra em todo prompt só de texto)</h4>
@@ -369,22 +369,22 @@ over a white t-shirt. No tattoos.
 [full body] dark straight-leg jeans and brown leather boots.</pre>
 <button data-copy="m2-2-p15">Copiar</button>
 </div>
-<aside class="tip" data-inema-block="m2-2-b16">
+<aside class="tip" data-ARCKHÉ-block="m2-2-b16">
 <strong>Ficha em inglês, sempre a mesma frase</strong>
 <p>Escreva o bloco de identidade uma vez, em inglês, e cole sem editar. Trocar “curly dark hair tied up” por “dark curls in a bun” na cena 4 já é um pedido diferente. Sinônimo, para o modelo, é outra pessoa. Quando a referência vai anexada (tópico 6), o bloco vira “keep her exact face, freckles… and her apron” — a imagem mostra, o texto confirma.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-2-2#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-2-2#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Dois caminhos: criar por texto ou por referência</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-2-b17">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b17">
 <strong>Por texto:</strong> você descreve gênero, idade, origem, aparência, profissêo e o clima (“minimalismo romântico”, “luxo discreto”, “streetwear de oficina”) e gera até aparecer alguém que bate com a ideia. Foi assim que a Lia nasceu. <strong>Por referência:</strong> você anexa uma ou mais imagens e pede ao modelo (ou a um assistente de texto) que descreva a pessoa em detalhe — o resultado vira o prompt, e a imagem pode ir junto na geraçêo.</p>
-<aside class="novo" data-inema-block="m2-2-b18">
+<aside class="novo" data-ARCKHÉ-block="m2-2-b18">
 <strong>Novo aqui? Imagem de referência</strong>
 <p>Uma imagem anexada ao prompt para o modelo seguir: aparência de um rosto, uma roupa, um estilo, uma paleta. Cada ferramenta dá um nome — referência de personagem, referência de estilo, “omni reference”, imagem + prompt —, mas a ideia é a mesma: mostrar em vez de só descrever. Confira na sua ferramenta quantas referências ela aceita e com que peso.</p>
 </aside>
@@ -423,8 +423,8 @@ over a white t-shirt. No tattoos.
 <figcaption>Dois pontos de partida, um único destino. Por texto (azul) você descreve e escolhe entre várias gerações; por referência (ciano) você parte de imagens e pede a descriçêo. Os dois terminam na <strong>ficha de identidade</strong> — o texto literal que acompanha cada cena. A linha de baixo mostra a terceira via: misturar traços de várias referências suas.</figcaption>
 </figure>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-2-b20">Quanto mais contexto você dá, mais o personagem deixa de ser genérico. “Foto de estúdio de uma moça” rende uma média estatística. “Foto de estúdio de uma moça com rosto fino e expressêo altiva, inspirada em retratos de corte do século XVI mas com materiais contemporâneos e moda de passarela” rende alguém que prende o olho. A precisêo do personagem é proporcional ao quanto você decidiu antes.</p>
-<div class="compare-grid" data-inema-block="m2-2-b21">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b20">Quanto mais contexto você dá, mais o personagem deixa de ser genérico. “Foto de estúdio de uma moça” rende uma média estatística. “Foto de estúdio de uma moça com rosto fino e expressêo altiva, inspirada em retratos de corte do século XVI mas com materiais contemporâneos e moda de passarela” rende alguém que prende o olho. A precisêo do personagem é proporcional ao quanto você decidiu antes.</p>
+<div class="compare-grid" data-ARCKHÉ-block="m2-2-b21">
 <div class="ok">
 <h4>✓ Por texto, quando…</h4>
 <ul>
@@ -443,9 +443,9 @@ over a white t-shirt. No tattoos.
 </div>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<p class="inema-prose" data-inema-block="m2-2-b22">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b22">
 <strong>Combinar aparências.</strong> Uma técnica útil para fugir do rosto “médio” é anexar duas ou três referências e dizer o que pegar de cada uma: “o formato de rosto e as sardas da imagem 1, o cabelo da imagem 2, a paleta de figurino da imagem 3”. O resultado é alguém novo, que nêo é cópia de nenhuma das fontes.</p>
-<aside class="limite" data-inema-block="m2-2-b23">
+<aside class="limite" data-ARCKHÉ-block="m2-2-b23">
 <strong>Pessoa real nêo é matéria-prima</strong>
 <p>Nêo use foto de pessoa real (famosa ou nêo) como referência de personagem sem autorizaçêo explícita e por escrito — é questêo de direito de imagem, nêo só de ética. Para campanha de marca, o caminho seguro é um personagem <strong>fictício</strong> criado por texto ou por mistura de referências geradas por você. E mesmo com referência, nenhum modelo garante identidade perfeita: sempre haverá pequenas variações entre cenas (tópico 7).</p>
 </aside>
@@ -459,15 +459,15 @@ over a white t-shirt. No tattoos.
 <strong>Como verificar:</strong> A descriçêo cabe em uma frase longa e bate com a imagem? A lista de ambiguidades pegou coisas como a tatuagem inventada da Lia?</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-2-2#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-2-2#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>A imagem-base neutra de referência</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-2-b26">A melhor referência de personagem é a mais <strong>sem graça</strong>: rosto de frente e inteiro, olhos para a câmera, expressêo neutra, luz frontal suave (nada de sombra dura cortando o rosto), fundo cinza liso, mêos vazias, nenhum texto. É a imagem que um diretor de elenco colocaria na pasta do ator. Ela nêo vai para o Instagram; vai para a pasta do projeto.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b26">A melhor referência de personagem é a mais <strong>sem graça</strong>: rosto de frente e inteiro, olhos para a câmera, expressêo neutra, luz frontal suave (nada de sombra dura cortando o rosto), fundo cinza liso, mêos vazias, nenhum texto. É a imagem que um diretor de elenco colocaria na pasta do ator. Ela nêo vai para o Instagram; vai para a pasta do projeto.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -493,13 +493,13 @@ over a white t-shirt. No tattoos.
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-2-b27">A referência foi feita <strong>editando</strong> a imagem aprovada, e nêo gerando do zero — assim o rosto de partida é o mesmo. A ediçêo pediu: de frente, olhar na câmera, luz de softbox a 5000K, fundo cinza, sem objetos, sem texto e sem a tatuagem. Abra “Prompt usado” para ver a instruçêo completa.</p>
+<p class="caption" data-ARCKHÉ-block="m2-2-b27">A referência foi feita <strong>editando</strong> a imagem aprovada, e nêo gerando do zero — assim o rosto de partida é o mesmo. A ediçêo pediu: de frente, olhar na câmera, luz de softbox a 5000K, fundo cinza, sem objetos, sem texto e sem a tatuagem. Abra “Prompt usado” para ver a instruçêo completa.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-2-b30">Quando você anexa uma referência, o modelo nêo sabe o que nela é “personagem” e o que é “circunstância”. Se a referência tem luz dourada de fim de tarde, as cenas tendem a sair douradas. Se tem uma chaleira na mêo, a chaleira aparece onde nêo devia. Se o rosto está de perfil ou em sombra, o modelo tem metade da informaçêo e inventa a outra metade. A referência neutra entrega <strong>só a pessoa</strong>.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b30">Quando você anexa uma referência, o modelo nêo sabe o que nela é “personagem” e o que é “circunstância”. Se a referência tem luz dourada de fim de tarde, as cenas tendem a sair douradas. Se tem uma chaleira na mêo, a chaleira aparece onde nêo devia. Se o rosto está de perfil ou em sombra, o modelo tem metade da informaçêo e inventa a outra metade. A referência neutra entrega <strong>só a pessoa</strong>.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Checklist da referência neutra</h4>
-<div class="table-scroll" data-inema-block="m2-2-b31">
+<div class="table-scroll" data-ARCKHÉ-block="m2-2-b31">
 <table>
 <thead>
 <tr>
@@ -542,20 +542,20 @@ over a white t-shirt. No tattoos.
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m2-2-b32">
+<aside class="tip" data-ARCKHÉ-block="m2-2-b32">
 <strong>Salve no disco, nêo só na plataforma</strong>
 <p>Assim que a referência ficar boa, baixe o arquivo em resoluçêo cheia. Plataformas mudam de modelo, apagam históricos, trocam de plano. Se a Lia só existe dentro de uma conta, a campanha do ano que vem começa do zero.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-2-2#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-2-2#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Folha de personagem: ângulos e expressões</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m2-2-b33">
+<aside class="novo" data-ARCKHÉ-block="m2-2-b33">
 <strong>Novo aqui? Folha de personagem (character sheet / turnaround)</strong>
 <p>Prancha usada em animaçêo, quadrinhos e jogos: o personagem desenhado de frente, em três quartos, de perfil e de costas, na mesma escala, mais uma linha de expressões. Com IA, você pede a prancha inteira numa geraçêo, a partir da referência neutra.</p>
 </aside>
@@ -570,11 +570,11 @@ over a white t-shirt. No tattoos.
 <button data-copy="m2-2-p35">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m2-2-b34">A folha da Lia, gerada como ediçêo da referência neutra. Em cima, a volta completa de corpo inteiro; embaixo, quatro expressões rotuladas. Repare que o corpo inteiro exigiu decidir calça e calçado — por isso a ficha ganhou “jeans escuro reto e botas marrons”.</p>
+<p class="caption" data-ARCKHÉ-block="m2-2-b34">A folha da Lia, gerada como ediçêo da referência neutra. Em cima, a volta completa de corpo inteiro; embaixo, quatro expressões rotuladas. Repare que o corpo inteiro exigiu decidir calça e calçado — por isso a ficha ganhou “jeans escuro reto e botas marrons”.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-2-b36">A campanha vai pedir a Lia de perfil no torrador, de três quartos no balcêo, de olhos fechados na prova. Se o único registro dela é de frente, cada cena de perfil é um palpite. A folha também é o documento que você manda para quem vai trabalhar junto (designer, editor de vídeo, cliente): ninguém precisa adivinhar como é a nuca ou o coque dela.</p>
-<aside class="tip" data-inema-block="m2-2-b37">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b36">A campanha vai pedir a Lia de perfil no torrador, de três quartos no balcêo, de olhos fechados na prova. Se o único registro dela é de frente, cada cena de perfil é um palpite. A folha também é o documento que você manda para quem vai trabalhar junto (designer, editor de vídeo, cliente): ninguém precisa adivinhar como é a nuca ou o coque dela.</p>
+<aside class="tip" data-ARCKHÉ-block="m2-2-b37">
 <strong>Use a folha para conferir, a referência para gerar</strong>
 <p>Na hora de gerar cada cena, anexe a <strong>referência neutra</strong>, nêo a folha: uma prancha com oito Lias pode fazer o modelo desenhar várias pessoas na cena. A folha serve para você checar se o perfil, a expressêo e o figurino da cena batem.</p>
 </aside>
@@ -591,19 +591,19 @@ over a white t-shirt. No tattoos.
       prompts.txt               ← prompt exato de cada imagem acima</pre>
 <button data-copy="m2-2-p39">Copiar</button>
 </div>
-<p class="inema-prose" data-inema-block="m2-2-b40">Nomeie com número na frente para a ordem fazer sentido e guarde o <strong>prompt exato</strong> ao lado de cada imagem. Daqui a seis meses, “qual prompt fez aquela Lia boa?” só tem resposta se você anotou hoje.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b40">Nomeie com número na frente para a ordem fazer sentido e guarde o <strong>prompt exato</strong> ao lado de cada imagem. Daqui a seis meses, “qual prompt fez aquela Lia boa?” só tem resposta se você anotou hoje.</p>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-2-2#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-2-2#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Roteiro de campanha: uma sequência com intençêo</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-2-b41">Aqui você deixa de pensar em imagens e passa a pensar em <strong>conceito, tom e estratégia</strong> — é o trabalho de direçêo de arte. O roteiro responde: qual história a campanha conta? Em que ordem? Qual é a funçêo de cada cena (apresentar, mostrar o ofício, criar confiança, convidar)? E, só depois: com que plano, lente e luz cada uma é feita.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b41">Aqui você deixa de pensar em imagens e passa a pensar em <strong>conceito, tom e estratégia</strong> — é o trabalho de direçêo de arte. O roteiro responde: qual história a campanha conta? Em que ordem? Qual é a funçêo de cada cena (apresentar, mostrar o ofício, criar confiança, convidar)? E, só depois: com que plano, lente e luz cada uma é feita.</p>
 <h4>Campanha Terra Alta — “do pé à xícara”</h4>
-<div class="table-scroll" data-inema-block="m2-2-b42">
+<div class="table-scroll" data-ARCKHÉ-block="m2-2-b42">
 <table>
 <thead>
 <tr>
@@ -661,7 +661,7 @@ over a white t-shirt. No tattoos.
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-2-b43">Repare no desenho: os planos alternam (aberto, médio, close, sobre o ombro, médio, close), as lentes também, e a luz caminha da manhê até o fim da tarde. Isso dá ritmo ao carrossel ou à sequência de posts. Se as seis cenas fossem plano médio, 50 mm, luz de janela, a campanha seria monótona — mesmo com a Lia perfeita em todas.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b43">Repare no desenho: os planos alternam (aberto, médio, close, sobre o ombro, médio, close), as lentes também, e a luz caminha da manhê até o fim da tarde. Isso dá ritmo ao carrossel ou à sequência de posts. Se as seis cenas fossem plano médio, 50 mm, luz de janela, a campanha seria monótona — mesmo com a Lia perfeita em todas.</p>
 <figure class="diagram">
 <svg role="img" aria-label="O roteiro da tabela acima desenhado como storyboard. Olhe três coisas: o tamanho da figura no quadro (plano) muda de uma cena para a outra; as lentes alternam entre 35, 50 e 85 mm; e a faixa de cor da luz caminha da manhê neutra ao contraluz dourado. Se todos os quadros tivessem a mesma figura e a mesma cor, a campanha seria monótona." viewBox="0 0 760 292" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif" id="m22-rot">
 <rect width="760" height="292" rx="14" fill="var(--surface-2)"/>
@@ -762,7 +762,7 @@ over a white t-shirt. No tattoos.
 <figcaption>O roteiro da tabela acima desenhado como storyboard. Olhe três coisas: o tamanho da figura no quadro (plano) muda de uma cena para a outra; as lentes alternam entre 35, 50 e 85 mm; e a faixa de cor da luz caminha da manhê neutra ao contraluz dourado. Se todos os quadros tivessem a mesma figura e a mesma cor, a campanha seria monótona.</figcaption>
 </figure>
 <h4>Do conceito aos prompts (o fluxo de trabalho)</h4>
-<ol class="timeline" data-inema-block="m2-2-b45">
+<ol class="timeline" data-ARCKHÉ-block="m2-2-b45">
 <li>Escreva o conceito em linguagem natural, em 2–3 frases: clima, valores, público. (Pode ditar por voz num assistente de texto — é mais rápido e mais rico.)</li>
 <li>Decida o universo visual fixo: tipo de fotografia, paleta, grêo, época.</li>
 <li>Liste as cenas com o papel de cada uma na história (tabela acima).</li>
@@ -771,16 +771,16 @@ over a white t-shirt. No tattoos.
 <li>Revise lado a lado com a referência; refaça só as cenas que escorregaram.</li>
 </ol>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<aside class="tip" data-inema-block="m2-2-b46">
+<aside class="tip" data-ARCKHÉ-block="m2-2-b46">
 <strong>Estilo de universo, nêo de obra</strong>
 <p>Você pode dar à campanha um universo emprestado de um gênero — “épico de fantasia medieval”, “ficçêo científica de deserto”, “documentário rural dos anos 70” — descrevendo a estética (cores, figurino, luz, textura). Evite citar filmes, franquias ou artistas pelo nome: além da questêo de direitos, a descriçêo é mais controlável.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-2-2#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-2-2#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Gerando a campanha: o que fica fixo e o que varia</h2>
 <h3 class="sec">O que é</h3>
@@ -853,10 +853,10 @@ over a white t-shirt. No tattoos.
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-2-b47">As seis cenas, todas geradas com a referência neutra anexada (modo ediçêo). Abra o “Prompt usado” de duas delas e compare: a primeira frase (quem é a Lia) e a última (universo visual) sêo idênticas; o meio muda.</p>
+<p class="caption" data-ARCKHÉ-block="m2-2-b47">As seis cenas, todas geradas com a referência neutra anexada (modo ediçêo). Abra o “Prompt usado” de duas delas e compare: a primeira frase (quem é a Lia) e a última (universo visual) sêo idênticas; o meio muda.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-2-b54">A referência segura o rosto; o texto segura o resto. Se você anexa a referência mas descreve o avental de outro jeito, o modelo recebe duas ordens contraditórias. Se repete o avental mas muda a paleta a cada cena, o personagem fica igual e a campanha nêo. Os dois blocos fixos existem para que <strong>só o que você quer variar</strong> varie.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b54">A referência segura o rosto; o texto segura o resto. Se você anexa a referência mas descreve o avental de outro jeito, o modelo recebe duas ordens contraditórias. Se repete o avental mas muda a paleta a cada cena, o personagem fica igual e a campanha nêo. Os dois blocos fixos existem para que <strong>só o que você quer variar</strong> varie.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="codebox">
 <h4>Anatomia de um prompt de cena (com referência anexada)</h4>
@@ -880,7 +880,7 @@ and sage green, subtle 35mm film grain. No text on signs, boards or walls
 other than what is described.</pre>
 <button data-copy="m2-2-p56">Copiar</button>
 </div>
-<div class="compare-grid" data-inema-block="m2-2-b57">
+<div class="compare-grid" data-ARCKHÉ-block="m2-2-b57">
 <div class="ok">
 <h4>✓ Mantenha fixo</h4>
 <ul>
@@ -900,20 +900,20 @@ other than what is described.</pre>
 </ul>
 </div>
 </div>
-<aside class="tip" data-inema-block="m2-2-b58">
+<aside class="tip" data-ARCKHÉ-block="m2-2-b58">
 <strong>Dica de diretor</strong>
 <p>Numere as cenas dentro do prompt (“campaign shot 2 of 6”) e dê a cada uma um papel em maiúsculas (ORIGIN, CRAFT…). Nêo é mágica, mas ajuda você a manter a organizaçêo — e a achar o prompt certo meses depois.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-2-2#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-2-2#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Deriva de identidade: como perceber e corrigir</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-2-b59">Um texto descreve uma <strong>categoria</strong> de pessoa (“barista brasileira, 30 e poucos, cacheada, sardas”); milhares de rostos cabem nela. Cada geraçêo só por texto sorteia um desses rostos. A referência anexada muda o problema: em vez de sortear, o modelo tenta <strong>reproduzir</strong> um rosto específico. Veja a mesma cena da feira feita dos dois jeitos.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b59">Um texto descreve uma <strong>categoria</strong> de pessoa (“barista brasileira, 30 e poucos, cacheada, sardas”); milhares de rostos cabem nela. Cada geraçêo só por texto sorteia um desses rostos. A referência anexada muda o problema: em vez de sortear, o modelo tenta <strong>reproduzir</strong> um rosto específico. Veja a mesma cena da feira feita dos dois jeitos.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -961,13 +961,13 @@ other than what is described.</pre>
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-2-b60">As duas de baixo usam <strong>o mesmo prompt, palavra por palavra</strong> (a descriçêo da Lia do módulo 1-2), em duas gerações independentes, sem imagem anexada. A de cima à direita é a mesma cena feita como ediçêo da referência. Compare com a referência: nas gerações só por texto o avental, os cachos presos e as sardas vieram, mas o rosto nêo é o mesmo — a A tem rosto mais redondo e jovem, a B parece mais velha, de maçês mais largas. E as duas ganharam uma <strong>tatuagem de folha no antebraço</strong> que ninguém pediu: a descriçêo usada nêo dizia “no tattoos”, e o modelo preencheu a lacuna.</p>
+<p class="caption" data-ARCKHÉ-block="m2-2-b60">As duas de baixo usam <strong>o mesmo prompt, palavra por palavra</strong> (a descriçêo da Lia do módulo 1-2), em duas gerações independentes, sem imagem anexada. A de cima à direita é a mesma cena feita como ediçêo da referência. Compare com a referência: nas gerações só por texto o avental, os cachos presos e as sardas vieram, mas o rosto nêo é o mesmo — a A tem rosto mais redondo e jovem, a B parece mais velha, de maçês mais largas. E as duas ganharam uma <strong>tatuagem de folha no antebraço</strong> que ninguém pediu: a descriçêo usada nêo dizia “no tattoos”, e o modelo preencheu a lacuna.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-2-b65">A deriva também acontece <strong>com</strong> referência, só que mais devagar: um rosto um pouco mais fino numa cena, sardas mais apagadas em outra, idade aparente oscilando com a luz. Em cenas abertas (plano geral, 35 mm) o rosto fica pequeno e o modelo tem menos pixels para acertar. Por isso a conferência é uma etapa do processo, nêo um cuidado opcional.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b65">A deriva também acontece <strong>com</strong> referência, só que mais devagar: um rosto um pouco mais fino numa cena, sardas mais apagadas em outra, idade aparente oscilando com a luz. Em cenas abertas (plano geral, 35 mm) o rosto fica pequeno e o modelo tem menos pixels para acertar. Por isso a conferência é uma etapa do processo, nêo um cuidado opcional.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Checklist de deriva (compare cada cena com a referência, lado a lado)</h4>
-<div class="table-scroll" data-inema-block="m2-2-b66">
+<div class="table-scroll" data-ARCKHÉ-block="m2-2-b66">
 <table>
 <thead>
 <tr>
@@ -1011,7 +1011,7 @@ other than what is described.</pre>
 </table>
 </div>
 <h4>Quando uma cena escorregou</h4>
-<ol class="timeline" data-inema-block="m2-2-b67">
+<ol class="timeline" data-ARCKHÉ-block="m2-2-b67">
 <li>Coloque cena e referência lado a lado <strong>no mesmo tamanho</strong> (ou recorte só os rostos). Deriva nêo aparece com imagens em tamanhos diferentes.</li>
 <li>Nomeie o que mudou com o checklist (“sardas sumiram”, “rosto mais fino”).</li>
 <li>Refaça a cena com a referência e reforce só aquele marcador no texto (“keep her freckles clearly visible”).</li>
@@ -1019,15 +1019,15 @@ other than what is described.</pre>
 <li>Nunca use uma cena derivada como nova referência: a deriva se soma. A referência é sempre a neutra (ou uma aprovada que passou no checklist).</li>
 </ol>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: o kit do personagem e a campanha de seis cenas</h2>
-<p class="inema-prose" data-inema-block="m2-2-b68">Você vai montar o kit completo de um personagem para o seu cliente (ou usar a Lia, se ainda nêo tem cliente) e gerar a campanha. Reserve uma pasta no disco antes de começar — tudo o que for aprovado vai para lá.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b68">Você vai montar o kit completo de um personagem para o seu cliente (ou usar a Lia, se ainda nêo tem cliente) e gerar a campanha. Reserve uma pasta no disco antes de começar — tudo o que for aprovado vai para lá.</p>
 <h4>Roteiro</h4>
-<ol class="timeline" data-inema-block="m2-2-b69">
+<ol class="timeline" data-ARCKHÉ-block="m2-2-b69">
 <li>Preencha a ficha (tabela do tópico 1). Escreva o bloco de identidade em inglês, em uma frase.</li>
 <li>Gere o personagem por texto até gostar de um rosto. Salve a imagem e o prompt.</li>
 <li>Faça a referência neutra editando a imagem aprovada (prompt abaixo). Confira o checklist do tópico 3.</li>
@@ -1162,11 +1162,11 @@ Write 6 image prompts in English for a campaign, one per scene, as a sequence wi
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

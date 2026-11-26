@@ -64,7 +64,7 @@ Como verificar: Compare com a imagem “Retrô / vintage” do módulo: o que o 
 ## Molde de prompt com bloco de estilo
 
 <Plano> of <assunto: quem ou o quê, aparência> <açêo concreta>, in <lugar com 2-3 objetos>.
-In a <família ou híbrido: e.g. 'hybrid of cinematic structure and retro surface'> aesthetic.
+In a <família ou híbrido: e.g. 'hybrid of cARCKHÉtic structure and retro surface'> aesthetic.
 STYLE BLOCK: <luz: fonte, direçêo, qualidade, K>; <paleta: base + acento único>; <lente e profundidade de campo>; <textura e acabamento>; <clima em 2 palavras> mood. No text on signs.
 
 Como verificar: Nas três imagens a luz vem do mesmo lado, a paleta tem o mesmo acento e o grêo/acabamento é igual? Se uma destoa, confira se o bloco foi colado sem alteraçêo.
@@ -73,10 +73,10 @@ Como verificar: Nas três imagens a luz vem do mesmo lado, a paleta tem o mesmo 
 ## Exemplo pronto: híbrido para uma ONG
 
 Medium shot of a Brazilian riverside fisherwoman in her 50s with sun-weathered skin and a faded yellow T-shirt, mending a fishing net on the wooden deck of her stilt house over the river, in the Amazon delta.
-In a hybrid aesthetic: CINEMATIC structure with RETRO surface.
+In a hybrid aesthetic: CARCKHÉTIC structure with RETRO surface.
 STYLE BLOCK: low warm late-afternoon sun from the right as a hard key light, deep shadow on the left side of the frame, shallow depth of field on a 50mm lens at f/2; 1970s color negative film look with warm faded tones, lifted blacks, visible grain and a soft vignette; earthy palette of wood brown and river green with the yellow shirt as the only accent; dignified, quiet, remembered mood. No text.
 
-Como verificar: A luz tem direçêo clara e sombra profunda (estrutura de cinema)? A superfície parece filme antigo (grêo, pretos lavados)? O amarelo é o único acento?
+Como verificar: A luz tem direçêo clara e sombra profunda (estrutura de cARCKHÉ)? A superfície parece filme antigo (grêo, pretos lavados)? O amarelo é o único acento?
 
 # Módulo 2-2 — Estética por objetivo: decidir, misturar, aplicar
 ## Pedir ajuda a um assistente para fechar a cadeia

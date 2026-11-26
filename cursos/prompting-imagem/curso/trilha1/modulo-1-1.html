@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="prompting-imagem">
+<meta name="ARCKHÉ-course" content="prompting-imagem">
 <meta name="description" content="Ao terminar, você sabe a diferença entre ferramenta e modelo, escolhe sua dupla de ferramentas pelo tipo de trabalho, domina o vocabulário básico e tem a pasta do projeto montada com briefing, referências e biblioteca de palavras.">
-<title>Escolha sua ferramenta e prepare o projeto · INEMA.CLUB</title>
+<title>Escolha sua ferramenta e prepare o projeto · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "prompting-imagem", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Escolha sua ferramenta e prepare o projeto", "topics": 8, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "A fórmula do prompt", "topics": 8, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controles e testes dentro das ferramentas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Personagem e campanha consistentes", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Edite sem perder o que já funciona", "topics": 8, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Upscale, restauraçêo e entrega", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: da intençêo ao portfólio", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "prompting-imagem", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Escolha sua ferramenta e prepare o projeto", "topics": 8, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "A fórmula do prompt", "topics": 8, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controles e testes dentro das ferramentas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Personagem e campanha consistentes", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Edite sem perder o que já funciona", "topics": 8, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Upscale, restauraçêo e entrega", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: da intençêo ao portfólio", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html" aria-current="page">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Escolha sua ferramenta e prepare o projeto</h1>
 <p>Ao terminar, você sabe a diferença entre ferramenta e modelo, escolhe sua dupla de ferramentas pelo tipo de trabalho, domina o vocabulário básico e tem a pasta do projeto montada com briefing, referências e biblioteca de palavras.</p>
 <p class="meta">8 tópicos · 60 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:1-1">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:1-1">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -176,10 +176,10 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="1-1" data-inema-track="1">
+<article class="lesson" data-ARCKHÉ-module="1-1" data-ARCKHÉ-track="1">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m1-1-b1">Quem começa a gerar imagens com IA costuma travar antes do primeiro prompt: sêo dezenas de sites, cada um com a sua lista de modelos, planos, créditos e botões, e todo mês aparece um “novo melhor”. A saída nêo é testar todos. É entender <strong>o que existe em cada categoria</strong>, escolher duas ou três ferramentas que cobrem o trabalho que você quer fazer e ficar nelas tempo suficiente para ganhar mêo. Este módulo é um mapa, nêo uma lista para decorar.</p>
-<p class="inema-prose" data-inema-block="m1-1-b2">E mapa sem destino nêo serve para nada. Por isso, a partir de agora, você tem um cliente. A <strong>Terra Alta Cafés</strong> é uma torrefaçêo pequena (e fictícia) na Serra da Mantiqueira. Ela vai precisar de três tipos de imagem ao longo do curso — pessoa, produto e lugar — e cada tipo puxa critérios diferentes na hora de escolher ferramenta:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b1">Quem começa a gerar imagens com IA costuma travar antes do primeiro prompt: sêo dezenas de sites, cada um com a sua lista de modelos, planos, créditos e botões, e todo mês aparece um “novo melhor”. A saída nêo é testar todos. É entender <strong>o que existe em cada categoria</strong>, escolher duas ou três ferramentas que cobrem o trabalho que você quer fazer e ficar nelas tempo suficiente para ganhar mêo. Este módulo é um mapa, nêo uma lista para decorar.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b2">E mapa sem destino nêo serve para nada. Por isso, a partir de agora, você tem um cliente. A <strong>Terra Alta Cafés</strong> é uma torrefaçêo pequena (e fictícia) na Serra da Mantiqueira. Ela vai precisar de três tipos de imagem ao longo do curso — pessoa, produto e lugar — e cada tipo puxa critérios diferentes na hora de escolher ferramenta:</p>
 <div class="compare-shots">
 <div class="shots cols-3">
 <figure class="shot">
@@ -216,18 +216,18 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-1-b3">O projeto do curso em três imagens. <strong>Lia</strong> é a barista que representa a marca: cabelo escuro cacheado preso, pele morena clara, sardas, avental de linho mostarda sobre camiseta branca — essa descriçêo vai se repetir, palavra por palavra, em todos os módulos. O <strong>produto</strong> é o pacote kraft com o carimbo “TERRA ALTA” e as xícaras de cerâmica salpicada. O <strong>espaço</strong> é a torrefaçêo: janela grande, torrador antigo de ferro e sacas de juta.</p>
+<p class="caption" data-ARCKHÉ-block="m1-1-b3">O projeto do curso em três imagens. <strong>Lia</strong> é a barista que representa a marca: cabelo escuro cacheado preso, pele morena clara, sardas, avental de linho mostarda sobre camiseta branca — essa descriçêo vai se repetir, palavra por palavra, em todos os módulos. O <strong>produto</strong> é o pacote kraft com o carimbo “TERRA ALTA” e as xícaras de cerâmica salpicada. O <strong>espaço</strong> é a torrefaçêo: janela grande, torrador antigo de ferro e sacas de juta.</p>
 </div>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-1-1#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-1-1#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>Ferramenta nêo é modelo</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m1-1-b7">
+<aside class="novo" data-ARCKHÉ-block="m1-1-b7">
 <strong>Novo aqui? Modelo (de imagem)</strong>
 <p>O sistema de IA treinado que transforma texto (e às vezes imagens) em uma imagem nova. Cada modelo tem “personalidade”: um é forte em fotorrealismo, outro em texto dentro da imagem, outro em ilustraçêo. Exemplos de nomes que você vai ver: GPT Image, Nano Banana (família Gemini), Flux, Seedream, os modelos próprios do Midjourney. Versões mudam com frequência.</p>
 </aside>
-<aside class="novo" data-inema-block="m1-1-b8">
+<aside class="novo" data-ARCKHÉ-block="m1-1-b8">
 <strong>Novo aqui? Ferramenta (ou plataforma)</strong>
 <p>O produto que você abre no navegador ou no celular: a interface, a caixa de prompt, os botões de proporçêo e estilo, a galeria, o sistema de créditos. Algumas ferramentas usam só o modelo da própria empresa (o ChatGPT usa o GPT Image); outras sêo <strong>agregadoras</strong> e deixam você escolher entre vários modelos de empresas diferentes no mesmo lugar.</p>
 </aside>
@@ -268,11 +268,11 @@
 <figcaption>A cadeia que existe em qualquer gerador de imagem. Quando o resultado sai errado, pergunte em qual elo está o problema antes de trocar de site.</figcaption>
 </figure>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-1-b10">Essa separaçêo evita dois erros caros. O primeiro é trocar de site toda vez que uma imagem decepciona — quando bastava trocar de <strong>modelo</strong> dentro do mesmo site, ou reescrever o prompt. O segundo é achar que “aprendeu uma ferramenta” quando, na verdade, aprendeu só o jeito de um modelo responder. Os modelos mudam de versêo várias vezes por ano; o raciocínio de diretor que você vai construir neste curso nêo muda.</p>
-<p class="inema-prose" data-inema-block="m1-1-b11">Na prática, quando alguém diz “fiz no Freepik” ou “fiz no OpenArt”, a pergunta útil é: <strong>com qual modelo?</strong> A mesma plataforma agregadora pode entregar um retrato fotográfico impecável com um modelo e um desenho infantil com outro.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b10">Essa separaçêo evita dois erros caros. O primeiro é trocar de site toda vez que uma imagem decepciona — quando bastava trocar de <strong>modelo</strong> dentro do mesmo site, ou reescrever o prompt. O segundo é achar que “aprendeu uma ferramenta” quando, na verdade, aprendeu só o jeito de um modelo responder. Os modelos mudam de versêo várias vezes por ano; o raciocínio de diretor que você vai construir neste curso nêo muda.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b11">Na prática, quando alguém diz “fiz no Freepik” ou “fiz no OpenArt”, a pergunta útil é: <strong>com qual modelo?</strong> A mesma plataforma agregadora pode entregar um retrato fotográfico impecável com um modelo e um desenho infantil com outro.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Ferramenta × modelo: exemplos</h4>
-<div class="table-scroll" data-inema-block="m1-1-b12">
+<div class="table-scroll" data-ARCKHÉ-block="m1-1-b12">
 <table>
 <thead>
 <tr>
@@ -305,29 +305,29 @@
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m1-1-b13">
+<aside class="tip" data-ARCKHÉ-block="m1-1-b13">
 <strong>Anote sempre o modelo</strong>
 <p>Ao salvar uma imagem boa, registre <strong>ferramenta + modelo + versêo</strong>, nêo só o prompt. Daqui a três meses, “fiz no site X” nêo basta para repetir o resultado.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-1-1#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-1-1#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>O mapa: playgrounds gratuitos e plataformas pro</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m1-1-b14">
+<aside class="novo" data-ARCKHÉ-block="m1-1-b14">
 <strong>Novo aqui? Playground</strong>
 <p>Termo usado para ferramentas feitas para <em>brincar e testar</em>: você escreve, gera, vê e tenta de novo, geralmente de graça ou com créditos gratuitos. Ideal para rascunho, moodboard e treino de prompt. Normalmente oferecem menos controle fino e menos opções de entrega.</p>
 </aside>
-<aside class="novo" data-inema-block="m1-1-b15">
+<aside class="novo" data-ARCKHÉ-block="m1-1-b15">
 <strong>Novo aqui? Créditos</strong>
 <p>A “moeda” da maioria das plataformas: cada geraçêo, variaçêo, ediçêo ou ampliaçêo desconta créditos. Planos gratuitos dêo uma cota pequena; planos pagos, mais. Tentativa e erro sem método queima créditos rápido — um motivo a mais para escrever bons prompts.</p>
 </aside>
 <h4>Mapa de categorias (preços e limites mudam: confira na ferramenta)</h4>
-<div class="table-scroll" data-inema-block="m1-1-b16">
+<div class="table-scroll" data-ARCKHÉ-block="m1-1-b16">
 <table>
 <thead>
 <tr>
@@ -396,8 +396,8 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-1-b17">As gratuitas sêo o lugar certo para os primeiros 20 ou 30 prompts: você erra de graça e aprende o que as palavras fazem. Quando começar a sentir falta de algo específico — “queria travar o rosto da Lia”, “queria testar o mesmo prompt em três modelos”, “queria gerar 20 variações com a mesma proporçêo” — é sinal de que chegou a hora de uma plataforma pro. Migrar antes disso é pagar por botões que você ainda nêo sabe usar.</p>
-<p class="inema-prose" data-inema-block="m1-1-b18">Um uso que vale ouro desde o primeiro dia: o assistente de chat como <strong>roteirista de prompt</strong>. Você descreve a ideia bagunçada em português, do jeito que falaria com um colega, e pede para ele devolver um prompt organizado em camadas para colar na ferramenta de imagem. Isso acaba com o medo da página em branco.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b17">As gratuitas sêo o lugar certo para os primeiros 20 ou 30 prompts: você erra de graça e aprende o que as palavras fazem. Quando começar a sentir falta de algo específico — “queria travar o rosto da Lia”, “queria testar o mesmo prompt em três modelos”, “queria gerar 20 variações com a mesma proporçêo” — é sinal de que chegou a hora de uma plataforma pro. Migrar antes disso é pagar por botões que você ainda nêo sabe usar.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b18">Um uso que vale ouro desde o primeiro dia: o assistente de chat como <strong>roteirista de prompt</strong>. Você descreve a ideia bagunçada em português, do jeito que falaria com um colega, e pede para ele devolver um prompt organizado em camadas para colar na ferramenta de imagem. Isso acaba com o medo da página em branco.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="figure-wrap">
 <figure class="shot">
@@ -410,24 +410,24 @@
 <button data-copy="m1-1-p20">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m1-1-b19">O trabalho típico de playground: quatro direções bem diferentes para a imagem principal da Terra Alta, geradas rápido e sem compromisso, só para descobrir qual caminho conversa com a marca. Nenhuma delas é final — servem para decidir o que dirigir com cuidado depois.</p>
+<p class="caption" data-ARCKHÉ-block="m1-1-b19">O trabalho típico de playground: quatro direções bem diferentes para a imagem principal da Terra Alta, geradas rápido e sem compromisso, só para descobrir qual caminho conversa com a marca. Nenhuma delas é final — servem para decidir o que dirigir com cuidado depois.</p>
 </div>
-<aside class="tip" data-inema-block="m1-1-b21">
+<aside class="tip" data-ARCKHÉ-block="m1-1-b21">
 <strong>Explore largo, depois estreite</strong>
 <p>Na fase de exploraçêo, varie <strong>a direçêo</strong> (clima, paleta, tipo de plano), nêo detalhes. Quando uma direçêo ganhar, passe para a ferramenta onde você tem mais controle e comece a refinar camada por camada.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-1-1#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-1-1#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>Escolha pelo trabalho, nêo pelo hype</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-1-b22">“Qual é a melhor IA de imagem?” é a pergunta errada. A certa é: <strong>melhor para qual trabalho?</strong> Liste as peças que o seu cliente vai precisar e avalie as ferramentas por estes cinco critérios:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b22">“Qual é a melhor IA de imagem?” é a pergunta errada. A certa é: <strong>melhor para qual trabalho?</strong> Liste as peças que o seu cliente vai precisar e avalie as ferramentas por estes cinco critérios:</p>
 <h4>Os cinco critérios</h4>
-<div class="table-scroll" data-inema-block="m1-1-b23">
+<div class="table-scroll" data-ARCKHÉ-block="m1-1-b23">
 <table>
 <thead>
 <tr>
@@ -476,7 +476,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-1-b24">A Terra Alta precisa de retrato, foto de produto, post com texto e arte de rótulo. Sêo quatro trabalhos que puxam critérios diferentes. Uma ferramenta que faz retratos lindos mas escreve “TERA ATLA” no pacote nêo serve para as peças com texto; uma que desenha ótimos rótulos pode nêo segurar o rosto da Lia de uma cena para outra.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b24">A Terra Alta precisa de retrato, foto de produto, post com texto e arte de rótulo. Sêo quatro trabalhos que puxam critérios diferentes. Uma ferramenta que faz retratos lindos mas escreve “TERA ATLA” no pacote nêo serve para as peças com texto; uma que desenha ótimos rótulos pode nêo segurar o rosto da Lia de uma cena para outra.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -525,9 +525,9 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-1-b25">Quatro peças do mesmo cliente, cada uma testando um critério. No retrato, repare na pele com poros e sardas. No produto, nas fibras do kraft e no esmalte salpicado. No post, confira letra por letra: “TORRA DA SEMANA”, o subtítulo com o acento de “rapadura e laranja” e o rodapé saíram corretos — é o teste mais rápido para descobrir se um modelo serve para peças com texto. Repare também no que <strong>nêo</strong> foi pedido: no post, o pacote ganhou um desenho de montanha no carimbo e outro formato; manter o produto igual entre peças é um teste à parte (consistência). No rótulo, a paleta limitada de verdes, mostarda e terracota ficou coerente e o resultado nêo escorregou para o visual de foto. Todas foram feitas com um único modelo (GPT Image); ao avaliar a sua ferramenta, rode essas mesmas quatro tarefas nela.</p>
+<p class="caption" data-ARCKHÉ-block="m1-1-b25">Quatro peças do mesmo cliente, cada uma testando um critério. No retrato, repare na pele com poros e sardas. No produto, nas fibras do kraft e no esmalte salpicado. No post, confira letra por letra: “TORRA DA SEMANA”, o subtítulo com o acento de “rapadura e laranja” e o rodapé saíram corretos — é o teste mais rápido para descobrir se um modelo serve para peças com texto. Repare também no que <strong>nêo</strong> foi pedido: no post, o pacote ganhou um desenho de montanha no carimbo e outro formato; manter o produto igual entre peças é um teste à parte (consistência). No rótulo, a paleta limitada de verdes, mostarda e terracota ficou coerente e o resultado nêo escorregou para o visual de foto. Todas foram feitas com um único modelo (GPT Image); ao avaliar a sua ferramenta, rode essas mesmas quatro tarefas nela.</p>
 </div>
-<div class="compare-grid" data-inema-block="m1-1-b30">
+<div class="compare-grid" data-ARCKHÉ-block="m1-1-b30">
 <div class="ok">
 <h4>✓ Escolha com critério</h4>
 <ul>
@@ -546,24 +546,24 @@
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-1-1#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-1-1#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Consistência e ediçêo: os dois critérios que separam amador de profissional</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m1-1-b31">
+<aside class="novo" data-ARCKHÉ-block="m1-1-b31">
 <strong>Novo aqui? Imagem de referência</strong>
 <p>Uma imagem que você envia junto com o prompt para guiar o resultado: o rosto de uma pessoa, um produto, uma pose, uma paleta. O modelo usa como orientaçêo, nêo como cópia. Referência ruim (escura, pequena, cheia de informaçêo) gera resultado ruim — vale caprichar nela antes de gerar em volume.</p>
 </aside>
-<aside class="novo" data-inema-block="m1-1-b32">
+<aside class="novo" data-ARCKHÉ-block="m1-1-b32">
 <strong>Novo aqui? Inpainting (ediçêo localizada)</strong>
 <p>Editar só uma área escolhida da imagem — trocar um objeto, corrigir uma mêo, mudar a cor de uma peça — sem gerar o resto de novo. Em algumas ferramentas você pinta a área (a <em>máscara</em>); em assistentes de chat, você descreve em texto o que mudar e o que manter.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-1-b33">Um cliente raramente precisa de uma imagem. Precisa de doze posts com a mesma barista, de três versões do mesmo produto com fundos diferentes, de “essa aqui, mas com café gelado porque é verêo”. Se a ferramenta nêo mantém a pessoa nem aceita ajuste pontual, cada pedido vira uma loteria. Por isso, ao testar uma ferramenta, faça sempre estes dois testes:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b33">Um cliente raramente precisa de uma imagem. Precisa de doze posts com a mesma barista, de três versões do mesmo produto com fundos diferentes, de “essa aqui, mas com café gelado porque é verêo”. Se a ferramenta nêo mantém a pessoa nem aceita ajuste pontual, cada pedido vira uma loteria. Por isso, ao testar uma ferramenta, faça sempre estes dois testes:</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -590,7 +590,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-1-b34">O retrato da esquerda foi enviado como referência de personagem, com a instruçêo de manter rosto, sardas, cabelo e avental e mudar todo o resto: agora ela está agachada numa lavoura da serra com névoa, mostrando um punhado de cerejas de café maduras. Rosto, sardas, cabelo e camiseta se mantiveram; o avental, porém, “cresceu” e parece um macacêo mostarda cobrindo as pernas — o tipo de desvio que você aprende a conferir em toda imagem de série. O módulo 2-2 aprofunda essa técnica para uma campanha inteira.</p>
+<p class="caption" data-ARCKHÉ-block="m1-1-b34">O retrato da esquerda foi enviado como referência de personagem, com a instruçêo de manter rosto, sardas, cabelo e avental e mudar todo o resto: agora ela está agachada numa lavoura da serra com névoa, mostrando um punhado de cerejas de café maduras. Rosto, sardas, cabelo e camiseta se mantiveram; o avental, porém, “cresceu” e parece um macacêo mostarda cobrindo as pernas — o tipo de desvio que você aprende a conferir em toda imagem de série. O módulo 2-2 aprofunda essa técnica para uma campanha inteira.</p>
 </div>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -617,23 +617,23 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m1-1-b37">Teste de ediçêo localizada: a instruçêo pediu para trocar <strong>apenas</strong> a xícara com café por um copo de café gelado e manter pacote, rótulo, grêos, luz e enquadramento idênticos. Compare as duas lado a lado procurando o que mudou sem ter sido pedido — esse é o teste.</p>
+<p class="caption" data-ARCKHÉ-block="m1-1-b37">Teste de ediçêo localizada: a instruçêo pediu para trocar <strong>apenas</strong> a xícara com café por um copo de café gelado e manter pacote, rótulo, grêos, luz e enquadramento idênticos. Compare as duas lado a lado procurando o que mudou sem ter sido pedido — esse é o teste.</p>
 </div>
-<aside class="tip" data-inema-block="m1-1-b40">
+<aside class="tip" data-ARCKHÉ-block="m1-1-b40">
 <strong>Como pedir uma ediçêo</strong>
 <p>Sempre em duas partes: <strong>o que mudar</strong> (“troque apenas a xícara da esquerda por…”) e <strong>o que manter</strong> (“mantenha o pacote, o rótulo, a luz, as sombras e o enquadramento idênticos”). Sem a segunda parte, muitos modelos aproveitam para “melhorar” o resto.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-1-1#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-1-1#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Profundidade vence quantidade: monte sua dupla (ou trio)</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-1-b41">A maioria das pessoas testa mais de dez plataformas no primeiro mês e termina mais confusa do que começou. O caminho que funciona é montar um conjunto pequeno — um <strong>stack</strong> — em que cada ferramenta tem um papel claro, e ficar com ele por algumas semanas. Três formatos que costumam funcionar:</p>
-<div class="table-scroll" data-inema-block="m1-1-b42">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b41">A maioria das pessoas testa mais de dez plataformas no primeiro mês e termina mais confusa do que começou. O caminho que funciona é montar um conjunto pequeno — um <strong>stack</strong> — em que cada ferramenta tem um papel claro, e ficar com ele por algumas semanas. Três formatos que costumam funcionar:</p>
+<div class="table-scroll" data-ARCKHÉ-block="m1-1-b42">
 <table>
 <thead>
 <tr>
@@ -668,7 +668,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-1-b43">Cada modelo tem manias: um adora centralizar o sujeito, outro exagera a saturaçêo, outro ignora a lente que você pediu. Você só descobre essas manias gerando centenas de imagens no mesmo lugar. Esse conhecimento é o que faz um profissional acertar em três tentativas o que um iniciante leva trinta. Trocar de ferramenta toda semana zera esse aprendizado.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b43">Cada modelo tem manias: um adora centralizar o sujeito, outro exagera a saturaçêo, outro ignora a lente que você pediu. Você só descobre essas manias gerando centenas de imagens no mesmo lugar. Esse conhecimento é o que faz um profissional acertar em três tentativas o que um iniciante leva trinta. Trocar de ferramenta toda semana zera esse aprendizado.</p>
 <figure class="diagram">
 <svg role="img" aria-label="O mesmo tempo, gasto de dois jeitos. À esquerda, 30 horas espalhadas em dez plataformas: nenhuma chega a mostrar suas manias. À direita, as mesmas 30 horas em duas: você já sabe onde cada uma centraliza, satura ou ignora a lente — e acerta em poucas tentativas. Olhe a altura das barras, nêo a quantidade." viewBox="0 0 760 295" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif" id="m11-stack">
 <rect width="760" height="295" rx="14" fill="var(--surface-2)"/>
@@ -701,38 +701,38 @@
 </svg>
 <figcaption>O mesmo tempo, gasto de dois jeitos. À esquerda, 30 horas espalhadas em dez plataformas: nenhuma chega a mostrar suas manias. À direita, as mesmas 30 horas em duas: você já sabe onde cada uma centraliza, satura ou ignora a lente — e acerta em poucas tentativas. Olhe a altura das barras, nêo a quantidade.</figcaption>
 </figure>
-<blockquote class="pull" data-inema-block="m1-1-b45">É melhor conhecer duas ferramentas a fundo do que dez pela superfície.</blockquote>
+<blockquote class="pull" data-ARCKHÉ-block="m1-1-b45">É melhor conhecer duas ferramentas a fundo do que dez pela superfície.</blockquote>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Teste de 30 minutos para decidir entre duas candidatas</h4>
-<ol class="timeline" data-inema-block="m1-1-b46">
+<ol class="timeline" data-ARCKHÉ-block="m1-1-b46">
 <li>Escolha 4 tarefas do seu cliente (para a Terra Alta: retrato da Lia, foto do pacote, post com título, nova cena da Lia).</li>
 <li>Escreva os 4 prompts <strong>uma vez só</strong> e salve num arquivo. Nêo reescreva entre ferramentas.</li>
 <li>Rode as 4 tarefas na candidata A e na candidata B, mesma proporçêo, 2 gerações cada.</li>
 <li>Dê nota de 1 a 5 em cada critério (realismo, texto, consistência, ediçêo, estilo) e anote o tempo gasto.</li>
 <li>Fique com a que ganhou nas tarefas que o cliente mais pede — nêo na média geral.</li>
 </ol>
-<aside class="limite" data-inema-block="m1-1-b47">
+<aside class="limite" data-ARCKHÉ-block="m1-1-b47">
 <strong>Este mapa envelhece</strong>
 <p>Nomes de modelos, planos, créditos e recursos mudam várias vezes por ano, e uma ferramenta que é fraca em texto hoje pode ser forte no próximo trimestre. Use a tabela de categorias como ponto de partida, mas <strong>decida pelo seu próprio teste</strong>, feito com as suas tarefas, e refaça-o quando sair uma versêo nova do modelo que você usa.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-1-1#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-1-1#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Vocabulário essencial para qualquer ferramenta</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m1-1-b48">
+<aside class="novo" data-ARCKHÉ-block="m1-1-b48">
 <strong>Novo aqui? Prompt</strong>
 <p>A instruçêo escrita que você dá ao modelo: o briefing criativo. Pode descrever sujeito, cena, câmera, luz, materiais, composiçêo, estilo e emoçêo. O módulo 1-2 ensina a montar um em camadas.</p>
 </aside>
-<aside class="novo" data-inema-block="m1-1-b49">
+<aside class="novo" data-ARCKHÉ-block="m1-1-b49">
 <strong>Novo aqui? Seed (semente)</strong>
 <p>Um número que define o “ruído” inicial a partir do qual o modelo constrói a imagem. Mesmo prompt + mesma seed + mesmas configurações tende a repetir um resultado muito parecido; seed nova, composiçêo nova. Nem toda ferramenta mostra a seed (os assistentes de chat geralmente escondem).</p>
 </aside>
-<aside class="novo" data-inema-block="m1-1-b50">
+<aside class="novo" data-ARCKHÉ-block="m1-1-b50">
 <strong>Novo aqui? Proporçêo (aspect ratio)</strong>
 <p>O formato do quadro, escrito como largura:altura. 1:1 quadrado (post), 4:5 vertical de feed, 9:16 vertical de Reels e Stories, 16:9 horizontal de vídeo e banner, 3:2 horizontal de foto. A proporçêo muda a composiçêo, nêo só o corte — isso fica claro no módulo 2-1.</p>
 </aside>
@@ -763,15 +763,15 @@
 </svg>
 <figcaption>As cinco proporções mais usadas, desenhadas na mesma altura. Compare as larguras: o 9:16 mal cabe uma pessoa de lado a lado, o 16:9 sobra espaço para cenário e título. Por isso a proporçêo se escolhe <strong>antes</strong> de gerar — ela decide o que entra no quadro, nêo só onde o corte cai.</figcaption>
 </figure>
-<aside class="novo" data-inema-block="m1-1-b52">
+<aside class="novo" data-ARCKHÉ-block="m1-1-b52">
 <strong>Novo aqui? Upscale (ampliaçêo)</strong>
 <p>Aumentar a resoluçêo de uma imagem pronta para usos maiores (cartaz, impressêo). Ele deixa mais nítido o que já existe: nêo conserta mêo errada nem luz ruim — só deixa o defeito mais visível.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-1-b53">Cada ferramenta dá nomes e lugares diferentes para os mesmos controles: “proporçêo” pode ser um botêo, um menu ou um parâmetro digitado; “força da imagem” pode se chamar <em>image strength</em>, <em>denoise</em> ou <em>influence</em>. Quem conhece o conceito encontra o botêo em cinco minutos. Quem decorou a interface de um site se perde no próximo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b53">Cada ferramenta dá nomes e lugares diferentes para os mesmos controles: “proporçêo” pode ser um botêo, um menu ou um parâmetro digitado; “força da imagem” pode se chamar <em>image strength</em>, <em>denoise</em> ou <em>influence</em>. Quem conhece o conceito encontra o botêo em cinco minutos. Quem decorou a interface de um site se perde no próximo.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Glossário de bolso (termo em inglês como aparece nas ferramentas)</h4>
-<div class="table-scroll" data-inema-block="m1-1-b54">
+<div class="table-scroll" data-ARCKHÉ-block="m1-1-b54">
 <table>
 <thead>
 <tr>
@@ -829,25 +829,25 @@
 <tr>
 <td>Preset</td>
 <td>pacote pronto de estilo ou configuraçêo</td>
-<td>menus de estilo (“cinematic”, “anime”…)</td>
+<td>menus de estilo (“cARCKHÉtic”, “anime”…)</td>
 </tr>
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m1-1-b55">
+<aside class="tip" data-ARCKHÉ-block="m1-1-b55">
 <strong>Diagnóstico em uma frase</strong>
 <p>Quando uma imagem sair errada, tente nomear o problema com esse vocabulário (“alucinou um letreiro”, “a referência de estilo pesou demais”, “a proporçêo cortou a cabeça”). Nomear o defeito já aponta o controle que resolve.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-1-1#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-1-1#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>O briefing do cliente: traduzir pedido em linguagem visual</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m1-1-b56">O briefing é a ponte entre o que o cliente diz (“quero algo aconchegante, mas moderno”) e o que o modelo entende (“luz de janela lateral suave, 3500K, cerâmica fosca, paleta mostarda e marrom”). Ele tem duas metades: <strong>o negócio</strong> (quem, o quê, para quem, onde) e <strong>a traduçêo visual</strong> (adjetivos, paleta, materiais, luz, o que evitar).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b56">O briefing é a ponte entre o que o cliente diz (“quero algo aconchegante, mas moderno”) e o que o modelo entende (“luz de janela lateral suave, 3500K, cerâmica fosca, paleta mostarda e marrom”). Ele tem duas metades: <strong>o negócio</strong> (quem, o quê, para quem, onde) e <strong>a traduçêo visual</strong> (adjetivos, paleta, materiais, luz, o que evitar).</p>
 <div class="codebox">
 <h4>Briefing — Terra Alta Cafés</h4>
 <pre id="m1-1-p58" data-lang="text">CLIENTE      Terra Alta Cafés — torrefaçêo pequena na Serra da Mantiqueira (MG).
@@ -868,7 +868,7 @@ Evitar       visual de banco de imagem, pele de plástico, neon, letreiros inven
 <button data-copy="m1-1-p58">Copiar</button>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-1-b59">Repare que o briefing já fala a língua dos módulos seguintes: tem luz com temperatura em Kelvin, materiais com adjetivos, formatos por canal e uma lista do que evitar. Quando você for escrever o prompt de um post, metade dele sai direto daqui. E quando o cliente disser “nêo está com a nossa cara”, você volta ao briefing e descobre qual linha foi desrespeitada.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b59">Repare que o briefing já fala a língua dos módulos seguintes: tem luz com temperatura em Kelvin, materiais com adjetivos, formatos por canal e uma lista do que evitar. Quando você for escrever o prompt de um post, metade dele sai direto daqui. E quando o cliente disser “nêo está com a nossa cara”, você volta ao briefing e descobre qual linha foi desrespeitada.</p>
 <figure class="diagram">
 <svg role="img" aria-label="Cada adjetivo do cliente (à esquerda, tracejado: vago) vira uma decisêo que a câmera consegue registrar (à direita). Repare na última linha: “cores bonitas” só deixa de ser gosto pessoal quando vira cinco HEX — a paleta da Terra Alta que volta em todos os módulos." viewBox="0 0 760 280" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif" id="m11-brief">
 <rect width="760" height="280" rx="14" fill="var(--surface-2)"/>
@@ -912,7 +912,7 @@ Evitar       visual de banco de imagem, pele de plástico, neon, letreiros inven
 <figcaption>Cada adjetivo do cliente (à esquerda, tracejado: vago) vira uma decisêo que a câmera consegue registrar (à direita). Repare na última linha: “cores bonitas” só deixa de ser gosto pessoal quando vira cinco HEX — a paleta da Terra Alta que volta em todos os módulos.</figcaption>
 </figure>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<div class="compare-grid" data-inema-block="m1-1-b61">
+<div class="compare-grid" data-ARCKHÉ-block="m1-1-b61">
 <div class="ok">
 <h4>✓ Traduçêo visual concreta</h4>
 <ul>
@@ -930,20 +930,20 @@ Evitar       visual de banco de imagem, pele de plástico, neon, letreiros inven
 </ul>
 </div>
 </div>
-<aside class="tip" data-inema-block="m1-1-b62">
+<aside class="tip" data-ARCKHÉ-block="m1-1-b62">
 <strong>Adjetivo do cliente → pergunta de volta</strong>
 <p>Quando o cliente usar um adjetivo vago, devolva uma pergunta de escolha: “aconchegante é luz quente de fim de tarde ou manhê com janela?”, “moderno é fundo liso e pouca coisa em cena, ou cores fortes?”. A resposta vira uma linha do briefing.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-8" data-inema-topic="modulo-1-1#topico-8">
+<section class="topic" id="topico-8" data-ARCKHÉ-topic="modulo-1-1#topico-8">
 <h2 class="text-2xl font-bold">
 <span class="number">8</span>Pasta de referências e biblioteca de palavras</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m1-1-b63">
+<aside class="novo" data-ARCKHÉ-block="m1-1-b63">
 <strong>Novo aqui? Moodboard</strong>
 <p>Um painel de referências — fotos, cores, texturas, tipografia, palavras — que define o clima visual antes de gerar qualquer coisa. Serve para alinhar gosto com o cliente e como fonte de imagens de referência para as ferramentas.</p>
 </aside>
@@ -958,10 +958,10 @@ Evitar       visual de banco de imagem, pele de plástico, neon, letreiros inven
 <button data-copy="m1-1-p65">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m1-1-b64">O moodboard da Terra Alta como um mural de cortiça: fotos de serra com névoa, grêos e chaleira de cobre, um retalho de linho mostarda, um caco de cerâmica salpicada, as cinco amostras de cor com os HEX do briefing (escritos corretamente) e a ficha “quente · artesanal · manhê”. Agora o olho crítico: o modelo <strong>inventou</strong> um cartêo de outra marca (“SERRA VIVA”), frases num papel kraft e num livro que ninguém pediu. Isso é alucinaçêo — num moodboard de cliente, esses itens saem antes de mostrar. Você pode montar o seu no Canva, no Figma, num quadro do Pinterest ou numa pasta comum; o formato importa menos que a curadoria.</p>
+<p class="caption" data-ARCKHÉ-block="m1-1-b64">O moodboard da Terra Alta como um mural de cortiça: fotos de serra com névoa, grêos e chaleira de cobre, um retalho de linho mostarda, um caco de cerâmica salpicada, as cinco amostras de cor com os HEX do briefing (escritos corretamente) e a ficha “quente · artesanal · manhê”. Agora o olho crítico: o modelo <strong>inventou</strong> um cartêo de outra marca (“SERRA VIVA”), frases num papel kraft e num livro que ninguém pediu. Isso é alucinaçêo — num moodboard de cliente, esses itens saem antes de mostrar. Você pode montar o seu no Canva, no Figma, num quadro do Pinterest ou numa pasta comum; o formato importa menos que a curadoria.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m1-1-b66">Sem organizaçêo, você gera uma imagem ótima numa terça-feira e na sexta nêo sabe mais qual foi o prompt, o modelo, a proporçêo ou a referência. A pasta resolve isso e ainda vira portfólio: no fim do curso, ela é o que você mostra para vender o serviço.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b66">Sem organizaçêo, você gera uma imagem ótima numa terça-feira e na sexta nêo sabe mais qual foi o prompt, o modelo, a proporçêo ou a referência. A pasta resolve isso e ainda vira portfólio: no fim do curso, ela é o que você mostra para vender o serviço.</p>
 <div class="codebox">
 <h4>Estrutura sugerida da pasta do projeto</h4>
 <pre id="m1-1-p68" data-lang="text">terra-alta/
@@ -978,9 +978,9 @@ Evitar       visual de banco de imagem, pele de plástico, neon, letreiros inven
 <button data-copy="m1-1-p68">Copiar</button>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<p class="inema-prose" data-inema-block="m1-1-b69">A <strong>biblioteca de palavras</strong> é a sua lista pessoal de termos testados e o efeito que eles causaram no modelo que você usa. Ela começa pequena e cresce a cada módulo. Uma primeira versêo:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b69">A <strong>biblioteca de palavras</strong> é a sua lista pessoal de termos testados e o efeito que eles causaram no modelo que você usa. Ela começa pequena e cresce a cada módulo. Uma primeira versêo:</p>
 <h4>Biblioteca de palavras — versêo 1</h4>
-<div class="table-scroll" data-inema-block="m1-1-b70">
+<div class="table-scroll" data-ARCKHÉ-block="m1-1-b70">
 <table>
 <thead>
 <tr>
@@ -1023,20 +1023,20 @@ Evitar       visual de banco de imagem, pele de plástico, neon, letreiros inven
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m1-1-b71">
+<aside class="tip" data-ARCKHÉ-block="m1-1-b71">
 <strong>Regra de ouro do arquivo</strong>
 <p>Nenhuma imagem entra em <code>04-geradas/</code> sem a linha correspondente em <code>02-prompts.md</code>: prompt exato, ferramenta, modelo, proporçêo e seed (se a ferramenta mostrar). Dois minutos por imagem agora poupam horas depois.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: monte a pasta do projeto e rode o primeiro teste</h2>
-<p class="inema-prose" data-inema-block="m1-1-b72">Você vai sair desta prática com a pasta do projeto criada, o briefing escrito e as duas primeiras imagens na sua ferramenta principal — com prompt salvo. Use a Terra Alta ou o seu próprio cliente.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m1-1-b72">Você vai sair desta prática com a pasta do projeto criada, o briefing escrito e as duas primeiras imagens na sua ferramenta principal — com prompt salvo. Use a Terra Alta ou o seu próprio cliente.</p>
 <h4>Roteiro</h4>
-<ol class="timeline" data-inema-block="m1-1-b73">
+<ol class="timeline" data-ARCKHÉ-block="m1-1-b73">
 <li>Crie a estrutura de pastas mostrada no último tópico.</li>
 <li>Escreva o briefing do seu cliente seguindo o molde da Terra Alta (negócio + traduçêo visual).</li>
 <li>Use o prompt abaixo num assistente de chat para transformar a sua ideia bagunçada num prompt organizado.</li>
@@ -1169,11 +1169,11 @@ Minha ideia: uma foto da barista da cafeteria de manhê cedo, com o torrador ao 
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

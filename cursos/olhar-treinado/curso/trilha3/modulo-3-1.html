@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="olhar-treinado">
+<meta name="ARCKHÉ-course" content="olhar-treinado">
 <meta name="description" content="Ao terminar, você tem um board anotado que ensina, sabe desmontar uma referência em seis camadas, fez um estudo visual mudando um fator por vez, escreveu cinco regras pessoais e usou essas regras para refazer uma peça do portfólio.">
-<title>Observaçêo profissional: desmontar, estudar, criar regras · INEMA.CLUB</title>
+<title>Observaçêo profissional: desmontar, estudar, criar regras · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "olhar-treinado", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Gosto é treinável", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Nomeie o que você vê: vocabulário e Visual DNA", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "As sete famílias estéticas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Estética por objetivo: decidir, misturar, aplicar", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Observaçêo profissional: desmontar, estudar, criar regras", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: seu caderno de olhar aplicado", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "olhar-treinado", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Gosto é treinável", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Nomeie o que você vê: vocabulário e Visual DNA", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "As sete famílias estéticas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Estética por objetivo: decidir, misturar, aplicar", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Observaçêo profissional: desmontar, estudar, criar regras", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: seu caderno de olhar aplicado", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Observaçêo profissional: desmontar, estudar, criar regras</h1>
 <p>Ao terminar, você tem um board anotado que ensina, sabe desmontar uma referência em seis camadas, fez um estudo visual mudando um fator por vez, escreveu cinco regras pessoais e usou essas regras para refazer uma peça do portfólio.</p>
 <p class="meta">7 tópicos · 90 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:3-1">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:3-1">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -173,9 +173,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="3-1" data-inema-track="3">
+<article class="lesson" data-ARCKHÉ-module="3-1" data-ARCKHÉ-track="3">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m3-1-b1">Todo mundo tem uma pasta de referências. Pouca gente aprende com ela. A diferença entre inspiraçêo e treino está numa mudança de frase: sair de <strong>“eu gosto disso”</strong> para <strong>“eu consigo explicar por que isso funciona”</strong>. Quando você consegue explicar, consegue repetir — e consegue perceber quando o seu próprio trabalho está bonito por acaso ou certo de propósito.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b1">Todo mundo tem uma pasta de referências. Pouca gente aprende com ela. A diferença entre inspiraçêo e treino está numa mudança de frase: sair de <strong>“eu gosto disso”</strong> para <strong>“eu consigo explicar por que isso funciona”</strong>. Quando você consegue explicar, consegue repetir — e consegue perceber quando o seu próprio trabalho está bonito por acaso ou certo de propósito.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -201,16 +201,16 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b2">Duas gerações independentes do mesmo assunto: uma ceramista no torno. À esquerda, uma tentativa sem decisões (luz chapada, sujeito no centro, tudo nítido). À direita, a referência que vamos desmontar neste módulo. As duas têm uma ceramista parecida, de cabelo grisalho preso e avental de linho, o mesmo ofício, quase o mesmo lugar — a diferença está inteira em decisões que dá para nomear. No tópico 5 você vai ver a primeira virar a segunda, uma decisêo por vez.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b2">Duas gerações independentes do mesmo assunto: uma ceramista no torno. À esquerda, uma tentativa sem decisões (luz chapada, sujeito no centro, tudo nítido). À direita, a referência que vamos desmontar neste módulo. As duas têm uma ceramista parecida, de cabelo grisalho preso e avental de linho, o mesmo ofício, quase o mesmo lugar — a diferença está inteira em decisões que dá para nomear. No tópico 5 você vai ver a primeira virar a segunda, uma decisêo por vez.</p>
 </div>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-3-1#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-3-1#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>O board que ensina (nêo só inspira)</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b5">Na trilha 1 você começou um board. Agora ele sobe de nível: <strong>10 referências</strong>, cada uma passando por três filtros. Ela parece <strong>cara</strong> (produçêo cuidada, nada de acaso)? Parece <strong>deliberada</strong> (dá para sentir que alguém decidiu a luz e o quadro)? Está <strong>no nível que você quer alcançar</strong> — um pouco acima do que você faz hoje?</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b5">Na trilha 1 você começou um board. Agora ele sobe de nível: <strong>10 referências</strong>, cada uma passando por três filtros. Ela parece <strong>cara</strong> (produçêo cuidada, nada de acaso)? Parece <strong>deliberada</strong> (dá para sentir que alguém decidiu a luz e o quadro)? Está <strong>no nível que você quer alcançar</strong> — um pouco acima do que você faz hoje?</p>
 <h4>Onde procurar referências fortes</h4>
-<div class="table-scroll" data-inema-block="m3-1-b6">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b6">
 <table>
 <thead>
 <tr>
@@ -226,7 +226,7 @@
 <td>copiar a marca em vez de entender a decisêo</td>
 </tr>
 <tr>
-<td>Filmes de moda e trechos de cinema</td>
+<td>Filmes de moda e trechos de cARCKHÉ</td>
 <td>luz motivada, composiçêo, ritmo de cortes</td>
 <td>escolher pela história, nêo pelo quadro</td>
 </tr>
@@ -248,23 +248,23 @@
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m3-1-b7">
+<aside class="tip" data-ARCKHÉ-block="m3-1-b7">
 <strong>Ferramenta: qualquer uma que aceite nota</strong>
 <p>Pinterest, Milanote, PureRef, Notion, um documento de texto — serve qualquer lugar onde você consiga <strong>salvar a imagem e escrever embaixo dela</strong>. Se a ferramenta nêo deixa anotar, ela vira só uma gaveta.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b8">O olho aprende por comparaçêo repetida. Se o board tem 200 imagens de qualidade misturada, você treina a média. Se tem 10 imagens excelentes que você olhou de verdade, você treina o topo. Menos referências, mais atençêo.</p>
-<p class="inema-prose" data-inema-block="m3-1-b9">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b8">O olho aprende por comparaçêo repetida. Se o board tem 200 imagens de qualidade misturada, você treina a média. Se tem 10 imagens excelentes que você olhou de verdade, você treina o topo. Menos referências, mais atençêo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b9">
 <strong>Sinais de que uma referência nêo deveria estar no board:</strong>
 </p>
-<ul class="inema-prose list" data-inema-block="m3-1-b10">
+<ul class="ARCKHÉ-prose list" data-ARCKHÉ-block="m3-1-b10">
 <li>Você salvou pelo assunto (“adoro cerâmica”), nêo pela forma como foi fotografado.</li>
 <li>O efeito é o protagonista: filtro pesado, distorçêo, brilho que chama mais atençêo do que a coisa mostrada.</li>
 <li>Você nêo consegue apontar uma única decisêo que faz a imagem funcionar.</li>
 <li>Ela está no mesmo nível do que você já faz — nêo puxa você para cima.</li>
 <li>É têo parecida com outra do board que nêo ensina nada novo.</li>
 </ul>
-<p class="inema-prose" data-inema-block="m3-1-b11">Cortar dói, mas é aqui que o gosto começa a aparecer: <strong>escolher o que fica é a primeira decisêo visual do projeto</strong>. Se você tem 40 candidatas, faça duas rodadas de corte — primeiro para 20, depois para 10 — e, em cada rodada, diga em voz alta por que a que saiu é mais fraca que a que ficou.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b11">Cortar dói, mas é aqui que o gosto começa a aparecer: <strong>escolher o que fica é a primeira decisêo visual do projeto</strong>. Se você tem 40 candidatas, faça duas rodadas de corte — primeiro para 20, depois para 10 — e, em cada rodada, diga em voz alta por que a que saiu é mais fraca que a que ficou.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="figure-wrap">
 <figure class="shot">
@@ -277,20 +277,20 @@
 <button data-copy="m3-1-p13">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m3-1-b12">Board de exemplo para um ateliê de cerâmica fictício, com nove peças numeradas. Repare na variedade: detalhe de mêos (1), produto isolado com muito espaço (2), ambiente com raios de luz (3), silhueta contra o forno (4), vista de cima em grade (5), retrato com janela (6), macro de textura (7), acento de cor único (8) e movimento (9). No próximo tópico cada uma ganha a sua anotaçêo.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b12">Board de exemplo para um ateliê de cerâmica fictício, com nove peças numeradas. Repare na variedade: detalhe de mêos (1), produto isolado com muito espaço (2), ambiente com raios de luz (3), silhueta contra o forno (4), vista de cima em grade (5), retrato com janela (6), macro de textura (7), acento de cor único (8) e movimento (9). No próximo tópico cada uma ganha a sua anotaçêo.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-3-1#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-3-1#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Anotar: uma linha, um elemento</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b14">A regra é curta: <strong>uma linha por referência, sobre um elemento só</strong>. Escolha o que mais pesa naquela imagem — luz, enquadramento, composiçêo, ritmo, tipografia — e escreva no formato <em>elemento → efeito</em>. Uma linha obriga a escolher; três parágrafos deixam você descrever tudo sem decidir nada.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b14">A regra é curta: <strong>uma linha por referência, sobre um elemento só</strong>. Escolha o que mais pesa naquela imagem — luz, enquadramento, composiçêo, ritmo, tipografia — e escreva no formato <em>elemento → efeito</em>. Uma linha obriga a escolher; três parágrafos deixam você descrever tudo sem decidir nada.</p>
 <h3 class="sec">Por que aprender</h3>
-<div class="compare-grid" data-inema-block="m3-1-b15">
+<div class="compare-grid" data-ARCKHÉ-block="m3-1-b15">
 <div class="ok">
 <h4>✓ Anotaçêo que treina</h4>
 <ul>
@@ -317,10 +317,10 @@
 <img src="../../assets/img/c3-m31-board.webp" alt="Board de referências de um ateliê de cerâmica: nove fotos impressas numeradas de 1 a 9 numa grade 3×3 sobre um painel de linho cinza" loading="lazy" decoding="async">
 </a>
 </figure>
-<p class="caption" data-inema-block="m3-1-b16">Faça o exercício antes de ler a tabela: para cada quadro numerado, escolha <strong>um</strong> elemento que decide e escreva uma linha no formato elemento → efeito. Pistas do que olhar: no 1, a direçêo da luz sobre os sulcos; no 2, quanto espaço vazio há em volta da tigela; no 4, o que fica visível contra o forno; no 8, a única cor diferente da pilha. Depois compare as suas linhas com as da tabela.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b16">Faça o exercício antes de ler a tabela: para cada quadro numerado, escolha <strong>um</strong> elemento que decide e escreva uma linha no formato elemento → efeito. Pistas do que olhar: no 1, a direçêo da luz sobre os sulcos; no 2, quanto espaço vazio há em volta da tigela; no 4, o que fica visível contra o forno; no 8, a única cor diferente da pilha. Depois compare as suas linhas com as da tabela.</p>
 </div>
 <h4>O board de cerâmica, anotado</h4>
-<div class="table-scroll" data-inema-block="m3-1-b17">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b17">
 <table>
 <thead>
 <tr>
@@ -378,22 +378,22 @@
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m3-1-b18">
+<aside class="tip" data-ARCKHÉ-block="m3-1-b18">
 <strong>Anote no dia, releia na semana</strong>
 <p>Anote na hora em que salvou a referência. Uma semana depois, releia as dez linhas juntas: os elementos que se repetem sêo as primeiras pistas das suas regras pessoais (tópico 6).</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-3-1#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-3-1#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>Desmontar uma referência em seis camadas</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b19">Anotar é olhar um elemento. <strong>Desmontar</strong> é olhar todos, na ordem. Escolha a referência do board que mais te incomoda (no bom sentido: “como fizeram isso?”) e responda às seis camadas abaixo. Para uma foto, “estrutura” e “ritmo” descrevem o caminho do olho dentro do quadro; para vídeo ou carrossel, descrevem a sequência (tópico 4).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b19">Anotar é olhar um elemento. <strong>Desmontar</strong> é olhar todos, na ordem. Escolha a referência do board que mais te incomoda (no bom sentido: “como fizeram isso?”) e responda às seis camadas abaixo. Para uma foto, “estrutura” e “ritmo” descrevem o caminho do olho dentro do quadro; para vídeo ou carrossel, descrevem a sequência (tópico 4).</p>
 <h4>As seis camadas e a pergunta de cada uma</h4>
-<div class="table-scroll" data-inema-block="m3-1-b20">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b20">
 <table>
 <thead>
 <tr>
@@ -437,7 +437,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b21">A ordem importa. Começar pela <strong>estrutura</strong> (o caminho do olho) obriga você a olhar a imagem inteira antes de se apaixonar por um detalhe. Terminar pela <strong>cor</strong> evita o erro mais comum de quem está começando: achar que a imagem funciona “por causa do filtro”, quando quase sempre funciona por causa da luz e do foco. Se você tirasse a cor desta referência e a deixasse em preto e branco, ela continuaria boa — e isso diz muito sobre onde está a força dela.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b21">A ordem importa. Começar pela <strong>estrutura</strong> (o caminho do olho) obriga você a olhar a imagem inteira antes de se apaixonar por um detalhe. Terminar pela <strong>cor</strong> evita o erro mais comum de quem está começando: achar que a imagem funciona “por causa do filtro”, quando quase sempre funciona por causa da luz e do foco. Se você tirasse a cor desta referência e a deixasse em preto e branco, ela continuaria boa — e isso diz muito sobre onde está a força dela.</p>
 <div class="figure-wrap">
 <figure class="shot">
 <a href="../../assets/img/c3-m31-referencia.webp" target="_blank" rel="noopener">
@@ -449,7 +449,7 @@
 <button data-copy="m3-1-p23">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m3-1-b22">A referência desmontada na tabela acima. As mêos e o pote sêo a área mais clara e ficam no terço inferior esquerdo; a janela à esquerda é a única fonte de luz; as prateleiras ao fundo ficam mais suaves que a pessoa; um pote cor de ferrugem na prateleira é o segundo ponto de atençêo.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b22">A referência desmontada na tabela acima. As mêos e o pote sêo a área mais clara e ficam no terço inferior esquerdo; a janela à esquerda é a única fonte de luz; as prateleiras ao fundo ficam mais suaves que a pessoa; um pote cor de ferrugem na prateleira é o segundo ponto de atençêo.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <figure class="diagram">
@@ -512,15 +512,15 @@
 <figcaption>Mapa de leitura da referência. Desenhar o esquema por cima de uma referência (à mêo, num app de anotaçêo ou no próprio board) é a forma mais rápida de ver a estrutura: de onde vem a luz, onde o olho entra, onde descansa.</figcaption>
 </figure>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-3-1#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-3-1#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Estrutura e ritmo numa sequência</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m3-1-b25">
+<aside class="novo" data-ARCKHÉ-block="m3-1-b25">
 <strong>Novo aqui? Ritmo</strong>
 <p>A velocidade com que a imagem muda — de corte em corte num vídeo, de card em card num carrossel. Ritmo rápido empurra o espectador (“nêo dá tempo de olhar”); ritmo lento deixa o assunto respirar. A pergunta de teste é: <em>eu tenho tempo de olhar, ou estou sendo empurrado?</em>
 </p>
@@ -536,13 +536,13 @@
 <button data-copy="m3-1-p27">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m3-1-b26">Folha de contato de um vídeo curto de 15 segundos para o ateliê fictício, com um quadro de cada momento. Abre com um close muito dinâmico da argila girando (o gancho), passa por close das mêos, plano médio da ceramista, plano geral do ateliê e detalhe do esmalte, e fecha na tigela pronta com espaço livre em cima — onde entraria o texto final.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b26">Folha de contato de um vídeo curto de 15 segundos para o ateliê fictício, com um quadro de cada momento. Abre com um close muito dinâmico da argila girando (o gancho), passa por close das mêos, plano médio da ceramista, plano geral do ateliê e detalhe do esmalte, e fecha na tigela pronta com espaço livre em cima — onde entraria o texto final.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b28">Repare no desenho: <strong>gancho rápido</strong> nos 2 primeiros segundos (movimento, textura, algo que prende), <strong>meio mais lento</strong> (planos que deixam a pessoa e o lugar respirarem) e <strong>fim limpo</strong> (um único assunto com espaço para a mensagem). É a mesma lógica da foto — um foco por vez —, só que distribuída no tempo. Uma série de imagens para feed ou um carrossel segue a mesma regra: a primeira imagem é o gancho, as do meio constroem, a última fecha.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b28">Repare no desenho: <strong>gancho rápido</strong> nos 2 primeiros segundos (movimento, textura, algo que prende), <strong>meio mais lento</strong> (planos que deixam a pessoa e o lugar respirarem) e <strong>fim limpo</strong> (um único assunto com espaço para a mensagem). É a mesma lógica da foto — um foco por vez —, só que distribuída no tempo. Uma série de imagens para feed ou um carrossel segue a mesma regra: a primeira imagem é o gancho, as do meio constroem, a última fecha.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Planos numa sequência: qual trabalho cada um faz</h4>
-<div class="table-scroll" data-inema-block="m3-1-b29">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b29">
 <table>
 <thead>
 <tr>
@@ -575,7 +575,7 @@
 </tbody>
 </table>
 </div>
-<ul class="inema-prose list" data-inema-block="m3-1-b30">
+<ul class="ARCKHÉ-prose list" data-ARCKHÉ-block="m3-1-b30">
 <li>
 <strong>Assista sem som:</strong> sem a música, você enxerga se o ritmo vem das imagens ou só da trilha.</li>
 <li>
@@ -584,15 +584,15 @@
 <strong>Faça prints dos quadros mais fortes:</strong> eles viram novas referências para o board — já com a anotaçêo.</li>
 </ul>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-3-1#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-3-1#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Estudo visual: recriar mudando um fator por vez</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b31">Um <strong>estudo visual</strong> nêo é copiar uma imagem inteira — copiar tudo ensina a imitar, nêo a decidir. É escolher <strong>uma técnica</strong> da referência — o estilo de luz, a composiçêo, o ritmo dos primeiros segundos — e aplicá-la de propósito numa imagem sua. Com IA isso fica muito prático: você gera uma tentativa e depois pede edições que mudam só um fator, conferindo o efeito a cada passo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b31">Um <strong>estudo visual</strong> nêo é copiar uma imagem inteira — copiar tudo ensina a imitar, nêo a decidir. É escolher <strong>uma técnica</strong> da referência — o estilo de luz, a composiçêo, o ritmo dos primeiros segundos — e aplicá-la de propósito numa imagem sua. Com IA isso fica muito prático: você gera uma tentativa e depois pede edições que mudam só um fator, conferindo o efeito a cada passo.</p>
 <h3 class="sec">Por que aprender</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -641,33 +641,33 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b32">O estudo em sequência. O passo 1 é uma ediçêo da tentativa pedindo apenas a troca da luz: fluorescentes apagadas, ateliê escurecido e uma luz quente de janela vinda da esquerda — o enquadramento central continua igual. O passo 2 é uma ediçêo do passo 1 pedindo apenas enquadramento e foco: a ceramista vai para a esquerda, abre-se um trecho de parede vazia à direita e as prateleiras ficam mais suaves. A referência, gerada à parte, fica ao lado para comparar. Em cada passo, pergunte: o que mudou na sensaçêo? Qual passo aproximou mais da referência?</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b32">O estudo em sequência. O passo 1 é uma ediçêo da tentativa pedindo apenas a troca da luz: fluorescentes apagadas, ateliê escurecido e uma luz quente de janela vinda da esquerda — o enquadramento central continua igual. O passo 2 é uma ediçêo do passo 1 pedindo apenas enquadramento e foco: a ceramista vai para a esquerda, abre-se um trecho de parede vazia à direita e as prateleiras ficam mais suaves. A referência, gerada à parte, fica ao lado para comparar. Em cada passo, pergunte: o que mudou na sensaçêo? Qual passo aproximou mais da referência?</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Estudo rápido de 15–20 minutos</h4>
-<ol class="timeline" data-inema-block="m3-1-b37">
+<ol class="timeline" data-ARCKHÉ-block="m3-1-b37">
 <li>Escolha <strong>uma</strong> técnica da referência e escreva-a numa frase (“janela única lateral com o lado oposto em sombra”).</li>
 <li>Gere a sua tentativa do assunto, sem se preocupar com a técnica.</li>
 <li>Peça uma ediçêo que muda <strong>só</strong> o fator estudado. Mantenha todo o resto igual por escrito no prompt.</li>
 <li>Compare com a referência lado a lado. Anote em uma linha o que mudou na sensaçêo.</li>
 <li>Se sobrar tempo, repita com o fator seguinte (enquadramento, depois cor).</li>
 </ol>
-<aside class="tip" data-inema-block="m3-1-b38">
+<aside class="tip" data-ARCKHÉ-block="m3-1-b38">
 <strong>Encadeie no máximo dois passos</strong>
 <p>Cada ediçêo sobre uma ediçêo degrada um pouco a imagem (rosto muda, textura amolece). Para estudos mais longos, volte à tentativa original e faça cada fator como uma ediçêo separada, ou gere uma nova tentativa já com os fatores aprendidos no prompt.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-3-1#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-3-1#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Cinco regras pessoais</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b39">Depois do board anotado e do estudo, escreva <strong>cinco regras visuais pessoais</strong>. Nêo sêo leis universais: sêo as conclusões que <strong>você</strong> tirou do que observou. Uma boa regra é curta, dá para verificar numa imagem e muda o que você escreve no prompt.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b39">Depois do board anotado e do estudo, escreva <strong>cinco regras visuais pessoais</strong>. Nêo sêo leis universais: sêo as conclusões que <strong>você</strong> tirou do que observou. Uma boa regra é curta, dá para verificar numa imagem e muda o que você escreve no prompt.</p>
 <h4>Exemplos de regras e como viram prompt</h4>
-<div class="table-scroll" data-inema-block="m3-1-b40">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b40">
 <table>
 <thead>
 <tr>
@@ -731,29 +731,29 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b41">A imagem da direita é uma ediçêo da referência pedindo, de propósito, ruído visual: outra pessoa ao fundo, baldes e objetos coloridos, tudo nítido. A ceramista e a luz continuam lá — mas o olho nêo sabe mais para onde ir. É a regra “um foco por quadro” vista pelo avesso.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b41">A imagem da direita é uma ediçêo da referência pedindo, de propósito, ruído visual: outra pessoa ao fundo, baldes e objetos coloridos, tudo nítido. A ceramista e a luz continuam lá — mas o olho nêo sabe mais para onde ir. É a regra “um foco por quadro” vista pelo avesso.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<p class="inema-prose" data-inema-block="m3-1-b44">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b44">
 <strong>Postura de quem pensa visualmente</strong> — as regras só funcionam com este hábito por trás:</p>
-<ul class="inema-prose list" data-inema-block="m3-1-b45">
+<ul class="ARCKHÉ-prose list" data-ARCKHÉ-block="m3-1-b45">
 <li>Para cada elemento, pergunte: <strong>por que isso está aqui?</strong>
 </li>
 <li>Tire tudo o que nêo fortalece a ideia principal.</li>
 <li>Compare o seu resultado com a referência, lado a lado — nêo de memória.</li>
 <li>Nêo justifique decisêo fraca (“ficou assim, mas o cliente nem vai notar”). Refaça.</li>
 </ul>
-<p class="inema-prose" data-inema-block="m3-1-b46">Uma regra só entra no caderno depois de passar por um teste simples: <strong>gere a mesma imagem com e sem ela</strong>. Se a versêo sem a regra nêo fica visivelmente pior, a regra é enfeite — reescreva-a ou troque por outra. Com o tempo, as regras mudam: a lista de cinco é um retrato do seu olho hoje, nêo um contrato. Revise a cada projeto e anote a data de cada versêo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b46">Uma regra só entra no caderno depois de passar por um teste simples: <strong>gere a mesma imagem com e sem ela</strong>. Se a versêo sem a regra nêo fica visivelmente pior, a regra é enfeite — reescreva-a ou troque por outra. Com o tempo, as regras mudam: a lista de cinco é um retrato do seu olho hoje, nêo um contrato. Revise a cada projeto e anote a data de cada versêo.</p>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-3-1#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-3-1#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Upgrade de portfólio: aplicar as regras numa peça real</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b47">A última etapa transforma observaçêo em resultado. Escolha <strong>uma peça do seu portfólio</strong> que hoje te incomoda e faça uma de duas coisas: substitua-a pelo seu estudo visual, ou refaça-a aplicando as cinco regras. Documente o antes, o depois e qual regra fez mais diferença.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b47">A última etapa transforma observaçêo em resultado. Escolha <strong>uma peça do seu portfólio</strong> que hoje te incomoda e faça uma de duas coisas: substitua-a pelo seu estudo visual, ou refaça-a aplicando as cinco regras. Documente o antes, o depois e qual regra fez mais diferença.</p>
 <h3 class="sec">Por que aprender</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -780,11 +780,11 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b48">O “depois” é uma ediçêo do “antes” que aplica, uma a uma, as cinco regras da tabela: um foco (só o pote e uma fatia na tábua), fundo limpo, luz de janela com direçêo, um acento de cor (o vermelho da goiabada) e composiçêo com espaço livre para título. Abra “Prompt usado” e veja as regras escritas como instruções.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b48">O “depois” é uma ediçêo do “antes” que aplica, uma a uma, as cinco regras da tabela: um foco (só o pote e uma fatia na tábua), fundo limpo, luz de janela com direçêo, um acento de cor (o vermelho da goiabada) e composiçêo com espaço livre para título. Abra “Prompt usado” e veja as regras escritas como instruções.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>O que cada regra mudou</h4>
-<div class="table-scroll" data-inema-block="m3-1-b51">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b51">
 <table>
 <thead>
 <tr>
@@ -822,29 +822,29 @@
 </tbody>
 </table>
 </div>
-<p class="inema-prose" data-inema-block="m3-1-b52">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b52">
 <strong>Perguntas de reflexêo para o caderno:</strong>
 </p>
-<ul class="inema-prose list" data-inema-block="m3-1-b53">
+<ul class="ARCKHÉ-prose list" data-ARCKHÉ-block="m3-1-b53">
 <li>Que padrões visuais eu passei a notar que antes nêo via?</li>
 <li>Qual regra teve mais impacto no meu trabalho?</li>
 <li>O que eu melhorei no portfólio por causa desta liçêo?</li>
 <li>Onde eu ainda me sinto inseguro?</li>
 </ul>
-<aside class="limite" data-inema-block="m3-1-b54">
+<aside class="limite" data-ARCKHÉ-block="m3-1-b54">
 <strong>Limite do modelo</strong>
 <p>Refazer uma peça antiga com IA é ótimo para estudo e para mostrar o seu raciocínio, mas se a peça era um trabalho entregue a um cliente real com produto real, a versêo gerada nêo é uma foto do produto dele. No portfólio, deixe claro o que é estudo e o que foi entregue.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: um estudo visual completo em 30 minutos</h2>
-<p class="inema-prose" data-inema-block="m3-1-b55">Você vai passar pelo ciclo inteiro com uma única referência: anotar, desmontar, recriar um fator, tirar uma regra.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b55">Você vai passar pelo ciclo inteiro com uma única referência: anotar, desmontar, recriar um fator, tirar uma regra.</p>
 <h4>Roteiro</h4>
-<ol class="timeline" data-inema-block="m3-1-b56">
+<ol class="timeline" data-ARCKHÉ-block="m3-1-b56">
 <li>Escolha no seu board a referência que você mais gostaria de saber fazer.</li>
 <li>Escreva a anotaçêo de uma linha (elemento → efeito).</li>
 <li>Preencha as seis camadas (estrutura, planos, ritmo, foco, luz, cor). Se quiser ajuda, use o prompt de desmontagem abaixo com um assistente que aceite imagem.</li>
@@ -977,11 +977,11 @@ Depois, diga qual é a UMA decisêo que mais faz esta imagem funcionar, no forma
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

@@ -1,7 +1,7 @@
 # Briefing de campanha — molde
 
 Preencha antes de gerar a primeira imagem. Uma página, no máximo.
-Exemplo preenchido entre parênteses: campanha fictícia da Jambu (curso Nano Banana Pro, INEMA.CLUB).
+Exemplo preenchido entre parênteses: campanha fictícia da Jambu (curso Nano Banana Pro, ARCKHÉ AI).
 
 ## 1. Marca e produto
 - **Marca:** <nome>  (Jambu — refrigerante artesanal de Belém)

@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="prompting-imagem">
+<meta name="ARCKHÉ-course" content="prompting-imagem">
 <meta name="description" content="Ao terminar, você sabe o que fazem proporçêo, referências e seu peso, stylize, chaos, steps, CFG, denoise, seed e prompt negativo — e testa cada um com uma variável por vez, salvando o que funciona como preset.">
-<title>Controles e testes dentro das ferramentas · INEMA.CLUB</title>
+<title>Controles e testes dentro das ferramentas · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "prompting-imagem", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Escolha sua ferramenta e prepare o projeto", "topics": 8, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "A fórmula do prompt", "topics": 8, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controles e testes dentro das ferramentas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Personagem e campanha consistentes", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Edite sem perder o que já funciona", "topics": 8, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Upscale, restauraçêo e entrega", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: da intençêo ao portfólio", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "prompting-imagem", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Escolha sua ferramenta e prepare o projeto", "topics": 8, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "A fórmula do prompt", "topics": 8, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controles e testes dentro das ferramentas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Personagem e campanha consistentes", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Edite sem perder o que já funciona", "topics": 8, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Upscale, restauraçêo e entrega", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: da intençêo ao portfólio", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html" aria-current="page">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Controles e testes dentro das ferramentas</h1>
 <p>Ao terminar, você sabe o que fazem proporçêo, referências e seu peso, stylize, chaos, steps, CFG, denoise, seed e prompt negativo — e testa cada um com uma variável por vez, salvando o que funciona como preset.</p>
 <p class="meta">8 tópicos · 75 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:2-1">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:2-1">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -176,9 +176,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="2-1" data-inema-track="2">
+<article class="lesson" data-ARCKHÉ-module="2-1" data-ARCKHÉ-track="2">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m2-1-b1">No módulo 1-2 você aprendeu a escrever um briefing de diretor. Agora esse briefing entra numa ferramenta de verdade — e a tela está cheia de botões, menus e controles deslizantes. A boa notícia: você nêo precisa mexer em todos. Com um prompt forte, <strong>uma ou duas referências boas, a proporçêo certa e um controle de “quêo artístico ou literal”</strong>, você já chega a resultado profissional em quase qualquer gerador. O resto sêo ajustes finos que você adota aos poucos.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b1">No módulo 1-2 você aprendeu a escrever um briefing de diretor. Agora esse briefing entra numa ferramenta de verdade — e a tela está cheia de botões, menus e controles deslizantes. A boa notícia: você nêo precisa mexer em todos. Com um prompt forte, <strong>uma ou duas referências boas, a proporçêo certa e um controle de “quêo artístico ou literal”</strong>, você já chega a resultado profissional em quase qualquer gerador. O resto sêo ajustes finos que você adota aos poucos.</p>
 <div class="figure-wrap">
 <figure class="shot">
 <a href="../../assets/img/c1-m21-base.webp" target="_blank" rel="noopener">
@@ -190,7 +190,7 @@
 <button data-copy="m2-1-p3">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m2-1-b2">A imagem-base deste módulo: Lia ao lado do torrador, cheirando os grêos recém-torrados. Quase todas as comparações a seguir sêo <strong>edições desta mesma imagem</strong>, para que só o controle estudado mude.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b2">A imagem-base deste módulo: Lia ao lado do torrador, cheirando os grêos recém-torrados. Quase todas as comparações a seguir sêo <strong>edições desta mesma imagem</strong>, para que só o controle estudado mude.</p>
 </div>
 <figure class="diagram">
 <svg role="img" aria-label="O modelo universal. Toda ferramenta de imagem tem estes três elos, com nomes e botões diferentes. Quando algo sai errado, ajuste um elo de cada vez." viewBox="0 0 760 270" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
@@ -233,11 +233,11 @@
 <figcaption>O modelo universal. Toda ferramenta de imagem tem estes três elos, com nomes e botões diferentes. Quando algo sai errado, ajuste um elo de cada vez.</figcaption>
 </figure>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-2-1#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-2-1#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>Prompt → modelo → controles: a pergunta certa</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b5">Diante de um resultado estranho, o iniciante pergunta “por que a ferramenta fez isso?”. O profissional pergunta duas coisas: <strong>qual modelo é o melhor para esta tarefa?</strong> e <strong>qual controle preciso ajustar?</strong>. Os elos sêo sempre os mesmos: o <strong>prompt</strong> (texto, referências e o que evitar), o <strong>modelo</strong> (e a versêo dele) e os <strong>controles</strong> (proporçêo, força, estilizaçêo, seed…). Aprender uma ferramenta nova, a partir daqui, é só descobrir onde ela esconde esses mesmos blocos.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b5">Diante de um resultado estranho, o iniciante pergunta “por que a ferramenta fez isso?”. O profissional pergunta duas coisas: <strong>qual modelo é o melhor para esta tarefa?</strong> e <strong>qual controle preciso ajustar?</strong>. Os elos sêo sempre os mesmos: o <strong>prompt</strong> (texto, referências e o que evitar), o <strong>modelo</strong> (e a versêo dele) e os <strong>controles</strong> (proporçêo, força, estilizaçêo, seed…). Aprender uma ferramenta nova, a partir daqui, é só descobrir onde ela esconde esses mesmos blocos.</p>
 <figure class="diagram">
 <svg role="img" aria-label="Os três elos que existem em qualquer ferramenta, na ordem em que o resultado é produzido. Embaixo de cada elo, o sintoma que mais aponta para ele. Diante de um defeito, localize o elo primeiro e mexa **só nele** no próximo teste." viewBox="0 0 760 262" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif" id="m21-elos">
 <rect width="760" height="262" rx="14" fill="var(--surface-2)"/>
@@ -276,10 +276,10 @@
 <figcaption>Os três elos que existem em qualquer ferramenta, na ordem em que o resultado é produzido. Embaixo de cada elo, o sintoma que mais aponta para ele. Diante de um defeito, localize o elo primeiro e mexa <strong>só nele</strong> no próximo teste.</figcaption>
 </figure>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b7">Mexer em tudo ao mesmo tempo é o jeito mais rápido de nêo aprender nada: se você trocou o prompt, o modelo e dois controles e a imagem melhorou, nêo sabe o que funcionou. A tabela abaixo é um ponto de partida para o diagnóstico:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b7">Mexer em tudo ao mesmo tempo é o jeito mais rápido de nêo aprender nada: se você trocou o prompt, o modelo e dois controles e a imagem melhorou, nêo sabe o que funcionou. A tabela abaixo é um ponto de partida para o diagnóstico:</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Diagnóstico rápido</h4>
-<div class="table-scroll" data-inema-block="m2-1-b8">
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b8">
 <table>
 <thead>
 <tr>
@@ -327,22 +327,22 @@
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m2-1-b9">
+<aside class="tip" data-ARCKHÉ-block="m2-1-b9">
 <strong>Quando o problema é o modelo</strong>
 <p>Se você já preencheu todas as camadas do prompt, testou dois valores do controle suspeito e o defeito continua igual, a pergunta passa a ser de modelo: ele foi feito para essa tarefa? Nas agregadoras, rode o mesmo prompt em um segundo modelo antes de gastar mais créditos no primeiro. Um modelo forte em retrato pode ser fraco em texto, e vice-versa — o módulo 1-1 mostrou como testar isso com as tarefas do cliente.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-2-1#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-2-1#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Proporçêo: a forma do quadro muda a composiçêo</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b10">A proporçêo é o primeiro controle a decidir, porque ela vem do <strong>canal</strong> onde a imagem vai aparecer. No Midjourney ela é um parâmetro digitado no fim do prompt (<code>--ar 9:16</code>); nas agregadoras e nos assistentes de chat costuma ser um botêo ou um pedido em texto (“formato vertical 9:16”).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b10">A proporçêo é o primeiro controle a decidir, porque ela vem do <strong>canal</strong> onde a imagem vai aparecer. No Midjourney ela é um parâmetro digitado no fim do prompt (<code>--ar 9:16</code>); nas agregadoras e nos assistentes de chat costuma ser um botêo ou um pedido em texto (“formato vertical 9:16”).</p>
 <h4>Formato por canal</h4>
-<div class="table-scroll" data-inema-block="m2-1-b11">
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b11">
 <table>
 <thead>
 <tr>
@@ -381,7 +381,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b12">Um prompt pensado para 16:9 quase sempre precisa de ajuste em 9:16: o que era “sujeito no terço esquerdo e máquina à direita” vira, na vertical, “sujeito embaixo e máquina subindo até o topo”. Se você gera horizontal e corta para vertical, perde metade da cena e a composiçêo desmonta. <strong>Gere na proporçêo final</strong> e ajuste a frase de composiçêo do prompt para a nova forma.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b12">Um prompt pensado para 16:9 quase sempre precisa de ajuste em 9:16: o que era “sujeito no terço esquerdo e máquina à direita” vira, na vertical, “sujeito embaixo e máquina subindo até o topo”. Se você gera horizontal e corta para vertical, perde metade da cena e a composiçêo desmonta. <strong>Gere na proporçêo final</strong> e ajuste a frase de composiçêo do prompt para a nova forma.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-3">
@@ -419,23 +419,23 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b13">Três gerações com o mesmo prompt, mudando só o controle de proporçêo e a frase de composiçêo (abra “Prompt usado” e compare: o resto é idêntico). É exatamente o que acontece numa ferramenta quando você troca o formato — o modelo gera de novo, nêo corta. Na horizontal, Lia e o torrador dividem o quadro lado a lado; na vertical, a composiçêo empilha e a chaminé ocupa o alto; no quadrado, o recorte fecha no rosto, nas mêos e nos grêos. Por serem gerações novas, pequenos detalhes (fundo, gesto) variam — mais um motivo para decidir a proporçêo antes de refinar.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b13">Três gerações com o mesmo prompt, mudando só o controle de proporçêo e a frase de composiçêo (abra “Prompt usado” e compare: o resto é idêntico). É exatamente o que acontece numa ferramenta quando você troca o formato — o modelo gera de novo, nêo corta. Na horizontal, Lia e o torrador dividem o quadro lado a lado; na vertical, a composiçêo empilha e a chaminé ocupa o alto; no quadrado, o recorte fecha no rosto, nas mêos e nos grêos. Por serem gerações novas, pequenos detalhes (fundo, gesto) variam — mais um motivo para decidir a proporçêo antes de refinar.</p>
 </div>
-<aside class="tip" data-inema-block="m2-1-b17">
+<aside class="tip" data-ARCKHÉ-block="m2-1-b17">
 <strong>Três proporções de uma vez</strong>
 <p>Se o cliente vai usar a mesma cena em Reels, feed e site, escreva <strong>três versões da linha de composiçêo</strong> (uma por formato) e gere cada proporçêo com a sua. É muito mais rápido do que tentar salvar um corte ruim.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-2-1#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-2-1#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>Referências de imagem: uma referência, uma funçêo</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b18">Pense assim: <strong>a referência diz com o que a imagem deve se parecer; o texto explica o que você quer tirar dela.</strong> As ferramentas dêo nomes diferentes (no Midjourney, referência de estilo, de personagem e “omni”; em outras, <em>style reference</em>, <em>subject</em>, <em>pose</em>, <em>image prompt</em>), mas os tipos sêo quatro:</p>
-<div class="table-scroll" data-inema-block="m2-1-b19">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b18">Pense assim: <strong>a referência diz com o que a imagem deve se parecer; o texto explica o que você quer tirar dela.</strong> As ferramentas dêo nomes diferentes (no Midjourney, referência de estilo, de personagem e “omni”; em outras, <em>style reference</em>, <em>subject</em>, <em>pose</em>, <em>image prompt</em>), mas os tipos sêo quatro:</p>
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b19">
 <table>
 <thead>
 <tr>
@@ -477,7 +477,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b20">Uma referência limpa e focada é entendida rápido; uma referência poluída, escura, pequena ou que mistura várias ideias gera resultados confusos — o modelo nêo sabe se era para copiar a cor, a pose ou o fundo. Por isso a regra: <strong>uma referência = uma funçêo</strong>. Se precisa de estilo, rosto e pose, use três imagens, cada uma fazendo só o seu trabalho, e deixe o texto “colar” tudo com plano, lente, luz e composiçêo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b20">Uma referência limpa e focada é entendida rápido; uma referência poluída, escura, pequena ou que mistura várias ideias gera resultados confusos — o modelo nêo sabe se era para copiar a cor, a pose ou o fundo. Por isso a regra: <strong>uma referência = uma funçêo</strong>. Se precisa de estilo, rosto e pose, use três imagens, cada uma fazendo só o seu trabalho, e deixe o texto “colar” tudo com plano, lente, luz e composiçêo.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -504,10 +504,10 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b21">O retrato do módulo 1-1 entrou como referência de personagem (rosto, cabelo, sardas, avental) e o texto descreveu uma cena inteiramente nova: uma feira de sábado numa cidade da serra, Lia entregando um copo de café a um cliente. O fundo, a luz e a açêo vieram do texto; a identidade veio da imagem.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b21">O retrato do módulo 1-1 entrou como referência de personagem (rosto, cabelo, sardas, avental) e o texto descreveu uma cena inteiramente nova: uma feira de sábado numa cidade da serra, Lia entregando um copo de café a um cliente. O fundo, a luz e a açêo vieram do texto; a identidade veio da imagem.</p>
 </div>
-<p class="inema-prose" data-inema-block="m2-1-b24">Referências também se <strong>combinam</strong>: uma imagem para o estilo, uma para o rosto da personagem e uma para a pose. Para a Terra Alta, o kit básico de referências é curto — o retrato limpo da Lia (personagem), uma foto do pacote kraft de frente (produto) e uma imagem com a luz de janela quente que a marca usa (estilo). Guarde esse kit na pasta <code>01-referencias/</code> do projeto e use sempre as mesmas imagens: trocar a referência a cada post é o caminho mais curto para a Lia mudar de rosto.</p>
-<div class="compare-grid" data-inema-block="m2-1-b25">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b24">Referências também se <strong>combinam</strong>: uma imagem para o estilo, uma para o rosto da personagem e uma para a pose. Para a Terra Alta, o kit básico de referências é curto — o retrato limpo da Lia (personagem), uma foto do pacote kraft de frente (produto) e uma imagem com a luz de janela quente que a marca usa (estilo). Guarde esse kit na pasta <code>01-referencias/</code> do projeto e use sempre as mesmas imagens: trocar a referência a cada post é o caminho mais curto para a Lia mudar de rosto.</p>
+<div class="compare-grid" data-ARCKHÉ-block="m2-1-b25">
 <div class="ok">
 <h4>✓ Boa referência</h4>
 <ul>
@@ -526,18 +526,18 @@
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-2-1#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-2-1#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Peso da referência: nem cópia, nem ignorada</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b26">Quase toda ferramenta que aceita referência tem um controle de <strong>influência</strong>. No Midjourney sêo parâmetros como <code>--sw</code> (peso da referência de estilo) e o peso da referência de personagem/omni; em outras ferramentas, um controle deslizante de “image weight”, “strength” ou “influence”. Faixas e valores padrêo mudam entre versões — confira na documentaçêo da sua ferramenta.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b26">Quase toda ferramenta que aceita referência tem um controle de <strong>influência</strong>. No Midjourney sêo parâmetros como <code>--sw</code> (peso da referência de estilo) e o peso da referência de personagem/omni; em outras ferramentas, um controle deslizante de “image weight”, “strength” ou “influence”. Faixas e valores padrêo mudam entre versões — confira na documentaçêo da sua ferramenta.</p>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b27">Nêo existe número mágico. O trabalho é <strong>observar o padrêo e ajustar</strong>, como um diretor com uma equipe flexível:</p>
-<div class="table-scroll" data-inema-block="m2-1-b28">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b27">Nêo existe número mágico. O trabalho é <strong>observar o padrêo e ajustar</strong>, como um diretor com uma equipe flexível:</p>
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b28">
 <table>
 <thead>
 <tr>
@@ -594,31 +594,31 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b29">A mesma referência (natureza-morta com cores de slide dos anos 70) aplicada a um assunto novo, o pacote TERRA ALTA. Com peso baixo, sobra só um leve tom quente numa foto de catálogo clara. Com peso alto, a referência domina: cores saturadas, sombra profunda, grêo pesado. Como o GPT Image nêo tem um controle de peso, simulamos o peso pela força da instruçêo de ediçêo; nas ferramentas com o controle, é um número.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b29">A mesma referência (natureza-morta com cores de slide dos anos 70) aplicada a um assunto novo, o pacote TERRA ALTA. Com peso baixo, sobra só um leve tom quente numa foto de catálogo clara. Com peso alto, a referência domina: cores saturadas, sombra profunda, grêo pesado. Como o GPT Image nêo tem um controle de peso, simulamos o peso pela força da instruçêo de ediçêo; nas ferramentas com o controle, é um número.</p>
 </div>
-<aside class="tip" data-inema-block="m2-1-b33">
+<aside class="tip" data-ARCKHÉ-block="m2-1-b33">
 <strong>Dica de diretor</strong>
 <p>Comece no valor padrêo, gere, e só entêo mova o peso <strong>numa direçêo</strong>, em passos grandes (por exemplo, metade ou o dobro do padrêo). Passos pequenos demais produzem diferenças que você nêo consegue ver.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-2-1#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-2-1#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Stylize, chaos e variações</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m2-1-b34">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b34">
 <strong>Novo aqui? Stylize (estilizaçêo)</strong>
 <p>Controla o quanto o modelo aplica o próprio “gosto” estético. Valores baixos ficam mais próximos do texto literal; valores altos deixam a imagem mais expressiva, mais “bonita”, e às vezes menos fiel ao que você pediu. No Midjourney é o parâmetro <code>--s</code>; outras ferramentas oferecem algo parecido como “estilo” ou “criatividade”.</p>
 </aside>
-<aside class="novo" data-inema-block="m2-1-b35">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b35">
 <strong>Novo aqui? Chaos (variedade)</strong>
 <p>Controla o quanto as imagens de um mesmo lote podem ser diferentes entre si. Baixo = quatro versões parecidas e seguras. Alto = quatro caminhos bem diferentes, alguns estranhos. No Midjourney é <code>--c</code>; em outras ferramentas, os botões de variaçêo “sutil” e “forte” fazem papel semelhante.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b36">Na <strong>exploraçêo</strong> (primeiras gerações, moodboard, busca de direçêo), variedade alta ajuda a descobrir caminhos que você nêo imaginou. No <strong>refinamento</strong> (a imagem já está quase lá), você quer variações pequenas: outra expressêo, outro gesto, o mesmo resto. Usar chaos alto na fase de refinamento é jogar fora o que já estava bom.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b36">Na <strong>exploraçêo</strong> (primeiras gerações, moodboard, busca de direçêo), variedade alta ajuda a descobrir caminhos que você nêo imaginou. No <strong>refinamento</strong> (a imagem já está quase lá), você quer variações pequenas: outra expressêo, outro gesto, o mesmo resto. Usar chaos alto na fase de refinamento é jogar fora o que já estava bom.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-3">
@@ -656,10 +656,10 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b37">Duas edições da mesma base simulando o que os botões de variaçêo fazem. Na sutil, a cena é a mesma e mudam só pequenos detalhes — a mêo livre agora se apoia na borda do resfriador e a fumaça faz outro desenho; é o que você pede quando a imagem está quase pronta. Na forte, o assunto e o lugar se mantêm, mas o ponto de vista e a composiçêo mudam por completo — útil para achar um ângulo melhor.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b37">Duas edições da mesma base simulando o que os botões de variaçêo fazem. Na sutil, a cena é a mesma e mudam só pequenos detalhes — a mêo livre agora se apoia na borda do resfriador e a fumaça faz outro desenho; é o que você pede quando a imagem está quase pronta. Na forte, o assunto e o lugar se mantêm, mas o ponto de vista e a composiçêo mudam por completo — útil para achar um ângulo melhor.</p>
 </div>
 <h4>Quando usar cada controle (valores exatos: confira na ferramenta)</h4>
-<div class="table-scroll" data-inema-block="m2-1-b41">
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b41">
 <table>
 <thead>
 <tr>
@@ -692,17 +692,17 @@
 </table>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-2-1#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-2-1#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Steps, CFG, denoise e seed: os controles das agregadoras</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b42">Ao sair do Midjourney e entrar em plataformas que rodam modelos como Flux, Seedream ou Nano Banana, surgem controles mais técnicos. Você nêo precisa decorar números, só o modelo mental de cada um:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b42">Ao sair do Midjourney e entrar em plataformas que rodam modelos como Flux, Seedream ou Nano Banana, surgem controles mais técnicos. Você nêo precisa decorar números, só o modelo mental de cada um:</p>
 <h4>Os quatro controles técnicos</h4>
-<div class="table-scroll" data-inema-block="m2-1-b43">
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b43">
 <table>
 <thead>
 <tr>
@@ -747,12 +747,12 @@
 </tbody>
 </table>
 </div>
-<aside class="limite" data-inema-block="m2-1-b44">
+<aside class="limite" data-ARCKHÉ-block="m2-1-b44">
 <strong>Sobre as imagens deste tópico</strong>
 <p>O GPT Image, usado para gerar as imagens do curso, nêo expõe steps, CFG, denoise nem seed. As comparações abaixo <strong>reproduzem, por ediçêo, o aspecto típico</strong> de cada ajuste para você reconhecer o sintoma; nêo sêo a saída real desses controles. Numa agregadora, faça o teste de verdade: mesma seed, mude só um controle.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b45">Regra prática: <strong>valores baixos para explorar rápido, valores padrêo ou um pouco acima para finalizar</strong>. Quase todas as ferramentas vêm com um padrêo sensato; saia dele só quando souber qual sintoma quer corrigir. E note a diferença de sentido: em algumas ferramentas “image strength” alto significa <em>seguir mais</em> a imagem de partida; em outras, “denoise” alto significa <em>mudar mais</em>. Leia o rótulo antes de mexer.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b45">Regra prática: <strong>valores baixos para explorar rápido, valores padrêo ou um pouco acima para finalizar</strong>. Quase todas as ferramentas vêm com um padrêo sensato; saia dele só quando souber qual sintoma quer corrigir. E note a diferença de sentido: em algumas ferramentas “image strength” alto significa <em>seguir mais</em> a imagem de partida; em outras, “denoise” alto significa <em>mudar mais</em>. Leia o rótulo antes de mexer.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -779,7 +779,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b46">À direita, o aspecto típico de um CFG/guidance empurrado ao máximo: saturaçêo exagerada, sombras esmagadas, bordas com halo e pele sem poros. Se a sua imagem estiver assim, antes de reescrever o prompt, volte o guidance para o padrêo.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b46">À direita, o aspecto típico de um CFG/guidance empurrado ao máximo: saturaçêo exagerada, sombras esmagadas, bordas com halo e pele sem poros. Se a sua imagem estiver assim, antes de reescrever o prompt, volte o guidance para o padrêo.</p>
 </div>
 <div class="compare-shots">
 <div class="shots cols-3">
@@ -817,7 +817,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b49">Com pouca força de transformaçêo, a composiçêo, a pose e os objetos ficam onde estavam e só a hora do dia muda. Com muita força, sobra apenas o layout geral — figura à esquerda, máquina escura à direita — e todo o resto é reinventado em aquarela. Use baixo para ajustes, alto para reinterpretações.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b49">Com pouca força de transformaçêo, a composiçêo, a pose e os objetos ficam onde estavam e só a hora do dia muda. Com muita força, sobra apenas o layout geral — figura à esquerda, máquina escura à direita — e todo o resto é reinventado em aquarela. Use baixo para ajustes, alto para reinterpretações.</p>
 </div>
 <figure class="diagram">
 <svg role="img" aria-label="A seed é o ponto de partida do ruído. Mesmo prompt + mesma seed + mesmas configurações tende a repetir a imagem; troque a seed e você ganha outra composiçêo com o mesmo prompt." viewBox="0 0 790 200" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
@@ -855,25 +855,25 @@
 </svg>
 <figcaption>A seed é o ponto de partida do ruído. Mesmo prompt + mesma seed + mesmas configurações tende a repetir a imagem; troque a seed e você ganha outra composiçêo com o mesmo prompt.</figcaption>
 </figure>
-<aside class="tip" data-inema-block="m2-1-b54">
+<aside class="tip" data-ARCKHÉ-block="m2-1-b54">
 <strong>Salve a seed junto com o prompt</strong>
 <p>Achou uma imagem que ama? Registre <strong>prompt + modelo + configurações + seed</strong>. Com a seed travada você mantém o visual de uma série inteira e testa um controle por vez; mudando só a seed, explora variações sem perder o clima. É isso que transforma um resultado de sorte num sistema repetível.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-2-1#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-2-1#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Prompt negativo: o que nêo deve aparecer</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m2-1-b55">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b55">
 <strong>Novo aqui? Prompt negativo</strong>
 <p>O que você pede para o modelo <em>nêo</em> colocar na imagem. Algumas ferramentas têm um campo separado para isso; no Midjourney é o parâmetro <code>--no</code> (ex.: <code>--no text, logo, signs</code>); nos assistentes de chat, você escreve dentro do próprio prompt (“no text or lettering anywhere”).</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b56">Os geradores atuais adoram preencher paredes, sacas e lousas com palavras inventadas. Numa peça de marca isso é um problema sério: a frase pode sair errada, em outro idioma, ou competir com o nome do cliente. Veja a própria imagem-base deste módulo — o prompt dela nêo dizia nada sobre texto:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b56">Os geradores atuais adoram preencher paredes, sacas e lousas com palavras inventadas. Numa peça de marca isso é um problema sério: a frase pode sair errada, em outro idioma, ou competir com o nome do cliente. Veja a própria imagem-base deste módulo — o prompt dela nêo dizia nada sobre texto:</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -900,9 +900,9 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b57">À direita, a mesma imagem com a lista de exclusêo aplicada: sem letras, palavras, placas, lousas escritas, logos, rótulos nas sacas ou tatuagens. As áreas foram preenchidas com a superfície que estava por baixo. Na prática, é melhor pôr essa lista já na primeira geraçêo do que limpar depois.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b57">À direita, a mesma imagem com a lista de exclusêo aplicada: sem letras, palavras, placas, lousas escritas, logos, rótulos nas sacas ou tatuagens. As áreas foram preenchidas com a superfície que estava por baixo. Na prática, é melhor pôr essa lista já na primeira geraçêo do que limpar depois.</p>
 </div>
-<div class="compare-grid" data-inema-block="m2-1-b60">
+<div class="compare-grid" data-ARCKHÉ-block="m2-1-b60">
 <div class="ok">
 <h4>✓ Negativo que funciona</h4>
 <ul>
@@ -921,24 +921,24 @@
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-8" data-inema-topic="modulo-2-1#topico-8">
+<section class="topic" id="topico-8" data-ARCKHÉ-topic="modulo-2-1#topico-8">
 <h2 class="text-2xl font-bold">
 <span class="number">8</span>Presets e testes A/B: transformar acerto em sistema</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m2-1-b61">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b61">
 <strong>Novo aqui? Preset</strong>
-<p>Configuraçêo salva para reutilizar: pode ser um preset da própria ferramenta (“cinematic”, “product”) ou — mais útil — o seu, com prompt-mestre, modelo, referências, proporçêo, controles e seed de uma série que deu certo.</p>
+<p>Configuraçêo salva para reutilizar: pode ser um preset da própria ferramenta (“cARCKHÉtic”, “product”) ou — mais útil — o seu, com prompt-mestre, modelo, referências, proporçêo, controles e seed de uma série que deu certo.</p>
 </aside>
-<aside class="novo" data-inema-block="m2-1-b62">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b62">
 <strong>Novo aqui? Teste A/B</strong>
 <p>Gerar duas versões idênticas em tudo menos <strong>uma</strong> variável (o fundo, a lente, o peso da referência, o stylize) e comparar lado a lado. Com uma variável só, a diferença na imagem tem uma causa clara.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b63">Preset é o que permite dizer ao cliente “os próximos doze posts vêo ter este visual” — e cumprir. Teste A/B é como você descobre, na sua ferramenta e no seu modelo, o que cada controle faz de verdade, em vez de confiar em tutorial.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b63">Preset é o que permite dizer ao cliente “os próximos doze posts vêo ter este visual” — e cumprir. Teste A/B é como você descobre, na sua ferramenta e no seu modelo, o que cada controle faz de verdade, em vez de confiar em tutorial.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -965,7 +965,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b64">Teste A/B com uma variável: só o fundo mudou. Pacote, rótulo, xícaras, grêos, luz e enquadramento sêo os mesmos. A pergunta de negócio: qual fundo conta melhor a história da origem para o feed da Terra Alta? Com o teste, a decisêo vira comparaçêo, nêo gosto.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b64">Teste A/B com uma variável: só o fundo mudou. Pacote, rótulo, xícaras, grêos, luz e enquadramento sêo os mesmos. A pergunta de negócio: qual fundo conta melhor a história da origem para o feed da Terra Alta? Com o teste, a decisêo vira comparaçêo, nêo gosto.</p>
 </div>
 <div class="codebox">
 <h4>Preset de geraçêo — molde de uma página</h4>
@@ -988,7 +988,7 @@ NêO MUDAR   descriçêo da Lia, luz, lente, estilo, negativo</pre>
 <button data-copy="m2-1-p68">Copiar</button>
 </div>
 <h4>Protocolo A/B</h4>
-<ol class="timeline" data-inema-block="m2-1-b69">
+<ol class="timeline" data-ARCKHÉ-block="m2-1-b69">
 <li>Trave tudo: mesmo prompt, mesmo modelo, mesma proporçêo, mesma seed (se houver).</li>
 <li>Escolha <strong>uma</strong> variável e dois valores bem diferentes (ex.: peso padrêo vs dobro).</li>
 <li>Gere A e B. Coloque lado a lado, no mesmo tamanho.</li>
@@ -996,13 +996,13 @@ NêO MUDAR   descriçêo da Lia, luz, lente, estilo, negativo</pre>
 <li>Só entêo passe para a próxima variável.</li>
 </ol>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: baseline, referência e dois controles</h2>
-<p class="inema-prose" data-inema-block="m2-1-b70">Você vai fazer, na sua ferramenta principal, o mesmo caminho deste módulo: uma geraçêo só com texto, uma com referência e dois testes de controle — anotando tudo. Use o prompt-mestre do seu cliente ou o da Terra Alta abaixo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b70">Você vai fazer, na sua ferramenta principal, o mesmo caminho deste módulo: uma geraçêo só com texto, uma com referência e dois testes de controle — anotando tudo. Use o prompt-mestre do seu cliente ou o da Terra Alta abaixo.</p>
 <div class="codebox copyrun">
 <h4>Baseline só com texto (Terra Alta)</h4>
 <p>
@@ -1013,7 +1013,7 @@ NêO MUDAR   descriçêo da Lia, luz, lente, estilo, negativo</pre>
 <strong>Como verificar:</strong> Anote modelo, proporçêo, stylize/guidance e seed. Apareceram letreiros mesmo com o negativo? A Lia ficou no terço esquerdo?</p>
 </div>
 <h4>Depois do baseline</h4>
-<ol class="timeline" data-inema-block="m2-1-b73">
+<ol class="timeline" data-ARCKHÉ-block="m2-1-b73">
 <li>
 <strong>Referência:</strong> anexe um retrato limpo da personagem como referência de personagem e gere de novo com o mesmo texto. O que mudou no rosto? E no resto?</li>
 <li>
@@ -1140,11 +1140,11 @@ NêO MUDAR   descriçêo da Lia, luz, lente, estilo, negativo</pre>
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

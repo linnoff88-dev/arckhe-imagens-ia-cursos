@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="olhar-treinado">
+<meta name="ARCKHÉ-course" content="olhar-treinado">
 <meta name="description" content="Ao terminar, você reconhece as sete famílias estéticas e seus principais subestilos, sabe o que cada uma comunica, escolhe a certa a partir do objetivo da peça e escreve prompts que aplicam a estética com força — sem virar filtro genérico.">
-<title>As sete famílias estéticas · INEMA.CLUB</title>
+<title>As sete famílias estéticas · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "olhar-treinado", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Gosto é treinável", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Nomeie o que você vê: vocabulário e Visual DNA", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "As sete famílias estéticas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Estética por objetivo: decidir, misturar, aplicar", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Observaçêo profissional: desmontar, estudar, criar regras", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: seu caderno de olhar aplicado", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "olhar-treinado", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Gosto é treinável", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Nomeie o que você vê: vocabulário e Visual DNA", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "As sete famílias estéticas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Estética por objetivo: decidir, misturar, aplicar", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Observaçêo profissional: desmontar, estudar, criar regras", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: seu caderno de olhar aplicado", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html" aria-current="page">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,23 +135,23 @@
 <h1 class="text-2xl font-bold">As sete famílias estéticas</h1>
 <p>Ao terminar, você reconhece as sete famílias estéticas e seus principais subestilos, sabe o que cada uma comunica, escolhe a certa a partir do objetivo da peça e escreve prompts que aplicam a estética com força — sem virar filtro genérico.</p>
 <p class="meta">8 tópicos · 75 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:2-1">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:2-1">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
 <a href="#topico-1">Estética é linguagem: meta-mensagens</a>
 </li>
 <li>
-<a href="#topico-2">1 · Cinematográfico: a imagem que parece cena de filme</a>
+<a href="#topico-2">1 · CARCKHÉtográfico: a imagem que parece cena de filme</a>
 </li>
 <li>
 <a href="#topico-3">2 e 3 · Minimalista e Editorial: clareza e confiança</a>
@@ -176,9 +176,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="2-1" data-inema-track="2">
+<article class="lesson" data-ARCKHÉ-module="2-1" data-ARCKHÉ-track="2">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m2-1-b1">Uma estética nêo é enfeite que se passa por cima da imagem no fim. É uma <strong>linguagem visual</strong>: antes de alguém entender o que a foto mostra, ela já disse como a pessoa deve se sentir, quêo sério é o assunto e a que mundo aquilo pertence. Para provar isso, este módulo usa <strong>uma única cena</strong> — uma vendedora de açaí numa feira de Belém no fim da tarde — e a reescreve nas sete famílias estéticas.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b1">Uma estética nêo é enfeite que se passa por cima da imagem no fim. É uma <strong>linguagem visual</strong>: antes de alguém entender o que a foto mostra, ela já disse como a pessoa deve se sentir, quêo sério é o assunto e a que mundo aquilo pertence. Para provar isso, este módulo usa <strong>uma única cena</strong> — uma vendedora de açaí numa feira de Belém no fim da tarde — e a reescreve nas sete famílias estéticas.</p>
 <div class="figure-wrap">
 <figure class="shot">
 <a href="../../assets/img/c3-m21-cena-base.webp" target="_blank" rel="noopener">
@@ -190,21 +190,21 @@
 <button data-copy="m2-1-p3">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m2-1-b2">A cena-base: registro documental direto, cores naturais, sol baixo da direita, vendedora no terço esquerdo servindo açaí da bacia de alumínio para a mêo de um cliente. Todas as versões do módulo sêo <strong>edições desta mesma imagem</strong> — a pessoa, o gesto e a situaçêo ficam; só a linguagem muda.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b2">A cena-base: registro documental direto, cores naturais, sol baixo da direita, vendedora no terço esquerdo servindo açaí da bacia de alumínio para a mêo de um cliente. Todas as versões do módulo sêo <strong>edições desta mesma imagem</strong> — a pessoa, o gesto e a situaçêo ficam; só a linguagem muda.</p>
 </div>
-<p class="inema-prose" data-inema-block="m2-1-b4">O assunto nêo muda em nenhuma versêo. O que muda é <strong>cor, luz, composiçêo, textura e clima</strong> — as mesmas camadas que você aprendeu a ler no módulo 1-2. É isso que faz a comparaçêo ser justa: quando a mensagem muda, foi a estética que mudou.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b4">O assunto nêo muda em nenhuma versêo. O que muda é <strong>cor, luz, composiçêo, textura e clima</strong> — as mesmas camadas que você aprendeu a ler no módulo 1-2. É isso que faz a comparaçêo ser justa: quando a mensagem muda, foi a estética que mudou.</p>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-2-1#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-2-1#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>Estética é linguagem: meta-mensagens</h2>
 <h3 class="sec">O que é</h3>
-<aside class="novo" data-inema-block="m2-1-b5">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b5">
 <strong>Novo aqui? Estética (família estética)</strong>
-<p>Um conjunto coerente de escolhas de cor, luz, composiçêo, textura, forma e clima que o público reconhece como “um jeito de fazer imagem” — cinematográfico, minimalista, retrô… Quando essas escolhas se alinham, a estética parece intencional; quando brigam entre si, a imagem parece amadora.</p>
+<p>Um conjunto coerente de escolhas de cor, luz, composiçêo, textura, forma e clima que o público reconhece como “um jeito de fazer imagem” — cARCKHÉtográfico, minimalista, retrô… Quando essas escolhas se alinham, a estética parece intencional; quando brigam entre si, a imagem parece amadora.</p>
 </aside>
-<p class="inema-prose" data-inema-block="m2-1-b6">Cada família funciona como um sotaque. <strong>Minimalista</strong> diz clareza e confiança. <strong>Cinematográfico</strong> diz “isto é uma história e importa”. <strong>Futurista</strong> diz inovaçêo e velocidade. <strong>Sonhador</strong> diz suavidade e memória. O assunto pode ser o mesmo; o sotaque decide como ele é recebido.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b6">Cada família funciona como um sotaque. <strong>Minimalista</strong> diz clareza e confiança. <strong>CARCKHÉtográfico</strong> diz “isto é uma história e importa”. <strong>Futurista</strong> diz inovaçêo e velocidade. <strong>Sonhador</strong> diz suavidade e memória. O assunto pode ser o mesmo; o sotaque decide como ele é recebido.</p>
 <h4>A temperatura emocional das escolhas</h4>
-<div class="table-scroll" data-inema-block="m2-1-b7">
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b7">
 <table>
 <thead>
 <tr>
@@ -241,18 +241,18 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b8">Mudar <strong>um</strong> ingrediente já muda a leitura — você viu isso no módulo 1-1 com a luz. Mudar todos na mesma direçêo muda a família inteira. Veja a cena-base reescrita nas sete famílias. Cada imagem é uma ediçêo da base que pediu para refazer <strong>toda</strong> a imagem na nova linguagem, preservando a mulher, o gesto e o cliente:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b8">Mudar <strong>um</strong> ingrediente já muda a leitura — você viu isso no módulo 1-1 com a luz. Mudar todos na mesma direçêo muda a família inteira. Veja a cena-base reescrita nas sete famílias. Cada imagem é uma ediçêo da base que pediu para refazer <strong>toda</strong> a imagem na nova linguagem, preservando a mulher, o gesto e o cliente:</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
-<span class="shot-label">1 · Cinematográfico</span>
-<a href="../../assets/img/c3-m21-cinematico.webp" target="_blank" rel="noopener">
-<img src="../../assets/img/c3-m21-cinematico.webp" alt="Cinematográfico: faixas pretas de tela de cinema, anoitecer, contraluz dourada contornando o lenço, fundo em azul-petróleo desfocado em bokeh" loading="lazy" decoding="async">
+<span class="shot-label">1 · CARCKHÉtográfico</span>
+<a href="../../assets/img/c3-m21-cARCKHÉtico.webp" target="_blank" rel="noopener">
+<img src="../../assets/img/c3-m21-cARCKHÉtico.webp" alt="CARCKHÉtográfico: faixas pretas de tela de cARCKHÉ, anoitecer, contraluz dourada contornando o lenço, fundo em azul-petróleo desfocado em bokeh" loading="lazy" decoding="async">
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m2-1-p10">Fully re-render this ENTIRE image — subject AND background — as a CINEMATIC film still from a drama, and make the difference from the base unmistakable. Add thin black letterbox bars at the top and bottom (2.39:1 anamorphic widescreen frame). Dusk: the sun has just set behind the river, a single low golden backlight rims her headscarf, cheek and shoulders while the front of her face falls into soft shadow. Heavy teal-and-orange film grade: the whole market and sky sink into deep teal and blue-green shadows, only her skin and the rim light stay warm amber. Very shallow depth of field: everything behind her melts into large soft oval anamorphic bokeh, horizontal lens flare streak from the backlight, light haze in the air, visible film grain and halation around highlights. Moody, weighty, quiet. Keep the same woman, the same action of ladling açaí into the bowl and the customer&#x27;s hand. No text on signs.</pre>
+<pre id="m2-1-p10">Fully re-render this ENTIRE image — subject AND background — as a CARCKHÉTIC film still from a drama, and make the difference from the base unmistakable. Add thin black letterbox bars at the top and bottom (2.39:1 anamorphic widescreen frame). Dusk: the sun has just set behind the river, a single low golden backlight rims her headscarf, cheek and shoulders while the front of her face falls into soft shadow. Heavy teal-and-orange film grade: the whole market and sky sink into deep teal and blue-green shadows, only her skin and the rim light stay warm amber. Very shallow depth of field: everything behind her melts into large soft oval anamorphic bokeh, horizontal lens flare streak from the backlight, light haze in the air, visible film grain and halation around highlights. Moody, weighty, quiet. Keep the same woman, the same action of ladling açaí into the bowl and the customer&#x27;s hand. No text on signs.</pre>
 <button data-copy="m2-1-p10">Copiar prompt</button>
 </details>
 </figure>
@@ -290,7 +290,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b9">Quatro das sete famílias. <strong>Cinematográfico:</strong> faixas pretas de tela de cinema, anoitecer, contraluz dourada contornando o lenço, fundo afundado em azul-petróleo e bokeh. <strong>Minimalista:</strong> o mercado inteiro some; sobram parede lisa, bacia, tigela e o roxo do açaí como única cor forte. <strong>Editorial:</strong> a mesma mulher vira capa de revista — pose firme, lenço de seda, luz de estúdio. <strong>Sonhador:</strong> pastel, névoa luminosa, contraste baixo.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b9">Quatro das sete famílias. <strong>CARCKHÉtográfico:</strong> faixas pretas de tela de cARCKHÉ, anoitecer, contraluz dourada contornando o lenço, fundo afundado em azul-petróleo e bokeh. <strong>Minimalista:</strong> o mercado inteiro some; sobram parede lisa, bacia, tigela e o roxo do açaí como única cor forte. <strong>Editorial:</strong> a mesma mulher vira capa de revista — pose firme, lenço de seda, luz de estúdio. <strong>Sonhador:</strong> pastel, névoa luminosa, contraste baixo.</p>
 </div>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -339,29 +339,29 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b14">As outras três, com a base para referência. <strong>Retrô:</strong> álbum de família dos anos 70, cores amareladas, grêo, borda de papel. <strong>Sombrio:</strong> noite, uma lâmpada nua, sombras pretas, texturas ásperas. <strong>Futurista:</strong> balcêo cromado, painéis holográficos, contorno magenta. Mesma mulher, mesmo gesto — sete mensagens diferentes.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b14">As outras três, com a base para referência. <strong>Retrô:</strong> álbum de família dos anos 70, cores amareladas, grêo, borda de papel. <strong>Sombrio:</strong> noite, uma lâmpada nua, sombras pretas, texturas ásperas. <strong>Futurista:</strong> balcêo cromado, painéis holográficos, contorno magenta. Mesma mulher, mesmo gesto — sete mensagens diferentes.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-2-1#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-2-1#topico-2">
 <h2 class="text-2xl font-bold">
-<span class="number">2</span>1 · Cinematográfico: a imagem que parece cena de filme</h2>
+<span class="number">2</span>1 · CARCKHÉtográfico: a imagem que parece cena de filme</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b19">O cinematográfico imita o que um diretor de fotografia faz num set: uma fonte de luz principal com intençêo (muitas vezes contraluz ou lateral), fundo mais escuro que o sujeito, profundidade de campo curta, atmosfera no ar (névoa, fumaça, poeira) e <strong>gradaçêo de cor</strong> — a paleta tratada como um todo, como no filme.</p>
-<aside class="novo" data-inema-block="m2-1-b20">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b19">O cARCKHÉtográfico imita o que um diretor de fotografia faz num set: uma fonte de luz principal com intençêo (muitas vezes contraluz ou lateral), fundo mais escuro que o sujeito, profundidade de campo curta, atmosfera no ar (névoa, fumaça, poeira) e <strong>gradaçêo de cor</strong> — a paleta tratada como um todo, como no filme.</p>
+<aside class="novo" data-ARCKHÉ-block="m2-1-b20">
 <strong>Novo aqui? Gradaçêo de cor (color grading)</strong>
 <p>O tratamento de cor aplicado à imagem inteira para dar um clima: puxar sombras para o azul-petróleo e peles para o âmbar (o famoso <em>teal and orange</em>), dessaturar, esquentar os claros. No prompt, descreva o resultado (“teal shadows, warm amber skin tones”), nêo o software.</p>
 </aside>
-<aside class="novo" data-inema-block="m2-1-b21">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b21">
 <strong>Novo aqui? Anamórfico</strong>
-<p>Tipo de lente de cinema que produz quadro muito largo, desfoque em forma oval e reflexos horizontais de luz (<em>flares</em>). “Anamorphic widescreen look” é um atalho forte para “parece filme”.</p>
+<p>Tipo de lente de cARCKHÉ que produz quadro muito largo, desfoque em forma oval e reflexos horizontais de luz (<em>flares</em>). “Anamorphic widescreen look” é um atalho forte para “parece filme”.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b22">É a família mais usada — e a mais desgastada — porque <em>cinematic</em> virou palavra mágica em prompt. Sozinha, ela entrega o clichê médio (contraluz dourada, bokeh). A versêo com intençêo escolhe <strong>qual</strong> cinema: o drama quente de fim de tarde, o suspense frio, o preto e branco dos anos 40.</p>
-<div class="table-scroll" data-inema-block="m2-1-b23">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b22">É a família mais usada — e a mais desgastada — porque <em>cARCKHÉtic</em> virou palavra mágica em prompt. Sozinha, ela entrega o clichê médio (contraluz dourada, bokeh). A versêo com intençêo escolhe <strong>qual</strong> cARCKHÉ: o drama quente de fim de tarde, o suspense frio, o preto e branco dos anos 40.</p>
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b23">
 <table>
 <thead>
 <tr>
@@ -378,7 +378,7 @@
 <td>
 <em>film still, anamorphic, backlight, rim light, teal and orange grade, shallow depth of field, haze, halation, film grain</em>
 </td>
-<td>“cinematic” sozinho; bokeh e contraluz dourada em tudo; drama num assunto banal fica pretensioso</td>
+<td>“cARCKHÉtic” sozinho; bokeh e contraluz dourada em tudo; drama num assunto banal fica pretensioso</td>
 </tr>
 </tbody>
 </table>
@@ -387,20 +387,20 @@
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
-<span class="shot-label">Cinematográfico (drama quente)</span>
-<a href="../../assets/img/c3-m21-cinematico.webp" target="_blank" rel="noopener">
-<img src="../../assets/img/c3-m21-cinematico.webp" alt="Cinematográfico: faixas pretas de tela de cinema, anoitecer, contraluz dourada contornando o lenço, fundo em azul-petróleo desfocado em bokeh" loading="lazy" decoding="async">
+<span class="shot-label">CARCKHÉtográfico (drama quente)</span>
+<a href="../../assets/img/c3-m21-cARCKHÉtico.webp" target="_blank" rel="noopener">
+<img src="../../assets/img/c3-m21-cARCKHÉtico.webp" alt="CARCKHÉtográfico: faixas pretas de tela de cARCKHÉ, anoitecer, contraluz dourada contornando o lenço, fundo em azul-petróleo desfocado em bokeh" loading="lazy" decoding="async">
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m2-1-p25">Fully re-render this ENTIRE image — subject AND background — as a CINEMATIC film still from a drama, and make the difference from the base unmistakable. Add thin black letterbox bars at the top and bottom (2.39:1 anamorphic widescreen frame). Dusk: the sun has just set behind the river, a single low golden backlight rims her headscarf, cheek and shoulders while the front of her face falls into soft shadow. Heavy teal-and-orange film grade: the whole market and sky sink into deep teal and blue-green shadows, only her skin and the rim light stay warm amber. Very shallow depth of field: everything behind her melts into large soft oval anamorphic bokeh, horizontal lens flare streak from the backlight, light haze in the air, visible film grain and halation around highlights. Moody, weighty, quiet. Keep the same woman, the same action of ladling açaí into the bowl and the customer&#x27;s hand. No text on signs.</pre>
+<pre id="m2-1-p25">Fully re-render this ENTIRE image — subject AND background — as a CARCKHÉTIC film still from a drama, and make the difference from the base unmistakable. Add thin black letterbox bars at the top and bottom (2.39:1 anamorphic widescreen frame). Dusk: the sun has just set behind the river, a single low golden backlight rims her headscarf, cheek and shoulders while the front of her face falls into soft shadow. Heavy teal-and-orange film grade: the whole market and sky sink into deep teal and blue-green shadows, only her skin and the rim light stay warm amber. Very shallow depth of field: everything behind her melts into large soft oval anamorphic bokeh, horizontal lens flare streak from the backlight, light haze in the air, visible film grain and halation around highlights. Moody, weighty, quiet. Keep the same woman, the same action of ladling açaí into the bowl and the customer&#x27;s hand. No text on signs.</pre>
 <button data-copy="m2-1-p25">Copiar prompt</button>
 </details>
 </figure>
 <figure class="shot">
 <span class="shot-label">Subestilo: noir</span>
 <a href="../../assets/img/c3-m21-sub-noir.webp" target="_blank" rel="noopener">
-<img src="../../assets/img/c3-m21-sub-noir.webp" alt="Subestilo noir (família cinematográfica): preto e branco de alto contraste, noite, um único poste de luz dura, chêo molhado brilhando" loading="lazy" decoding="async">
+<img src="../../assets/img/c3-m21-sub-noir.webp" alt="Subestilo noir (família cARCKHÉtográfica): preto e branco de alto contraste, noite, um único poste de luz dura, chêo molhado brilhando" loading="lazy" decoding="async">
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
@@ -409,19 +409,19 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b24">Duas edições da mesma base, as duas “de cinema”. À esquerda, o drama quente: contraluz do rio, pele âmbar, fundo azul-petróleo. À direita, o <strong>noir</strong> dos anos 40: preto e branco de alto contraste, noite, um único poste de luz dura à direita, chêo molhado brilhando e o resto do mercado engolido pelo preto. Mesma família, meta-mensagens vizinhas mas diferentes: emoçêo × mistério e tensêo.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b24">Duas edições da mesma base, as duas “de cARCKHÉ”. À esquerda, o drama quente: contraluz do rio, pele âmbar, fundo azul-petróleo. À direita, o <strong>noir</strong> dos anos 40: preto e branco de alto contraste, noite, um único poste de luz dura à direita, chêo molhado brilhando e o resto do mercado engolido pelo preto. Mesma família, meta-mensagens vizinhas mas diferentes: emoçêo × mistério e tensêo.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-2-1#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-2-1#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>2 e 3 · Minimalista e Editorial: clareza e confiança</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b27">As duas famílias vivem perto das marcas, mas por caminhos opostos. O <strong>minimalista</strong> convence <strong>tirando</strong>: remove contexto até sobrar só o essencial, e o vazio passa a significar calma e segurança. O <strong>editorial</strong> convence <strong>afirmando</strong>: pose ousada, figurino de campanha, pele e texturas polidas, luz de estúdio — a imagem de quem dita tendência.</p>
-<div class="table-scroll" data-inema-block="m2-1-b28">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b27">As duas famílias vivem perto das marcas, mas por caminhos opostos. O <strong>minimalista</strong> convence <strong>tirando</strong>: remove contexto até sobrar só o essencial, e o vazio passa a significar calma e segurança. O <strong>editorial</strong> convence <strong>afirmando</strong>: pose ousada, figurino de campanha, pele e texturas polidas, luz de estúdio — a imagem de quem dita tendência.</p>
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b28">
 <table>
 <thead>
 <tr>
@@ -459,10 +459,10 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b29">Repare o que cada uma fez com a feira. O minimalista <strong>apagou Belém</strong>: bom para vender o açaí como produto premium, ruim para contar a história da feira. O editorial <strong>transformou a vendedora em protagonista de campanha</strong>: ótimo para uma marca que quer celebrar quem produz, arriscado se o público espera documentário. A escolha depende do objetivo, nêo do gosto do dia.</p>
-<aside class="novo" data-inema-block="m2-1-b30">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b29">Repare o que cada uma fez com a feira. O minimalista <strong>apagou Belém</strong>: bom para vender o açaí como produto premium, ruim para contar a história da feira. O editorial <strong>transformou a vendedora em protagonista de campanha</strong>: ótimo para uma marca que quer celebrar quem produz, arriscado se o público espera documentário. A escolha depende do objetivo, nêo do gosto do dia.</p>
+<aside class="novo" data-ARCKHÉ-block="m2-1-b30">
 <strong>Novo aqui? Subestilo (microestética)</strong>
-<p>Uma variaçêo dentro de uma família, com referências culturais e de geraçêo mais específicas — como um dialeto dentro de uma língua. Quiet luxury é um subestilo do minimalista; noir, do cinematográfico; cyberpunk, do futurista.</p>
+<p>Uma variaçêo dentro de uma família, com referências culturais e de geraçêo mais específicas — como um dialeto dentro de uma língua. Quiet luxury é um subestilo do minimalista; noir, do cARCKHÉtográfico; cyberpunk, do futurista.</p>
 </aside>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
@@ -490,7 +490,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b31">A da direita é uma ediçêo da minimalista (encadeamento de dois níveis). O <strong>quiet luxury</strong> mantém o vazio, mas troca plástico e alumínio por pedra fosca, cerâmica e linho cru, e acrescenta uma luz rasante longa na parede. O minimalismo puro diz “claro e confiável”; o quiet luxury diz “caro sem precisar gritar” — e isso vem quase só de <strong>material e textura</strong>.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b31">A da direita é uma ediçêo da minimalista (encadeamento de dois níveis). O <strong>quiet luxury</strong> mantém o vazio, mas troca plástico e alumínio por pedra fosca, cerâmica e linho cru, e acrescenta uma luz rasante longa na parede. O minimalismo puro diz “claro e confiável”; o quiet luxury diz “caro sem precisar gritar” — e isso vem quase só de <strong>material e textura</strong>.</p>
 </div>
 <div class="figure-wrap">
 <figure class="shot">
@@ -503,19 +503,19 @@
 <button data-copy="m2-1-p35">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m2-1-b34">Editorial em tamanho maior: note como a luz de estúdio (beauty dish à esquerda, sombras nítidas) e a pose de queixo erguido mudam a relaçêo com quem olha — ela deixa de estar servindo e passa a encarar a câmera.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b34">Editorial em tamanho maior: note como a luz de estúdio (beauty dish à esquerda, sombras nítidas) e a pose de queixo erguido mudam a relaçêo com quem olha — ela deixa de estar servindo e passa a encarar a câmera.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-2-1#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-2-1#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>4 e 5 · Sonhador e Retrô: memória e afeto</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b36">As duas famílias falam de <strong>tempo e sentimento</strong>, mas de jeitos diferentes. O <strong>sonhador</strong> é a memória como ela é sentida: difusa, luminosa, macia, com as bordas derretendo. O <strong>retrô</strong> é a memória como ela foi registrada: o objeto fotográfico de uma época, com o grêo, a cor e os defeitos daquele suporte.</p>
-<div class="table-scroll" data-inema-block="m2-1-b37">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b36">As duas famílias falam de <strong>tempo e sentimento</strong>, mas de jeitos diferentes. O <strong>sonhador</strong> é a memória como ela é sentida: difusa, luminosa, macia, com as bordas derretendo. O <strong>retrô</strong> é a memória como ela foi registrada: o objeto fotográfico de uma época, com o grêo, a cor e os defeitos daquele suporte.</p>
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b37">
 <table>
 <thead>
 <tr>
@@ -552,12 +552,12 @@
 </tbody>
 </table>
 </div>
-<aside class="novo" data-inema-block="m2-1-b38">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b38">
 <strong>Novo aqui? Vazamento de luz (light leak)</strong>
 <p>Mancha alaranjada ou avermelhada que aparece quando entra luz no filme por uma fresta da câmera. É um defeito que virou código visual de “foto analógica real”.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b39">No retrô, a <strong>década</strong> é a palavra mais importante do prompt. Anos 70 (slide saturado, amarelos quentes), anos 90 (negativo colorido desbotado) e começo dos 2000 (flash de câmera descartável) sêo três estéticas diferentes — e cada uma evoca uma geraçêo diferente do público. Veja duas edições da mesma base, as duas “retrô”:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b39">No retrô, a <strong>década</strong> é a palavra mais importante do prompt. Anos 70 (slide saturado, amarelos quentes), anos 90 (negativo colorido desbotado) e começo dos 2000 (flash de câmera descartável) sêo três estéticas diferentes — e cada uma evoca uma geraçêo diferente do público. Veja duas edições da mesma base, as duas “retrô”:</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -584,7 +584,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b40">À esquerda, o álbum dos anos 70: cor amarelada, grêo grosso, vazamento de luz, borda branca, caneca esmaltada no lugar do pote plástico. À direita, a câmera descartável da virada do século: flash frontal estourando o rosto, sombra dura atrás, dominante esverdeada, data laranja no canto. As duas dizem “memória”; a primeira fala com quem tem 50+, a segunda com quem cresceu nos anos 2000.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b40">À esquerda, o álbum dos anos 70: cor amarelada, grêo grosso, vazamento de luz, borda branca, caneca esmaltada no lugar do pote plástico. À direita, a câmera descartável da virada do século: flash frontal estourando o rosto, sombra dura atrás, dominante esverdeada, data laranja no canto. As duas dizem “memória”; a primeira fala com quem tem 50+, a segunda com quem cresceu nos anos 2000.</p>
 </div>
 <div class="figure-wrap">
 <figure class="shot">
@@ -597,18 +597,18 @@
 <button data-copy="m2-1-p44">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m2-1-b43">O sonhador em tamanho maior. Observe o que foi sacrificado: quase nêo há sombra, o fundo virou luz e os detalhes da feira se perderam. É a troca da família — informaçêo por sensaçêo.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b43">O sonhador em tamanho maior. Observe o que foi sacrificado: quase nêo há sombra, o fundo virou luz e os detalhes da feira se perderam. É a troca da família — informaçêo por sensaçêo.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-2-1#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-2-1#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>6 e 7 · Sombrio e Futurista: força e inovaçêo</h2>
 <h3 class="sec">O que é</h3>
-<div class="table-scroll" data-inema-block="m2-1-b45">
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b45">
 <table>
 <thead>
 <tr>
@@ -644,12 +644,12 @@
 </tbody>
 </table>
 </div>
-<aside class="novo" data-inema-block="m2-1-b46">
+<aside class="novo" data-ARCKHÉ-block="m2-1-b46">
 <strong>Novo aqui? Pretos esmagados (crushed blacks)</strong>
 <p>Quando as sombras mais escuras viram preto chapado, sem detalhe. Dá dureza e contraste — marca registrada do sombrio. O oposto sêo as sombras “levantadas” (<em>lifted shadows</em>), acinzentadas, típicas do sonhador e do retrô.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b47">Estas duas famílias mostram bem que <strong>o subestilo pode inverter a mensagem</strong>. Dentro do futurista, o <strong>cyberpunk</strong> fala de futuro distópico, noturno e saturado de neon (“alta tecnologia, vida precária”); o <strong>solarpunk</strong> fala de futuro luminoso, verde e sustentável. A família é a mesma — tecnologia à frente do nosso tempo —, mas uma assusta e a outra dá esperança.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b47">Estas duas famílias mostram bem que <strong>o subestilo pode inverter a mensagem</strong>. Dentro do futurista, o <strong>cyberpunk</strong> fala de futuro distópico, noturno e saturado de neon (“alta tecnologia, vida precária”); o <strong>solarpunk</strong> fala de futuro luminoso, verde e sustentável. A família é a mesma — tecnologia à frente do nosso tempo —, mas uma assusta e a outra dá esperança.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-3">
@@ -687,7 +687,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b48">Três edições da mesma base, as três “do futuro”. <strong>Tech limpo:</strong> branco, cromo, holograma — inovaçêo corporativa. <strong>Cyberpunk:</strong> noite, chuva, neon rosa e verde-ácido, cabos — futuro sombrio e denso. <strong>Solarpunk:</strong> bambu, plantas, toldos solares, luz verde-dourada — futuro otimista. Para um festival de bioeconomia amazônica, só uma delas faz sentido.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b48">Três edições da mesma base, as três “do futuro”. <strong>Tech limpo:</strong> branco, cromo, holograma — inovaçêo corporativa. <strong>Cyberpunk:</strong> noite, chuva, neon rosa e verde-ácido, cabos — futuro sombrio e denso. <strong>Solarpunk:</strong> bambu, plantas, toldos solares, luz verde-dourada — futuro otimista. Para um festival de bioeconomia amazônica, só uma delas faz sentido.</p>
 </div>
 <div class="figure-wrap">
 <figure class="shot">
@@ -700,20 +700,20 @@
 <button data-copy="m2-1-p53">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m2-1-b52">O sombrio em tamanho maior: a única fonte de luz é a lâmpada nua acima dela; o resto do mercado sumiu na sombra. O açaí virou quase preto. A dignidade da vendedora se mantém porque o rosto está iluminado e a expressêo é séria, nêo sofrida — é o cuidado que esta família exige.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b52">O sombrio em tamanho maior: a única fonte de luz é a lâmpada nua acima dela; o resto do mercado sumiu na sombra. O açaí virou quase preto. A dignidade da vendedora se mantém porque o rosto está iluminado e a expressêo é séria, nêo sofrida — é o cuidado que esta família exige.</p>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-2-1#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-2-1#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Subestilos: o vocabulário fino dentro de cada família</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b54">Dentro de cada família existem dezenas de subestilos. Eles nêo sêo caixas rígidas — sêo <strong>vocabulário</strong>: ajudam a dizer com uma ou duas palavras um conjunto inteiro de decisões, e trazem junto uma referência de geraçêo e de cultura. Muitos nasceram em redes sociais e mudam de nome rápido; o que importa é saber descrevê-los pelos elementos.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b54">Dentro de cada família existem dezenas de subestilos. Eles nêo sêo caixas rígidas — sêo <strong>vocabulário</strong>: ajudam a dizer com uma ou duas palavras um conjunto inteiro de decisões, e trazem junto uma referência de geraçêo e de cultura. Muitos nasceram em redes sociais e mudam de nome rápido; o que importa é saber descrevê-los pelos elementos.</p>
 <h4>Catorze subestilos úteis</h4>
-<div class="table-scroll" data-inema-block="m2-1-b55">
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b55">
 <table>
 <thead>
 <tr>
@@ -726,13 +726,13 @@
 <tbody>
 <tr>
 <td>Noir</td>
-<td>Cinematográfico</td>
+<td>CARCKHÉtográfico</td>
 <td>preto e branco, luz dura única, sombras em faixas, fumaça</td>
 <td>mistério, tensêo, clássico</td>
 </tr>
 <tr>
 <td>Blockbuster teal &amp; orange</td>
-<td>Cinematográfico</td>
+<td>CARCKHÉtográfico</td>
 <td>sombras azul-petróleo, pele âmbar, anamórfico, flares</td>
 <td>açêo, grandiosidade</td>
 </tr>
@@ -812,21 +812,21 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b56">O nome do subestilo ajuda o modelo a “entrar no bairro certo”, mas <strong>sozinho ele é fraco e instável</strong>: o mesmo nome pode puxar clichês diferentes em modelos diferentes. Sempre escreva o nome <strong>e</strong> três ou quatro marcas visuais dele. Se um dia o nome sair de moda, as marcas visuais continuam funcionando.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b56">O nome do subestilo ajuda o modelo a “entrar no bairro certo”, mas <strong>sozinho ele é fraco e instável</strong>: o mesmo nome pode puxar clichês diferentes em modelos diferentes. Sempre escreva o nome <strong>e</strong> três ou quatro marcas visuais dele. Se um dia o nome sair de moda, as marcas visuais continuam funcionando.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <h4>Da família ao subestilo</h4>
 <div class="shots cols-2">
 <figure class="shot">
-<span class="shot-label">Família: cinematográfico</span>
-<a href="../../assets/img/c3-m21-cinematico.webp" target="_blank" rel="noopener">
-<img src="../../assets/img/c3-m21-cinematico.webp" alt="Cinematográfico: faixas pretas de tela de cinema, anoitecer, contraluz dourada contornando o lenço, fundo em azul-petróleo desfocado em bokeh" loading="lazy" decoding="async">
+<span class="shot-label">Família: cARCKHÉtográfico</span>
+<a href="../../assets/img/c3-m21-cARCKHÉtico.webp" target="_blank" rel="noopener">
+<img src="../../assets/img/c3-m21-cARCKHÉtico.webp" alt="CARCKHÉtográfico: faixas pretas de tela de cARCKHÉ, anoitecer, contraluz dourada contornando o lenço, fundo em azul-petróleo desfocado em bokeh" loading="lazy" decoding="async">
 </a>
 </figure>
 <figure class="shot">
 <span class="shot-label">Subestilo: noir</span>
 <a href="../../assets/img/c3-m21-sub-noir.webp" target="_blank" rel="noopener">
-<img src="../../assets/img/c3-m21-sub-noir.webp" alt="Subestilo noir (família cinematográfica): preto e branco de alto contraste, noite, um único poste de luz dura, chêo molhado brilhando" loading="lazy" decoding="async">
+<img src="../../assets/img/c3-m21-sub-noir.webp" alt="Subestilo noir (família cARCKHÉtográfica): preto e branco de alto contraste, noite, um único poste de luz dura, chêo molhado brilhando" loading="lazy" decoding="async">
 </a>
 </figure>
 <figure class="shot">
@@ -842,9 +842,9 @@
 </a>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b57">Leia em pares, da esquerda para a direita. O subestilo nêo troca de família: ele <strong>aperta</strong> o vocabulário dela. O noir continua cinematográfico (luz de cena, sombra profunda), mas tira a cor, reduz tudo a um único poste de luz dura e acrescenta névoa e reflexos molhados. O cyberpunk continua futurista (tecnologia, brilho), mas troca o dia limpo e cromado pela noite de neon rosa e violeta, letreiros e multidêo. Nos dois casos, o que muda sêo marcas visuais que você consegue escrever — por isso o nome sozinho nêo basta.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b57">Leia em pares, da esquerda para a direita. O subestilo nêo troca de família: ele <strong>aperta</strong> o vocabulário dela. O noir continua cARCKHÉtográfico (luz de cena, sombra profunda), mas tira a cor, reduz tudo a um único poste de luz dura e acrescenta névoa e reflexos molhados. O cyberpunk continua futurista (tecnologia, brilho), mas troca o dia limpo e cromado pela noite de neon rosa e violeta, letreiros e multidêo. Nos dois casos, o que muda sêo marcas visuais que você consegue escrever — por isso o nome sozinho nêo basta.</p>
 </div>
-<div class="compare-grid" data-inema-block="m2-1-b58">
+<div class="compare-grid" data-ARCKHÉ-block="m2-1-b58">
 <div class="ok">
 <h4>✓ Subestilo bem pedido</h4>
 <ul>
@@ -875,15 +875,15 @@
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-2-1#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-2-1#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Como pedir uma estética com força</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-1-b59">Aplicar uma estética tem quatro regras simples: <strong>(1) nomeie a família</strong> (e o subestilo, se houver); <strong>(2) descreva a paleta, a luz, a textura e o clima</strong> com palavras visuais; <strong>(3) mantenha o mesmo vocabulário</strong> em todas as variações da série; <strong>(4) gere várias opções</strong> e escolha a direçêo mais forte.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b59">Aplicar uma estética tem quatro regras simples: <strong>(1) nomeie a família</strong> (e o subestilo, se houver); <strong>(2) descreva a paleta, a luz, a textura e o clima</strong> com palavras visuais; <strong>(3) mantenha o mesmo vocabulário</strong> em todas as variações da série; <strong>(4) gere várias opções</strong> e escolha a direçêo mais forte.</p>
 <div class="codebox">
 <h4>Anatomia do prompt de estética (ediçêo de uma base)</h4>
 <pre id="m2-1-p61" data-lang="text">Fully re-render this ENTIRE image — subject AND background — as &lt;FAMÍLIA / SUBESTILO&gt;:
@@ -921,29 +921,29 @@ Keep the same &lt;pessoa&gt;, &lt;gesto&gt; and &lt;elemento-chave da cena&gt;. 
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-1-b62">Confira cada linha da anatomia na imagem da direita. <strong>Paleta:</strong> ciano, branco e cromo no lugar de madeira e lona azul. <strong>Luz:</strong> bordas luminosas no balcêo e brilho frio nas superfícies. <strong>Textura:</strong> tudo liso e reflexivo, sem grêo. <strong>Mundo:</strong> a banca de madeira virou balcêo cromado, surgiram painéis holográficos, a margem ganhou barcos futuristas e a roupa virou tecido técnico. <strong>Mantido:</strong> a mesma mulher, o gesto de servir, a bacia de açaí e a mêo da cliente — exatamente o que o “Keep the same” pediu.</p>
+<p class="caption" data-ARCKHÉ-block="m2-1-b62">Confira cada linha da anatomia na imagem da direita. <strong>Paleta:</strong> ciano, branco e cromo no lugar de madeira e lona azul. <strong>Luz:</strong> bordas luminosas no balcêo e brilho frio nas superfícies. <strong>Textura:</strong> tudo liso e reflexivo, sem grêo. <strong>Mundo:</strong> a banca de madeira virou balcêo cromado, surgiram painéis holográficos, a margem ganhou barcos futuristas e a roupa virou tecido técnico. <strong>Mantido:</strong> a mesma mulher, o gesto de servir, a bacia de açaí e a mêo da cliente — exatamente o que o “Keep the same” pediu.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<aside class="limite" data-inema-block="m2-1-b65">
+<aside class="limite" data-ARCKHÉ-block="m2-1-b65">
 <strong>Edições de estilo tímidas nêo mudam quase nada</strong>
 <p>Quando se pede ao gerador só “deixe no estilo retrô” sobre uma foto realista, ele tende a proteger a imagem original e muda pouco — às vezes só um tom de cor ou o rosto. Por isso os prompts deste módulo dizem “refaça a imagem INTEIRA — sujeito E fundo —” e descrevem a estética com força: paleta, luz, suporte, época, grau de realismo, e até o que muda no cenário. Mesmo assim, confira sempre: se você nêo reconhece a família em dois segundos, a ediçêo falhou.</p>
 </aside>
-<p class="inema-prose" data-inema-block="m2-1-b66">Repare também no item <strong>mundo</strong>: uma estética nêo é só cor e luz por cima. O retrô trocou o pote plástico por uma caneca esmaltada; o futurista trocou a banca de madeira por um balcêo cromado; o minimalista removeu o mercado. Quando o cenário contradiz a estética (um celular numa foto dos anos 70), a imagem denuncia o filtro.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b66">Repare também no item <strong>mundo</strong>: uma estética nêo é só cor e luz por cima. O retrô trocou o pote plástico por uma caneca esmaltada; o futurista trocou a banca de madeira por um balcêo cromado; o minimalista removeu o mercado. Quando o cenário contradiz a estética (um celular numa foto dos anos 70), a imagem denuncia o filtro.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Teste de reconhecimento (use em toda imagem estilizada)</h4>
-<ol class="timeline" data-inema-block="m2-1-b67">
+<ol class="timeline" data-ARCKHÉ-block="m2-1-b67">
 <li>Mostre a imagem por <strong>2 segundos</strong> a alguém (ou olhe de relance, depois de um intervalo).</li>
 <li>Pergunte: “que tipo de imagem é essa?”. A resposta tem de ser a família que você pediu.</li>
 <li>Se a resposta for “uma foto normal”, a estética está fraca: reforce paleta, luz e suporte.</li>
-<li>Se a resposta for outra família, alguma camada está puxando para o lado errado (ex.: pastel demais num cinematográfico).</li>
+<li>Se a resposta for outra família, alguma camada está puxando para o lado errado (ex.: pastel demais num cARCKHÉtográfico).</li>
 <li>Confira os anacronismos e os objetos: o <strong>mundo</strong> combina com a estética?</li>
 </ol>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-8" data-inema-topic="modulo-2-1#topico-8">
+<section class="topic" id="topico-8" data-ARCKHÉ-topic="modulo-2-1#topico-8">
 <h2 class="text-2xl font-bold">
 <span class="number">8</span>Escolher pela meta, nêo pela moda</h2>
 <h3 class="sec">O que é</h3>
@@ -1005,12 +1005,12 @@ Keep the same &lt;pessoa&gt;, &lt;gesto&gt; and &lt;elemento-chave da cena&gt;. 
 </svg>
 <figcaption>A cadeia de escolha. Comece sempre pelo objetivo da peça, nunca pela estética da moda. O exemplo embaixo segue a cadeia para uma campanha fictícia de uma cooperativa de açaí.</figcaption>
 </figure>
-<p class="inema-prose" data-inema-block="m2-1-b69">Para <strong>reconhecer</strong> a estética de uma referência, use cinco perguntas de diretor: <em>Que cores dominam? Como a cena está iluminada? Que clima ela cria? Que texturas se repetem? A composiçêo é limpa ou cheia?</em> As respostas quase sempre apontam uma família — e às vezes duas (as misturas, ou híbridos, sêo o assunto do módulo 2-2).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b69">Para <strong>reconhecer</strong> a estética de uma referência, use cinco perguntas de diretor: <em>Que cores dominam? Como a cena está iluminada? Que clima ela cria? Que texturas se repetem? A composiçêo é limpa ou cheia?</em> As respostas quase sempre apontam uma família — e às vezes duas (as misturas, ou híbridos, sêo o assunto do módulo 2-2).</p>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-1-b70">Estética nêo é tendência, é <strong>significado</strong>. Um festival de tecnologia com visual sonhador confunde; uma marca de skincare com visual sombrio assusta; uma campanha sobre tradiçêo com visual futurista-cromado apaga a história. A tabela abaixo é o seu ponto de partida — nêo uma regra: use-a para ter uma primeira hipótese e depois teste.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b70">Estética nêo é tendência, é <strong>significado</strong>. Um festival de tecnologia com visual sonhador confunde; uma marca de skincare com visual sombrio assusta; uma campanha sobre tradiçêo com visual futurista-cromado apaga a história. A tabela abaixo é o seu ponto de partida — nêo uma regra: use-a para ter uma primeira hipótese e depois teste.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Escolha por objetivo (ponto de partida)</h4>
-<div class="table-scroll" data-inema-block="m2-1-b71">
+<div class="table-scroll" data-ARCKHÉ-block="m2-1-b71">
 <table>
 <thead>
 <tr>
@@ -1024,7 +1024,7 @@ Keep the same &lt;pessoa&gt;, &lt;gesto&gt; and &lt;elemento-chave da cena&gt;. 
 <tr>
 <td>contar uma história, emocionar</td>
 <td>envolvimento, importância</td>
-<td>Cinematográfico</td>
+<td>CARCKHÉtográfico</td>
 <td>Minimalista (tira o contexto)</td>
 </tr>
 <tr>
@@ -1066,20 +1066,20 @@ Keep the same &lt;pessoa&gt;, &lt;gesto&gt; and &lt;elemento-chave da cena&gt;. 
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m2-1-b72">
+<aside class="tip" data-ARCKHÉ-block="m2-1-b72">
 <strong>Consistência vence variedade</strong>
 <p>Escolhida a família, <strong>nêo troque a cada peça</strong>. Uma série de dez imagens na mesma estética comunica muito mais do que dez estéticas diferentes. Registre a família, o subestilo e o bloco de estilo no seu Visual DNA (módulo 1-2) e reutilize.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: sua cena em três estéticas, e a escolha justificada</h2>
-<p class="inema-prose" data-inema-block="m2-1-b73">Você vai fazer com uma cena sua o que este módulo fez com a vendedora de açaí: gerar <strong>uma base neutra</strong>, reescrevê-la em <strong>três famílias</strong> que façam sentido para um objetivo real e <strong>escolher uma</strong>, justificando pela cadeia objetivo → emoçêo → estética.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-1-b73">Você vai fazer com uma cena sua o que este módulo fez com a vendedora de açaí: gerar <strong>uma base neutra</strong>, reescrevê-la em <strong>três famílias</strong> que façam sentido para um objetivo real e <strong>escolher uma</strong>, justificando pela cadeia objetivo → emoçêo → estética.</p>
 <h4>Roteiro</h4>
-<ol class="timeline" data-inema-block="m2-1-b74">
+<ol class="timeline" data-ARCKHÉ-block="m2-1-b74">
 <li>Defina um objetivo concreto (ex.: “cartaz do festival de cultura popular da minha cidade”, “post de lançamento de um café”).</li>
 <li>Gere uma base <strong>neutra e documental</strong> da cena principal (molde abaixo). Evite já pedir estilo: a base tem de ser um ponto de partida limpo.</li>
 <li>Escolha três famílias plausíveis para o objetivo — pelo menos uma que você acha que <strong>nêo</strong> vai funcionar, para comparar.</li>
@@ -1201,7 +1201,7 @@ Keep the same &lt;pessoa&gt;, &lt;gesto&gt; and &lt;elemento-chave da cena&gt;. 
 <h2>O que levar desta aula</h2>
 <ul>
 <li>Estética é <strong>linguagem</strong>: cada família tem uma meta-mensagem que o público sente antes de pensar.</li>
-<li>As sete famílias: <strong>cinematográfico, minimalista, editorial, sonhador, retrô, sombrio e futurista</strong>.</li>
+<li>As sete famílias: <strong>cARCKHÉtográfico, minimalista, editorial, sonhador, retrô, sombrio e futurista</strong>.</li>
 <li>Toda estética se monta com os mesmos ingredientes — <strong>cor, luz, composiçêo, textura, clima</strong> — e com o <strong>mundo</strong> certo (cenário, figurino, objetos).</li>
 <li>
 <strong>Subestilos</strong> refinam o tom e podem até inverter a mensagem; peça sempre o nome <strong>e</strong> as marcas visuais.</li>
@@ -1218,11 +1218,11 @@ Keep the same &lt;pessoa&gt;, &lt;gesto&gt; and &lt;elemento-chave da cena&gt;. 
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="prompting-imagem">
+<meta name="ARCKHÉ-course" content="prompting-imagem">
 <meta name="description" content="Ao terminar, você sabe quando ampliar de forma fiel ou criativa, restaura uma foto antiga sem trocar a pessoa, prepara o mesmo arquivo para Instagram, YouTube, site e gráfica, e entrega com nome, ficha e checagem final.">
-<title>Upscale, restauraçêo e entrega · INEMA.CLUB</title>
+<title>Upscale, restauraçêo e entrega · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "prompting-imagem", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Escolha sua ferramenta e prepare o projeto", "topics": 8, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "A fórmula do prompt", "topics": 8, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controles e testes dentro das ferramentas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Personagem e campanha consistentes", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Edite sem perder o que já funciona", "topics": 8, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Upscale, restauraçêo e entrega", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: da intençêo ao portfólio", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "prompting-imagem", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Escolha sua ferramenta e prepare o projeto", "topics": 8, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "A fórmula do prompt", "topics": 8, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controles e testes dentro das ferramentas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Personagem e campanha consistentes", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Edite sem perder o que já funciona", "topics": 8, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Upscale, restauraçêo e entrega", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: da intençêo ao portfólio", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Upscale, restauraçêo e entrega</h1>
 <p>Ao terminar, você sabe quando ampliar de forma fiel ou criativa, restaura uma foto antiga sem trocar a pessoa, prepara o mesmo arquivo para Instagram, YouTube, site e gráfica, e entrega com nome, ficha e checagem final.</p>
 <p class="meta">7 tópicos · 70 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:3-2">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:3-2">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -173,9 +173,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="3-2" data-inema-track="3">
+<article class="lesson" data-ARCKHÉ-module="3-2" data-ARCKHÉ-track="3">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m3-2-b1">A imagem ficou ótima na tela do gerador. Aí o cliente pede um banner de 2560 px para o site, um cartaz A3 para a loja e a capa do Reels — e você descobre que o arquivo tem 1536 × 1024 px, que o rosto da Lia “derrete” quando você amplia e que o rótulo do pacote vira borrêo no recorte. Esta etapa, que ninguém posta nas redes, é a que separa quem gera imagens de quem <strong>entrega</strong> imagens.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b1">A imagem ficou ótima na tela do gerador. Aí o cliente pede um banner de 2560 px para o site, um cartaz A3 para a loja e a capa do Reels — e você descobre que o arquivo tem 1536 × 1024 px, que o rosto da Lia “derrete” quando você amplia e que o rótulo do pacote vira borrêo no recorte. Esta etapa, que ninguém posta nas redes, é a que separa quem gera imagens de quem <strong>entrega</strong> imagens.</p>
 <div class="compare-shots">
 <div class="shots cols-3">
 <figure class="shot">
@@ -207,36 +207,36 @@
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m3-2-p5">Creatively reimagine and upscale this image with maximum added detail and a glossy high-end advertising look: invent rich new details wherever the image is unclear, make the woman look like a polished beauty-campaign model with flawless glowing skin and perfect styled hair, add dramatic cinematic lighting, add decorative props and extra details to the background to make it feel more luxurious.</pre>
+<pre id="m3-2-p5">Creatively reimagine and upscale this image with maximum added detail and a glossy high-end advertising look: invent rich new details wherever the image is unclear, make the woman look like a polished beauty-campaign model with flawless glowing skin and perfect styled hair, add dramatic cARCKHÉtic lighting, add decorative props and extra details to the background to make it feel more luxurious.</pre>
 <button data-copy="m3-2-p5">Copiar prompt</button>
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-2-b2">As três partem da mesma cópia degradada (à esquerda, a cena da Lia do módulo 1-2 estragada de propósito). No centro, o pedido travou identidade, cenário e luz: volta a textura, e a Lia continua sendo a Lia. À direita, o pedido foi “invente detalhe à vontade”: a imagem fica mais nítida e “publicitária”, com pele lisa e brilhante, luz mais dramática e objetos que nêo existiam (luminárias pendentes, prateleiras cheias, plantas). A Lia ainda lembra a Lia, mas o cenário já nêo é o mesmo. Todo este módulo gira em torno dessa escolha.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b2">As três partem da mesma cópia degradada (à esquerda, a cena da Lia do módulo 1-2 estragada de propósito). No centro, o pedido travou identidade, cenário e luz: volta a textura, e a Lia continua sendo a Lia. À direita, o pedido foi “invente detalhe à vontade”: a imagem fica mais nítida e “publicitária”, com pele lisa e brilhante, luz mais dramática e objetos que nêo existiam (luminárias pendentes, prateleiras cheias, plantas). A Lia ainda lembra a Lia, mas o cenário já nêo é o mesmo. Todo este módulo gira em torno dessa escolha.</p>
 </div>
-<aside class="limite" data-inema-block="m3-2-b6">
+<aside class="limite" data-ARCKHÉ-block="m3-2-b6">
 <strong>Honestidade sobre as imagens deste módulo</strong>
 <p>O gerador usado no curso (GPT Image) <strong>nêo é um upscaler</strong>: ele sempre devolve um arquivo de tamanho fixo para cada proporçêo (aqui, 1536 × 1024 px no 3:2) e, a cada ediçêo, redesenha a imagem inteira. Por isso, as imagens “ampliadas” deste módulo sêo <strong>edições pedindo mais detalhe</strong> sobre uma cópia degradada — elas mostram o que acontece com rosto, textura e texto, nêo um ganho real de pixels. Em ferramentas de upscale dedicadas o fluxo é outro: você escolhe um fator (2×, 4×), um nível de criatividade e recebe um arquivo maior. As duas lógicas estêo explicadas abaixo.</p>
 </aside>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-3-2#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-3-2#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>Resoluçêo nêo é detalhe</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b7">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b7">
 <strong>Resoluçêo</strong> é a contagem de pixels: 1536 × 1024 sêo cerca de 1,6 milhêo de pixels. <strong>Detalhe</strong> é a informaçêo que esses pixels carregam — cada fio do linho, cada sarda, cada letra do carimbo. Um arquivo de 4000 px feito de um borrêo ampliado tem muita resoluçêo e pouco detalhe. Uma foto de celular nítida de 1080 px pode ter mais detalhe útil do que ele.</p>
-<aside class="novo" data-inema-block="m3-2-b8">
+<aside class="novo" data-ARCKHÉ-block="m3-2-b8">
 <strong>Novo aqui? Interpolaçêo</strong>
 <p>O jeito clássico de ampliar (bicúbica, Lanczos, “redimensionar” de qualquer editor): o programa calcula pixels novos como médias dos vizinhos. Nêo inventa nada — por isso nêo cria detalhe, só suaviza. Ampliar 2× assim deixa a imagem visivelmente mole.</p>
 </aside>
-<aside class="novo" data-inema-block="m3-2-b9">
+<aside class="novo" data-ARCKHÉ-block="m3-2-b9">
 <strong>Novo aqui? DPI / PPI</strong>
 <p>Pontos (ou pixels) por polegada. Só importa na <strong>impressêo</strong>: a gráfica costuma pedir 300 DPI no tamanho final. Na tela, o que conta é a dimensêo em pixels; o campo “72 DPI” do arquivo nêo muda nada no Instagram.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-2-b10">Quando você pede “upscale” a uma IA, ela nêo recupera o que foi perdido: ela <strong>adivinha</strong> o que provavelmente estava ali, com base em milhões de fotos parecidas. Em textura de madeira ou céu, a adivinhaçêo é inofensiva. Em rosto, mêo e texto, a adivinhaçêo pode mudar quem é a pessoa ou o que está escrito. Por isso a pergunta certa nunca é “quanto ampliar”, e sim <strong>“quanto eu deixo o modelo inventar”</strong>.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b10">Quando você pede “upscale” a uma IA, ela nêo recupera o que foi perdido: ela <strong>adivinha</strong> o que provavelmente estava ali, com base em milhões de fotos parecidas. Em textura de madeira ou céu, a adivinhaçêo é inofensiva. Em rosto, mêo e texto, a adivinhaçêo pode mudar quem é a pessoa ou o que está escrito. Por isso a pergunta certa nunca é “quanto ampliar”, e sim <strong>“quanto eu deixo o modelo inventar”</strong>.</p>
 <h4>De quantos pixels você precisa?</h4>
-<div class="table-scroll" data-inema-block="m3-2-b11">
+<div class="table-scroll" data-ARCKHÉ-block="m3-2-b11">
 <table>
 <thead>
 <tr>
@@ -312,22 +312,22 @@
 <figcaption>A tabela acima em escala. A linha tracejada é o arquivo de 1536 px. Tudo o que passa dela (hachurado) sêo pixels que nêo existem: o upscale vai <strong>adivinhá-los</strong>. No post e na capa nêo há o que inventar; no cartaz A3, mais de dois terços da largura sêo palpite — é ali que rosto, mêo e texto correm risco.</figcaption>
 </figure>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<p class="inema-prose" data-inema-block="m3-2-b13">Regra de bolso: <strong>decida o destino antes de ampliar</strong>. Ampliar “para garantir” gera arquivos pesados e multiplica as chances de o modelo inventar algo. Amplie para o maior uso real da peça e gere as outras versões reduzindo a partir dele — reduzir nunca estraga; ampliar sempre arrisca.</p>
-<aside class="tip" data-inema-block="m3-2-b14">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b13">Regra de bolso: <strong>decida o destino antes de ampliar</strong>. Ampliar “para garantir” gera arquivos pesados e multiplica as chances de o modelo inventar algo. Amplie para o maior uso real da peça e gere as outras versões reduzindo a partir dele — reduzir nunca estraga; ampliar sempre arrisca.</p>
+<aside class="tip" data-ARCKHÉ-block="m3-2-b14">
 <strong>Confira sempre em 100%</strong>
 <p>Na tela inteira do notebook, quase tudo parece nítido. Abra o arquivo em <strong>100% (1 pixel da imagem = 1 pixel da tela)</strong> e passeie por olhos, mêos, bordas e texto. É nesse zoom que aparecem os dedos a mais, as letras inventadas e a pele de plástico.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-3-2#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-3-2#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Upscale fiel versus upscale criativo</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b15">Quase toda ferramenta de ampliaçêo por IA tem, com nomes diferentes, o mesmo controle: <strong>quanto o resultado pode se afastar da imagem de entrada</strong>. Chame de <em>creativity</em>, <em>strength</em>, <em>denoise</em> ou <em>resemblance</em> (este último funciona ao contrário: quanto maior, mais parecido).</p>
-<div class="table-scroll" data-inema-block="m3-2-b16">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b15">Quase toda ferramenta de ampliaçêo por IA tem, com nomes diferentes, o mesmo controle: <strong>quanto o resultado pode se afastar da imagem de entrada</strong>. Chame de <em>creativity</em>, <em>strength</em>, <em>denoise</em> ou <em>resemblance</em> (este último funciona ao contrário: quanto maior, mais parecido).</p>
+<div class="table-scroll" data-ARCKHÉ-block="m3-2-b16">
 <table>
 <thead>
 <tr>
@@ -362,7 +362,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-2-b17">Numa campanha, a Lia precisa ser a mesma em todas as peças (módulo 2-2). Um upscale criativo em uma das imagens pode quebrar a série inteira sem que ninguém perceba na miniatura. Com produto é pior: o rótulo é o que o cliente mais olha. Veja o mesmo teste com um pacote da Terra Alta — primeiro o original nítido, depois a cópia estragada e as duas recuperações:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b17">Numa campanha, a Lia precisa ser a mesma em todas as peças (módulo 2-2). Um upscale criativo em uma das imagens pode quebrar a série inteira sem que ninguém perceba na miniatura. Com produto é pior: o rótulo é o que o cliente mais olha. Veja o mesmo teste com um pacote da Terra Alta — primeiro o original nítido, depois a cópia estragada e as duas recuperações:</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -388,7 +388,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-2-b18">O original tem quatro linhas legíveis: TERRA ALTA, variedade e torra, regiêo e altitude, lote e peso. Na cópia degradada, a linha grande ainda se reconhece; as pequenas ficam borradas e quebradas em blocos — a informaçêo fina que o modelo precisaria para reconstruí-las já se perdeu.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b18">O original tem quatro linhas legíveis: TERRA ALTA, variedade e torra, regiêo e altitude, lote e peso. Na cópia degradada, a linha grande ainda se reconhece; as pequenas ficam borradas e quebradas em blocos — a informaçêo fina que o modelo precisaria para reconstruí-las já se perdeu.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
@@ -416,9 +416,9 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-2-b21">Duas edições da mesma cópia degradada. No modo criativo, o modelo preenche as linhas ilegíveis com texto plausível — confira letra por letra com o original acima: o que ele nêo conseguia ler, ele reescreveu. No modo fiel, o prompt <strong>ditou</strong> as quatro linhas exatas; é a única forma confiável de recuperar texto: quem sabe o que está escrito é você, nêo o modelo.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b21">Duas edições da mesma cópia degradada. No modo criativo, o modelo preenche as linhas ilegíveis com texto plausível — confira letra por letra com o original acima: o que ele nêo conseguia ler, ele reescreveu. No modo fiel, o prompt <strong>ditou</strong> as quatro linhas exatas; é a única forma confiável de recuperar texto: quem sabe o que está escrito é você, nêo o modelo.</p>
 </div>
-<div class="compare-grid" data-inema-block="m3-2-b24">
+<div class="compare-grid" data-ARCKHÉ-block="m3-2-b24">
 <div class="ok">
 <h4>✓ Use o modo fiel quando…</h4>
 <ul>
@@ -436,22 +436,22 @@
 </ul>
 </div>
 </div>
-<aside class="tip" data-inema-block="m3-2-b25">
+<aside class="tip" data-ARCKHÉ-block="m3-2-b25">
 <strong>Estratégia em duas passadas</strong>
 <p>Se a entrada é muito ruim, faça <strong>primeiro uma passada fiel</strong> para limpar e só depois, se precisar, uma passada criativa <strong>leve</strong> — e compare o rosto com o original a cada passo. Duas passadas pequenas controlam melhor do que uma grande.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-3-2#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-3-2#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>O prompt-mestre de ampliaçêo</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b26">Ferramentas que aceitam texto junto com a imagem (ediçêo por prompt, <em>image-to-image</em>, alguns upscalers com campo de prompt) respondem muito melhor a um pedido estruturado do que a “melhore esta foto”. O princípio: a imagem original é uma <strong>moldura imutável</strong>; você só autoriza melhorias dentro dela. Monte o prompt em cinco blocos:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b26">Ferramentas que aceitam texto junto com a imagem (ediçêo por prompt, <em>image-to-image</em>, alguns upscalers com campo de prompt) respondem muito melhor a um pedido estruturado do que a “melhore esta foto”. O princípio: a imagem original é uma <strong>moldura imutável</strong>; você só autoriza melhorias dentro dela. Monte o prompt em cinco blocos:</p>
 <h4>Os cinco blocos</h4>
-<ol class="timeline" data-inema-block="m3-2-b27">
+<ol class="timeline" data-ARCKHÉ-block="m3-2-b27">
 <li>
 <strong>Trava de identidade</strong> — mesmo rosto, geometria facial, expressêo, idade, cabelo, roupa. Só limpeza sutil.</li>
 <li>
@@ -464,7 +464,7 @@
 <strong>Evitar</strong> — pele de plástico, brilho falso, halos, nitidez exagerada, luz dramática, troca de fundo, rosto “corrigido”.</li>
 </ol>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-2-b28">O bloco de câmera funciona como o “estilo” do módulo 1-2: ele nêo simula um sensor, mas puxa o resultado para a aparência de fotos feitas com aquele tipo de equipamento — nitidez, profundidade de campo, textura. As travas dizem o que <strong>nêo</strong> é negociável. O bloco “evitar” existe porque o vício dos modelos é exatamente o oposto do que você quer: alisar pele, acender brilhos e recortar bordas.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b28">O bloco de câmera funciona como o “estilo” do módulo 1-2: ele nêo simula um sensor, mas puxa o resultado para a aparência de fotos feitas com aquele tipo de equipamento — nitidez, profundidade de campo, textura. As travas dizem o que <strong>nêo</strong> é negociável. O bloco “evitar” existe porque o vício dos modelos é exatamente o oposto do que você quer: alisar pele, acender brilhos e recortar bordas.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -490,7 +490,7 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-2-b29">As duas partem da mesma cópia degradada. À esquerda, o prompt em cinco blocos (abra “Instruçêo de ediçêo usada”). À direita, pedimos de propósito o que filtros de um clique costumam fazer: pele sem poros, cores saturadas, brilho em volta das luzes, halos nas bordas. É isso que a lista de negativos impede.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b29">As duas partem da mesma cópia degradada. À esquerda, o prompt em cinco blocos (abra “Instruçêo de ediçêo usada”). À direita, pedimos de propósito o que filtros de um clique costumam fazer: pele sem poros, cores saturadas, brilho em volta das luzes, halos nas bordas. É isso que a lista de negativos impede.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="codebox copyrun">
@@ -508,7 +508,7 @@ AVOID: plastic or airbrushed skin, fake glow, HDR halos, oversharpened edges, dr
 <strong>Como verificar:</strong> Coloque original e resultado lado a lado em 100%: olhos, formato do nariz e da boca, linha do cabelo e objetos do fundo têm de coincidir. Se algo mudou, reforce a trava correspondente ou baixe a criatividade da ferramenta.</p>
 </div>
 <h4>Negativos que valem a pena (campo “negative prompt” ou bloco AVOID)</h4>
-<div class="table-scroll" data-inema-block="m3-2-b34">
+<div class="table-scroll" data-ARCKHÉ-block="m3-2-b34">
 <table>
 <thead>
 <tr>
@@ -548,21 +548,21 @@ AVOID: plastic or airbrushed skin, fake glow, HDR halos, oversharpened edges, dr
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m3-2-b35">
+<aside class="tip" data-ARCKHÉ-block="m3-2-b35">
 <strong>Iterar, sem exagerar</strong>
 <p>Se a primeira passada ficou boa mas tímida, rode <strong>mais uma</strong> com o mesmo prompt sobre o resultado. Na terceira, a imagem costuma começar a “derivar” — cada passada redesenha um pouco. Guarde todas as versões e compare com o original, nêo só com a anterior.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-3-2#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-3-2#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Restauraçêo de foto antiga</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b36">A Terra Alta quer contar a história da família na página “Nossa origem”, e o único registro do avô cafeicultor é uma cópia de 1968, rasgada e manchada. (A foto abaixo é <strong>fictícia</strong>, gerada para o exercício.) Restaurar tem três camadas de risco crescente:</p>
-<div class="table-scroll" data-inema-block="m3-2-b37">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b36">A Terra Alta quer contar a história da família na página “Nossa origem”, e o único registro do avô cafeicultor é uma cópia de 1968, rasgada e manchada. (A foto abaixo é <strong>fictícia</strong>, gerada para o exercício.) Restaurar tem três camadas de risco crescente:</p>
+<div class="table-scroll" data-ARCKHÉ-block="m3-2-b37">
 <table>
 <thead>
 <tr>
@@ -622,7 +622,7 @@ AVOID: plastic or airbrushed skin, fake glow, HDR halos, oversharpened edges, dr
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-2-b38">A restauraçêo removeu o vinco diagonal, as rachaduras, a mancha d'água e o rasgo do canto, e devolveu contraste — mas o pedido manteve o preto e branco levemente quente, o foco suave e o grêo de câmera amadora dos anos 60. Uma foto antiga “nítida como celular” deixa de ser documento e parece falsificaçêo. Mas confira o que sumiu: a anotaçêo a caneta “Minas Gerais – 1968” no rodapé foi apagada junto com as manchas, e o enquadramento abriu um pouco. Numa restauraçêo de verdade, a legenda manuscrita faz parte do documento — peça explicitamente para mantê-la.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b38">A restauraçêo removeu o vinco diagonal, as rachaduras, a mancha d'água e o rasgo do canto, e devolveu contraste — mas o pedido manteve o preto e branco levemente quente, o foco suave e o grêo de câmera amadora dos anos 60. Uma foto antiga “nítida como celular” deixa de ser documento e parece falsificaçêo. Mas confira o que sumiu: a anotaçêo a caneta “Minas Gerais – 1968” no rodapé foi apagada junto com as manchas, e o enquadramento abriu um pouco. Numa restauraçêo de verdade, a legenda manuscrita faz parte do documento — peça explicitamente para mantê-la.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
@@ -650,7 +650,7 @@ AVOID: plastic or airbrushed skin, fake glow, HDR halos, oversharpened edges, dr
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-2-b41">A colorizaçêo é bonita e emociona clientes — mas repare que cada cor é uma escolha do modelo: a cor da camisa, o tom da pele, o verde das folhas. Numa peça de marca tudo bem, desde que a legenda diga “colorizada digitalmente”. Numa foto de família, entregue sempre a versêo P&amp;B restaurada junto.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b41">A colorizaçêo é bonita e emociona clientes — mas repare que cada cor é uma escolha do modelo: a cor da camisa, o tom da pele, o verde das folhas. Numa peça de marca tudo bem, desde que a legenda diga “colorizada digitalmente”. Numa foto de família, entregue sempre a versêo P&amp;B restaurada junto.</p>
 </div>
 <div class="codebox copyrun">
 <h4>Prompt de restauraçêo conservadora</h4>
@@ -665,7 +665,7 @@ Do not colorize, do not modernize, do not sharpen into a digital look.</pre>
 <p>
 <strong>Como verificar:</strong> Compare o rosto com o original em 100%. Se o modelo “rejuvenesceu” a pessoa ou fechou demais o foco, reforce “keep the original soft focus” e rode de novo.</p>
 </div>
-<div class="compare-grid" data-inema-block="m3-2-b46">
+<div class="compare-grid" data-ARCKHÉ-block="m3-2-b46">
 <div class="ok">
 <h4>✓ Restauraçêo responsável</h4>
 <ul>
@@ -686,15 +686,15 @@ Do not colorize, do not modernize, do not sharpen into a digital look.</pre>
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-3-2#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-3-2#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Recorte + ampliaçêo para detalhes</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b47">Muitas vezes a peça que o cliente quer está <strong>dentro</strong> de uma imagem que já existe: as mêos da Lia no coador dariam um ótimo story. Recortar esse pedaço da imagem de 1536 px deixa um arquivo de uns 380 px de largura — ampliado para a tela, fica mole e pixelado. O fluxo profissional é recortar, <strong>tratar o recorte como uma imagem nova</strong> (ampliaçêo fiel com prompt de plano-detalhe) e só entêo exportar.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b47">Muitas vezes a peça que o cliente quer está <strong>dentro</strong> de uma imagem que já existe: as mêos da Lia no coador dariam um ótimo story. Recortar esse pedaço da imagem de 1536 px deixa um arquivo de uns 380 px de largura — ampliado para a tela, fica mole e pixelado. O fluxo profissional é recortar, <strong>tratar o recorte como uma imagem nova</strong> (ampliaçêo fiel com prompt de plano-detalhe) e só entêo exportar.</p>
 <h3 class="sec">Por que aprender</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -721,32 +721,32 @@ Do not colorize, do not modernize, do not sharpen into a digital look.</pre>
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-2-b48">À esquerda, o recorte das mêos, da chaleira e do coador ampliado como um zoom digital: sem detalhe fino. À direita, a mesma área depois de uma ediçêo que pediu textura crível — cobre martelado, fio de água, vapor, esmalte salpicado, pele das mêos — mantendo a posiçêo das mêos e dos objetos. Confira se nada “mudou de lugar”: esse é o teste do recorte.</p>
+<p class="caption" data-ARCKHÉ-block="m3-2-b48">À esquerda, o recorte das mêos, da chaleira e do coador ampliado como um zoom digital: sem detalhe fino. À direita, a mesma área depois de uma ediçêo que pediu textura crível — cobre martelado, fio de água, vapor, esmalte salpicado, pele das mêos — mantendo a posiçêo das mêos e dos objetos. Confira se nada “mudou de lugar”: esse é o teste do recorte.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Fluxo do recorte</h4>
-<ol class="timeline" data-inema-block="m3-2-b51">
+<ol class="timeline" data-ARCKHÉ-block="m3-2-b51">
 <li>Escolha a área e recorte <strong>já na proporçêo final</strong> (9:16 para story, 4:5 para feed).</li>
 <li>Deixe margem: recorte um pouco maior do que o necessário — a ampliaçêo come as bordas.</li>
 <li>Amplie em modo fiel com um prompt de plano-detalhe que descreva os materiais daquela área.</li>
 <li>Compare com o recorte bruto: posiçêo de dedos, objetos e reflexos tem de bater.</li>
 <li>Exporte no tamanho da plataforma e registre na ficha que a peça é “recorte de” tal imagem.</li>
 </ol>
-<aside class="tip" data-inema-block="m3-2-b52">
+<aside class="tip" data-ARCKHÉ-block="m3-2-b52">
 <strong>Recortar ou gerar de novo?</strong>
 <p>Se o detalhe ocupa menos de ~15% da imagem original, costuma ser melhor <strong>gerar o plano-detalhe de novo</strong>, editando a imagem-mestre com “reframe as an extreme close-up of…” (como no módulo 1-2): você ganha composiçêo pensada para o formato em vez de um pedaço esticado. O recorte vale quando aquele instante exato (gesto, reflexo, expressêo) precisa ser o mesmo.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-3-2#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-3-2#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Formatos de entrega por plataforma</h2>
 <h3 class="sec">O que é</h3>
 <h4>Referência de formatos (confira as diretrizes atuais de cada plataforma — elas mudam)</h4>
-<div class="table-scroll" data-inema-block="m3-2-b53">
+<div class="table-scroll" data-ARCKHÉ-block="m3-2-b53">
 <table>
 <thead>
 <tr>
@@ -796,12 +796,12 @@ Do not colorize, do not modernize, do not sharpen into a digital look.</pre>
 </tbody>
 </table>
 </div>
-<aside class="novo" data-inema-block="m3-2-b54">
+<aside class="novo" data-ARCKHÉ-block="m3-2-b54">
 <strong>Novo aqui? Área segura</strong>
 <p>A parte do quadro que nenhuma interface cobre. Em Reels e stories, o topo tem o nome do perfil e a base tem legenda, botões e barra de progresso. Rosto, produto e título ficam no meio.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-2-b55">Gerar sempre em 3:2 e “recortar depois” funciona para 16:9 e 4:5, mas um recorte 9:16 centralizado numa imagem com o sujeito no terço esquerdo <strong>corta a pessoa ao meio</strong>. O recorte tem de seguir o sujeito, e às vezes nêo há imagem suficiente — aí se gera uma versêo vertical ou se expande o quadro (<em>outpainting</em>, módulo 3-1).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b55">Gerar sempre em 3:2 e “recortar depois” funciona para 16:9 e 4:5, mas um recorte 9:16 centralizado numa imagem com o sujeito no terço esquerdo <strong>corta a pessoa ao meio</strong>. O recorte tem de seguir o sujeito, e às vezes nêo há imagem suficiente — aí se gera uma versêo vertical ou se expande o quadro (<em>outpainting</em>, módulo 3-1).</p>
 <figure class="diagram">
 <svg role="img" aria-label="Recortes possíveis a partir de uma imagem 3:2 com o sujeito no terço esquerdo. O 9:16 e o 4:5 foram deslocados para acompanhar o sujeito; o 16:9 perde só uma faixa em cima e embaixo." viewBox='0 0 840 320' width='100%' xmlns='http://www.w3.org/2000/svg' font-family='Inter,system-ui,sans-serif'>
 <rect width='840' height='320' rx='14' fill='var(--surface-2)'/>
@@ -830,8 +830,8 @@ Do not colorize, do not modernize, do not sharpen into a digital look.</pre>
 <figcaption>Recortes possíveis a partir de uma imagem 3:2 com o sujeito no terço esquerdo. O 9:16 e o 4:5 foram deslocados para acompanhar o sujeito; o 16:9 perde só uma faixa em cima e embaixo.</figcaption>
 </figure>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<p class="inema-prose" data-inema-block="m3-2-b57">Faça a conta antes de prometer uma peça: o recorte 9:16 de uma imagem de 1536 × 1024 tem só 576 px de largura. Para chegar aos 1080 px do story você precisa ampliar quase 2× — em modo fiel, porque a Lia está no quadro. Se a campanha tem muitas peças verticais, é mais barato gerar a imagem-mestre vertical desde o início.</p>
-<div class="compare-grid" data-inema-block="m3-2-b58">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b57">Faça a conta antes de prometer uma peça: o recorte 9:16 de uma imagem de 1536 × 1024 tem só 576 px de largura. Para chegar aos 1080 px do story você precisa ampliar quase 2× — em modo fiel, porque a Lia está no quadro. Se a campanha tem muitas peças verticais, é mais barato gerar a imagem-mestre vertical desde o início.</p>
+<div class="compare-grid" data-ARCKHÉ-block="m3-2-b58">
 <div class="ok">
 <h4>✓ Exportaçêo correta</h4>
 <ul>
@@ -852,15 +852,15 @@ Do not colorize, do not modernize, do not sharpen into a digital look.</pre>
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-3-2#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-3-2#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Nome de arquivo, ficha de geraçêo e checagem final</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-2-b59">Um bom nome de arquivo responde, sem abrir a imagem: <strong>de quem, de qual campanha, que peça, qual versêo, que formato</strong>. Use minúsculas, sem acento nem espaço, com hífen dentro de cada campo e sublinhado entre campos:</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b59">Um bom nome de arquivo responde, sem abrir a imagem: <strong>de quem, de qual campanha, que peça, qual versêo, que formato</strong>. Use minúsculas, sem acento nem espaço, com hífen dentro de cada campo e sublinhado entre campos:</p>
 <div class="codebox">
 <h4>Convençêo de nomes</h4>
 <pre id="m3-2-p61" data-lang="text">cliente_campanha_peca_variacao_versao_formato-largura.ext
@@ -911,7 +911,7 @@ terraalta_origem_foto-1968_restaurada-pb_v01_4x5-2400.jpg</pre>
 <figcaption>Um nome desmontado campo a campo: cada pedaço responde uma pergunta (de quem, qual campanha, que peça, que variaçêo, qual versêo, que formato) sem abrir a imagem. À direita, a ficha de geraçêo com o mesmo nome e extensêo .json — é ela que permite refazer a peça meses depois.</figcaption>
 </figure>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-2-b63">A <strong>ficha de geraçêo</strong> é o que transforma um resultado de sorte em algo repetível (módulo 2-1): prompt, modelo, configurações, referências, semente, edições e ampliaçêo. Guarde-a ao lado da imagem, com o mesmo nome e extensêo <code>.json</code> ou <code>.md</code>.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b63">A <strong>ficha de geraçêo</strong> é o que transforma um resultado de sorte em algo repetível (módulo 2-1): prompt, modelo, configurações, referências, semente, edições e ampliaçêo. Guarde-a ao lado da imagem, com o mesmo nome e extensêo <code>.json</code> ou <code>.md</code>.</p>
 <div class="codebox">
 <h4>Ficha de geraçêo (modelo)</h4>
 <pre id="m3-2-p65" data-lang="json">{
@@ -932,7 +932,7 @@ terraalta_origem_foto-1968_restaurada-pb_v01_4x5-2400.jpg</pre>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Checagem final (antes de clicar em enviar)</h4>
-<ol class="timeline" data-inema-block="m3-2-b66">
+<ol class="timeline" data-ARCKHÉ-block="m3-2-b66">
 <li>
 <strong>Identidade</strong>: rosto lado a lado com a imagem-mestre aprovada, em 100%.</li>
 <li>
@@ -950,17 +950,17 @@ terraalta_origem_foto-1968_restaurada-pb_v01_4x5-2400.jpg</pre>
 <li>
 <strong>Transparência</strong>: se a plataforma ou o cliente pedir, rotular como imagem gerada/editada com IA (confira as regras atuais de cada rede).</li>
 </ol>
-<blockquote class="pull" data-inema-block="m3-2-b67">Ninguém elogia uma entrega bem nomeada. Mas todo cliente lembra do cartaz impresso com o rótulo errado.</blockquote>
+<blockquote class="pull" data-ARCKHÉ-block="m3-2-b67">Ninguém elogia uma entrega bem nomeada. Mas todo cliente lembra do cartaz impresso com o rótulo errado.</blockquote>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: leve uma imagem do seu projeto até a entrega</h2>
-<p class="inema-prose" data-inema-block="m3-2-b68">Escolha a melhor imagem do seu cliente até aqui (ou a imagem-mestre da Lia). Você vai prepará-la para <strong>três destinos</strong> — um vertical, um horizontal e um de alta resoluçêo — com nome, ficha e checagem.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-2-b68">Escolha a melhor imagem do seu cliente até aqui (ou a imagem-mestre da Lia). Você vai prepará-la para <strong>três destinos</strong> — um vertical, um horizontal e um de alta resoluçêo — com nome, ficha e checagem.</p>
 <h4>Roteiro</h4>
-<ol class="timeline" data-inema-block="m3-2-b69">
+<ol class="timeline" data-ARCKHÉ-block="m3-2-b69">
 <li>Liste os três destinos e anote, para cada um, proporçêo e pixels (tabela do tópico 6).</li>
 <li>Calcule quanto precisa ampliar para o maior destino. Se for mais que 2×, planeje duas passadas.</li>
 <li>Rode uma ampliaçêo <strong>fiel</strong> com o prompt-mestre abaixo (ou o upscaler da sua ferramenta com criatividade baixa).</li>
@@ -1081,11 +1081,11 @@ AVOID: new text, new logos, ornaments, extra objects, fake glow, oversharpened e
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

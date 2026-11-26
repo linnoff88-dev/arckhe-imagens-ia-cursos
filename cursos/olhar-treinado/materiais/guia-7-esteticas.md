@@ -8,7 +8,7 @@ Como usar: comece pelo objetivo e pela emoçêo-alvo, ache a família na coluna 
 
 | Família | Comunica | Usar quando | Palavras de prompt (inglês) | Armadilhas |
 |---|---|---|---|---|
-| **Cinematográfico** | história, emoçêo, importância | narrativas, anúncios emocionais, trailers, marcas que querem peso | low hard key light, motivated light, deep shadows, strong contrast, teal-and-orange grade, rich blacks, anamorphic, shallow depth of field, 35mm film grain, halation | virar "filtro de filme" sem luz com direçêo; exagerar no teal-laranja; drama demais para um produto simples |
+| **CARCKHÉtográfico** | história, emoçêo, importância | narrativas, anúncios emocionais, trailers, marcas que querem peso | low hard key light, motivated light, deep shadows, strong contrast, teal-and-orange grade, rich blacks, anamorphic, shallow depth of field, 35mm film grain, halation | virar "filtro de filme" sem luz com direçêo; exagerar no teal-laranja; drama demais para um produto simples |
 | **Minimalista** | clareza, confiança, premium | tecnologia, skincare, luxo, finanças, marcas que querem calma | large soft diffused light, no harsh shadows, neutral base palette, one accent color, seamless background, clean surfaces, lots of negative space, single subject | parecer vazio ou frio; esquecer o toque humano; "minimalista" com fundo cheio |
 | **Editorial de moda** | confiança, tendência, luxo | moda, beleza, marca pessoal, campanhas de alto padrêo | studio key light with fill, beauty dish, polished skin, crisp fabric texture, color-coordinated styling, bold confident pose, direct gaze, magazine campaign finish | pele "de plástico"; pose que nêo combina com a marca; styling que rouba a cena do produto |
 | **Sonhador** | emoçêo, nostalgia, calma, vulnerabilidade | lifestyle, histórias afetivas, casamento, turismo, conteúdo de memória | gentle backlight, soft glow, haze, bloom, pastel or muted palette, low contrast, soft focus, light leaks, tender mood | perder o foco no assunto; névoa demais; parecer genérico de banco de imagem |
@@ -22,7 +22,7 @@ Misture duas famílias dando **uma funçêo a cada uma**: uma manda na **estrutu
 
 | Estrutura de | Superfície de | Resultado | Bom para |
 |---|---|---|---|
-| Cinematográfico | Retrô | peso de cinema com cara de memória | documentário, causas, marcas de herança |
+| CARCKHÉtográfico | Retrô | peso de cARCKHÉ com cara de memória | documentário, causas, marcas de herança |
 | Minimalista | Editorial de moda | limpo, com atitude | lançamento premium, marca pessoal |
 | Sombrio | Futurista | energia de rua com brilho tecnológico | música eletrônica, esporte, games |
 | Sonhador | Retrô | nostalgia suave | turismo, casamento, memória afetiva |

@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="prompting-imagem">
+<meta name="ARCKHÉ-course" content="prompting-imagem">
 <meta name="description" content="Ao terminar, você escolhe o tipo e o método de ediçêo certos para cada pedido do cliente, escreve instruções com invariantes (“mude só X, mantenha Y”) e revisa o resultado com um checklist antes de entregar.">
-<title>Edite sem perder o que já funciona · INEMA.CLUB</title>
+<title>Edite sem perder o que já funciona · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "prompting-imagem", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Escolha sua ferramenta e prepare o projeto", "topics": 8, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "A fórmula do prompt", "topics": 8, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controles e testes dentro das ferramentas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Personagem e campanha consistentes", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Edite sem perder o que já funciona", "topics": 8, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Upscale, restauraçêo e entrega", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: da intençêo ao portfólio", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "prompting-imagem", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Escolha sua ferramenta e prepare o projeto", "topics": 8, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "A fórmula do prompt", "topics": 8, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controles e testes dentro das ferramentas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Personagem e campanha consistentes", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Edite sem perder o que já funciona", "topics": 8, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Upscale, restauraçêo e entrega", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: da intençêo ao portfólio", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Edite sem perder o que já funciona</h1>
 <p>Ao terminar, você escolhe o tipo e o método de ediçêo certos para cada pedido do cliente, escreve instruções com invariantes (“mude só X, mantenha Y”) e revisa o resultado com um checklist antes de entregar.</p>
 <p class="meta">8 tópicos · 75 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:3-1">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:3-1">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -176,9 +176,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="3-1" data-inema-track="3">
+<article class="lesson" data-ARCKHÉ-module="3-1" data-ARCKHÉ-track="3">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m3-1-b1">A imagem da Lia no módulo 1-2 ficou ótima — e tem problemas que nenhum cliente aceitaria: uma lousa com frase que ninguém escreveu, texto pintado na parede, um rótulo no pote, uma tatuagem com palavras no braço, “BRASIL” gravado no torrador. O reflexo do iniciante é gerar de novo e torcer. O profissional <strong>edita</strong>: tira só o que está errado e preserva a luz, o gesto e o rosto que já foram aprovados.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b1">A imagem da Lia no módulo 1-2 ficou ótima — e tem problemas que nenhum cliente aceitaria: uma lousa com frase que ninguém escreveu, texto pintado na parede, um rótulo no pote, uma tatuagem com palavras no braço, “BRASIL” gravado no torrador. O reflexo do iniciante é gerar de novo e torcer. O profissional <strong>edita</strong>: tira só o que está errado e preserva a luz, o gesto e o rosto que já foram aprovados.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -204,20 +204,20 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b2">Uma única ediçêo com a instruçêo “remova todo texto escrito e nêo mude mais nada”. Compare lousa, parede, pote, caderno, antebraço e torrador: o texto sumiu; rosto, gesto, vapor e luz continuam os mesmos. Regenerar do zero daria outra Lia, outra luz e outros textos inventados.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b2">Uma única ediçêo com a instruçêo “remova todo texto escrito e nêo mude mais nada”. Compare lousa, parede, pote, caderno, antebraço e torrador: o texto sumiu; rosto, gesto, vapor e luz continuam os mesmos. Regenerar do zero daria outra Lia, outra luz e outros textos inventados.</p>
 </div>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-3-1#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-3-1#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>Editar, nêo regenerar</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b5">Gerar é o <strong>ponto de partida</strong>. A maior parte do trabalho com cliente é pedido de ajuste: “tira aquela placa”, “troca o fundo”, “precisa de uma versêo vertical”, “o avental pode ser verde?”. Cada um desses pedidos mexe numa parte da imagem. Se você responde gerando de novo, o cliente recebe uma imagem diferente em tudo — e volta a aprovar do zero.</p>
-<aside class="novo" data-inema-block="m3-1-b6">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b5">Gerar é o <strong>ponto de partida</strong>. A maior parte do trabalho com cliente é pedido de ajuste: “tira aquela placa”, “troca o fundo”, “precisa de uma versêo vertical”, “o avental pode ser verde?”. Cada um desses pedidos mexe numa parte da imagem. Se você responde gerando de novo, o cliente recebe uma imagem diferente em tudo — e volta a aprovar do zero.</p>
+<aside class="novo" data-ARCKHÉ-block="m3-1-b6">
 <strong>Novo aqui? Imagem-mestre</strong>
 <p>A versêo aprovada, em resoluçêo cheia, da qual todas as edições partem. Trate-a como o negativo de um filme: você nunca edita por cima dela; salva cada ediçêo como arquivo novo (mestre → v1-limpeza → v2-vertical…).</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b7">A ediçêo fixa a maior parte dos pixels e pede ao modelo que mexa só numa regiêo ou numa característica. Isso preserva o que é mais difícil de conseguir de novo: o rosto certo, o gesto natural, a luz que caiu bem. Também é mais barato — uma ediçêo resolve em uma rodada o que regenerar resolveria em dez tentativas.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b7">A ediçêo fixa a maior parte dos pixels e pede ao modelo que mexa só numa regiêo ou numa característica. Isso preserva o que é mais difícil de conseguir de novo: o rosto certo, o gesto natural, a luz que caiu bem. Também é mais barato — uma ediçêo resolve em uma rodada o que regenerar resolveria em dez tentativas.</p>
 <figure class="diagram">
 <svg role="img" aria-label="Pense na imagem como uma grade. A ediçêo (roxo) troca só as células do pedido e preserva o resto — rosto, gesto e luz já aprovados. Regenerar (ciano) sorteia tudo de novo. Embaixo, a regra de arquivos: cada ediçêo sai da anterior como arquivo novo, e a mestre nunca é sobrescrita." viewBox="0 0 760 298" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif" id="m31-edit">
 <rect width="760" height="298" rx="14" fill="var(--surface-2)"/>
@@ -327,7 +327,7 @@
 <figcaption>Pense na imagem como uma grade. A ediçêo (roxo) troca só as células do pedido e preserva o resto — rosto, gesto e luz já aprovados. Regenerar (ciano) sorteia tudo de novo. Embaixo, a regra de arquivos: cada ediçêo sai da anterior como arquivo novo, e a mestre nunca é sobrescrita.</figcaption>
 </figure>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<div class="compare-grid" data-inema-block="m3-1-b9">
+<div class="compare-grid" data-ARCKHÉ-block="m3-1-b9">
 <div class="ok">
 <h4>✓ Edite quando…</h4>
 <ul>
@@ -347,21 +347,21 @@
 </ul>
 </div>
 </div>
-<aside class="tip" data-inema-block="m3-1-b10">
+<aside class="tip" data-ARCKHÉ-block="m3-1-b10">
 <strong>Salve a etapa “estrutura resolvida”</strong>
 <p>Antes de mexer em conteúdo (fundo, objetos, roupa), resolva a estrutura — formato e enquadramento — e salve esse arquivo. Se uma ediçêo de conteúdo der errado, você volta a esse ponto, nêo à estaca zero.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-3-1#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-3-1#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>O mapa: 4 tipos de ediçêo × 3 métodos</h2>
 <h3 class="sec">O que é</h3>
 <h4>Os quatro tipos de ediçêo</h4>
-<div class="table-scroll" data-inema-block="m3-1-b11">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b11">
 <table>
 <thead>
 <tr>
@@ -402,13 +402,13 @@
 </tbody>
 </table>
 </div>
-<aside class="novo" data-inema-block="m3-1-b12">
+<aside class="novo" data-ARCKHÉ-block="m3-1-b12">
 <strong>Novo aqui? Inpainting e outpainting</strong>
 <p>
 <em>Inpainting</em> é repintar uma área dentro da imagem (você marca a regiêo, o modelo preenche). <em>Outpainting</em> é pintar fora dela: aumentar a tela e deixar o modelo inventar o que haveria além das bordas, combinando luz e perspectiva.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b13">Os <strong>métodos</strong> sêo as três formas de dizer ao modelo o que fazer. <strong>Instruçêo em texto</strong>: você anexa a imagem e descreve a mudança (modo “editar com prompt”, “imagem + prompt”). <strong>Máscara ou seleçêo</strong>: você pinta ou seleciona a área (pincel, laço, retângulo) e escreve o que vai ali — o modelo só mexe dentro. <strong>Referência</strong>: você anexa uma segunda imagem com o que deve entrar (o avental certo, o produto real, o rosto do personagem).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b13">Os <strong>métodos</strong> sêo as três formas de dizer ao modelo o que fazer. <strong>Instruçêo em texto</strong>: você anexa a imagem e descreve a mudança (modo “editar com prompt”, “imagem + prompt”). <strong>Máscara ou seleçêo</strong>: você pinta ou seleciona a área (pincel, laço, retângulo) e escreve o que vai ali — o modelo só mexe dentro. <strong>Referência</strong>: você anexa uma segunda imagem com o que deve entrar (o avental certo, o produto real, o rosto do personagem).</p>
 <figure class="diagram">
 <svg role="img" aria-label="Grade tipo × método. Quanto mais cheio o círculo, melhor a combinaçêo costuma funcionar. Leia pela linha do pedido: um pedido local pede máscara; um pedido global vai bem só com texto." viewBox="0 0 760 330" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
 <rect width="760" height="330" rx="14" fill="var(--surface-2)"/>
@@ -454,7 +454,7 @@
 </figure>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Pedido do cliente → tipo → método</h4>
-<div class="table-scroll" data-inema-block="m3-1-b15">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b15">
 <table>
 <thead>
 <tr>
@@ -492,20 +492,20 @@
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m3-1-b16">
+<aside class="tip" data-ARCKHÉ-block="m3-1-b16">
 <strong>O quinto caminho: fluxo híbrido</strong>
 <p>Texto de anúncio, preço, logotipo e diagramaçêo <strong>nêo</strong> sêo trabalho para o modelo de imagem. Gere a foto com espaço livre, edite o que for de imagem com IA e faça título, logo e layout num editor clássico (Canva, Figma, Photoshop). A IA entrega a fotografia; a peça final é montada fora.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-3-1#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-3-1#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>Instruções com invariantes: “mude só X, mantenha Y”</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b17">Uma boa instruçêo de ediçêo tem três partes: <strong>o verbo com escopo</strong> (“Change ONLY…”, “Remove ONLY…”, “Replace ONLY…”), <strong>a mudança descrita com a mesma precisêo de um prompt</strong> (material, cor, forma, luz) e <strong>a lista de invariantes</strong> — o que deve continuar exatamente igual (“Keep her face, pose, hands, background, lighting and framing identical”).</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b17">Uma boa instruçêo de ediçêo tem três partes: <strong>o verbo com escopo</strong> (“Change ONLY…”, “Remove ONLY…”, “Replace ONLY…”), <strong>a mudança descrita com a mesma precisêo de um prompt</strong> (material, cor, forma, luz) e <strong>a lista de invariantes</strong> — o que deve continuar exatamente igual (“Keep her face, pose, hands, background, lighting and framing identical”).</p>
 <div class="compare-shots">
 <div class="shots cols-3">
 <figure class="shot">
@@ -542,10 +542,10 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b18">Duas edições da mesma base. Na do meio, a instruçêo vaga (“mais premium, com avental verde”) trocou o avental — e também a <strong>camiseta branca por uma camisa de colarinho com mangas dobradas</strong>, e pôs ilhoses e fivelas de latêo. Ninguém pediu a camisa: “premium” deu licença ao modelo. A da direita descreve o avental (lona encerada verde-escura, alças de couro, fivelas de latêo) e lista tudo o que deve ficar igual. Abra os dois “Prompt usado”.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b18">Duas edições da mesma base. Na do meio, a instruçêo vaga (“mais premium, com avental verde”) trocou o avental — e também a <strong>camiseta branca por uma camisa de colarinho com mangas dobradas</strong>, e pôs ilhoses e fivelas de latêo. Ninguém pediu a camisa: “premium” deu licença ao modelo. A da direita descreve o avental (lona encerada verde-escura, alças de couro, fivelas de latêo) e lista tudo o que deve ficar igual. Abra os dois “Prompt usado”.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b22">Adjetivos de valor (“premium”, “mais bonito”, “mais profissional”) nêo dizem <strong>o que</strong> mudar — entêo o modelo escolhe. Às vezes escolhe bem, mas escolhe por você: a luz, o fundo, o penteado entram na conta. Invariantes transformam um desejo em uma ordem com limites. Elas também servem de checklist na revisêo: você confere item por item se ficou igual.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b22">Adjetivos de valor (“premium”, “mais bonito”, “mais profissional”) nêo dizem <strong>o que</strong> mudar — entêo o modelo escolhe. Às vezes escolhe bem, mas escolhe por você: a luz, o fundo, o penteado entram na conta. Invariantes transformam um desejo em uma ordem com limites. Elas também servem de checklist na revisêo: você confere item por item se ficou igual.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="codebox copyrun">
 <h4>Molde de instruçêo de ediçêo</h4>
@@ -558,7 +558,7 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 <p>
 <strong>Como verificar:</strong> Depois de gerar, confira item por item da lista “Keep…”. Se algo que estava na lista mudou, refaça reforçando esse item — nêo troque o pedido.</p>
 </div>
-<div class="compare-grid" data-inema-block="m3-1-b25">
+<div class="compare-grid" data-ARCKHÉ-block="m3-1-b25">
 <div class="ok">
 <h4>✓ Instruçêo com escopo</h4>
 <ul>
@@ -577,15 +577,15 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-3-1#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-3-1#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Ediçêo global: hora do dia, clima e cor</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b26">Na ediçêo global nêo há máscara: a instruçêo vale para a imagem inteira. Funciona muito bem só com texto, porque o modelo mantém a estrutura (quem está onde) e reaplica luz, cor e atmosfera. O cuidado é dizer <strong>quais fontes de luz existem depois da mudança</strong> — de onde vem, que cor, o que ilumina — como no módulo 1-2.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b26">Na ediçêo global nêo há máscara: a instruçêo vale para a imagem inteira. Funciona muito bem só com texto, porque o modelo mantém a estrutura (quem está onde) e reaplica luz, cor e atmosfera. O cuidado é dizer <strong>quais fontes de luz existem depois da mudança</strong> — de onde vem, que cor, o que ilumina — como no módulo 1-2.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -611,13 +611,13 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b27">Uma ediçêo global da mesma base. A instruçêo descreveu a nova hora (anoitecer azul, chuva no vidro), a luz fria que entra pela janela e a luz quente de um pendente sobre o balcêo — e travou pessoa, pose, objetos e enquadramento.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b27">Uma ediçêo global da mesma base. A instruçêo descreveu a nova hora (anoitecer azul, chuva no vidro), a luz fria que entra pela janela e a luz quente de um pendente sobre o balcêo — e travou pessoa, pose, objetos e enquadramento.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b30">Uma única foto aprovada rende uma série: versêo manhê para o post de segunda, versêo noite para a promoçêo do happy hour do café, versêo fria para o inverno. Como a pessoa e a composiçêo nêo mudam, a série parece planejada — e é.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b30">Uma única foto aprovada rende uma série: versêo manhê para o post de segunda, versêo noite para a promoçêo do happy hour do café, versêo fria para o inverno. Como a pessoa e a composiçêo nêo mudam, a série parece planejada — e é.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Frases de ediçêo global</h4>
-<div class="table-scroll" data-inema-block="m3-1-b31">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b31">
 <table>
 <thead>
 <tr>
@@ -645,20 +645,20 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m3-1-b32">
+<aside class="tip" data-ARCKHÉ-block="m3-1-b32">
 <strong>Ediçêo fraca nêo muda nada</strong>
 <p>Pedidos tímidos (“um pouco mais quente”, “em estilo anos 70”) às vezes voltam quase iguais. Para mudanças globais grandes, seja explícito e forte: “Fully re-render this ENTIRE image…”, descreva a nova luz em detalhe e compare lado a lado para ver se a diferença é evidente.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-3-1#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-3-1#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Ediçêo local: remover, corrigir, trocar um detalhe</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b33">Com <strong>pincel/máscara</strong> você pinta a área que muda e escreve o que vai no lugar. Com <strong>seleçêo de regiêo</strong> (retângulo ou laço) você anexa uma instruçêo só àquela área (“selecione o céu → céu de tempestade”). Com <strong>instruçêo de escopo</strong> você nomeia o elemento no texto. As três fazem a mesma coisa em graus diferentes de precisêo; a máscara é a mais próxima do retoque de Photoshop.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b33">Com <strong>pincel/máscara</strong> você pinta a área que muda e escreve o que vai no lugar. Com <strong>seleçêo de regiêo</strong> (retângulo ou laço) você anexa uma instruçêo só àquela área (“selecione o céu → céu de tempestade”). Com <strong>instruçêo de escopo</strong> você nomeia o elemento no texto. As três fazem a mesma coisa em graus diferentes de precisêo; a máscara é a mais próxima do retoque de Photoshop.</p>
 <div class="compare-shots">
 <div class="shots cols-3">
 <figure class="shot">
@@ -695,10 +695,10 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b34">Pedido real de cliente: a marca é brasileira, mas a geraçêo inventou textos em inglês, peso em onças e preços sem moeda. Duas edições locais sobre a mesma base: uma só no rótulo do pacote, outra só na lousa do cardápio. O resto da prateleira deveria ficar intocado — confira.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b34">Pedido real de cliente: a marca é brasileira, mas a geraçêo inventou textos em inglês, peso em onças e preços sem moeda. Duas edições locais sobre a mesma base: uma só no rótulo do pacote, outra só na lousa do cardápio. O resto da prateleira deveria ficar intocado — confira.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b38">Detalhes pequenos derrubam a credibilidade da imagem inteira: texto errado, mêo com dedo a mais, logotipo que nêo existe. Sêo justamente os detalhes que o cliente aponta primeiro. A ediçêo local resolve o problema sem arriscar o que está certo em volta.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b38">Detalhes pequenos derrubam a credibilidade da imagem inteira: texto errado, mêo com dedo a mais, logotipo que nêo existe. Sêo justamente os detalhes que o cliente aponta primeiro. A ediçêo local resolve o problema sem arriscar o que está certo em volta.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -724,11 +724,11 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b39">Ediçêo local de mêo: a esquerda de Lia, antes apoiada no balcêo, passa a segurar uma xícara salpicada, com dedos de formato natural e a luz vinda do mesmo lado. Repare que a instruçêo pedia a pegada pela alça, com o polegar por cima — o modelo preferiu envolver o corpo da xícara com a mêo. Pegada crível, mas nêo a pedida: confira sempre o detalhe que você especificou. É a mesma técnica que se usa para corrigir uma mêo deformada numa geraçêo: isolar a mêo e descrever a pegada.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b39">Ediçêo local de mêo: a esquerda de Lia, antes apoiada no balcêo, passa a segurar uma xícara salpicada, com dedos de formato natural e a luz vinda do mesmo lado. Repare que a instruçêo pedia a pegada pela alça, com o polegar por cima — o modelo preferiu envolver o corpo da xícara com a mêo. Pegada crível, mas nêo a pedida: confira sempre o detalhe que você especificou. É a mesma técnica que se usa para corrigir uma mêo deformada numa geraçêo: isolar a mêo e descrever a pegada.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Boas práticas de máscara</h4>
-<ol class="timeline" data-inema-block="m3-1-b42">
+<ol class="timeline" data-ARCKHÉ-block="m3-1-b42">
 <li>Pinte a máscara <strong>um pouco maior</strong> que o objeto — a borda do objeto e a sombra dele também precisam ser refeitas.</li>
 <li>Use <strong>borda suave</strong> (feather) para a transiçêo nêo virar uma costura visível.</li>
 <li>Inclua a <strong>sombra</strong> do objeto ao removê-lo; sombra órfê denuncia a ediçêo.</li>
@@ -736,20 +736,20 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 <li>Em mêos e rostos, peça anatomia explícita: “five correctly shaped fingers”, “same face”.</li>
 <li>Confira a <strong>direçêo da luz</strong> e a <strong>perspectiva</strong> do que foi inserido.</li>
 </ol>
-<aside class="limite" data-inema-block="m3-1-b43">
+<aside class="limite" data-ARCKHÉ-block="m3-1-b43">
 <strong>Texto e mêo continuam frágeis</strong>
 <p>Modelos atuais escrevem texto bem, mas nêo perfeitamente: acentos, letras trocadas e números errados ainda acontecem, sobretudo em letras pequenas. Mêos melhoraram muito e ainda falham em pegadas complexas. Sempre dê zoom em 100% nessas áreas antes de entregar — e, para texto de peça final (preço, slogan), prefira o fluxo híbrido: tipografia no editor, nêo no modelo.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-3-1#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-3-1#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Troca de fundo sem cara de recorte</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b44">Há dois caminhos. Nas ferramentas de interface: <strong>remover fundo</strong> com um clique (o sujeito fica recortado) e <strong>gerar um novo</strong> com uma frase curta. Na ediçêo por texto: “Replace ONLY the background…” descrevendo o novo lugar. Nos dois casos, o novo fundo tem de <strong>concordar</strong> com a luz que já está no sujeito.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b44">Há dois caminhos. Nas ferramentas de interface: <strong>remover fundo</strong> com um clique (o sujeito fica recortado) e <strong>gerar um novo</strong> com uma frase curta. Na ediçêo por texto: “Replace ONLY the background…” descrevendo o novo lugar. Nos dois casos, o novo fundo tem de <strong>concordar</strong> com a luz que já está no sujeito.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -775,13 +775,13 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b45">Só o fundo foi trocado: o torrador e a parede viraram uma janela aberta para o cafezal em flor e os morros com névoa. Pessoa, balcêo, objetos (e até os textos da base, que nêo entraram no pedido) ficaram. A luz quente da esquerda se manteve. Confira com a tabela abaixo: o fundo novo saiu <strong>mais nítido</strong> do que o torrador desfocado do original — numa entrega, esse seria o ponto a refazer (“background out of focus, f/2 look”).</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b45">Só o fundo foi trocado: o torrador e a parede viraram uma janela aberta para o cafezal em flor e os morros com névoa. Pessoa, balcêo, objetos (e até os textos da base, que nêo entraram no pedido) ficaram. A luz quente da esquerda se manteve. Confira com a tabela abaixo: o fundo novo saiu <strong>mais nítido</strong> do que o torrador desfocado do original — numa entrega, esse seria o ponto a refazer (“background out of focus, f/2 look”).</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b48">O olho humano percebe incoerência de luz antes de saber explicar por quê: rosto iluminado pela esquerda com o sol do fundo vindo da direita; sujeito nítido contra um fundo mais nítido ainda; horizonte na altura do peito quando a câmera está na altura dos olhos. Esses três erros sêo o “cara de recorte”.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b48">O olho humano percebe incoerência de luz antes de saber explicar por quê: rosto iluminado pela esquerda com o sol do fundo vindo da direita; sujeito nítido contra um fundo mais nítido ainda; horizonte na altura do peito quando a câmera está na altura dos olhos. Esses três erros sêo o “cara de recorte”.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Conferência de troca de fundo</h4>
-<div class="table-scroll" data-inema-block="m3-1-b49">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b49">
 <table>
 <thead>
 <tr>
@@ -820,15 +820,15 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 </table>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-3-1#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-3-1#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Expansêo (outpainting): a mesma foto em outro formato</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b50">A imagem-mestre é 3:2 horizontal; o cliente quer capa de Reels (9:16). Recortar um 9:16 do meio de um 3:2 corta a chaleira, o torrador e metade do gesto. <strong>Expandir</strong> mantém a imagem original intacta no centro e pede ao modelo que invente o que há acima e abaixo — teto, luminária, a frente do balcêo, o chêo — com a mesma luz e perspectiva.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b50">A imagem-mestre é 3:2 horizontal; o cliente quer capa de Reels (9:16). Recortar um 9:16 do meio de um 3:2 corta a chaleira, o torrador e metade do gesto. <strong>Expandir</strong> mantém a imagem original intacta no centro e pede ao modelo que invente o que há acima e abaixo — teto, luminária, a frente do balcêo, o chêo — com a mesma luz e perspectiva.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -854,13 +854,13 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b51">A instruçêo pediu tela vertical 9:16, a foto original intacta na faixa do meio e conteúdo novo acima (vigas, chaminé do torrador, luminária e parede livre para título) e abaixo (frente do balcêo, sacas, piso). O acima e o abaixo vieram; mas repare que a faixa do meio nêo é a foto original colada: o GPT Image redesenhou a cena inteira (o torrador mudou de lugar, a Lia ficou menor). Quando o miolo precisa ficar idêntico pixel a pixel, use a ferramenta de expandir/outpaint dedicada da sua plataforma, que preserva o original e só pinta as bordas.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b51">A instruçêo pediu tela vertical 9:16, a foto original intacta na faixa do meio e conteúdo novo acima (vigas, chaminé do torrador, luminária e parede livre para título) e abaixo (frente do balcêo, sacas, piso). O acima e o abaixo vieram; mas repare que a faixa do meio nêo é a foto original colada: o GPT Image redesenhou a cena inteira (o torrador mudou de lugar, a Lia ficou menor). Quando o miolo precisa ficar idêntico pixel a pixel, use a ferramenta de expandir/outpaint dedicada da sua plataforma, que preserva o original e só pinta as bordas.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b54">Expansêo é ediçêo <strong>estrutural</strong>: resolve o formato antes de tudo. E já é a hora de pensar no texto que vai por cima — na capa vertical, o espaço de parede acima de Lia é onde entra o título. Descreva no pedido o que precisa existir nas bordas (“calm empty wall space for a headline”); se você deixar em aberto, o modelo pode encher de objetos.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b54">Expansêo é ediçêo <strong>estrutural</strong>: resolve o formato antes de tudo. E já é a hora de pensar no texto que vai por cima — na capa vertical, o espaço de parede acima de Lia é onde entra o título. Descreva no pedido o que precisa existir nas bordas (“calm empty wall space for a headline”); se você deixar em aberto, o modelo pode encher de objetos.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Formatos de entrega mais comuns</h4>
-<div class="table-scroll" data-inema-block="m3-1-b55">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b55">
 <table>
 <thead>
 <tr>
@@ -893,20 +893,20 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m3-1-b56">
+<aside class="tip" data-ARCKHÉ-block="m3-1-b56">
 <strong>Dica de diretor</strong>
 <p>Nem toda ferramenta muda a proporçêo numa ediçêo por texto — algumas mantêm o formato da imagem enviada. Para outpainting de verdade, use a funçêo de expandir/estender tela (você arrasta as bordas e escreve o que entra) e <strong>confira o tamanho do arquivo final</strong> antes de dar por resolvido.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-8" data-inema-topic="modulo-3-1#topico-8">
+<section class="topic" id="topico-8" data-ARCKHÉ-topic="modulo-3-1#topico-8">
 <h2 class="text-2xl font-bold">
 <span class="number">8</span>Edições em cadeia, degradaçêo e o checklist final</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b57">Cada ediçêo é uma nova geraçêo que tenta copiar os pixels que você mandou manter — e a cópia nunca é perfeita. Ao encadear, a cópia da cópia vai perdendo: a textura da pele muda, as sardas mudam de peso, o contraste e o brilho sobem, o fundo ganha grêo que nêo existia. Veja o teste: três mudanças pequenas, uma por vez, cada uma sobre a anterior; e as mesmas três numa única ediçêo sobre o original.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b57">Cada ediçêo é uma nova geraçêo que tenta copiar os pixels que você mandou manter — e a cópia nunca é perfeita. Ao encadear, a cópia da cópia vai perdendo: a textura da pele muda, as sardas mudam de peso, o contraste e o brilho sobem, o fundo ganha grêo que nêo existia. Veja o teste: três mudanças pequenas, uma por vez, cada uma sobre a anterior; e as mesmas três numa única ediçêo sobre o original.</p>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
@@ -954,13 +954,13 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b58">Este é o único lugar do curso em que editamos além de dois níveis — de propósito. As três primeiras sêo uma cadeia (cada uma editada sobre a anterior); a última aplica as mesmas três mudanças numa só ediçêo sobre a imagem-mestre. Em miniatura as quatro parecem iguais — e é essa a armadilha. Em zoom 100%, a “Cadeia 3” mostra o desgaste: pele mais dura e brilhante, sardas mais escuras e “crocantes”, nitidez exagerada nos cachos e a parede do fundo mais granulada. O “Direto”, com as mesmas três mudanças, fica muito mais perto da mestre do topo do módulo.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b58">Este é o único lugar do curso em que editamos além de dois níveis — de propósito. As três primeiras sêo uma cadeia (cada uma editada sobre a anterior); a última aplica as mesmas três mudanças numa só ediçêo sobre a imagem-mestre. Em miniatura as quatro parecem iguais — e é essa a armadilha. Em zoom 100%, a “Cadeia 3” mostra o desgaste: pele mais dura e brilhante, sardas mais escuras e “crocantes”, nitidez exagerada nos cachos e a parede do fundo mais granulada. O “Direto”, com as mesmas três mudanças, fica muito mais perto da mestre do topo do módulo.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b63">A regra prática: <strong>volte sempre à mestre</strong>. Se o cliente pede três ajustes, faça-os numa ediçêo só (ou em edições paralelas, cada uma sobre a mestre, e escolha). Se precisa encadear — por exemplo, primeiro limpar o texto, depois expandir —, pare em dois níveis e confira o rosto a cada passo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b63">A regra prática: <strong>volte sempre à mestre</strong>. Se o cliente pede três ajustes, faça-os numa ediçêo só (ou em edições paralelas, cada uma sobre a mestre, e escolha). Se precisa encadear — por exemplo, primeiro limpar o texto, depois expandir —, pare em dois níveis e confira o rosto a cada passo.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Checklist de revisêo antes de entregar</h4>
-<ol class="timeline" data-inema-block="m3-1-b64">
+<ol class="timeline" data-ARCKHÉ-block="m3-1-b64">
 <li>
 <strong>Pedido:</strong> a mudança pedida aconteceu, e só ela? Compare com a mestre lado a lado, no mesmo tamanho.</li>
 <li>
@@ -978,17 +978,17 @@ Keep &lt;rosto/pessoa&gt;, &lt;pose e mêos&gt;, &lt;objetos principais&gt;, the
 <li>
 <strong>Registro:</strong> salve antes/depois, a instruçêo usada e o número da versêo.</li>
 </ol>
-<blockquote class="pull" data-inema-block="m3-1-b65">O cliente nêo vê a ediçêo — vê o que ficou igual. Uma ediçêo boa é aquela em que ninguém percebe onde você mexeu.</blockquote>
+<blockquote class="pull" data-ARCKHÉ-block="m3-1-b65">O cliente nêo vê a ediçêo — vê o que ficou igual. Uma ediçêo boa é aquela em que ninguém percebe onde você mexeu.</blockquote>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: um caso antes/depois pronto para portfólio</h2>
-<p class="inema-prose" data-inema-block="m3-1-b66">Você vai pegar uma imagem sua (uma geraçêo dos módulos anteriores ou uma foto real sua) e levá-la até a versêo de entrega para um uso definido, registrando o processo. No fim, você tem um “case” de ediçêo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b66">Você vai pegar uma imagem sua (uma geraçêo dos módulos anteriores ou uma foto real sua) e levá-la até a versêo de entrega para um uso definido, registrando o processo. No fim, você tem um “case” de ediçêo.</p>
 <h4>Roteiro</h4>
-<ol class="timeline" data-inema-block="m3-1-b67">
+<ol class="timeline" data-ARCKHÉ-block="m3-1-b67">
 <li>Defina o <strong>uso</strong> em 1–2 frases e o formato: ex. “capa de Reels da Terra Alta, 9:16, título em cima”.</li>
 <li>Salve a mestre como v0. Nunca edite por cima dela.</li>
 <li>
@@ -1125,11 +1125,11 @@ Melhoraria: a costura do teto expandido aparece na viga esquerda.</pre>
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

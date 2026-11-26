@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="olhar-treinado">
+<meta name="ARCKHÉ-course" content="olhar-treinado">
 <meta name="description" content="Ao terminar, você escolhe a estética a partir do objetivo do projeto, justifica cada elemento pela mensagem que ele passa, monta híbridos de duas famílias e trava um bloco de estilo que mantém uma série inteira coerente.">
-<title>Estética por objetivo: decidir, misturar, aplicar · INEMA.CLUB</title>
+<title>Estética por objetivo: decidir, misturar, aplicar · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "olhar-treinado", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Gosto é treinável", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Nomeie o que você vê: vocabulário e Visual DNA", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "As sete famílias estéticas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Estética por objetivo: decidir, misturar, aplicar", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Observaçêo profissional: desmontar, estudar, criar regras", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: seu caderno de olhar aplicado", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "olhar-treinado", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Gosto é treinável", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Nomeie o que você vê: vocabulário e Visual DNA", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "As sete famílias estéticas", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}, {"id": "2-2", "title": "Estética por objetivo: decidir, misturar, aplicar", "topics": 7, "href": "curso/trilha2/modulo-2-2.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Observaçêo profissional: desmontar, estudar, criar regras", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: seu caderno de olhar aplicado", "topics": 7, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html" aria-current="page">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Estética por objetivo: decidir, misturar, aplicar</h1>
 <p>Ao terminar, você escolhe a estética a partir do objetivo do projeto, justifica cada elemento pela mensagem que ele passa, monta híbridos de duas famílias e trava um bloco de estilo que mantém uma série inteira coerente.</p>
 <p class="meta">7 tópicos · 75 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:2-2">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:2-2">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -173,19 +173,19 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="2-2" data-inema-track="2">
+<article class="lesson" data-ARCKHÉ-module="2-2" data-ARCKHÉ-track="2">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m2-2-b1">No módulo anterior você viu a mesma vendedora de açaí do Ver-o-Peso atravessar as sete famílias estéticas. Agora vem a pergunta que separa quem gera imagens bonitas de quem dirige: <strong>qual delas usar, e por quê?</strong> Um lançamento de produto, uma campanha de ONG e o cartaz de uma festa de tecnobrega podem partir da mesma cena — e precisam de estéticas diferentes, porque querem provocar sentimentos diferentes em pessoas diferentes.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b1">No módulo anterior você viu a mesma vendedora de açaí do Ver-o-Peso atravessar as sete famílias estéticas. Agora vem a pergunta que separa quem gera imagens bonitas de quem dirige: <strong>qual delas usar, e por quê?</strong> Um lançamento de produto, uma campanha de ONG e o cartaz de uma festa de tecnobrega podem partir da mesma cena — e precisam de estéticas diferentes, porque querem provocar sentimentos diferentes em pessoas diferentes.</p>
 <div class="compare-shots">
 <div class="shots cols-3">
 <figure class="shot">
 <span class="shot-label">ONG: memória e importância</span>
 <a href="../../assets/img/c3-m22-hibrido-cine-retro.webp" target="_blank" rel="noopener">
-<img src="../../assets/img/c3-m22-hibrido-cine-retro.webp" alt="A mesma cena como híbrido cinematográfico + retrô: luz dramática de cinema com a superfície de um filme negativo dos anos 70, grêo, pretos lavados e vinheta" loading="lazy" decoding="async">
+<img src="../../assets/img/c3-m22-hibrido-cine-retro.webp" alt="A mesma cena como híbrido cARCKHÉtográfico + retrô: luz dramática de cARCKHÉ com a superfície de um filme negativo dos anos 70, grêo, pretos lavados e vinheta" loading="lazy" decoding="async">
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m2-2-p3">Fully re-render this ENTIRE image — subject AND background — as a HYBRID of two aesthetics. From CINEMATIC take the structure: a single low warm directional sun from the right, deep contrast, shallow depth of field, a sense of weight and story. From RETRO/VINTAGE take the surface: the look of a 1970s color negative film print — warm faded tones, lifted milky blacks, slightly yellowed whites, clearly visible film grain, gentle analog color shifts, soft vignette and a hint of light leak at the right edge. The result must look unmistakably like an old film photograph with cinematic lighting. Keep the same woman, face, headscarf, outfit, pose, action, stall and framing. No text on signs.</pre>
+<pre id="m2-2-p3">Fully re-render this ENTIRE image — subject AND background — as a HYBRID of two aesthetics. From CARCKHÉTIC take the structure: a single low warm directional sun from the right, deep contrast, shallow depth of field, a sense of weight and story. From RETRO/VINTAGE take the surface: the look of a 1970s color negative film print — warm faded tones, lifted milky blacks, slightly yellowed whites, clearly visible film grain, gentle analog color shifts, soft vignette and a hint of light leak at the right edge. The result must look unmistakably like an old film photograph with cARCKHÉtic lighting. Keep the same woman, face, headscarf, outfit, pose, action, stall and framing. No text on signs.</pre>
 <button data-copy="m2-2-p3">Copiar prompt</button>
 </details>
 </figure>
@@ -212,14 +212,14 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-2-b2">Três objetivos, uma cena-base. Todas sêo edições da mesma foto da vendedora, cada uma pedindo uma mistura de duas famílias escolhida pelo objetivo. Nenhuma é “a mais bonita”: cada uma está certa para um público e errada para os outros dois. Este módulo ensina a chegar a essa escolha de propósito.</p>
+<p class="caption" data-ARCKHÉ-block="m2-2-b2">Três objetivos, uma cena-base. Todas sêo edições da mesma foto da vendedora, cada uma pedindo uma mistura de duas famílias escolhida pelo objetivo. Nenhuma é “a mais bonita”: cada uma está certa para um público e errada para os outros dois. Este módulo ensina a chegar a essa escolha de propósito.</p>
 </div>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-2-2#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-2-2#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>A cadeia de decisêo: objetivo → emoçêo → estética</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-2-b6">Escolher estética nêo é abrir o Pinterest e salvar o que agrada. É responder, em ordem, a cinco perguntas. Cada resposta estreita a seguinte, e a última já sai em forma de palavras que você cola no prompt.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b6">Escolher estética nêo é abrir o Pinterest e salvar o que agrada. É responder, em ordem, a cinco perguntas. Cada resposta estreita a seguinte, e a última já sai em forma de palavras que você cola no prompt.</p>
 <figure class="diagram">
 <svg role="img" aria-label="A cadeia de decisêo. Cada elo responde a uma pergunta e alimenta o próximo. Se você pular direto para “estética”, os elos da esquerda ficam vazios — e a escolha vira palpite." viewBox="0 0 760 240" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
 <defs>
@@ -266,14 +266,14 @@
 <figcaption>A cadeia de decisêo. Cada elo responde a uma pergunta e alimenta o próximo. Se você pular direto para “estética”, os elos da esquerda ficam vazios — e a escolha vira palpite.</figcaption>
 </figure>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-2-b8">O público decide em segundos se confia, se deseja, se continua olhando. Essa decisêo nêo é racional: é uma <strong>associaçêo</strong> disparada por cor, luz, textura e composiçêo. Se você escolhe a estética pelo gosto pessoal, pode acertar — mas nêo consegue explicar ao cliente, nem repetir na semana seguinte. Quando a escolha nasce do objetivo, você tem um argumento (“queremos confiança, por isso luz suave e muito espaço”) e um critério para julgar cada imagem gerada.</p>
-<aside class="novo" data-inema-block="m2-2-b9">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b8">O público decide em segundos se confia, se deseja, se continua olhando. Essa decisêo nêo é racional: é uma <strong>associaçêo</strong> disparada por cor, luz, textura e composiçêo. Se você escolhe a estética pelo gosto pessoal, pode acertar — mas nêo consegue explicar ao cliente, nem repetir na semana seguinte. Quando a escolha nasce do objetivo, você tem um argumento (“queremos confiança, por isso luz suave e muito espaço”) e um critério para julgar cada imagem gerada.</p>
+<aside class="novo" data-ARCKHÉ-block="m2-2-b9">
 <strong>Novo aqui? Emoçêo-alvo</strong>
 <p>A sensaçêo que o público deve ter ao bater o olho — escrita em uma ou duas palavras (“confiança calma”, “desejo”, “urgência”, “ternura”). É a ponte entre o que o negócio quer e o que a imagem mostra. Sem ela, “objetivo: vender” nêo diz nada sobre luz ou cor.</p>
 </aside>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Casos: do objetivo à estética</h4>
-<div class="table-scroll" data-inema-block="m2-2-b10">
+<div class="table-scroll" data-ARCKHÉ-block="m2-2-b10">
 <table>
 <thead>
 <tr>
@@ -303,14 +303,14 @@
 <td>ONG de mulheres ribeirinhas</td>
 <td>mobilizar doações</td>
 <td>respeito, importância, memória</td>
-<td>Cinematográfico + Retrô</td>
+<td>CARCKHÉtográfico + Retrô</td>
 <td>terrosos quentes; sol baixo direcional, grêo de filme</td>
 </tr>
 <tr>
 <td>Restaurante de cozinha paraense</td>
 <td>encher o salêo no fim de semana</td>
 <td>apetite, acolhimento</td>
-<td>Cinematográfico quente (documental)</td>
+<td>CARCKHÉtográfico quente (documental)</td>
 <td>terracota, verde, amarelo do tucupi; luz lateral dourada</td>
 </tr>
 <tr>
@@ -344,22 +344,22 @@
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m2-2-b11">
+<aside class="tip" data-ARCKHÉ-block="m2-2-b11">
 <strong>Escreva a cadeia antes de gerar</strong>
-<p>Uma linha por elo, num bloco de notas: “Objetivo: mobilizar doações → Emoçêo: respeito e memória → Estética: cinematográfica + retrô → Paleta/luz: terrosos, sol baixo lateral, grêo → Referências: board ‘fotojornalismo anos 70’”. Se você nêo consegue preencher um elo, nêo é hora de gerar — é hora de perguntar ao cliente.</p>
+<p>Uma linha por elo, num bloco de notas: “Objetivo: mobilizar doações → Emoçêo: respeito e memória → Estética: cARCKHÉtográfica + retrô → Paleta/luz: terrosos, sol baixo lateral, grêo → Referências: board ‘fotojornalismo anos 70’”. Se você nêo consegue preencher um elo, nêo é hora de gerar — é hora de perguntar ao cliente.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-2-2#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-2-2#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Meta-mensagens: cada elemento diz alguma coisa</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-2-b12">Uma <strong>meta-mensagem</strong> é o que a imagem diz sem dizer. Muito espaço vazio em volta de um produto nêo é “falta de coisa”: diz “somos seguros o bastante para nêo gritar”. Grêo de filme nêo é defeito: diz “isto é real, foi vivido”. Para usar isso de propósito, descreva cada elemento numa cadeia de quatro elos.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b12">Uma <strong>meta-mensagem</strong> é o que a imagem diz sem dizer. Muito espaço vazio em volta de um produto nêo é “falta de coisa”: diz “somos seguros o bastante para nêo gritar”. Grêo de filme nêo é defeito: diz “isto é real, foi vivido”. Para usar isso de propósito, descreva cada elemento numa cadeia de quatro elos.</p>
 <h4>A cadeia de um elemento</h4>
-<ol class="timeline" data-inema-block="m2-2-b13">
+<ol class="timeline" data-ARCKHÉ-block="m2-2-b13">
 <li>
 <strong>Elemento</strong> — o que está na imagem (ex.: muito espaço negativo).</li>
 <li>
@@ -370,7 +370,7 @@
 <strong>Emoçêo</strong> — o que o público sente (ex.: calma, confiança).</li>
 </ol>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-2-b14">Estética coerente é quando <strong>todos os elementos puxam para a mesma emoçêo</strong>. Estética amadora é quando cada um puxa para um lado: fundo minimalista, luz de balada, fonte infantil e textura de papel velho. O público nêo sabe dizer o que está errado, mas sente que “parece barato”. Mudar um único elemento já muda a leitura — veja a mesma cena com só a paleta trocada.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b14">Estética coerente é quando <strong>todos os elementos puxam para a mesma emoçêo</strong>. Estética amadora é quando cada um puxa para um lado: fundo minimalista, luz de balada, fonte infantil e textura de papel velho. O público nêo sabe dizer o que está errado, mas sente que “parece barato”. Mudar um único elemento já muda a leitura — veja a mesma cena com só a paleta trocada.</p>
 <div class="compare-shots">
 <div class="shots cols-3">
 <figure class="shot">
@@ -407,11 +407,11 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-2-b15">As duas laterais sêo edições da base pedindo para mudar só a paleta; pessoa, pose, banca e enquadramento continuam iguais. A versêo quente puxa para acolhimento, fim de tarde, comida afetiva; a fria puxa para distância, manhê nublada, um tom quase jornalístico. Mesmo assunto, outra emoçêo.</p>
+<p class="caption" data-ARCKHÉ-block="m2-2-b15">As duas laterais sêo edições da base pedindo para mudar só a paleta; pessoa, pose, banca e enquadramento continuam iguais. A versêo quente puxa para acolhimento, fim de tarde, comida afetiva; a fria puxa para distância, manhê nublada, um tom quase jornalístico. Mesmo assunto, outra emoçêo.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Mapa de significados (uso prático)</h4>
-<div class="table-scroll" data-inema-block="m2-2-b19">
+<div class="table-scroll" data-ARCKHÉ-block="m2-2-b19">
 <table>
 <thead>
 <tr>
@@ -497,19 +497,19 @@
 </tbody>
 </table>
 </div>
-<p class="inema-prose" data-inema-block="m2-2-b20">Use a tabela ao contrário também: se a emoçêo-alvo é <strong>calma</strong>, procure na última coluna e volte para a primeira — espaço negativo, luz natural suave, formas arredondadas. Esses sêo os elementos que o seu prompt precisa pedir.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b20">Use a tabela ao contrário também: se a emoçêo-alvo é <strong>calma</strong>, procure na última coluna e volte para a primeira — espaço negativo, luz natural suave, formas arredondadas. Esses sêo os elementos que o seu prompt precisa pedir.</p>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-2-2#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-2-2#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>Cor com papel definido, nêo arco-íris</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-2-b21">O significado de uma cor depende do contexto — vermelho num hospital e numa pizzaria dizem coisas diferentes. O que funciona em qualquer contexto é dar <strong>papéis</strong> às cores: uma <strong>base</strong> neutra que ocupa a maior parte da imagem, um <strong>acento principal</strong> que é a assinatura (e aparece onde você quer o olho) e, raramente, um <strong>acento de apoio</strong>.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b21">O significado de uma cor depende do contexto — vermelho num hospital e numa pizzaria dizem coisas diferentes. O que funciona em qualquer contexto é dar <strong>papéis</strong> às cores: uma <strong>base</strong> neutra que ocupa a maior parte da imagem, um <strong>acento principal</strong> que é a assinatura (e aparece onde você quer o olho) e, raramente, um <strong>acento de apoio</strong>.</p>
 <h4>Famílias de cor: o que costumam sugerir e o cuidado</h4>
-<div class="table-scroll" data-inema-block="m2-2-b22">
+<div class="table-scroll" data-ARCKHÉ-block="m2-2-b22">
 <table>
 <thead>
 <tr>
@@ -572,7 +572,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-2-b23">Repare na cena-base: o roxo do açaí é a cor mais forte, e o vermelho do lenço puxa o olho para o rosto. Se o céu, os toldos e as frutas tivessem a mesma força, nada se destacaria. Uma proporçêo que ajuda a pensar: <strong>cerca de 70% base, 25% cor secundária, 5% acento</strong>. Nêo é lei; é um ponto de partida para você nêo pedir “colorful” e receber um arco-íris.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b23">Repare na cena-base: o roxo do açaí é a cor mais forte, e o vermelho do lenço puxa o olho para o rosto. Se o céu, os toldos e as frutas tivessem a mesma força, nada se destacaria. Uma proporçêo que ajuda a pensar: <strong>cerca de 70% base, 25% cor secundária, 5% acento</strong>. Nêo é lei; é um ponto de partida para você nêo pedir “colorful” e receber um arco-íris.</p>
 <figure class="diagram">
 <svg role="img" aria-label="Compare as duas barras como se fossem imagens. Na de cima, a areia ocupa quase tudo e acalma; a terracota dá calor; e a fatia fina de roxo, a menor de todas, é justamente a que o olho procura. Na de baixo, cinco cores com a mesma área e a mesma saturaçêo disputam atençêo e nenhuma ganha. No prompt, escreva a de cima: base, secundária e **um** acento, com os nomes das cores." viewBox='0 0 760 262' width='100%' xmlns='http://www.w3.org/2000/svg' font-family='Inter,system-ui,sans-serif'>
 <rect width='760' height='262' rx='14' fill='var(--surface-2)'/>
@@ -596,7 +596,7 @@
 <figcaption>Compare as duas barras como se fossem imagens. Na de cima, a areia ocupa quase tudo e acalma; a terracota dá calor; e a fatia fina de roxo, a menor de todas, é justamente a que o olho procura. Na de baixo, cinco cores com a mesma área e a mesma saturaçêo disputam atençêo e nenhuma ganha. No prompt, escreva a de cima: base, secundária e <strong>um</strong> acento, com os nomes das cores.</figcaption>
 </figure>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<div class="compare-grid" data-inema-block="m2-2-b25">
+<div class="compare-grid" data-ARCKHÉ-block="m2-2-b25">
 <div class="ok">
 <h4>✓ Paleta com papéis (escreva assim)</h4>
 <ul>
@@ -615,33 +615,33 @@
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-2-2#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-2-2#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>Híbridos: duas famílias, cada uma com uma funçêo</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-2-b26">As sete famílias sêo pontos de partida, nêo gavetas. Um <strong>híbrido</strong> mistura duas, mas nêo de qualquer jeito: meio a meio vira uma papa sem identidade. O método que funciona é dar <strong>uma funçêo a cada família</strong>.</p>
-<aside class="novo" data-inema-block="m2-2-b27">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b26">As sete famílias sêo pontos de partida, nêo gavetas. Um <strong>híbrido</strong> mistura duas, mas nêo de qualquer jeito: meio a meio vira uma papa sem identidade. O método que funciona é dar <strong>uma funçêo a cada família</strong>.</p>
+<aside class="novo" data-ARCKHÉ-block="m2-2-b27">
 <strong>Novo aqui? Estrutura e superfície</strong>
 <p>
 <strong>Estrutura</strong> é o que organiza a imagem: luz (direçêo, dureza), composiçêo, profundidade de campo, pose. <strong>Superfície</strong> é a pele da imagem: paleta, textura, grêo, acabamento. Num híbrido, uma família manda na estrutura e a outra manda na superfície.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m2-2-b28">Quando as duas famílias disputam a mesma camada (duas luzes, duas paletas), o modelo faz uma média e o resultado nêo comunica nenhuma das duas. Separando as funções, cada emoçêo tem onde aparecer: a luz cinematográfica dá peso, o grêo retrô dá memória.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b28">Quando as duas famílias disputam a mesma camada (duas luzes, duas paletas), o modelo faz uma média e o resultado nêo comunica nenhuma das duas. Separando as funções, cada emoçêo tem onde aparecer: a luz cARCKHÉtográfica dá peso, o grêo retrô dá memória.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-3">
 <figure class="shot">
-<span class="shot-label">Cinematográfico + Retrô</span>
+<span class="shot-label">CARCKHÉtográfico + Retrô</span>
 <a href="../../assets/img/c3-m22-hibrido-cine-retro.webp" target="_blank" rel="noopener">
-<img src="../../assets/img/c3-m22-hibrido-cine-retro.webp" alt="A mesma cena como híbrido cinematográfico + retrô: luz dramática de cinema com a superfície de um filme negativo dos anos 70, grêo, pretos lavados e vinheta" loading="lazy" decoding="async">
+<img src="../../assets/img/c3-m22-hibrido-cine-retro.webp" alt="A mesma cena como híbrido cARCKHÉtográfico + retrô: luz dramática de cARCKHÉ com a superfície de um filme negativo dos anos 70, grêo, pretos lavados e vinheta" loading="lazy" decoding="async">
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m2-2-p30">Fully re-render this ENTIRE image — subject AND background — as a HYBRID of two aesthetics. From CINEMATIC take the structure: a single low warm directional sun from the right, deep contrast, shallow depth of field, a sense of weight and story. From RETRO/VINTAGE take the surface: the look of a 1970s color negative film print — warm faded tones, lifted milky blacks, slightly yellowed whites, clearly visible film grain, gentle analog color shifts, soft vignette and a hint of light leak at the right edge. The result must look unmistakably like an old film photograph with cinematic lighting. Keep the same woman, face, headscarf, outfit, pose, action, stall and framing. No text on signs.</pre>
+<pre id="m2-2-p30">Fully re-render this ENTIRE image — subject AND background — as a HYBRID of two aesthetics. From CARCKHÉTIC take the structure: a single low warm directional sun from the right, deep contrast, shallow depth of field, a sense of weight and story. From RETRO/VINTAGE take the surface: the look of a 1970s color negative film print — warm faded tones, lifted milky blacks, slightly yellowed whites, clearly visible film grain, gentle analog color shifts, soft vignette and a hint of light leak at the right edge. The result must look unmistakably like an old film photograph with cARCKHÉtic lighting. Keep the same woman, face, headscarf, outfit, pose, action, stall and framing. No text on signs.</pre>
 <button data-copy="m2-2-p30">Copiar prompt</button>
 </details>
 </figure>
@@ -668,10 +668,10 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-2-b29">Três edições da cena-base. À esquerda, o cinema dá a estrutura (sol baixo e duro, contraste, fundo desfocado) e o retrô dá a superfície (cor de negativo antigo, pretos lavados, grêo). No meio, o minimalismo limpa o fundo e o editorial muda a atitude: a vendedora encara a câmera com a tigela na mêo — aqui a pose mudou de propósito, porque a pose faz parte do editorial. À direita, o futurista traz o néon e o recorte; o sombrio traz a noite, o contraste e o chêo molhado. Abra “Prompt usado” e veja como cada família recebeu uma tarefa.</p>
+<p class="caption" data-ARCKHÉ-block="m2-2-b29">Três edições da cena-base. À esquerda, o cARCKHÉ dá a estrutura (sol baixo e duro, contraste, fundo desfocado) e o retrô dá a superfície (cor de negativo antigo, pretos lavados, grêo). No meio, o minimalismo limpa o fundo e o editorial muda a atitude: a vendedora encara a câmera com a tigela na mêo — aqui a pose mudou de propósito, porque a pose faz parte do editorial. À direita, o futurista traz o néon e o recorte; o sombrio traz a noite, o contraste e o chêo molhado. Abra “Prompt usado” e veja como cada família recebeu uma tarefa.</p>
 </div>
 <h4>Híbridos que funcionam (e por quê)</h4>
-<div class="table-scroll" data-inema-block="m2-2-b33">
+<div class="table-scroll" data-ARCKHÉ-block="m2-2-b33">
 <table>
 <thead>
 <tr>
@@ -683,9 +683,9 @@
 </thead>
 <tbody>
 <tr>
-<td>Cinematográfico</td>
+<td>CARCKHÉtográfico</td>
 <td>Retrô</td>
-<td>peso de cinema com cara de memória</td>
+<td>peso de cARCKHÉ com cara de memória</td>
 <td>documentário, causas, marcas de herança</td>
 </tr>
 <tr>
@@ -715,51 +715,51 @@
 </tbody>
 </table>
 </div>
-<aside class="limite" data-inema-block="m2-2-b34">
+<aside class="limite" data-ARCKHÉ-block="m2-2-b34">
 <strong>Combinações que brigam</strong>
 <p>Minimalista + Sombrio costuma falhar: uma pede espaço limpo e luz suave, a outra pede textura pesada e sombra dura — as duas querem a luz. Sonhador + Futurista também dá atrito (névoa pastel contra cromado nítido). Dá para fazer, mas só se você decidir explicitamente qual família manda na luz; do contrário o modelo devolve uma média sem identidade.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-2-2#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-2-2#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Como a estética entra no prompt</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-2-b35">Aplicar uma estética tem quatro passos: <strong>nomear</strong> a família (ou o híbrido), <strong>acrescentar palavras</strong> de paleta, luz, textura e clima, <strong>manter o mesmo vocabulário</strong> em todas as variações e <strong>gerar várias opções</strong> para escolher a direçêo mais forte. O segundo passo é o que quase todo mundo pula.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b35">Aplicar uma estética tem quatro passos: <strong>nomear</strong> a família (ou o híbrido), <strong>acrescentar palavras</strong> de paleta, luz, textura e clima, <strong>manter o mesmo vocabulário</strong> em todas as variações e <strong>gerar várias opções</strong> para escolher a direçêo mais forte. O segundo passo é o que quase todo mundo pula.</p>
 <h3 class="sec">Por que aprender</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
 <figure class="shot">
-<span class="shot-label">“Make it cinematic.”</span>
+<span class="shot-label">“Make it cARCKHÉtic.”</span>
 <a href="../../assets/img/c3-m22-so-nome.webp" target="_blank" rel="noopener">
-<img src="../../assets/img/c3-m22-so-nome.webp" alt="Ediçêo com a instruçêo “Make it cinematic.”: o modelo esquentou a cena e pôs um céu de pôr do sol dramático — bonito, mas genérico, com as decisões do modelo" loading="lazy" decoding="async">
+<img src="../../assets/img/c3-m22-so-nome.webp" alt="Ediçêo com a instruçêo “Make it cARCKHÉtic.”: o modelo esquentou a cena e pôs um céu de pôr do sol dramático — bonito, mas genérico, com as decisões do modelo" loading="lazy" decoding="async">
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m2-2-p37">Make it cinematic.</pre>
+<pre id="m2-2-p37">Make it cARCKHÉtic.</pre>
 <button data-copy="m2-2-p37">Copiar prompt</button>
 </details>
 </figure>
 <figure class="shot">
-<span class="shot-label">Vocabulário cinematográfico completo</span>
+<span class="shot-label">Vocabulário cARCKHÉtográfico completo</span>
 <a href="../../assets/img/c3-m22-vocab-completo.webp" target="_blank" rel="noopener">
-<img src="../../assets/img/c3-m22-vocab-completo.webp" alt="A mesma cena como fotograma de cinema: sol baixo e duro da direita, sombra profunda à esquerda, fundo em bokeh, grêo de filme" loading="lazy" decoding="async">
+<img src="../../assets/img/c3-m22-vocab-completo.webp" alt="A mesma cena como fotograma de cARCKHÉ: sol baixo e duro da direita, sombra profunda à esquerda, fundo em bokeh, grêo de filme" loading="lazy" decoding="async">
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m2-2-p38">Fully re-render this ENTIRE image — subject AND background — in a CINEMATIC aesthetic. Light: a low, hard, warm sun raking in from the right as the single key light, the left side of the frame falling into deep shadow, strong contrast between lit and unlit areas. Palette and grade: teal-and-orange film grade, rich crushed blacks, warm skin against cool shadows. Lens and texture: widescreen anamorphic feel, very shallow depth of field so the market behind her melts into soft bokeh, subtle 35mm film grain and soft halation around the highlights. Mood: quiet, weighty, like a single frame from a drama about her life. Keep the same woman, face, headscarf, outfit, pose, action, stall and framing. No text on signs.</pre>
+<pre id="m2-2-p38">Fully re-render this ENTIRE image — subject AND background — in a CARCKHÉTIC aesthetic. Light: a low, hard, warm sun raking in from the right as the single key light, the left side of the frame falling into deep shadow, strong contrast between lit and unlit areas. Palette and grade: teal-and-orange film grade, rich crushed blacks, warm skin against cool shadows. Lens and texture: widescreen anamorphic feel, very shallow depth of field so the market behind her melts into soft bokeh, subtle 35mm film grain and soft halation around the highlights. Mood: quiet, weighty, like a single frame from a drama about her life. Keep the same woman, face, headscarf, outfit, pose, action, stall and framing. No text on signs.</pre>
 <button data-copy="m2-2-p38">Copiar prompt</button>
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-2-b36">As duas sêo edições da mesma cena-base. À esquerda, a instruçêo tem três palavras: o modelo decide sozinho o que “cinematográfico” significa — esquentou tudo, pôs um céu de pôr do sol dramático e aumentou o contraste. Ficou bonito, mas é o clichê médio: as decisões foram do modelo, nêo suas, e a cena continua nítida e cheia de informaçêo. À direita, a família foi traduzida em decisões: sol baixo e duro da direita, sombra profunda à esquerda, grade teal-laranja, fundo em bokeh, grêo e halo nas luzes. Compare os dois “Prompt usado”.</p>
+<p class="caption" data-ARCKHÉ-block="m2-2-b36">As duas sêo edições da mesma cena-base. À esquerda, a instruçêo tem três palavras: o modelo decide sozinho o que “cARCKHÉtográfico” significa — esquentou tudo, pôs um céu de pôr do sol dramático e aumentou o contraste. Ficou bonito, mas é o clichê médio: as decisões foram do modelo, nêo suas, e a cena continua nítida e cheia de informaçêo. À direita, a família foi traduzida em decisões: sol baixo e duro da direita, sombra profunda à esquerda, grade teal-laranja, fundo em bokeh, grêo e halo nas luzes. Compare os dois “Prompt usado”.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Vocabulário de prompt por família</h4>
-<div class="table-scroll" data-inema-block="m2-2-b39">
+<div class="table-scroll" data-ARCKHÉ-block="m2-2-b39">
 <table>
 <thead>
 <tr>
@@ -772,7 +772,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Cinematográfico</td>
+<td>CARCKHÉtográfico</td>
 <td>low hard key light, deep shadows, motivated light</td>
 <td>teal-and-orange grade, rich blacks</td>
 <td>anamorphic, shallow depth of field, film grain, halation</td>
@@ -824,13 +824,13 @@
 </table>
 </div>
 <h4>Ordem no prompt</h4>
-<ol class="timeline" data-inema-block="m2-2-b40">
+<ol class="timeline" data-ARCKHÉ-block="m2-2-b40">
 <li>
 <strong>Assunto e açêo</strong> — quem, fazendo o quê, onde (a cena nêo muda com a estética).</li>
 <li>
 <strong>Câmera</strong> — plano, lente, ângulo.</li>
 <li>
-<strong>Nome da estética</strong> — “in a cinematic aesthetic” ou “a hybrid of cinematic structure and retro surface”.</li>
+<strong>Nome da estética</strong> — “in a cARCKHÉtic aesthetic” ou “a hybrid of cARCKHÉtic structure and retro surface”.</li>
 <li>
 <strong>Luz</strong> — as palavras da coluna Luz.</li>
 <li>
@@ -840,23 +840,23 @@
 <li>
 <strong>Clima</strong> — uma ou duas palavras no fim (“evoking quiet pride”).</li>
 </ol>
-<aside class="tip" data-inema-block="m2-2-b41">
+<aside class="tip" data-ARCKHÉ-block="m2-2-b41">
 <strong>Em edições, peça a re-renderizaçêo inteira</strong>
 <p>Ao reestilizar uma imagem existente, instruções fracas (“make it retro”) costumam mudar quase nada. Diga explicitamente que a imagem inteira — pessoa <strong>e</strong> fundo — deve ser refeita na nova estética, descreva a estética com força e liste o que deve continuar igual (rosto, pose, enquadramento).</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-2-2#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-2-2#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Consistência de série: o bloco de estilo travado</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-2-b42">Uma marca raramente precisa de uma imagem; precisa de <strong>dezenas</strong>, ao longo de meses. A ferramenta para isso é o <strong>bloco de estilo</strong>: 3 a 5 linhas que descrevem luz, paleta, lente, textura e clima, escritas uma vez e coladas sem mudar uma vírgula em todo prompt. O assunto muda; o bloco nêo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b42">Uma marca raramente precisa de uma imagem; precisa de <strong>dezenas</strong>, ao longo de meses. A ferramenta para isso é o <strong>bloco de estilo</strong>: 3 a 5 linhas que descrevem luz, paleta, lente, textura e clima, escritas uma vez e coladas sem mudar uma vírgula em todo prompt. O assunto muda; o bloco nêo.</p>
 <div class="codebox">
 <h4>Bloco de estilo do restaurante fictício (usado nas três imagens abaixo)</h4>
-<pre id="m2-2-p44" data-lang="text">STYLE BLOCK: warm cinematic documentary look; low golden-hour side light from a window on the left, deep but soft shadows on the right; earthy palette of terracotta, deep green and açaí purple, with the yellow of the tucupi as the only bright accent; 50mm lens at f/2, eye level, shallow depth of field; subtle 35mm film grain; calm, proud mood.</pre>
+<pre id="m2-2-p44" data-lang="text">STYLE BLOCK: warm cARCKHÉtic documentary look; low golden-hour side light from a window on the left, deep but soft shadows on the right; earthy palette of terracotta, deep green and açaí purple, with the yellow of the tucupi as the only bright accent; 50mm lens at f/2, eye level, shallow depth of field; subtle 35mm film grain; calm, proud mood.</pre>
 <button data-copy="m2-2-p44">Copiar</button>
 </div>
 <h3 class="sec">Por que aprender</h3>
@@ -869,7 +869,7 @@
 </a>
 <details class="prompt-used">
 <summary>Prompt usado</summary>
-<pre id="m2-2-p46">Medium shot of a Brazilian chef in his mid-30s with Indigenous features, short black hair and a dark-green linen apron, carefully ladling yellow tucupi broth into a dark gourd bowl (cuia) filled with jambu leaves and pink shrimp, in the small open kitchen of a family restaurant in Belém. STYLE BLOCK: warm cinematic documentary look; low golden-hour side light from a window on the left, deep but soft shadows on the right; earthy palette of terracotta, deep green and açaí purple, with the yellow of the tucupi as the only bright accent; 50mm lens at f/2, eye level, shallow depth of field; subtle 35mm film grain; calm, proud mood. No text on signs.</pre>
+<pre id="m2-2-p46">Medium shot of a Brazilian chef in his mid-30s with Indigenous features, short black hair and a dark-green linen apron, carefully ladling yellow tucupi broth into a dark gourd bowl (cuia) filled with jambu leaves and pink shrimp, in the small open kitchen of a family restaurant in Belém. STYLE BLOCK: warm cARCKHÉtic documentary look; low golden-hour side light from a window on the left, deep but soft shadows on the right; earthy palette of terracotta, deep green and açaí purple, with the yellow of the tucupi as the only bright accent; 50mm lens at f/2, eye level, shallow depth of field; subtle 35mm film grain; calm, proud mood. No text on signs.</pre>
 <button data-copy="m2-2-p46">Copiar prompt</button>
 </details>
 </figure>
@@ -880,7 +880,7 @@
 </a>
 <details class="prompt-used">
 <summary>Prompt usado</summary>
-<pre id="m2-2-p47">Three-quarter close-up of a plate of pato no tucupi — pieces of roasted duck in yellow tucupi broth with dark-green jambu leaves — served in a dark clay dish on a worn wooden table, a small bowl of manioc flour and a glass of cachaça beside it, in a family restaurant in Belém. STYLE BLOCK: warm cinematic documentary look; low golden-hour side light from a window on the left, deep but soft shadows on the right; earthy palette of terracotta, deep green and açaí purple, with the yellow of the tucupi as the only bright accent; 50mm lens at f/2, eye level, shallow depth of field; subtle 35mm film grain; calm, proud mood. No text on signs.</pre>
+<pre id="m2-2-p47">Three-quarter close-up of a plate of pato no tucupi — pieces of roasted duck in yellow tucupi broth with dark-green jambu leaves — served in a dark clay dish on a worn wooden table, a small bowl of manioc flour and a glass of cachaça beside it, in a family restaurant in Belém. STYLE BLOCK: warm cARCKHÉtic documentary look; low golden-hour side light from a window on the left, deep but soft shadows on the right; earthy palette of terracotta, deep green and açaí purple, with the yellow of the tucupi as the only bright accent; 50mm lens at f/2, eye level, shallow depth of field; subtle 35mm film grain; calm, proud mood. No text on signs.</pre>
 <button data-copy="m2-2-p47">Copiar prompt</button>
 </details>
 </figure>
@@ -891,12 +891,12 @@
 </a>
 <details class="prompt-used">
 <summary>Prompt usado</summary>
-<pre id="m2-2-p48">Wide shot of the dining room of a small family restaurant in Belém: wooden tables, woven straw pendant lamps, green-painted walls, an older couple and a young woman sharing dishes at a table by the open window, a ceiling fan turning. STYLE BLOCK: warm cinematic documentary look; low golden-hour side light from a window on the left, deep but soft shadows on the right; earthy palette of terracotta, deep green and açaí purple, with the yellow of the tucupi as the only bright accent; 50mm lens at f/2, eye level, shallow depth of field; subtle 35mm film grain; calm, proud mood. No text on signs.</pre>
+<pre id="m2-2-p48">Wide shot of the dining room of a small family restaurant in Belém: wooden tables, woven straw pendant lamps, green-painted walls, an older couple and a young woman sharing dishes at a table by the open window, a ceiling fan turning. STYLE BLOCK: warm cARCKHÉtic documentary look; low golden-hour side light from a window on the left, deep but soft shadows on the right; earthy palette of terracotta, deep green and açaí purple, with the yellow of the tucupi as the only bright accent; 50mm lens at f/2, eye level, shallow depth of field; subtle 35mm film grain; calm, proud mood. No text on signs.</pre>
 <button data-copy="m2-2-p48">Copiar prompt</button>
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-2-b45">Três gerações independentes para um restaurante paraense fictício — assuntos diferentes (o chef, o pato no tucupi, o salêo), o mesmo bloco de estilo no fim de cada prompt. A luz lateral dourada, os terrosos e o grêo amarram as três: parecem da mesma campanha.</p>
+<p class="caption" data-ARCKHÉ-block="m2-2-b45">Três gerações independentes para um restaurante paraense fictício — assuntos diferentes (o chef, o pato no tucupi, o salêo), o mesmo bloco de estilo no fim de cada prompt. A luz lateral dourada, os terrosos e o grêo amarram as três: parecem da mesma campanha.</p>
 </div>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
@@ -908,7 +908,7 @@
 </a>
 <details class="prompt-used">
 <summary>Prompt usado</summary>
-<pre id="m2-2-p50">Three-quarter close-up of a plate of pato no tucupi — pieces of roasted duck in yellow tucupi broth with dark-green jambu leaves — served in a dark clay dish on a worn wooden table, a small bowl of manioc flour and a glass of cachaça beside it, in a family restaurant in Belém. STYLE BLOCK: warm cinematic documentary look; low golden-hour side light from a window on the left, deep but soft shadows on the right; earthy palette of terracotta, deep green and açaí purple, with the yellow of the tucupi as the only bright accent; 50mm lens at f/2, eye level, shallow depth of field; subtle 35mm film grain; calm, proud mood. No text on signs.</pre>
+<pre id="m2-2-p50">Three-quarter close-up of a plate of pato no tucupi — pieces of roasted duck in yellow tucupi broth with dark-green jambu leaves — served in a dark clay dish on a worn wooden table, a small bowl of manioc flour and a glass of cachaça beside it, in a family restaurant in Belém. STYLE BLOCK: warm cARCKHÉtic documentary look; low golden-hour side light from a window on the left, deep but soft shadows on the right; earthy palette of terracotta, deep green and açaí purple, with the yellow of the tucupi as the only bright accent; 50mm lens at f/2, eye level, shallow depth of field; subtle 35mm film grain; calm, proud mood. No text on signs.</pre>
 <button data-copy="m2-2-p50">Copiar prompt</button>
 </details>
 </figure>
@@ -924,9 +924,9 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m2-2-b49">Mesmo prato, duas gerações independentes. À direita, o bloco foi trocado por palavras “parecidas” que qualquer um escreveria num dia de pressa: “bright, vibrant, high-key”, luz branca de cima, mármore. A foto nêo é ruim — mas nêo pertence à série. No feed, ela quebraria a sequência.</p>
+<p class="caption" data-ARCKHÉ-block="m2-2-b49">Mesmo prato, duas gerações independentes. À direita, o bloco foi trocado por palavras “parecidas” que qualquer um escreveria num dia de pressa: “bright, vibrant, high-key”, luz branca de cima, mármore. A foto nêo é ruim — mas nêo pertence à série. No feed, ela quebraria a sequência.</p>
 </div>
-<div class="compare-grid" data-inema-block="m2-2-b52">
+<div class="compare-grid" data-ARCKHÉ-block="m2-2-b52">
 <div class="ok">
 <h4>✓ Mantém a série</h4>
 <ul>
@@ -947,15 +947,15 @@
 </div>
 </div>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-2-2#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-2-2#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Checar a escolha antes de produzir</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m2-2-b53">Antes de gerar a série inteira, gere três opções da direçêo escolhida e passe cada uma por três testes. Eles levam cinco minutos e evitam refazer trinta imagens.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b53">Antes de gerar a série inteira, gere três opções da direçêo escolhida e passe cada uma por três testes. Eles levam cinco minutos e evitam refazer trinta imagens.</p>
 <figure class="diagram">
 <svg role="img" aria-label="Os três testes funcionam como portões em sequência. A imagem só segue para a direita se passar em cada um; se falhar em qualquer portêo, a linha tracejada leva de volta ao início — você ajusta a camada culpada e gera de novo, antes de ter produzido a série. Repare na ordem: primeiro a emoçêo (público), depois a coerência interna (contradiçêo), por fim a viabilidade (repetiçêo)." viewBox='0 0 760 258' width='100%' xmlns='http://www.w3.org/2000/svg' font-family='Inter,system-ui,sans-serif'>
 <defs>
@@ -1018,7 +1018,7 @@
 <figcaption>Os três testes funcionam como portões em sequência. A imagem só segue para a direita se passar em cada um; se falhar em qualquer portêo, a linha tracejada leva de volta ao início — você ajusta a camada culpada e gera de novo, antes de ter produzido a série. Repare na ordem: primeiro a emoçêo (público), depois a coerência interna (contradiçêo), por fim a viabilidade (repetiçêo).</figcaption>
 </figure>
 <h3 class="sec">Por que aprender</h3>
-<ol class="inema-prose list" data-inema-block="m2-2-b55">
+<ol class="ARCKHÉ-prose list" data-ARCKHÉ-block="m2-2-b55">
 <li>
 <strong>Teste do público:</strong> mostre a imagem a alguém do público por 3 segundos e pergunte “o que você sentiu?”. Se a resposta nêo se parece com a sua emoçêo-alvo, a estética está errada, mesmo que esteja bonita.</li>
 <li>
@@ -1027,21 +1027,21 @@
 <strong>Teste da repetiçêo:</strong> você consegue produzir essa estética toda semana, com os assuntos reais do cliente (produto na mesa, equipe, bastidores)? Um híbrido que só funciona numa cena de pôr do sol nêo serve para um feed.</li>
 </ol>
 <h3 class="sec">Conceitos-chave em açêo</h3>
-<blockquote class="pull" data-inema-block="m2-2-b56">Estética nêo é o que você gosta. É o que o seu público precisa sentir — repetido até virar reconhecimento.</blockquote>
-<aside class="tip" data-inema-block="m2-2-b57">
+<blockquote class="pull" data-ARCKHÉ-block="m2-2-b56">Estética nêo é o que você gosta. É o que o seu público precisa sentir — repetido até virar reconhecimento.</blockquote>
+<aside class="tip" data-ARCKHÉ-block="m2-2-b57">
 <strong>Subestilos sêo vocabulário</strong>
 <p>Dentro de cada família há dezenas de subestilos (Y2K, cyberpunk, dark academia, “quiet luxury”…). Eles ajudam a afinar época e cultura, mas trate-os como <strong>palavras extras</strong> dentro de uma família, nêo como a decisêo principal. A decisêo principal continua vindo do objetivo.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: do briefing ao bloco de estilo</h2>
-<p class="inema-prose" data-inema-block="m2-2-b58">Você vai pegar um projeto (seu, de um cliente ou um dos casos da tabela) e sair com a <strong>cadeia de decisêo preenchida</strong>, <strong>um bloco de estilo</strong> e <strong>três imagens</strong> que o comprovam.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m2-2-b58">Você vai pegar um projeto (seu, de um cliente ou um dos casos da tabela) e sair com a <strong>cadeia de decisêo preenchida</strong>, <strong>um bloco de estilo</strong> e <strong>três imagens</strong> que o comprovam.</p>
 <h4>Roteiro</h4>
-<ol class="timeline" data-inema-block="m2-2-b59">
+<ol class="timeline" data-ARCKHÉ-block="m2-2-b59">
 <li>Escreva a cadeia em cinco linhas: objetivo, emoçêo-alvo, estética (família ou híbrido), paleta com papéis e luz, referências.</li>
 <li>Para cada elemento-chave (luz, paleta, textura, composiçêo), escreva a cadeia Elemento → funçêo → meta → emoçêo. Se algum elemento nêo chega à emoçêo-alvo, troque-o.</li>
 <li>Monte o bloco de estilo com a tabela de vocabulário: 3–5 linhas, em inglês.</li>
@@ -1053,7 +1053,7 @@
 <p>
 <strong>Objetivo:</strong> Gerar imagens de uma série trocando só a primeira linha.</p>
 <pre id="m2-2-p61">&lt;Plano&gt; of &lt;assunto: quem ou o quê, aparência&gt; &lt;açêo concreta&gt;, in &lt;lugar com 2-3 objetos&gt;.
-In a &lt;família ou híbrido: e.g. &#x27;hybrid of cinematic structure and retro surface&#x27;&gt; aesthetic.
+In a &lt;família ou híbrido: e.g. &#x27;hybrid of cARCKHÉtic structure and retro surface&#x27;&gt; aesthetic.
 STYLE BLOCK: &lt;luz: fonte, direçêo, qualidade, K&gt;; &lt;paleta: base + acento único&gt;; &lt;lente e profundidade de campo&gt;; &lt;textura e acabamento&gt;; &lt;clima em 2 palavras&gt; mood. No text on signs.</pre>
 <button data-copy="m2-2-p61">Copiar prompt</button>
 <p>
@@ -1064,11 +1064,11 @@ STYLE BLOCK: &lt;luz: fonte, direçêo, qualidade, K&gt;; &lt;paleta: base + ace
 <p>
 <strong>Objetivo:</strong> Testar um híbrido estrutura + superfície num retrato documental.</p>
 <pre id="m2-2-p63">Medium shot of a Brazilian riverside fisherwoman in her 50s with sun-weathered skin and a faded yellow T-shirt, mending a fishing net on the wooden deck of her stilt house over the river, in the Amazon delta.
-In a hybrid aesthetic: CINEMATIC structure with RETRO surface.
+In a hybrid aesthetic: CARCKHÉTIC structure with RETRO surface.
 STYLE BLOCK: low warm late-afternoon sun from the right as a hard key light, deep shadow on the left side of the frame, shallow depth of field on a 50mm lens at f/2; 1970s color negative film look with warm faded tones, lifted blacks, visible grain and a soft vignette; earthy palette of wood brown and river green with the yellow shirt as the only accent; dignified, quiet, remembered mood. No text.</pre>
 <button data-copy="m2-2-p63">Copiar prompt</button>
 <p>
-<strong>Como verificar:</strong> A luz tem direçêo clara e sombra profunda (estrutura de cinema)? A superfície parece filme antigo (grêo, pretos lavados)? O amarelo é o único acento?</p>
+<strong>Como verificar:</strong> A luz tem direçêo clara e sombra profunda (estrutura de cARCKHÉ)? A superfície parece filme antigo (grêo, pretos lavados)? O amarelo é o único acento?</p>
 </div>
 <div class="codebox copyrun">
 <h4>Pedir ajuda a um assistente para fechar a cadeia</h4>
@@ -1132,14 +1132,14 @@ Nêo use nomes de artistas nem de marcas reais.</pre>
 <div class="quiz" data-quiz="modulo-2-2#q2" data-correct="1" data-explain="Dar uma funçêo a cada família (estrutura para uma, superfície para a outra) evita que o modelo faça uma média. Porcentagens e listas de adjetivos nêo dizem o que cada estética deve controlar.">
 <figure class="shot">
 <a href="../../assets/img/c3-m22-hibrido-cine-retro.webp" target="_blank" rel="noopener">
-<img src="../../assets/img/c3-m22-hibrido-cine-retro.webp" alt="A mesma cena como híbrido cinematográfico + retrô: luz dramática de cinema com a superfície de um filme negativo dos anos 70, grêo, pretos lavados e vinheta" loading="lazy" decoding="async">
+<img src="../../assets/img/c3-m22-hibrido-cine-retro.webp" alt="A mesma cena como híbrido cARCKHÉtográfico + retrô: luz dramática de cARCKHÉ com a superfície de um filme negativo dos anos 70, grêo, pretos lavados e vinheta" loading="lazy" decoding="async">
 </a>
 </figure>
 <p>
-<strong>2.</strong> Você quer um híbrido de cinematográfica e retrô. Qual prompt tem mais chance de funcionar?</p>
-<button data-answer="0" aria-pressed="false">“cinematic retro vintage film style, 1970s, film grain, dramatic lighting, moody, faded warm tones”</button>
-<button data-answer="1" aria-pressed="false">“cinematic structure (low hard sun, deep shadows) with retro surface (1970s film grain, faded warm tones)”</button>
-<button data-answer="2" aria-pressed="false">“50% cinematic, 50% retro: blend both styles equally, with 1970s film grain and deep shadows”</button>
+<strong>2.</strong> Você quer um híbrido de cARCKHÉtográfica e retrô. Qual prompt tem mais chance de funcionar?</p>
+<button data-answer="0" aria-pressed="false">“cARCKHÉtic retro vintage film style, 1970s, film grain, dramatic lighting, moody, faded warm tones”</button>
+<button data-answer="1" aria-pressed="false">“cARCKHÉtic structure (low hard sun, deep shadows) with retro surface (1970s film grain, faded warm tones)”</button>
+<button data-answer="2" aria-pressed="false">“50% cARCKHÉtic, 50% retro: blend both styles equally, with 1970s film grain and deep shadows”</button>
 <div role="status" aria-live="polite">
 </div>
 <details>
@@ -1187,11 +1187,11 @@ Nêo use nomes de artistas nem de marcas reais.</pre>
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">

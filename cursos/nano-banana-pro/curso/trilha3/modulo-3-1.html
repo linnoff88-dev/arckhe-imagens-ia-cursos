@@ -4,11 +4,11 @@
 <script>(function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -18,19 +18,19 @@
         // fallback ao tema legado do v1
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
 
     // mapa tema -> (.dark on/off, data-theme, color-scheme)
     var THEMES = {
-      'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+      'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
       'claro':      { dark: false, attr: null,        cs: 'light' },
       'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
       'foco':       { dark: null,  attr: 'foco',      cs: null    },  // herda eixo atual
       'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
 
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
@@ -47,7 +47,7 @@
     // variaveis de leitura (espelham learn.js / learn.css) ANTES do paint
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');               // :root em %, nunca px
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -75,12 +75,12 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="inema-course" content="nano-banana-pro">
+<meta name="ARCKHÉ-course" content="nano-banana-pro">
 <meta name="description" content="Ao terminar, você sabe explorar um produto em estações, luzes e materiais sem perder a identidade dele, transformar os melhores experimentos em conceitos de campanha e montar um storyboard de 6 quadros que vira imagens finais em alta.">
-<title>Exploraçêo criativa e storyboard · INEMA.CLUB</title>
+<title>Exploraçêo criativa e storyboard · ARCKHÉ AI</title>
 <link rel="stylesheet" href="../../assets/learn.css">
 <link rel="stylesheet" href="../../assets/course.css">
-<script type="application/json" data-inema-manifest>{"course": "nano-banana-pro", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Prepare o modelo, o briefing e as referências", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Produto e personagem: uma base consistente", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controle de marca: cor, texto e hierarquia", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Exploraçêo criativa e storyboard", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Edições, referências múltiplas e adaptações", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: campanha Jambu", "topics": 8, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
+<script type="application/json" data-ARCKHÉ-manifest>{"course": "nano-banana-pro", "tracks": [{"n": "1", "title": "Fundamentos", "modules": [{"id": "1-1", "title": "Prepare o modelo, o briefing e as referências", "topics": 7, "href": "curso/trilha1/modulo-1-1.html"}, {"id": "1-2", "title": "Produto e personagem: uma base consistente", "topics": 7, "href": "curso/trilha1/modulo-1-2.html"}]}, {"n": "2", "title": "Direçêo visual", "modules": [{"id": "2-1", "title": "Controle de marca: cor, texto e hierarquia", "topics": 8, "href": "curso/trilha2/modulo-2-1.html"}]}, {"n": "3", "title": "Produçêo", "modules": [{"id": "3-1", "title": "Exploraçêo criativa e storyboard", "topics": 7, "href": "curso/trilha3/modulo-3-1.html"}, {"id": "3-2", "title": "Edições, referências múltiplas e adaptações", "topics": 7, "href": "curso/trilha3/modulo-3-2.html"}]}, {"n": "4", "title": "Projeto", "modules": [{"id": "4-1", "title": "Projeto final: campanha Jambu", "topics": 8, "href": "curso/trilha4/modulo-4-1.html"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -93,9 +93,9 @@
 </svg>
 <span class="wide-only">Imagem com IA</span>
 </a>
-<a class="text-sky-400" href="https://inema.club">INEMA.CLUB</a>
+<a class="text-sky-400" href="https://ARCKHÉ AI">ARCKHÉ AI</a>
 <span>–</span>
-<a class="pro" href="https://inema.pro">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro">PRO</a>
 <nav class="tracks" aria-label="Trilhas">
 <a href="../../curso/trilha1/index.html">1. Fundamentos</a>
 <a href="../../curso/trilha2/index.html">2. Direçêo visual</a>
@@ -103,28 +103,28 @@
 <a href="../../curso/trilha4/index.html">4. Projeto</a>
 </nav>
 <div class="tools">
-<button data-inema-journey-open>Minha jornada</button>
-<button data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false">Aparência</button>
+<button data-ARCKHÉ-journey-open>Minha jornada</button>
+<button data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false">Aparência</button>
 </div>
 </div>
-<div data-inema-appearance class="inema-appearance-pop">
-<div class="inema-segment">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop">
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button>
+<button data-ARCKHÉ-set-theme="claro">Claro</button>
+<button data-ARCKHÉ-set-theme="sepia">Sépia</button>
+<button data-ARCKHÉ-set-theme="foco">Foco</button>
+<button data-ARCKHÉ-set-theme="contraste">Alto contraste</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-fontscale="100">Texto padrêo</button>
-<button data-inema-set-fontscale="112">Texto maior</button>
-<button data-inema-set-fontscale="125">Texto amplo</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-fontscale="100">Texto padrêo</button>
+<button data-ARCKHÉ-set-fontscale="112">Texto maior</button>
+<button data-ARCKHÉ-set-fontscale="125">Texto amplo</button>
 </div>
-<div class="inema-segment">
-<button data-inema-set-font="system">Fonte do sistema</button>
-<button data-inema-set-font="leitura">Fonte de leitura</button>
-<button data-inema-set-linewidth="60">Coluna estreita</button>
-<button data-inema-set-linewidth="75">Coluna larga</button>
+<div class="ARCKHÉ-segment">
+<button data-ARCKHÉ-set-font="system">Fonte do sistema</button>
+<button data-ARCKHÉ-set-font="leitura">Fonte de leitura</button>
+<button data-ARCKHÉ-set-linewidth="60">Coluna estreita</button>
+<button data-ARCKHÉ-set-linewidth="75">Coluna larga</button>
 </div>
 </div>
 </header>
@@ -135,16 +135,16 @@
 <h1 class="text-2xl font-bold">Exploraçêo criativa e storyboard</h1>
 <p>Ao terminar, você sabe explorar um produto em estações, luzes e materiais sem perder a identidade dele, transformar os melhores experimentos em conceitos de campanha e montar um storyboard de 6 quadros que vira imagens finais em alta.</p>
 <p class="meta">7 tópicos · 80 min · exemplos com o prompt que gerou cada imagem</p>
-<div data-inema-meter="modulo:3-1">
-<span data-inema-meter-frac>0 de 0</span> · <span data-inema-meter-pct>0%</span>
-<div class="inema-bar">
-<div class="inema-bar__fill" data-inema-meter-fill>
+<div data-ARCKHÉ-meter="modulo:3-1">
+<span data-ARCKHÉ-meter-frac>0 de 0</span> · <span data-ARCKHÉ-meter-pct>0%</span>
+<div class="ARCKHÉ-bar">
+<div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill>
 </div>
 </div>
 </div>
 </header>
 <div class="reading-layout">
-<nav class="toc" data-inema-toc aria-label="Tópicos deste módulo">
+<nav class="toc" data-ARCKHÉ-toc aria-label="Tópicos deste módulo">
 <strong>Nesta aula</strong>
 <ol>
 <li>
@@ -173,9 +173,9 @@
 <a href="#licao">Liçêo de casa</a>
 <a href="#checagem">Teste sua decisêo</a>
 </nav>
-<article class="lesson" data-inema-module="3-1" data-inema-track="3">
+<article class="lesson" data-ARCKHÉ-module="3-1" data-ARCKHÉ-track="3">
 <section class="abertura">
-<p class="inema-prose" data-inema-block="m3-1-b1">Você já tem a lata da Jambu fotografada com cara de estúdio (módulo 1-1) e a Maíra, heroína da campanha (módulo 1-2). O cliente olha, gosta e pergunta a coisa mais difícil do mundo: “e o que mais dá pra fazer?”. Esta é a hora de <strong>explorar</strong>: pegar a mesma lata e testar o que acontece quando muda a estaçêo, a luz, o material do mundo em volta — e, dos experimentos que funcionam, tirar <strong>conceitos</strong> e um <strong>storyboard</strong> para aprovar antes de produzir.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b1">Você já tem a lata da Jambu fotografada com cara de estúdio (módulo 1-1) e a Maíra, heroína da campanha (módulo 1-2). O cliente olha, gosta e pergunta a coisa mais difícil do mundo: “e o que mais dá pra fazer?”. Esta é a hora de <strong>explorar</strong>: pegar a mesma lata e testar o que acontece quando muda a estaçêo, a luz, o material do mundo em volta — e, dos experimentos que funcionam, tirar <strong>conceitos</strong> e um <strong>storyboard</strong> para aprovar antes de produzir.</p>
 <div class="figure-wrap">
 <figure class="shot">
 <a href="../../assets/img/c2-m11-lata-base.webp" target="_blank" rel="noopener">
@@ -187,7 +187,7 @@
 <button data-copy="m3-1-p3">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m3-1-b2">A imagem-base de todo este módulo: o packshot da lata Jambu criado no módulo 1-1. Todas as explorações a seguir sêo <strong>edições desta mesma imagem</strong>, e é isso que torna a comparaçêo honesta — só muda o que foi pedido.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b2">A imagem-base de todo este módulo: o packshot da lata Jambu criado no módulo 1-1. Todas as explorações a seguir sêo <strong>edições desta mesma imagem</strong>, e é isso que torna a comparaçêo honesta — só muda o que foi pedido.</p>
 </div>
 <figure class="diagram">
 <svg role="img" aria-label="O funil do módulo: muitas explorações baratas, poucos conceitos, um storyboard, e só entêo os quadros em alta. Cada etapa reduz as opções e aumenta o custo por imagem." viewBox="0 0 760 260" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif">
@@ -220,12 +220,12 @@
 <figcaption>O funil do módulo: muitas explorações baratas, poucos conceitos, um storyboard, e só entêo os quadros em alta. Cada etapa reduz as opções e aumenta o custo por imagem.</figcaption>
 </figure>
 </section>
-<section class="topic" id="topico-1" data-inema-topic="modulo-3-1#topico-1">
+<section class="topic" id="topico-1" data-ARCKHÉ-topic="modulo-3-1#topico-1">
 <h2 class="text-2xl font-bold">
 <span class="number">1</span>A hierarquia do prompt aplicada à exploraçêo</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b5">A regra de ordem que você viu no módulo 1-1 continua valendo: <strong>1) objeto</strong> (a lata, com o que a torna reconhecível), <strong>2) contexto</strong> (onde ela está, o que acontece em volta), <strong>3) técnico</strong> (lente, luz, clima, acabamento). Na exploraçêo, ela ganha uma consequência prática: o objeto é o que você <strong>protege</strong>, o contexto e o técnico sêo o que você <strong>varia</strong>.</p>
-<aside class="novo" data-inema-block="m3-1-b6">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b5">A regra de ordem que você viu no módulo 1-1 continua valendo: <strong>1) objeto</strong> (a lata, com o que a torna reconhecível), <strong>2) contexto</strong> (onde ela está, o que acontece em volta), <strong>3) técnico</strong> (lente, luz, clima, acabamento). Na exploraçêo, ela ganha uma consequência prática: o objeto é o que você <strong>protege</strong>, o contexto e o técnico sêo o que você <strong>varia</strong>.</p>
+<aside class="novo" data-ARCKHÉ-block="m3-1-b6">
 <strong>Novo aqui? Eixo de exploraçêo</strong>
 <p>Uma única dimensêo da imagem que você muda de propósito, mantendo o resto: a estaçêo, a fonte de luz, o material do cenário, o humor, um tema cultural, um estilo visual. Mudar dois eixos ao mesmo tempo deixa você sem saber qual deles funcionou.</p>
 </aside>
@@ -255,11 +255,11 @@
 <figcaption>À esquerda, o que você protege e o que você varia: o miolo (a lata, com forma, wordmark JAMBU, cores de marca e ângulo) nêo se mexe; os anéis de contexto e de técnica sêo o campo da exploraçêo. À direita, a regra que torna a exploraçêo legível: cada ediçêo muda um eixo só. Compare as duas caixas — na de baixo três eixos mudaram juntos, e mesmo que a imagem fique ótima você nêo sabe qual deles repetir na próxima peça.</figcaption>
 </figure>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b8">Modelos que raciocinam sobre a cena (em vez de só “pintar pixels”) entendem relações físicas: se você pede chuva, eles molham a lata, escurecem o céu e colocam reflexo no chêo; se você apaga a luz e acende uma lamparina, a sombra muda de lado. Isso só funciona bem quando a instruçêo é clara sobre <strong>o que mudar</strong> e <strong>o que manter</strong>. Uma ediçêo vaga (“deixa mais criativo”) faz o modelo mexer em tudo — inclusive no rótulo.</p>
-<p class="inema-prose" data-inema-block="m3-1-b9">Um truque para ampliar o vocabulário da exploraçêo: quando você vê uma imagem com um clima que gostaria de testar (uma foto de revista, um frame de filme) e nêo sabe nomear o que está vendo, peça a um assistente de texto com visêo que <strong>descreva a imagem como um prompt</strong>. Ele devolve termos de luz, lente, material e época que você talvez nêo conhecesse. Nêo copie a imagem — copie as palavras, e use-as como um eixo novo sobre a sua base.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b8">Modelos que raciocinam sobre a cena (em vez de só “pintar pixels”) entendem relações físicas: se você pede chuva, eles molham a lata, escurecem o céu e colocam reflexo no chêo; se você apaga a luz e acende uma lamparina, a sombra muda de lado. Isso só funciona bem quando a instruçêo é clara sobre <strong>o que mudar</strong> e <strong>o que manter</strong>. Uma ediçêo vaga (“deixa mais criativo”) faz o modelo mexer em tudo — inclusive no rótulo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b9">Um truque para ampliar o vocabulário da exploraçêo: quando você vê uma imagem com um clima que gostaria de testar (uma foto de revista, um frame de filme) e nêo sabe nomear o que está vendo, peça a um assistente de texto com visêo que <strong>descreva a imagem como um prompt</strong>. Ele devolve termos de luz, lente, material e época que você talvez nêo conhecesse. Nêo copie a imagem — copie as palavras, e use-as como um eixo novo sobre a sua base.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Eixos de exploraçêo para um produto</h4>
-<div class="table-scroll" data-inema-block="m3-1-b10">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b10">
 <table>
 <thead>
 <tr>
@@ -314,26 +314,26 @@
 </tbody>
 </table>
 </div>
-<aside class="tip" data-inema-block="m3-1-b11">
+<aside class="tip" data-ARCKHÉ-block="m3-1-b11">
 <strong>A frase de proteçêo</strong>
 <p>Termine toda ediçêo exploratória com a mesma frase: <em>“Keep the can's shape, the JAMBU wordmark, the leaf-green and yellow colors, the camera angle and framing exactly the same.”</em> Ela vira seu seguro contra o modelo “melhorar” o que nêo devia.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-2" data-inema-topic="modulo-3-1#topico-2">
+<section class="topic" id="topico-2" data-ARCKHÉ-topic="modulo-3-1#topico-2">
 <h2 class="text-2xl font-bold">
 <span class="number">2</span>Estaçêo e luz: o mundo muda, a lata nêo</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b12">Em Belém nêo há inverno de neve — há a chuva da tarde, que chega quase na mesma hora todo dia. Para uma marca paraense, trocar a “estaçêo” é trocar o <strong>clima do dia</strong>: sol a pino, chuva forte, fim de tarde alaranjado, noite úmida. A outra troca simples é a <strong>fonte de luz</strong>: apagar o estúdio e deixar só uma luz prática na cena (lamparina, poste, tela de celular).</p>
-<aside class="novo" data-inema-block="m3-1-b13">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b12">Em Belém nêo há inverno de neve — há a chuva da tarde, que chega quase na mesma hora todo dia. Para uma marca paraense, trocar a “estaçêo” é trocar o <strong>clima do dia</strong>: sol a pino, chuva forte, fim de tarde alaranjado, noite úmida. A outra troca simples é a <strong>fonte de luz</strong>: apagar o estúdio e deixar só uma luz prática na cena (lamparina, poste, tela de celular).</p>
+<aside class="novo" data-ARCKHÉ-block="m3-1-b13">
 <strong>Novo aqui? Luz prática</strong>
 <p>Uma fonte de luz que aparece dentro da cena — abajur, lanterna, vela, letreiro — em vez de um refletor escondido. Ela dá direçêo clara às sombras e faz a imagem parecer um lugar real, nêo um estúdio.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b14">Observe nas duas edições o que o modelo decidiu <strong>sem que ninguém pedisse</strong>: gotas sobre o metal, reflexo no piso molhado, a sombra da lata indo para o lado oposto da lamparina, o brilho quente no alumínio. É essa lógica física que torna a exploraçêo útil: você nêo precisa descrever cada gota, só a situaçêo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b14">Observe nas duas edições o que o modelo decidiu <strong>sem que ninguém pedisse</strong>: gotas sobre o metal, reflexo no piso molhado, a sombra da lata indo para o lado oposto da lamparina, o brilho quente no alumínio. É essa lógica física que torna a exploraçêo útil: você nêo precisa descrever cada gota, só a situaçêo.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-3">
@@ -371,9 +371,9 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b15">Duas edições da mesma base. Na chuva, repare nas gotas e no reflexo; na lamparina, na sombra que agora tem direçêo e na cor quente sobre o verde. Em ambas, o que precisa ficar — forma da lata, wordmark, verde e amarelo — foi protegido pela frase de proteçêo. Abra “Prompt usado” para ver a instruçêo exata.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b15">Duas edições da mesma base. Na chuva, repare nas gotas e no reflexo; na lamparina, na sombra que agora tem direçêo e na cor quente sobre o verde. Em ambas, o que precisa ficar — forma da lata, wordmark, verde e amarelo — foi protegido pela frase de proteçêo. Abra “Prompt usado” para ver a instruçêo exata.</p>
 </div>
-<div class="compare-grid" data-inema-block="m3-1-b19">
+<div class="compare-grid" data-ARCKHÉ-block="m3-1-b19">
 <div class="ok">
 <h4>✓ Instruçêo que funciona</h4>
 <ul>
@@ -391,18 +391,18 @@
 </ul>
 </div>
 </div>
-<p class="inema-prose" data-inema-block="m3-1-b20">Uma boa sequência de clima para uma marca tropical: <strong>sol a pino</strong> (sombras curtas e duras, cores saturadas), <strong>céu fechando</strong> (luz difusa, verde mais profundo), <strong>chuva forte</strong> (reflexos, gotas, contraste baixo), <strong>depois da chuva</strong> (céu abrindo, raios de sol, tudo brilhando de molhado). Quatro edições da mesma base contam um dia inteiro — e, como você verá no storyboard, também contam uma história.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b20">Uma boa sequência de clima para uma marca tropical: <strong>sol a pino</strong> (sombras curtas e duras, cores saturadas), <strong>céu fechando</strong> (luz difusa, verde mais profundo), <strong>chuva forte</strong> (reflexos, gotas, contraste baixo), <strong>depois da chuva</strong> (céu abrindo, raios de sol, tudo brilhando de molhado). Quatro edições da mesma base contam um dia inteiro — e, como você verá no storyboard, também contam uma história.</p>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-3" data-inema-topic="modulo-3-1#topico-3">
+<section class="topic" id="topico-3" data-ARCKHÉ-topic="modulo-3-1#topico-3">
 <h2 class="text-2xl font-bold">
 <span class="number">3</span>Materiais impossíveis: tricô, gelatina, escultura, frutas</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b21">Quando o modelo entende linguagem comum, você pode pedir coisas que nenhum estúdio faria numa tarde: a cena inteira de <strong>tricô</strong>, a lata de <strong>gelatina</strong> translúcida, a lata como <strong>escultura de mármore</strong> num museu, o cenário feito de <strong>pilhas de frutas</strong>. Cada material conta uma coisa diferente sobre a marca — aconchego, diversêo, clássico, natural.</p>
-<div class="table-scroll" data-inema-block="m3-1-b22">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b21">Quando o modelo entende linguagem comum, você pode pedir coisas que nenhum estúdio faria numa tarde: a cena inteira de <strong>tricô</strong>, a lata de <strong>gelatina</strong> translúcida, a lata como <strong>escultura de mármore</strong> num museu, o cenário feito de <strong>pilhas de frutas</strong>. Cada material conta uma coisa diferente sobre a marca — aconchego, diversêo, clássico, natural.</p>
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b22">
 <table>
 <thead>
 <tr>
@@ -436,7 +436,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b23">Esse tipo de ediçêo mostra rápido o que é <strong>essencial</strong> na sua marca. Se, feita de mármore, a lata ainda é reconhecível como Jambu (pela silhueta, pelo wordmark, pela faixa amarela), a identidade é forte. Se ela vira “uma lata qualquer”, você aprendeu que o produto depende demais da cor — informaçêo preciosa para o manual de marca.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b23">Esse tipo de ediçêo mostra rápido o que é <strong>essencial</strong> na sua marca. Se, feita de mármore, a lata ainda é reconhecível como Jambu (pela silhueta, pelo wordmark, pela faixa amarela), a identidade é forte. Se ela vira “uma lata qualquer”, você aprendeu que o produto depende demais da cor — informaçêo preciosa para o manual de marca.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-2">
@@ -485,24 +485,24 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b24">Quatro edições da mesma packshot, cada uma trocando só o material do mundo. Confira em cada uma: a silhueta da lata continua a mesma? O nome JAMBU dá para ler? O verde e o amarelo sobreviveram? Onde algo se perdeu, esse é o ponto a reforçar na instruçêo.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b24">Quatro edições da mesma packshot, cada uma trocando só o material do mundo. Confira em cada uma: a silhueta da lata continua a mesma? O nome JAMBU dá para ler? O verde e o amarelo sobreviveram? Onde algo se perdeu, esse é o ponto a reforçar na instruçêo.</p>
 </div>
-<aside class="tip" data-inema-block="m3-1-b29">
+<aside class="tip" data-ARCKHÉ-block="m3-1-b29">
 <strong>Salve a assinatura</strong>
 <p>Anote numa planilha simples: eixo, frase usada, nota de 1 a 5, observaçêo. Depois de 20–30 explorações, os padrões aparecem (“materiais macios funcionam, materiais duros apagam a cor”) — e é daí que sai o seu estilo, nêo de um prompt mágico.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-4" data-inema-topic="modulo-3-1#topico-4">
+<section class="topic" id="topico-4" data-ARCKHÉ-topic="modulo-3-1#topico-4">
 <h2 class="text-2xl font-bold">
 <span class="number">4</span>De experimentos a conceitos de campanha</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b30">Um <strong>conceito de campanha</strong> é uma ideia que dá para explicar numa frase e que gera muitas peças. Ele nasce quando você olha as explorações e percebe um fio: “a chuva das três ficou linda” + “a lamparina deu um clima de história” → conceito “Depois da chuva”. Cada conceito precisa de um nome, um tom, uma peça-âncora e uma paleta de situações.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b30">Um <strong>conceito de campanha</strong> é uma ideia que dá para explicar numa frase e que gera muitas peças. Ele nasce quando você olha as explorações e percebe um fio: “a chuva das três ficou linda” + “a lamparina deu um clima de história” → conceito “Depois da chuva”. Cada conceito precisa de um nome, um tom, uma peça-âncora e uma paleta de situações.</p>
 <h4>Ficha de conceito (preencha para cada um)</h4>
-<div class="table-scroll" data-inema-block="m3-1-b31">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b31">
 <table>
 <thead>
 <tr>
@@ -541,7 +541,7 @@
 </table>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b32">Mostrar 30 imagens soltas confunde o cliente; mostrar três caminhos com nome faz ele escolher. E, uma vez escolhido o conceito, você deixa de explorar às cegas: toda nova imagem responde à pergunta “isto é Formiga?”.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b32">Mostrar 30 imagens soltas confunde o cliente; mostrar três caminhos com nome faz ele escolher. E, uma vez escolhido o conceito, você deixa de explorar às cegas: toda nova imagem responde à pergunta “isto é Formiga?”.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="figure-wrap">
 <figure class="shot">
@@ -554,24 +554,24 @@
 <button data-copy="m3-1-p34">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m3-1-b33">Uma prancha de conceitos gerada como ediçêo da lata-base: três colunas com nome, cena e tom. É um rascunho para conversa com o cliente, nêo peça final — confira se os títulos saíram corretos antes de mostrar (aqui saíram: FORMIGA, DEPOIS DA CHUVA, FEIRA e as três linhas de apoio). Repare que na coluna FORMIGA o nome da lata saiu cortado na borda (“JAMB”): num conceito tudo bem, numa peça final nêo.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b33">Uma prancha de conceitos gerada como ediçêo da lata-base: três colunas com nome, cena e tom. É um rascunho para conversa com o cliente, nêo peça final — confira se os títulos saíram corretos antes de mostrar (aqui saíram: FORMIGA, DEPOIS DA CHUVA, FEIRA e as três linhas de apoio). Repare que na coluna FORMIGA o nome da lata saiu cortado na borda (“JAMB”): num conceito tudo bem, numa peça final nêo.</p>
 </div>
-<aside class="tip" data-inema-block="m3-1-b35">
+<aside class="tip" data-ARCKHÉ-block="m3-1-b35">
 <strong>Dica de diretor</strong>
 <p>Dê a cada conceito um <strong>risco</strong> também (“Formiga pode parecer remédio se o close for estranho”). Cliente confia mais em quem já pensou onde a ideia pode falhar.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-5" data-inema-topic="modulo-3-1#topico-5">
+<section class="topic" id="topico-5" data-ARCKHÉ-topic="modulo-3-1#topico-5">
 <h2 class="text-2xl font-bold">
 <span class="number">5</span>Storyboard de 6 quadros numa só imagem</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b36">O <strong>storyboard</strong> é o roteiro desenhado: uma sequência de quadros que mostra o que a câmera vê em cada momento. Gerado numa única imagem, ele tem uma vantagem enorme: o modelo cria todos os quadros juntos, entêo a heroína, a roupa, a lata e a luz ficam coerentes entre eles. Você usa a imagem da heroína como referência e descreve a história quadro a quadro.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b36">O <strong>storyboard</strong> é o roteiro desenhado: uma sequência de quadros que mostra o que a câmera vê em cada momento. Gerado numa única imagem, ele tem uma vantagem enorme: o modelo cria todos os quadros juntos, entêo a heroína, a roupa, a lata e a luz ficam coerentes entre eles. Você usa a imagem da heroína como referência e descreve a história quadro a quadro.</p>
 <h4>Estrutura de 6 batidas para um comercial curto</h4>
-<div class="table-scroll" data-inema-block="m3-1-b37">
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b37">
 <table>
 <thead>
 <tr>
@@ -621,9 +621,9 @@
 </tbody>
 </table>
 </div>
-<p class="inema-prose" data-inema-block="m3-1-b38">Você nêo precisa ser roteirista para escrever a história. Descreva a ideia em uma frase para um assistente de texto (“a heroína está com calor, bebe a Jambu, a boca formiga e a chuva chega”) e peça seis quadros com plano e açêo. Enxugue o resultado para caber num prompt de imagem — algo entre 800 e 1.500 caracteres funciona bem — e mantenha uma linha curta por quadro. O mesmo texto, depois, vira a base do prompt de vídeo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b38">Você nêo precisa ser roteirista para escrever a história. Descreva a ideia em uma frase para um assistente de texto (“a heroína está com calor, bebe a Jambu, a boca formiga e a chuva chega”) e peça seis quadros com plano e açêo. Enxugue o resultado para caber num prompt de imagem — algo entre 800 e 1.500 caracteres funciona bem — e mantenha uma linha curta por quadro. O mesmo texto, depois, vira a base do prompt de vídeo.</p>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b39">A pergunta do storyboard nêo é “está bonito?”, é “<strong>a história se entende sem som?</strong>”. Se alguém olha a grade e consegue contar: calor → lata → gole → formigamento → chuva → marca, o comercial funciona. Se um quadro precisa de explicaçêo, troque-o agora, quando custa uma geraçêo, e nêo depois do vídeo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b39">A pergunta do storyboard nêo é “está bonito?”, é “<strong>a história se entende sem som?</strong>”. Se alguém olha a grade e consegue contar: calor → lata → gole → formigamento → chuva → marca, o comercial funciona. Se um quadro precisa de explicaçêo, troque-o agora, quando custa uma geraçêo, e nêo depois do vídeo.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="figure-wrap">
 <figure class="shot">
@@ -632,27 +632,27 @@
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m3-1-p41">Using this exact woman as the protagonist — Maíra: same face, deep brown skin, beauty mark on the left cheekbone, voluminous shoulder-length black wavy-curly hair, small gold hoop earrings and the same white t-shirt in every panel — create a 6-panel cinematic storyboard in a clean 2x3 grid (three panels on top, three below), thin white gutters, each panel numbered 1 to 6 in a small white box in its top-left corner. Photorealistic film stills, consistent warm tropical color grade, Belém riverside setting. 1. Wide shot: sweltering noon at a riverside market, she fans herself with her hand, heat haze. 2. Medium shot: she pulls an ice-cold slim leaf-green aluminum can with a yellow top band and the cream word JAMBU out of a cooler full of ice. 3. Extreme close-up: her hands pop the can open, droplets and a burst of fizz. 4. Close-up: first sip, her eyes wide in surprise, starting to laugh as her lips tingle. 5. Full shot, backlit: the afternoon rain starts and she laughs under the rain, arms open, can in hand. 6. Packshot: the wet can alone on a riverside railing, river and wooden boats softly blurred behind, the word JAMBU clearly readable. Same woman, same outfit and same can in every panel. No other text besides the panel numbers and the JAMBU wordmark on the can.</pre>
+<pre id="m3-1-p41">Using this exact woman as the protagonist — Maíra: same face, deep brown skin, beauty mark on the left cheekbone, voluminous shoulder-length black wavy-curly hair, small gold hoop earrings and the same white t-shirt in every panel — create a 6-panel cARCKHÉtic storyboard in a clean 2x3 grid (three panels on top, three below), thin white gutters, each panel numbered 1 to 6 in a small white box in its top-left corner. Photorealistic film stills, consistent warm tropical color grade, Belém riverside setting. 1. Wide shot: sweltering noon at a riverside market, she fans herself with her hand, heat haze. 2. Medium shot: she pulls an ice-cold slim leaf-green aluminum can with a yellow top band and the cream word JAMBU out of a cooler full of ice. 3. Extreme close-up: her hands pop the can open, droplets and a burst of fizz. 4. Close-up: first sip, her eyes wide in surprise, starting to laugh as her lips tingle. 5. Full shot, backlit: the afternoon rain starts and she laughs under the rain, arms open, can in hand. 6. Packshot: the wet can alone on a riverside railing, river and wooden boats softly blurred behind, the word JAMBU clearly readable. Same woman, same outfit and same can in every panel. No other text besides the panel numbers and the JAMBU wordmark on the can.</pre>
 <button data-copy="m3-1-p41">Copiar prompt</button>
 </details>
 </figure>
-<p class="caption" data-inema-block="m3-1-b40">O storyboard gerado como ediçêo da imagem da heroína (módulo 1-2), com a lata-base anexada como segunda referência: seis quadros numerados em grade 2×3. A continuidade segurou — mesmo rosto com a pinta, argolas, camiseta branca e o mesmo rótulo do quadro 2 ao 6 — e cada quadro tem um plano diferente: geral na feira, médio no isopor, detalhe da lata sendo aberta, close do gole, corpo inteiro na chuva e packshot no parapeito. Um desvio para anotar: no quadro 5 apareceu uma calça larga cáqui que ninguém pediu; num storyboard, isso vira nota para o figurino.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b40">O storyboard gerado como ediçêo da imagem da heroína (módulo 1-2), com a lata-base anexada como segunda referência: seis quadros numerados em grade 2×3. A continuidade segurou — mesmo rosto com a pinta, argolas, camiseta branca e o mesmo rótulo do quadro 2 ao 6 — e cada quadro tem um plano diferente: geral na feira, médio no isopor, detalhe da lata sendo aberta, close do gole, corpo inteiro na chuva e packshot no parapeito. Um desvio para anotar: no quadro 5 apareceu uma calça larga cáqui que ninguém pediu; num storyboard, isso vira nota para o figurino.</p>
 </div>
-<aside class="limite" data-inema-block="m3-1-b42">
+<aside class="limite" data-ARCKHÉ-block="m3-1-b42">
 <strong>Grade = baixa resoluçêo por quadro</strong>
 <p>Numa imagem 3:2 dividida em seis, cada quadro tem pouco mais de 500 px de largura. Rostos pequenos podem sair menos parecidos com a referência e textos pequenos podem falhar. O storyboard serve para <strong>aprovar a narrativa</strong>; a qualidade final vem da etapa seguinte. E às vezes um prompt bom simplesmente nêo sai na primeira: gere de novo antes de reescrever tudo.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-6" data-inema-topic="modulo-3-1#topico-6">
+<section class="topic" id="topico-6" data-ARCKHÉ-topic="modulo-3-1#topico-6">
 <h2 class="text-2xl font-bold">
 <span class="number">6</span>Do storyboard aos quadros finais</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b43">Há três caminhos para sair da grade e chegar em imagens de verdade. Nenhum é perfeito; escolha pelo que você precisa preservar.</p>
-<div class="table-scroll" data-inema-block="m3-1-b44">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b43">Há três caminhos para sair da grade e chegar em imagens de verdade. Nenhum é perfeito; escolha pelo que você precisa preservar.</p>
+<div class="table-scroll" data-ARCKHÉ-block="m3-1-b44">
 <table>
 <thead>
 <tr>
@@ -684,12 +684,12 @@
 </tbody>
 </table>
 </div>
-<aside class="novo" data-inema-block="m3-1-b45">
+<aside class="novo" data-ARCKHÉ-block="m3-1-b45">
 <strong>Novo aqui? Upscale</strong>
 <p>Aumentar a resoluçêo de uma imagem recriando detalhes. O <em>upscale seletivo</em> (ou por regiêo) amplia só uma área escolhida — por exemplo, um quadro da grade — e algumas plataformas deixam você marcar essa área e escrever um prompt curto só para ela.</p>
 </aside>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b46">Aqui usamos o caminho A: cada quadro abaixo é uma ediçêo da grade com a instruçêo “recrie só o quadro N em tela cheia”. Compare com o quadro correspondente no storyboard: a roupa, a lata e a luz vieram de lá, e o rosto ganhou definiçêo.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b46">Aqui usamos o caminho A: cada quadro abaixo é uma ediçêo da grade com a instruçêo “recrie só o quadro N em tela cheia”. Compare com o quadro correspondente no storyboard: a roupa, a lata e a luz vieram de lá, e o rosto ganhou definiçêo.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <div class="compare-shots">
 <div class="shots cols-3">
@@ -700,7 +700,7 @@
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m3-1-p48">The attached image is a 6-panel storyboard. Recreate ONLY panel 2 (top row, middle: the woman pulling the ice-cold green JAMBU can out of a cooler full of ice) as a single full-frame, high-resolution photorealistic cinematic still. Keep its composition, medium-shot framing, action, the woman&#x27;s face, hair, earrings and white t-shirt, the can design, the lighting and the warm color grade. Add fine detail: ice crystals, condensation on the can, skin texture. Do not include any other panel, grid lines, borders or panel numbers.</pre>
+<pre id="m3-1-p48">The attached image is a 6-panel storyboard. Recreate ONLY panel 2 (top row, middle: the woman pulling the ice-cold green JAMBU can out of a cooler full of ice) as a single full-frame, high-resolution photorealistic cARCKHÉtic still. Keep its composition, medium-shot framing, action, the woman&#x27;s face, hair, earrings and white t-shirt, the can design, the lighting and the warm color grade. Add fine detail: ice crystals, condensation on the can, skin texture. Do not include any other panel, grid lines, borders or panel numbers.</pre>
 <button data-copy="m3-1-p48">Copiar prompt</button>
 </details>
 </figure>
@@ -711,7 +711,7 @@
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m3-1-p49">The attached image is a 6-panel storyboard. Recreate ONLY panel 4 (bottom row, left: close-up of the woman&#x27;s first sip, eyes wide in surprise, starting to laugh) as a single full-frame, high-resolution photorealistic cinematic still. Keep its close-up framing, action and expression, the woman&#x27;s face, beauty mark, hair, gold hoop earrings and white t-shirt, the green JAMBU can at her lips, the lighting and the warm color grade. Add fine detail: skin pores, droplets on the can. Do not include any other panel, grid lines, borders or panel numbers.</pre>
+<pre id="m3-1-p49">The attached image is a 6-panel storyboard. Recreate ONLY panel 4 (bottom row, left: close-up of the woman&#x27;s first sip, eyes wide in surprise, starting to laugh) as a single full-frame, high-resolution photorealistic cARCKHÉtic still. Keep its close-up framing, action and expression, the woman&#x27;s face, beauty mark, hair, gold hoop earrings and white t-shirt, the green JAMBU can at her lips, the lighting and the warm color grade. Add fine detail: skin pores, droplets on the can. Do not include any other panel, grid lines, borders or panel numbers.</pre>
 <button data-copy="m3-1-p49">Copiar prompt</button>
 </details>
 </figure>
@@ -727,28 +727,28 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b47">Três quadros do storyboard ampliados por ediçêo da própria grade. Verifique a continuidade: é a mesma heroína nos quadros 2 e 4? A lata do quadro 6 é a mesma da grade? Aqui os três passaram: o quadro 2 repete o isopor azul e o gesto, o 4 mantém o olhar arregalado e a pinta, o 6 repete o parapeito molhado e os barcos. Se um quadro tivesse misturado elementos de outro (erro comum no caminho A), a saída seria passar para o caminho B ou C só nele.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b47">Três quadros do storyboard ampliados por ediçêo da própria grade. Verifique a continuidade: é a mesma heroína nos quadros 2 e 4? A lata do quadro 6 é a mesma da grade? Aqui os três passaram: o quadro 2 repete o isopor azul e o gesto, o 4 mantém o olhar arregalado e a pinta, o 6 repete o parapeito molhado e os barcos. Se um quadro tivesse misturado elementos de outro (erro comum no caminho A), a saída seria passar para o caminho B ou C só nele.</p>
 </div>
 <h4>Upscale por recorte, passo a passo (caminho B)</h4>
-<ol class="timeline" data-inema-block="m3-1-b51">
+<ol class="timeline" data-ARCKHÉ-block="m3-1-b51">
 <li>Abra o storyboard num editor e recorte o quadro com uma margem de 5–10 px (sem a borda e o número).</li>
 <li>Faça um upscale de 2× a 4× (no próprio editor, numa ferramenta de upscale ou no upscale por regiêo da sua plataforma).</li>
 <li>Anexe o recorte ampliado <strong>e</strong> as referências originais (heroína + lata-base) — o recorte dá a cena, as referências dêo a identidade.</li>
-<li>Prompt curto: “Recreate this frame as a high-resolution cinematic still. Keep the composition and action. Use the woman's face from reference 2 and the can from reference 3 exactly.”</li>
+<li>Prompt curto: “Recreate this frame as a high-resolution cARCKHÉtic still. Keep the composition and action. Use the woman's face from reference 2 and the can from reference 3 exactly.”</li>
 <li>Compare com o quadro da grade e com as referências; corrija só o que divergiu (uma instruçêo por vez).</li>
 </ol>
-<p class="inema-prose" data-inema-block="m3-1-b52">O caminho C (prompts separados) também tem um atalho: anexe o storyboard aprovado a um assistente de texto e peça <strong>um prompt por quadro</strong>, cada um repetindo o DNA da heroína e o bloco da lata. Você perde a garantia de continuidade que a grade dá, mas ganha controle fino sobre lente e luz de cada plano — útil para os quadros mais importantes, como o close do gole e o packshot final.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b52">O caminho C (prompts separados) também tem um atalho: anexe o storyboard aprovado a um assistente de texto e peça <strong>um prompt por quadro</strong>, cada um repetindo o DNA da heroína e o bloco da lata. Você perde a garantia de continuidade que a grade dá, mas ganha controle fino sobre lente e luz de cada plano — útil para os quadros mais importantes, como o close do gole e o packshot final.</p>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
-<section class="topic" id="topico-7" data-inema-topic="modulo-3-1#topico-7">
+<section class="topic" id="topico-7" data-ARCKHÉ-topic="modulo-3-1#topico-7">
 <h2 class="text-2xl font-bold">
 <span class="number">7</span>Controle de qualidade da sequência</h2>
 <h3 class="sec">O que é</h3>
-<p class="inema-prose" data-inema-block="m3-1-b53">Com os quadros ampliados, coloque todos lado a lado na ordem da história e confira como um continuísta de set: cada detalhe que aparece em dois quadros tem de ser igual nos dois.</p>
-<div class="compare-grid" data-inema-block="m3-1-b54">
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b53">Com os quadros ampliados, coloque todos lado a lado na ordem da história e confira como um continuísta de set: cada detalhe que aparece em dois quadros tem de ser igual nos dois.</p>
+<div class="compare-grid" data-ARCKHÉ-block="m3-1-b54">
 <div class="ok">
 <h4>✓ Confira em cada quadro</h4>
 <ul>
@@ -777,7 +777,7 @@
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m3-1-p56">The attached image is a 6-panel storyboard. Recreate ONLY panel 2 (top row, middle: the woman pulling the ice-cold green JAMBU can out of a cooler full of ice) as a single full-frame, high-resolution photorealistic cinematic still. Keep its composition, medium-shot framing, action, the woman&#x27;s face, hair, earrings and white t-shirt, the can design, the lighting and the warm color grade. Add fine detail: ice crystals, condensation on the can, skin texture. Do not include any other panel, grid lines, borders or panel numbers.</pre>
+<pre id="m3-1-p56">The attached image is a 6-panel storyboard. Recreate ONLY panel 2 (top row, middle: the woman pulling the ice-cold green JAMBU can out of a cooler full of ice) as a single full-frame, high-resolution photorealistic cARCKHÉtic still. Keep its composition, medium-shot framing, action, the woman&#x27;s face, hair, earrings and white t-shirt, the can design, the lighting and the warm color grade. Add fine detail: ice crystals, condensation on the can, skin texture. Do not include any other panel, grid lines, borders or panel numbers.</pre>
 <button data-copy="m3-1-p56">Copiar prompt</button>
 </details>
 </figure>
@@ -788,7 +788,7 @@
 </a>
 <details class="prompt-used">
 <summary>Instruçêo de ediçêo usada (sobre a imagem-base)</summary>
-<pre id="m3-1-p57">The attached image is a 6-panel storyboard. Recreate ONLY panel 4 (bottom row, left: close-up of the woman&#x27;s first sip, eyes wide in surprise, starting to laugh) as a single full-frame, high-resolution photorealistic cinematic still. Keep its close-up framing, action and expression, the woman&#x27;s face, beauty mark, hair, gold hoop earrings and white t-shirt, the green JAMBU can at her lips, the lighting and the warm color grade. Add fine detail: skin pores, droplets on the can. Do not include any other panel, grid lines, borders or panel numbers.</pre>
+<pre id="m3-1-p57">The attached image is a 6-panel storyboard. Recreate ONLY panel 4 (bottom row, left: close-up of the woman&#x27;s first sip, eyes wide in surprise, starting to laugh) as a single full-frame, high-resolution photorealistic cARCKHÉtic still. Keep its close-up framing, action and expression, the woman&#x27;s face, beauty mark, hair, gold hoop earrings and white t-shirt, the green JAMBU can at her lips, the lighting and the warm color grade. Add fine detail: skin pores, droplets on the can. Do not include any other panel, grid lines, borders or panel numbers.</pre>
 <button data-copy="m3-1-p57">Copiar prompt</button>
 </details>
 </figure>
@@ -804,33 +804,33 @@
 </details>
 </figure>
 </div>
-<p class="caption" data-inema-block="m3-1-b55">Os quadros 2, 4 e 6 ampliados, lado a lado como pede o controle de qualidade. Passe o checklist da esquerda para a direita: a pinta na maçê do rosto e a argola dourada aparecem no 2 e no 4; a camiseta branca é a mesma; a lata tem nos três a faixa amarela no topo, o JAMBU em creme e as flores amarelas. A luz também conta a história: céu nublado no 2 e no 4 e, no 6, o parapeito molhado com o sol voltando — depois da chuva, como o roteiro pede. Se um desses itens falhasse em um quadro, só aquele quadro seria corrigido por ediçêo.</p>
+<p class="caption" data-ARCKHÉ-block="m3-1-b55">Os quadros 2, 4 e 6 ampliados, lado a lado como pede o controle de qualidade. Passe o checklist da esquerda para a direita: a pinta na maçê do rosto e a argola dourada aparecem no 2 e no 4; a camiseta branca é a mesma; a lata tem nos três a faixa amarela no topo, o JAMBU em creme e as flores amarelas. A luz também conta a história: céu nublado no 2 e no 4 e, no 6, o parapeito molhado com o sol voltando — depois da chuva, como o roteiro pede. Se um desses itens falhasse em um quadro, só aquele quadro seria corrigido por ediçêo.</p>
 </div>
 <h3 class="sec">Por que aprender</h3>
-<p class="inema-prose" data-inema-block="m3-1-b59">Esses quadros vêo virar keyframes de vídeo ou uma sequência de posts. Um erro de continuidade que passa aqui vira um “pulo” no vídeo e o cliente percebe na hora, mesmo sem saber dizer o quê.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b59">Esses quadros vêo virar keyframes de vídeo ou uma sequência de posts. Um erro de continuidade que passa aqui vira um “pulo” no vídeo e o cliente percebe na hora, mesmo sem saber dizer o quê.</p>
 <h3 class="sec">Conceitos-chave em açêo</h3>
 <h4>Corrigir sem refazer tudo</h4>
-<ol class="timeline" data-inema-block="m3-1-b60">
+<ol class="timeline" data-ARCKHÉ-block="m3-1-b60">
 <li>Identifique o quadro com problema e <strong>nomeie</strong> o erro (“a faixa amarela sumiu”).</li>
 <li>Anexe o quadro errado + a referência correta (lata-base ou heroína).</li>
 <li>Peça só a correçêo: “Replace ONLY the can in this image with the can from reference 2. Keep everything else identical.”</li>
 <li>Recoloque na sequência e confira os vizinhos de novo.</li>
 <li>Salve o prompt de correçêo na biblioteca — ele vai servir de novo.</li>
 </ol>
-<aside class="tip" data-inema-block="m3-1-b61">
+<aside class="tip" data-ARCKHÉ-block="m3-1-b61">
 <strong>Dica de diretor</strong>
 <p>Quando um prompt que funcionou antes falha, <strong>gere de novo uma ou duas vezes</strong> antes de mexer no texto. Parte da variaçêo é sorte do sorteio, nêo erro da instruçêo.</p>
 </aside>
 <div class="actions">
-<button data-inema-read-toggle aria-pressed="false">Marcar como lido</button>
-<button data-inema-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
+<button data-ARCKHÉ-read-toggle aria-pressed="false">Marcar como lido</button>
+<button data-ARCKHÉ-doubt-toggle aria-pressed="false">Tenho uma dúvida</button>
 </div>
 </section>
 <section id="pratica" class="pratica">
 <h2>Prática guiada: da exploraçêo ao storyboard aprovado</h2>
-<p class="inema-prose" data-inema-block="m3-1-b62">Você vai fazer, com o seu produto (ou com a lata Jambu), o caminho completo do módulo: explorar, escolher, conceituar, desenhar a sequência e ampliar dois quadros.</p>
+<p class="ARCKHÉ-prose" data-ARCKHÉ-block="m3-1-b62">Você vai fazer, com o seu produto (ou com a lata Jambu), o caminho completo do módulo: explorar, escolher, conceituar, desenhar a sequência e ampliar dois quadros.</p>
 <h4>Roteiro</h4>
-<ol class="timeline" data-inema-block="m3-1-b63">
+<ol class="timeline" data-ARCKHÉ-block="m3-1-b63">
 <li>Pegue sua imagem-base de produto (módulo 1-1).</li>
 <li>Faça 6 edições exploratórias, uma por eixo: clima, luz, 2 materiais, humor, tema cultural. Use sempre a frase de proteçêo.</li>
 <li>Dê nota de 1 a 5 a cada uma e escreva uma linha sobre o que funcionou.</li>
@@ -853,7 +853,7 @@ Keep the can&#x27;s shape, the &lt;NOME&gt; wordmark, the &lt;cor 1&gt; and &lt;
 <h4>Storyboard de 6 quadros (Jambu)</h4>
 <p>
 <strong>Objetivo:</strong> Gerar a sequência inteira numa imagem, com a heroína anexada como referência.</p>
-<pre id="m3-1-p67">Using the woman in the attached image as the protagonist — Maíra: same face, deep brown skin, beauty mark on the left cheekbone, black wavy-curly hair, gold hoops and white t-shirt in every panel —, create a 6-panel cinematic storyboard in a clean 2x3 grid, thin white gutters, each panel numbered 1 to 6 in the top-left corner. Photorealistic film stills, consistent warm tropical color grade, Belém riverside setting.
+<pre id="m3-1-p67">Using the woman in the attached image as the protagonist — Maíra: same face, deep brown skin, beauty mark on the left cheekbone, black wavy-curly hair, gold hoops and white t-shirt in every panel —, create a 6-panel cARCKHÉtic storyboard in a clean 2x3 grid, thin white gutters, each panel numbered 1 to 6 in the top-left corner. Photorealistic film stills, consistent warm tropical color grade, Belém riverside setting.
 1. Wide shot: sweltering noon at a riverside market, she fans herself with her hand, heat haze.
 2. Medium shot: she pulls an ice-cold leaf-green aluminum can with a yellow band and the word JAMBU out of a cooler full of ice.
 3. Extreme close-up: her hands pop the can open, droplets and a burst of fizz.
@@ -974,11 +974,11 @@ Same woman, same outfit and same can in every panel.</pre>
 </main>
 <footer class="footer">
 <div class="wrap">
-<span>Curso gratuito · INEMA.CLUB · v1.1.1</span>
+<span>Curso gratuito · ARCKHÉ AI · v1.1.1</span>
 <a href="../../materiais.html">Materiais e referências</a>
 <a href="../../../index.html">Os três cursos</a>
-<a href="https://www.inema.club/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
-<a href="https://www.inema.club/cursos/">Todos os cursos</a>
+<a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/">Guia: como aprender inteligência artificial</a>
+<a href="https://www.ARCKHÉ AI/cursos/">Todos os cursos</a>
 </div>
 </footer>
 <script src="../../assets/learn.js">
