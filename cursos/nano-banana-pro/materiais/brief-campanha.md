@@ -29,8 +29,8 @@ Exemplo preenchido entre parênteses: campanha fictícia da Jambu (curso Nano Ba
 
 ## 6. Personagem
 - **Nome e DNA fixo:** <rosto, pele, idade, marcas, cabelo, acessórios fixos>
-  (Maíra, 28, de Belém: pele marrom-escura de subtom quente, maçãs altas, sobrancelhas grossas, pinta na maçã do rosto esquerda, cabelo preto ondulado-cacheado nos ombros com repartido no meio, argolas douradas pequenas)
-- **Autorização:** personagem fictício / pessoa real com autorização por escrito
+  (Maíra, 28, de Belém: pele marrom-escura de subtom quente, maçês altas, sobrancelhas grossas, pinta na maçê do rosto esquerda, cabelo preto ondulado-cacheado nos ombros com repartido no meio, argolas douradas pequenas)
+- **Autorizaçêo:** personagem fictício / pessoa real com autorizaçêo por escrito
 
 ## 7. Entregáveis
 - [ ] 3 fotos de produto (ângulos diferentes)
@@ -38,11 +38,11 @@ Exemplo preenchido entre parênteses: campanha fictícia da Jambu (curso Nano Ba
 - [ ] 1 peça com nome + slogan em cores HEX
 - [ ] 1 infográfico com rótulos
 - [ ] 1 storyboard de 6 quadros + 2–3 quadros ampliados
-- [ ] prancha de apresentação
+- [ ] prancha de apresentaçêo
 - [ ] formatos: <1:1, 9:16, 16:9…>
 
-## 8. Prazos e aprovação
+## 8. Prazos e aprovaçêo
 - **Bases aprovadas até:** <data>
 - **Storyboard aprovado até:** <data>
 - **Entrega final:** <data>
-- **Quem aprova:** <nome/função>
+- **Quem aprova:** <nome/funçêo>

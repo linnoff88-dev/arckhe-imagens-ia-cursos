@@ -38,6 +38,6 @@ html:not(.dark){--primary:#92400e;--text-muted:#595b62}html[data-theme=sepia]{--
 .module-extras{margin:1.2rem 0}.module-extras h4{margin:.1rem 0 .4rem}
 @media(max-width:850px){.track-hero{grid-template-columns:1fr}.module-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.topic-explanation.has-thumb:not([hidden]){grid-template-columns:1fr}}
 main .inema-prose{margin-left:0;margin-right:0}
-/* revisão 2026-09-25: "Novo aqui?" em claro/sépia — accent-2 a 38% dá 4.09:1 no branco; escurece o rótulo p/ AA */
+/* revisêo 2026-09-25: "Novo aqui?" em claro/sépia — accent-2 a 38% dá 4.09:1 no branco; escurece o rótulo p/ AA */
 html:not(.dark) .novo strong{color:#0369a1}
 @media(max-width:600px){.diagram.trilha-svg{display:none}}

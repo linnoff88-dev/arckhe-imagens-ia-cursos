@@ -10,7 +10,7 @@ Referência: 26–30 pronta para o cliente · 20–25 ajustes pontuais · abaixo
 | Controle de marca (HEX + texto) | ×2 | cores fora da paleta, texto com erro | paleta certa, um erro corrigível | paleta e textos perfeitos | |
 | Conceito e narrativa | ×2 | peças soltas, sem ideia comum | ideia presente na maioria | todas as peças contam o conceito | |
 | Técnica fotográfica | ×1 | ângulos e luz genéricos | ângulos variados, luz coerente | cada escolha de lente/luz justificável | |
-| Storyboard | ×1 | a história não se entende sem explicação | entende-se, com um quadro fraco | seis planos diferentes, história clara sem texto | |
+| Storyboard | ×1 | a história nêo se entende sem explicaçêo | entende-se, com um quadro fraco | seis planos diferentes, história clara sem texto | |
 | **Total** | | | | | **/30** |
 
 ## Checklist de entrega (antes da rubrica)
@@ -24,14 +24,14 @@ Referência: 26–30 pronta para o cliente · 20–25 ajustes pontuais · abaixo
 - [ ] Prompt exato salvo ao lado de cada imagem
 
 **Reprova na hora**
-- [ ] Mãos com dedos a mais / produto atravessando a mão
+- [ ] Mêos com dedos a mais / produto atravessando a mêo
 - [ ] Texto inventado em placas ou no fundo
 - [ ] Personagem “rejuvenescido” ou com pele de plástico
 - [ ] Logo real de outra marca na cena
-- [ ] Pessoa real ou rosto sem autorização
+- [ ] Pessoa real ou rosto sem autorizaçêo
 - [ ] Storyboard fora de ordem
 
 ## Comentário do avaliador
 - O que está mais forte:
 - O que corrigir primeiro (uma coisa):
-- Sugestão de próximo passo:
+- Sugestêo de próximo passo:

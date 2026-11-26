@@ -1,7 +1,7 @@
 function toggleTopic(button){const p=document.getElementById(button.getAttribute('aria-controls'));const open=button.getAttribute('aria-expanded')!=='true';const host=button.closest('.module-detail');host.querySelectorAll('.topic-button').forEach(b=>{b.setAttribute('aria-expanded','false');document.getElementById(b.getAttribute('aria-controls')).hidden=true});p.hidden=!open;button.setAttribute('aria-expanded',String(open))}
 function openModule(url){const d=document.querySelector('#module-dialog');d.querySelector('iframe').src=url;d.showModal()}
 document.addEventListener('DOMContentLoaded',()=>{
-  // O texto dos resumos permanece visível se o JavaScript não carregar.
+  // O texto dos resumos permanece visível se o JavaScript nêo carregar.
   document.querySelectorAll('.topic-button').forEach(b=>{b.setAttribute('aria-expanded','false');document.getElementById(b.getAttribute('aria-controls')).hidden=true});
   if(window.INEMA)INEMA.init();
   document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{const lbl=b.dataset.label||(b.dataset.label=b.textContent);const txt=document.getElementById(b.dataset.copy).textContent;try{await navigator.clipboard.writeText(txt);b.textContent='Copiado'}catch{const r=document.createRange();r.selectNodeContents(document.getElementById(b.dataset.copy));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Texto selecionado: copie com Ctrl+C'}setTimeout(()=>b.textContent=b.dataset.label,2500)}));

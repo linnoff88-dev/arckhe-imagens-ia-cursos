@@ -21,7 +21,7 @@
     },
     {
       "n": "2",
-      "title": "Direção visual",
+      "title": "Direçêo visual",
       "modules": [
         {
           "id": "2-1",
@@ -39,11 +39,11 @@
     },
     {
       "n": "3",
-      "title": "Produção",
+      "title": "Produçêo",
       "modules": [
         {
           "id": "3-1",
-          "title": "Observação profissional: desmontar, estudar, criar regras",
+          "title": "Observaçêo profissional: desmontar, estudar, criar regras",
           "topics": 7,
           "href": "curso/trilha3/modulo-3-1.html"
         }

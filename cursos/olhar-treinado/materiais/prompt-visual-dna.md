@@ -2,7 +2,7 @@
 
 Use com um assistente que aceite imagens (ChatGPT, Claude, Gemini). Anexe de 6 a 12 imagens que representam a marca hoje (posts, fotos de produto, site, embalagem) **ou** as referências que você quer atingir. Preencha o que está entre `< >`.
 
-O resultado é a **Legenda de DNA Visual**: uma única fonte de verdade com as decisões de cor, forma, composição, tipografia, textura e estilo de imagem — cada uma ligada à emoção que deve provocar.
+O resultado é a **Legenda de DNA Visual**: uma única fonte de verdade com as decisões de cor, forma, composiçêo, tipografia, textura e estilo de imagem — cada uma ligada à emoçêo que deve provocar.
 
 ---
 
@@ -22,12 +22,12 @@ Analise as imagens anexadas e responda em 6 partes.
 1) LEITURA ATUAL — Para cada imagem, uma linha: qual elemento mais pesa e que efeito ele produz (formato "elemento → efeito").
 
 2) CADEIA DE SIGNIFICADO — Para cada elemento-chave abaixo, escreva a cadeia
-   Elemento → função prática → meta-mensagem → emoção que provoca:
+   Elemento → funçêo prática → meta-mensagem → emoçêo que provoca:
    - cor de base
    - cor de acento
    - forma dominante (arredondada, angular, geométrica, orgânica)
-   - composição (espaço negativo, simetria/assimetria, um herói ou vários)
-   - textura e acabamento (grão, brilho, papel, cromado)
+   - composiçêo (espaço negativo, simetria/assimetria, um herói ou vários)
+   - textura e acabamento (grêo, brilho, papel, cromado)
    - estilo de imagem (produto em estúdio, lifestyle espontâneo, luz cinematográfica, macro)
    - tipografia, se houver (serifada, sem serifa, pesada, leve)
 
@@ -35,22 +35,22 @@ Analise as imagens anexadas e responda em 6 partes.
 
 4) PALETA COM PAPÉIS — Proponha: base neutra (1–2 cores), acento principal (1 cor), acento de apoio (opcional, uso raro). Dê um nome descritivo e um HEX aproximado para cada, e onde cada uma deve aparecer.
 
-5) LEGENDA DE DNA VISUAL — Uma tabela com: Elemento | Decisão | Por quê (emoção) | Nunca fazer.
-   Cubra: cor, forma, composição, luz, textura, estilo de imagem, tipografia.
+5) LEGENDA DE DNA VISUAL — Uma tabela com: Elemento | Decisêo | Por quê (emoçêo) | Nunca fazer.
+   Cubra: cor, forma, composiçêo, luz, textura, estilo de imagem, tipografia.
 
-6) BLOCO DE ESTILO — Escreva um STYLE BLOCK de 3 a 5 linhas, em inglês, pronto para colar no fim de prompts de imagem, que aplique essa legenda (luz com direção, paleta com acento único, lente, textura, clima).
+6) BLOCO DE ESTILO — Escreva um STYLE BLOCK de 3 a 5 linhas, em inglês, pronto para colar no fim de prompts de imagem, que aplique essa legenda (luz com direçêo, paleta com acento único, lente, textura, clima).
 
-Regras: não cite artistas, fotógrafos ou marcas reais como referência de estilo; descreva a estética com palavras. Seja específico e verificável — nada de "bonito", "moderno" ou "profissional" sem dizer o que isso é na imagem.
+Regras: nêo cite artistas, fotógrafos ou marcas reais como referência de estilo; descreva a estética com palavras. Seja específico e verificável — nada de "bonito", "moderno" ou "profissional" sem dizer o que isso é na imagem.
 ```
 
 ---
 
 ## Como conferir a resposta
 
-- A cadeia de cada elemento termina numa emoção **coerente com as 3 palavras de vibe**? Se não, o elemento é candidato a sair.
+- A cadeia de cada elemento termina numa emoçêo **coerente com as 3 palavras de vibe**? Se nêo, o elemento é candidato a sair.
 - A paleta tem **um** acento principal? Se o assistente propôs três acentos, peça para escolher um.
-- O bloco de estilo tem luz com fonte e direção, paleta com acento único, lente e textura? Teste-o gerando 3 imagens de assuntos diferentes (pessoa, produto, ambiente) e veja se parecem da mesma marca.
-- Guarde a legenda com data e versão. Revise a cada trimestre ou quando o objetivo da marca mudar.
+- O bloco de estilo tem luz com fonte e direçêo, paleta com acento único, lente e textura? Teste-o gerando 3 imagens de assuntos diferentes (pessoa, produto, ambiente) e veja se parecem da mesma marca.
+- Guarde a legenda com data e versêo. Revise a cada trimestre ou quando o objetivo da marca mudar.
 
 ## Referência rápida: cores e o que costumam sugerir
 
@@ -60,8 +60,8 @@ Regras: não cite artistas, fotógrafos ou marcas reais como referência de esti
 | Vermelho | urgência, energia | agressivo em área grande |
 | Verde | crescimento, saúde | "bem-estar genérico" em excesso |
 | Amarelo / laranja | otimismo, calor | reduz o premium em área grande |
-| Roxo | criatividade, aspiração | infantil se muito saturado |
-| Preto / branco | autoridade, contenção | precisa de contraste e respiro |
+| Roxo | criatividade, aspiraçêo | infantil se muito saturado |
+| Preto / branco | autoridade, contençêo | precisa de contraste e respiro |
 | Marrom / bege | artesanal, herança | pode envelhecer a marca |
-| Ciano / turquesa | inovação calma | neon demais vira balada |
+| Ciano / turquesa | inovaçêo calma | neon demais vira balada |
 | Cinza | neutralidade, maturidade | frio sem um acento quente |

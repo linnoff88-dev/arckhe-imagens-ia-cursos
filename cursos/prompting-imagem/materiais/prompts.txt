@@ -3,17 +3,17 @@
 
 Você é diretor de fotografia e especialista em prompts para geradores de imagem.
 Vou descrever uma imagem do jeito que eu falaria. Devolva UM prompt em inglês, em texto corrido, com estas camadas nesta ordem:
-1) tipo de plano + sujeito (aparência, roupa) + ação física concreta + lugar;
+1) tipo de plano + sujeito (aparência, roupa) + açêo física concreta + lugar;
 2) lente em mm e abertura (f/), ângulo de câmera;
-3) luz: fonte, direção, qualidade (dura/suave) e temperatura em Kelvin;
+3) luz: fonte, direçêo, qualidade (dura/suave) e temperatura em Kelvin;
 4) 2–3 materiais com dois adjetivos cada;
-5) composição (posição do sujeito, espaço negativo, fundo);
-6) referência de estilo (época, tipo de fotografia) e a emoção pretendida.
-Não cite nomes de artistas nem marcas reais. Termine com uma linha 'Evitar:' listando o que não deve aparecer.
+5) composiçêo (posiçêo do sujeito, espaço negativo, fundo);
+6) referência de estilo (época, tipo de fotografia) e a emoçêo pretendida.
+Nêo cite nomes de artistas nem marcas reais. Termine com uma linha 'Evitar:' listando o que nêo deve aparecer.
 
-Minha ideia: uma foto da barista da cafeteria de manhã cedo, com o torrador ao fundo, passando a sensação de que o dia está começando com calma. É para o post de abertura do Instagram (formato 4:5).
+Minha ideia: uma foto da barista da cafeteria de manhê cedo, com o torrador ao fundo, passando a sensaçêo de que o dia está começando com calma. É para o post de abertura do Instagram (formato 4:5).
 
-Como verificar: O prompt devolvido tem as seis camadas? A luz tem direção e Kelvin? Existe uma linha do que evitar? Se faltar algo, peça: “reescreva incluindo a camada X”.
+Como verificar: O prompt devolvido tem as seis camadas? A luz tem direçêo e Kelvin? Existe uma linha do que evitar? Se faltar algo, peça: “reescreva incluindo a camada X”.
 
 # Módulo 1-1 — Escolha sua ferramenta e prepare o projeto
 ## Prompt de teste: o retrato da Lia
@@ -25,14 +25,14 @@ Como verificar: Cabelo cacheado preso, sardas e avental mostarda apareceram? A l
 # Módulo 1-2 — A fórmula do prompt
 ## Molde do prompt-mestre
 
-<Plano> of <sujeito: quem, aparência, roupa> <ação física concreta>, in <lugar com 2-3 objetos>.
+<Plano> of <sujeito: quem, aparência, roupa> <açêo física concreta>, in <lugar com 2-3 objetos>.
 Shot on a <lente> lens at <abertura>, <ângulo>.
-<Fonte de luz> from the <direção>, <qualidade> light, <temperatura>K.
+<Fonte de luz> from the <direçêo>, <qualidade> light, <temperatura>K.
 Detailed textures: <material 1 + 2 adjetivos>, <material 2 + 2 adjetivos>.
-<Composição: posição do sujeito, espaço negativo, camadas>.
-<Referência de estilo: época, gênero, suporte>, evoking <emoção pretendida>.
+<Composiçêo: posiçêo do sujeito, espaço negativo, camadas>.
+<Referência de estilo: época, gênero, suporte>, evoking <emoçêo pretendida>.
 
-Como verificar: Cada linha do molde virou algo visível na imagem? Se uma camada não aparece (ex.: a luz veio da direita), reforce só essa linha e gere de novo.
+Como verificar: Cada linha do molde virou algo visível na imagem? Se uma camada nêo aparece (ex.: a luz veio da direita), reforce só essa linha e gere de novo.
 
 # Módulo 1-2 — A fórmula do prompt
 ## Exemplo pronto (Terra Alta — produto)
@@ -51,21 +51,21 @@ Como verificar: O rótulo saiu legível? O espaço à esquerda está limpo o bas
 
 Medium shot of Lia, a Brazilian barista in her early 30s with curly dark hair tied up, light-brown skin and freckles, wearing a mustard-yellow linen apron over a white t-shirt, standing beside a vintage black cast-iron drum coffee roaster, scooping freshly roasted beans from the round cooling tray with a small metal trier and smelling them, eyes half-closed. Shot on a 35mm lens at f/2.8, eye level. Soft morning window light from the left, warm 3500K, thin smoke rising from the beans. Textures: oily roasted beans, aged iron with brass details, linen apron, rough plaster wall. Lia on the left third, the roaster filling the right side, burlap sacks in the background. Natural documentary photography, subtle 35mm film grain, evoking the ritual of the first roast of the day. No text, no signage, no logos.
 
-Como verificar: Anote modelo, proporção, stylize/guidance e seed. Apareceram letreiros mesmo com o negativo? A Lia ficou no terço esquerdo?
+Como verificar: Anote modelo, proporçêo, stylize/guidance e seed. Apareceram letreiros mesmo com o negativo? A Lia ficou no terço esquerdo?
 
 # Módulo 2-1 — Controles e testes dentro das ferramentas
-## Linha de composição para 9:16
+## Linha de composiçêo para 9:16
 
 Vertical 9:16 composition: Lia and the cooling tray in the lower two-thirds of the frame, the tall roaster chimney and wooden ceiling beams rising into the top third, clean space at the top for a short caption.
 
-Como verificar: Substitua só a frase de composição do baseline por esta. A cabeça ou o torrador foram cortados? Sobrou espaço limpo em cima?
+Como verificar: Substitua só a frase de composiçêo do baseline por esta. A cabeça ou o torrador foram cortados? Sobrou espaço limpo em cima?
 
 # Módulo 2-2 — Personagem e campanha consistentes
 ## Referência neutra a partir de uma imagem aprovada
 
 Turn this into a clean CHARACTER REFERENCE photo of the SAME person. Medium shot from the waist up, body and face turned straight to the camera, neutral relaxed expression, looking into the lens, arms relaxed, hands empty. Even soft frontal studio light from a large softbox, neutral 5000K, no dramatic shadows. Plain light-grey seamless backdrop, no props, no text anywhere. Keep the exact face shape, skin tone and marks, hair color and hairstyle, and the signature outfit: <figurino-assinatura>. <Decisões da ficha: ex. remove the tattoo / keep the freckles>.
 
-Como verificar: Rosto inteiro e de frente? Fundo liso, mãos vazias, nenhum texto? As decisões da ficha (o que tirar, o que manter) aparecem?
+Como verificar: Rosto inteiro e de frente? Fundo liso, mêos vazias, nenhum texto? As decisões da ficha (o que tirar, o que manter) aparecem?
 
 # Módulo 2-2 — Personagem e campanha consistentes
 ## Meta-prompt: o assistente escreve os prompts da campanha
@@ -73,20 +73,20 @@ Como verificar: Rosto inteiro e de frente? Fundo liso, mãos vazias, nenhum text
 You are an art director. I attached the reference image of my fictional character.
 Character identity block (use it verbatim in every prompt): <bloco de identidade>.
 Brand: <marca, o que faz, para quem>. Campaign concept: <2-3 frases de conceito>.
-Fixed visual world (use verbatim at the end of every prompt): <tipo de foto, paleta, grão, época>.
+Fixed visual world (use verbatim at the end of every prompt): <tipo de foto, paleta, grêo, época>.
 Write 6 image prompts in English for a campaign, one per scene, as a sequence with a story arc (origin → craft → quality → encounter → community → emotional close). For each: start with 'Use the person in the attached image as the SAME character — keep her exact face...', then the scene and action, then shot type, lens and aperture, then light source, direction, quality and Kelvin. Vary shot types and lenses across the six. Do not describe the character's appearance differently from the identity block. Add 'No text on signs other than what is described.' Output: a table with scene number, role in the story, and the full prompt.
 
 Como verificar: Os seis prompts repetem o bloco de identidade e o de universo sem alterar uma palavra? Os planos e lentes variam? Cada cena tem um papel claro?
 
 # Módulo 3-1 — Edite sem perder o que já funciona
-## Instrução de limpeza (a primeira edição de quase toda geração)
+## Instruçêo de limpeza (a primeira ediçêo de quase toda geraçêo)
 
 Remove ALL written text from this image, and change nothing else: <liste cada lugar com texto: the chalkboard sign on the left, the words painted on the wall, the label on the jar…>. Fill each area with what would naturally be there (<plain dark board / plain plaster wall / blank kraft label>). Keep the person, her face, pose and hands, every object, the lighting, the framing and the color grade identical.
 
-Como verificar: Todos os textos listados sumiram? Sobrou alguma letra fantasma? O rosto e a luz estão iguais à mestre quando você alterna entre as duas?
+Como verificar: Todos os textos listados sumiram? Sobrou alguma letra fantasma? O rosto e a luz estêo iguais à mestre quando você alterna entre as duas?
 
-# Módulo 3-2 — Upscale, restauração e entrega
-## Ampliação fiel para produto com texto
+# Módulo 3-2 — Upscale, restauraçêo e entrega
+## Ampliaçêo fiel para produto com texto
 
 Restore and enhance this product photo faithfully. Keep the exact product, label layout, framing, light direction and colors.
 The label text is known and must be reproduced exactly, letter by letter, in the same positions and typographic style:
@@ -99,28 +99,28 @@ AVOID: new text, new logos, ornaments, extra objects, fake glow, oversharpened e
 
 Como verificar: Leia o rótulo em voz alta comparando com o texto do prompt. Uma letra trocada já reprova a peça — gere de novo ou corrija o texto num editor de imagem.
 
-# Módulo 4-1 — Projeto final: da intenção ao portfólio
+# Módulo 4-1 — Projeto final: da intençêo ao portfólio
 ## Peça de série com referência de identidade
 
 Use the person in the attached image as a strict identity reference (same face, <traços marcantes>, <cabelo>, <figurino>) and completely re-shoot a NEW photo:
-<plano> of <ação física concreta> in <lugar com 2–3 objetos>.
+<plano> of <açêo física concreta> in <lugar com 2–3 objetos>.
 <lente> lens at <abertura>, <ângulo>.
 <CONSTANTE DE LUZ DO PRESET, colada idêntica>.
 <CONSTANTE DE TEXTURAS DO PRESET, colada idêntica>.
-<composição: posição do sujeito e espaço para texto, se houver>.
+<composiçêo: posiçêo do sujeito e espaço para texto, se houver>.
 <CONSTANTE DE ESTILO E PALETA DO PRESET, colada idêntica>.
 <NEGATIVOS DO PRESET>.
 
-Como verificar: Ponha a peça nova ao lado da imagem-mestre: o rosto e o figurino batem? A luz vem do mesmo lado? Se só uma constante falhou, reforce essa linha e gere de novo — não reescreva o resto.
+Como verificar: Ponha a peça nova ao lado da imagem-mestre: o rosto e o figurino batem? A luz vem do mesmo lado? Se só uma constante falhou, reforce essa linha e gere de novo — nêo reescreva o resto.
 
-# Módulo 4-1 — Projeto final: da intenção ao portfólio
-## Rascunho do texto de apresentação com um assistente
+# Módulo 4-1 — Projeto final: da intençêo ao portfólio
+## Rascunho do texto de apresentaçêo com um assistente
 
-Você é diretor de arte e vai apresentar uma série de imagens a um cliente. Escreva um texto de apresentação em português, com no máximo 220 palavras, em cinco parágrafos curtos: o pedido, a direção visual, a série (uma frase por peça), o sistema entregue e um próximo passo sugerido. Tom: claro, confiante, sem jargão de marketing e sem adjetivos vazios. Use só as informações abaixo.
+Você é diretor de arte e vai apresentar uma série de imagens a um cliente. Escreva um texto de apresentaçêo em português, com no máximo 220 palavras, em cinco parágrafos curtos: o pedido, a direçêo visual, a série (uma frase por peça), o sistema entregue e um próximo passo sugerido. Tom: claro, confiante, sem jargêo de marketing e sem adjetivos vazios. Use só as informações abaixo.
 
 BRIEFING: <cole o briefing>
 CONSTANTES VISUAIS: <luz, paleta, texturas, estilo>
 PEÇAS: <1 linha por peça: papel na história + formato de uso>
 ENTREGA: <formatos, preset, JSON>
 
-Como verificar: Todo fato do texto está no seu briefing ou no preset? Corte qualquer promessa que você não fez e troque palavras genéricas (“incrível”, “impactante”) por decisões concretas.
+Como verificar: Todo fato do texto está no seu briefing ou no preset? Corte qualquer promessa que você nêo fez e troque palavras genéricas (“incrível”, “impactante”) por decisões concretas.
